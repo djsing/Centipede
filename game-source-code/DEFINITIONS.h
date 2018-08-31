@@ -16,4 +16,7 @@
 
 #define GAME_BACKGROUND_FILEPATH ""
 
+#define GAME_OVER_BACKGROUND_FILEPATH "losebackground.jpg"
+#define GAME_WIN_BACKGROUND_FILEPATH "winbackground.jpg"
+
 #endif

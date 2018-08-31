@@ -1,5 +1,5 @@
-#ifndef GAMEPLAY_H
-#define GAMEPLAY_H
+#ifndef GAMEOVER_H
+#define GAMEOVER_H
 
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
@@ -7,10 +7,10 @@
 
 namespace GameEngine
 {
-	class GamePlay: public GameState
+	class GameOver: public GameState
 	{
 	public:
-		GamePlay(DataPtr data);
+		GameOver(DataPtr data);
 
 		void Initialise();
 		void HandleInput();
@@ -21,7 +21,5 @@ namespace GameEngine
 		DataPtr _data;
 		sf::Sprite _background;
 	};
-
 }
-
 #endif
