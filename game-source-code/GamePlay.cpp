@@ -1,4 +1,5 @@
 #include "GamePlay.h"
+#include "PauseGame.h"
 #include "DEFINITIONS.h"
 #include <SFML/Graphics.hpp>
 
@@ -25,6 +26,11 @@ namespace GameEngine
 				(event.type == sf::Event::Closed))
 			{
 				_data->window.close();
+			}
+			// if user presses f12, pasue game
+			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::F12))
+			{
+				_data->statehandler.AddState(StatePtr(new PauseGame(_data)), false);
 			}
 		}
 	}
