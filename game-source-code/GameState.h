@@ -12,7 +12,7 @@ namespace GameEngine
 		virtual void Update(float dt) = 0;
 		virtual void Draw(float interpolation) = 0;
 
-		// Functions to pause and resume a particular game state
+		// empty Functions to represent pause and resume a particular game state
 		virtual void Pause(){}
 		virtual void Resume(){}
 	};
