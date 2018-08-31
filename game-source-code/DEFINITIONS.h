@@ -12,7 +12,6 @@
 
 #define MENU_BACKGROUND_FILEPATH "menubackground.jpg"
 #define GAME_TITLE_FILEPATH "title.jpg"
-#define GAME_PLAY_BUTTON_FILEPATH "playbutton.jpg"
 
 #define GAME_BACKGROUND_FILEPATH ""
 

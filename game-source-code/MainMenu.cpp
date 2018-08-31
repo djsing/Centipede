@@ -25,11 +25,6 @@ namespace GameEngine
 		_data->resources.LoadTexture("Menu Screen Background", MENU_BACKGROUND_FILEPATH);
 		_background.setTexture(_data->resources.GetTexture("Menu Screen Background"));
 
-		_data->resources.LoadTexture("Play Button", GAME_PLAY_BUTTON_FILEPATH);
-		_playbutton.setTexture(_data->resources.GetTexture("Play Button"));
-		_playbutton.setPosition((SCREEN_WIDTH/2)-(_playbutton.getGlobalBounds().width/2),
-			(SCREEN_HEIGHT)-(1.5*_playbutton.getGlobalBounds().height));
-
 		_data->resources.LoadTexture("Menu Screen Title", GAME_TITLE_FILEPATH);
 		_title.setTexture(_data->resources.GetTexture("Menu Screen Title"));
 		_title.setPosition((SCREEN_WIDTH/2)-(_title.getGlobalBounds().width/2),
@@ -48,8 +43,9 @@ namespace GameEngine
 				_data->window.close();
 			}
 
-			if (_data->mouseInput.IsSpriteClicked(_playbutton, sf::Mouse::Left, _data->window))
+			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Space))
 			{
+				// if player presses space, start game 
 				_data->statehandler.AddState(StatePtr(new GamePlay(_data)));
 			}
 		}

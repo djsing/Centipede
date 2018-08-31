@@ -6,7 +6,6 @@
 #include <SFML/Graphics.hpp>
 #include "StateHandler.h"
 #include "ResourceManager.h"
-#include "MouseInputHandler.h"
 #include "StopWatch.h"
 
 namespace GameEngine
@@ -16,7 +15,6 @@ namespace GameEngine
 		StateHandler statehandler;
 		sf::RenderWindow window;
 		ResourceManager resources;
-		MouseInputHandler mouseInput;
 	};
 
 	typedef std::shared_ptr<GameData> DataPtr;
