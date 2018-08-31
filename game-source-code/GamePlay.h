@@ -1,16 +1,17 @@
-#ifndef MAINMENU_H
-#define MAINMENU_H
+#ifndef GAMEPLAY_H
+#define GAMEPLAY_H
 
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 #include "Game.h"
+#include "StopWatch.h"
 
 namespace GameEngine
 {
-	class MainMenu: public GameState
+	class GamePlay: public GameState
 	{
 	public:
-		MainMenu(DataPtr data);
+		GamePlay(DataPtr data);
 
 		void Initialise();
 		void HandleInput();
@@ -20,9 +21,8 @@ namespace GameEngine
 	private:
 		DataPtr _data;
 		sf::Sprite _background;
-		sf::Sprite _title;
-		sf::Sprite _playbutton;
 	};
 
 }
+
 #endif
