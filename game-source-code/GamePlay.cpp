@@ -1,6 +1,7 @@
 #include "GamePlay.h"
 #include "PauseGame.h"
 #include "DEFINITIONS.h"
+#include "Centipede.h"
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine
@@ -13,7 +14,10 @@ namespace GameEngine
 	{
 		// for now keep black screen
 		//_data->resources.LoadTexture("Game Screen Background", GAME_BACKGROUND_FILEPATH);
+
 		//_background.setTexture(_data->resources.GetTexture("Game Screen Background"));
+		_centipede = new Centipede(_data);
+		_data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
 	}
 
 	void GamePlay::HandleInput()
@@ -32,12 +36,16 @@ namespace GameEngine
 			{
 				_data->statehandler.AddState(StatePtr(new PauseGame(_data)), false);
 			}
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				_centipede->SpawnCentipedeSegments();
+			}
 		}
 	}
 
 	void GamePlay::Update(float dt)
 	{
-		
+		_centipede->MoveCentipedeSegments(dt);
 	}
 
 	void GamePlay::Draw(float interpolation)
@@ -47,6 +55,7 @@ namespace GameEngine
 		// draw background sprite with background texture loaded
 		//_data->window.draw(_background);
 		// display updated data
+		_centipede->DrawSegments();
 		_data->window.display();
 	}
 }

@@ -1,20 +1,32 @@
 #ifndef CENTIPEDESEGMENT_H
 #define CENTIPEDESEGMENT_H
 
-#include "Game.h"
 #include <SFML/Graphics.hpp>
-#include <vector>
+#include "Direction.h"
+#include "Trajectory.h"
+#include "Game.h"
 
 namespace GameEngine
 {
-	class CentipedeSegment 
+	class CentipedeSegment
 	{
 	public:
 		CentipedeSegment(DataPtr data);
-		void DrawSegments();
+		void MoveSprite(int x, int y);
+		sf::Sprite GetSegmentSprite();
+		void SetDirection(Direction direction);
+		Direction GetDirection();
+		void SetTrajectory(Trajectory trajectory);
+		Trajectory GetTrajectory();
+		int GetTopLeftPosition();
+		void SetTurningLeft();
 	private:
 		DataPtr _data;
-		std::vector<sf::Sprite> _centipedeSegmentSprites;
+		sf::Sprite _segmentSprite;
+		Direction _direction;
+		Trajectory _trajecory;
+		int _topLeftPosition;
+		bool _turningLeft;
 	};
 }
 

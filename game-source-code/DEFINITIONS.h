@@ -19,4 +19,8 @@
 #define GAME_WIN_BACKGROUND_FILEPATH "Resources\\winbackground.jpg"
 #define PAUSE_BACKGROUND_FILEPATH "Resources\\pausebackground.jpg"
 
+#define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
+
+#define CENTIPEDE_MOVEMENT_SPEED 200.0f
+
 #endif

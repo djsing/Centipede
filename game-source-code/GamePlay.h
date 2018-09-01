@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 #include "Game.h"
+#include "Centipede.h"
 
 namespace GameEngine
 {
@@ -20,6 +21,7 @@ namespace GameEngine
 	private:
 		DataPtr _data;
 		sf::Sprite _background;
+		Centipede *_centipede;
 	};
 
 }
