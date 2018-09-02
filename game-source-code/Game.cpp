@@ -23,10 +23,10 @@ namespace GameEngine
 			newTime = watch.getElapsedTime();
 			frameTime = newTime - currentTime;
 			//limit fps not to drop below 4
-			//if (frameTime > 0.25f)
-			//{
-			//	frameTime = 0.25f;
-			//}
+			if (frameTime > 0.25f)
+			{
+				frameTime = 0.25f;
+			}
 
 			currentTime = newTime;
 			accumulator += frameTime;

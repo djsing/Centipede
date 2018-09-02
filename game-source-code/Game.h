@@ -25,7 +25,7 @@ namespace GameEngine
 		Game(int width, int height, std::string windowTitle);
 
 	private:
-		const float _dt = 1.0f/60.0f;
+		const float _dt = 1.0f/120.0f;
 		StopWatch watch;
 		DataPtr _data = std::make_shared<GameData>();
 		// Starts game loop

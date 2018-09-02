@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 #include "Game.h"
-#include "Centipede.h"
+#include "CentipedeSegment.h"
 
 namespace GameEngine
 {
@@ -12,7 +12,7 @@ namespace GameEngine
 	{
 	public:
 		GamePlay(DataPtr data);
-
+		~GamePlay();
 		void Initialise();
 		void HandleInput();
 		void Update(float dt);
@@ -21,7 +21,7 @@ namespace GameEngine
 	private:
 		DataPtr _data;
 		sf::Sprite _background;
-		Centipede *_centipede;
+		CentipedeSegment *_centipede;
 	};
 
 }

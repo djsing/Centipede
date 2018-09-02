@@ -1,7 +1,7 @@
 #include "GamePlay.h"
 #include "PauseGame.h"
 #include "DEFINITIONS.h"
-#include "Centipede.h"
+#include "CentipedeSegment.h"
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine
@@ -10,13 +10,18 @@ namespace GameEngine
 	_data(data)
 	{}
 
+	GamePlay::~GamePlay()
+	{
+		delete _centipede;
+	}
+
 	void GamePlay::Initialise()
 	{
 		// for now keep black screen
 		//_data->resources.LoadTexture("Game Screen Background", GAME_BACKGROUND_FILEPATH);
 
 		//_background.setTexture(_data->resources.GetTexture("Game Screen Background"));
-		_centipede = new Centipede(_data);
+		_centipede = new CentipedeSegment(_data);
 		_data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
 	}
 

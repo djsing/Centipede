@@ -18,6 +18,7 @@ namespace GameEngine
 			_data->window.create(sf::VideoMode().getDesktopMode(),
 				WINDOW_TITLE, sf::Style::None);
 		}
+		_data->window.setVerticalSyncEnabled(true);
 	}
 
 	void MainMenu::Initialise()
