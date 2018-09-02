@@ -36,7 +36,7 @@ namespace GameEngine
 		}
 	}
 
-	void SplashScreen::Draw(float interpolation)
+	void SplashScreen::Draw()
 	{
 		// clear screen to update data
 		_data->window.clear();

@@ -12,6 +12,8 @@ namespace GameEngine
 	public:
 		Centipede(DataPtr data);
 		void SpawnCentipedeSegments();
+		void DrawCentipedeSegments();
+		void MoveCentipede(float dt);
 	private:
 		DataPtr _data;
 		std::vector<CentipedeSegment> _centipedeSegments;

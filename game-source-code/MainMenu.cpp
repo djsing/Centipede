@@ -57,7 +57,7 @@ namespace GameEngine
 
 	}
 
-	void MainMenu::Draw(float interpolation)
+	void MainMenu::Draw()
 	{
 		// clear screen to update data
 		_data->window.clear();

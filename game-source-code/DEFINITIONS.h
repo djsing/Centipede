@@ -21,7 +21,7 @@
 
 #define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
 
-#define CENTIPEDE_MOVEMENT_SPEED 1000
+#define CENTIPEDE_MOVEMENT_SPEED 500
 #define CENTIPEDE_SPRITE_SIDE_SIZE 20
 
 #endif

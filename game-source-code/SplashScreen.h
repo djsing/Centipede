@@ -16,7 +16,7 @@ namespace GameEngine
 		void Initialise();
 		void HandleInput();
 		void Update(float dt);
-		void Draw(float interpolation);
+		void Draw();
 
 	private:
 		DataPtr _data;

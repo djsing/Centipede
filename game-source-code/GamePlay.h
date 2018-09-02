@@ -5,6 +5,7 @@
 #include "GameState.h"
 #include "Game.h"
 #include "CentipedeSegment.h"
+#include "Centipede.h"
 
 namespace GameEngine
 {
@@ -16,12 +17,13 @@ namespace GameEngine
 		void Initialise();
 		void HandleInput();
 		void Update(float dt);
-		void Draw(float interpolation);
+		void Draw();
 
 	private:
 		DataPtr _data;
 		sf::Sprite _background;
-		CentipedeSegment *_centipede;
+		Centipede *_centipede;
+		int _numberOfCentipedeSegments;
 	};
 
 }

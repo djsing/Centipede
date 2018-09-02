@@ -40,7 +40,7 @@ namespace GameEngine
 		
 	}
 
-	void GameOver::Draw(float interpolation)
+	void GameOver::Draw()
 	{
 		// clear screen to update data
 		_data->window.clear();
