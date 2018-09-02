@@ -20,16 +20,19 @@ namespace GameEngine
 		while (_data->window.isOpen())
 		{
 			_data->statehandler.ProcessStateChanges();
+
 			newTime = _watch.getElapsedTime();
 			frameTime = newTime - currentTime;
 			currentTime = newTime;
 			accumulator += frameTime;
+
 			while ((accumulator >= _dt) && (_data->window.isOpen()))
 			{
 				_data->statehandler.GetActiveGameState()->HandleInput();
 				_data->statehandler.GetActiveGameState()->Update(_dt);
 				accumulator -= _dt;
 			}
+
 			_data->statehandler.GetActiveGameState()->Draw();
 		}
 	}

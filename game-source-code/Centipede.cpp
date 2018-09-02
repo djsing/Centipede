@@ -11,9 +11,14 @@ namespace GameEngine
 		
 	}
 
-	void Centipede::SpawnCentipedeSegments()
+	float Centipede::GetLastSpriteXPosition()
 	{
-		auto segment = CentipedeSegment(_data);
+		return _centipedeSegments.back().GetTopLeftXPosition();
+	}
+
+	void Centipede::SpawnCentipedeSegments(bool firstSegment)
+	{
+		auto segment = CentipedeSegment(_data, firstSegment);
 		_centipedeSegments.push_back(segment);
 	}
 

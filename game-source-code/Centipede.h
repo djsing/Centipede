@@ -11,7 +11,8 @@ namespace GameEngine
 	{
 	public:
 		Centipede(DataPtr data);
-		void SpawnCentipedeSegments();
+		float GetLastSpriteXPosition();
+		void SpawnCentipedeSegments(bool firstSegment = false);
 		void DrawCentipedeSegments();
 		void MoveCentipede(float dt);
 	private:

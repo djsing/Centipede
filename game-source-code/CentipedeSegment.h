@@ -11,7 +11,9 @@ namespace GameEngine
 	class CentipedeSegment
 	{
 	public:
-		CentipedeSegment(DataPtr data);
+		CentipedeSegment(DataPtr data, bool firstSegment);
+		void setFirstSegment(bool firstSegment);
+		float GetTopLeftXPosition();
 		void DrawSegments();
 		void MoveCentipedeSegments(float dt);
 	private:
@@ -22,7 +24,8 @@ namespace GameEngine
 		float _topLeftXPosition;
 		float _topLeftYPosition;
 		bool _turningLeft;
-		
+		bool _firstSegment;
+		float _speed;
 	};
 }
 

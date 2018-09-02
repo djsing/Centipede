@@ -24,7 +24,10 @@ namespace GameEngine
 
 		//_background.setTexture(_data->resources.GetTexture("Game Screen Background"));
 		_data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
+		_data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 		_centipede = new Centipede(_data);
+		_centipede->SpawnCentipedeSegments(true);
+		_numberOfCentipedeSegments++;
 	}
 
 	void GamePlay::HandleInput()
@@ -43,15 +46,18 @@ namespace GameEngine
 			{
 				_data->statehandler.AddState(StatePtr(new PauseGame(_data)), false);
 			}
-			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-			{
-				_centipede->SpawnCentipedeSegments();
-			}
 		}
 	}
 
 	void GamePlay::Update(float dt)
 	{
+		// inital spawning of 12 centipede segments when the game begins
+		if ((_centipede->GetLastSpriteXPosition() >= CENTIPEDE_SPRITE_SIDE_SIZE) 
+				&& (_numberOfCentipedeSegments < 12 ))
+		{
+			_centipede->SpawnCentipedeSegments();
+			_numberOfCentipedeSegments++;
+		}
 		_centipede->MoveCentipede(dt);
 	}
 

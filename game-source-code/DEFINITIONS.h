@@ -3,15 +3,16 @@
 
 #include <SFML/Graphics.hpp>
 
-#define SCREEN_WIDTH sf::VideoMode().getDesktopMode().width
-#define SCREEN_HEIGHT sf::VideoMode().getDesktopMode().height
+#define SCREEN_WIDTH sf::VideoMode::getDesktopMode().width
+#define SCREEN_HEIGHT sf::VideoMode::getDesktopMode().height
 #define WINDOW_TITLE "Centipede"
 
 #define SPLASH_TIME 3.0
 #define SPLASH_BACKGROUND_FILEPATH "Resources\\splashscreenbackground.jpg"
 
 #define MENU_BACKGROUND_FILEPATH "Resources\\menubackground.jpg"
-#define GAME_TITLE_FILEPATH "Resources\\title.jpg"
+#define GAME_TITLE_FILEPATH "Resources\\title.gif"
+#define GAME_SUBTITLE_FILEPATH "Resources\\subtitle.jpg"
 
 #define GAME_BACKGROUND_FILEPATH ""
 
@@ -20,8 +21,8 @@
 #define PAUSE_BACKGROUND_FILEPATH "Resources\\pausebackground.jpg"
 
 #define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
+#define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.jpg"
 
-#define CENTIPEDE_MOVEMENT_SPEED 500
 #define CENTIPEDE_SPRITE_SIDE_SIZE 20
 
 #endif
