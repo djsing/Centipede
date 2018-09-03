@@ -9,7 +9,7 @@ namespace GameEngine
 		if (tex.loadFromFile(fileName))
 		{
 			_textures[name] = tex;
-		} //else throw TextureFileNotFound{};
+		} else throw TextureFileNotFound{};
 	}
 	
 	sf::Texture &ResourceManager::GetTexture(std::string name)
@@ -23,7 +23,7 @@ namespace GameEngine
 		if (font.loadFromFile(fileName))
 		{
 			_fonts[name] = font;
-		}// else throw FontFileNotFound{};
+		} else throw FontFileNotFound{};
 	}
 	
 	sf::Font &ResourceManager::GetFont(std::string name)

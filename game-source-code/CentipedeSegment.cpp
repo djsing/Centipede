@@ -16,7 +16,7 @@ namespace GameEngine
 	_firstSegment(false),
 	_speed(500)
 	{
-		setFirstSegment(firstSegment);
+		SetFirstSegment(firstSegment);
 
 		if (_firstSegment)
 		{
@@ -30,7 +30,32 @@ namespace GameEngine
 		}
 	}
 
-	void CentipedeSegment::setFirstSegment(bool firstSegment)
+	float CentipedeSegment::GetSpeed()
+	{
+		return _speed;
+	}
+
+	bool CentipedeSegment::IsFirstSegment()
+	{
+		return _firstSegment;
+	}
+
+	bool CentipedeSegment::IsTurningLeft()
+	{
+		return _turningLeft;
+	}
+
+	Trajectory CentipedeSegment::GetTrajectory()
+	{
+		return _trajectory;
+	}
+
+	Direction CentipedeSegment::GetDirection()
+	{
+		return _direction;
+	}
+
+	void CentipedeSegment::SetFirstSegment(bool firstSegment)
 	{
 		_firstSegment = firstSegment;
 	}
@@ -38,6 +63,21 @@ namespace GameEngine
 	float CentipedeSegment::GetTopLeftXPosition()
 	{
 		return _topLeftXPosition;
+	}
+
+	float CentipedeSegment::GetTopLeftYPosition()
+	{
+		return _topLeftYPosition;
+	}
+
+	float CentipedeSegment::GetCenterXPosition()
+	{
+		return _topLeftXPosition + CENTIPEDE_SPRITE_SIDE_SIZE/2;
+	}
+
+	float CentipedeSegment::GetCenterYPosition()
+	{
+		return _topLeftYPosition + CENTIPEDE_SPRITE_SIDE_SIZE/2;
 	}
 
 	void CentipedeSegment::DrawSegments()
