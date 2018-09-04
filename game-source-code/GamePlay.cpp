@@ -83,6 +83,7 @@ namespace GameEngine
 		_collisionhandler.CheckBulletCollisions(_turret);
 		_collisionhandler.CheckCentipedeSegmentCollisions(_centipede);
 		_turret->DestroyBullets();
+		_centipede->DestroyCentipedeSegments();
 	}
 
 	void GamePlay::Draw()

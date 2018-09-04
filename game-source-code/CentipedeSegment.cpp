@@ -14,7 +14,8 @@ namespace GameEngine
 	_topLeftYPosition(0),
 	_turningLeft(true),
 	_firstSegment(firstSegment),
-	_speed(500)
+	_speed(500),
+	_dead(false)
 	{
 		if (_firstSegment)
 		{
@@ -41,6 +42,11 @@ namespace GameEngine
 	bool CentipedeSegment::IsTurningLeft()
 	{
 		return _turningLeft;
+	}
+
+	bool CentipedeSegment::IsDead()
+	{
+		return _dead;
 	}
 
 	Trajectory CentipedeSegment::GetTrajectory()
@@ -148,13 +154,11 @@ namespace GameEngine
 					}
 					break;
 
-					case Direction::UP:
-					case Direction::HOVER:
 					default: break;
 				}
 				break;
 ///////////////////////////////////////////////////////////////////////////////////
-				case Trajectory::UPWARD:
+			case Trajectory::UPWARD:
 				switch (_direction)
 				{
 					case Direction::RIGHT:
@@ -203,8 +207,6 @@ namespace GameEngine
 					}
 					break;
 
-					case Direction::DOWN:
-					case Direction::HOVER:
 					default: break;
 				}
 				break;

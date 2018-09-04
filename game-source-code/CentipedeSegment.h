@@ -15,6 +15,7 @@ namespace GameEngine
 		float GetSpeed();
 		bool IsFirstSegment();
 		bool IsTurningLeft();
+		bool IsDead();
 		Trajectory GetTrajectory();
 		Direction GetDirection();
 		float GetTopLeftXPosition();
@@ -34,6 +35,7 @@ namespace GameEngine
 		void SetFirstSegment(bool firstSegment);
 		bool _firstSegment;
 		float _speed;
+		bool _dead;
 	};
 }
 
