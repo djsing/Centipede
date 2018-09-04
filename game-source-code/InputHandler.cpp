@@ -37,6 +37,7 @@ namespace GameEngine
 
 				case sf::Keyboard::Space:
 				_isShooting = true;
+				_data->keyboard.SetShooting(_isShooting);
 
 				default: break;
 			}
@@ -50,10 +51,16 @@ namespace GameEngine
 			}
 			else if (event.key.code == sf::Keyboard::Space)
 			{
-				_data->keyboard.SetShooting(false);
+				_isShooting = false;
+				_data->keyboard.SetShooting(_isShooting);
 			}
 
 			default: break;
 		}
+	}
+
+	bool InputHandler::IsShooting()
+	{
+		return _isShooting;
 	}
 }

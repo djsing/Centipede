@@ -12,6 +12,7 @@ namespace GameEngine
 	public:
 		InputHandler(DataPtr data);
 		void SetControls(sf::Event event);
+		bool IsShooting();
 	private:
 		DataPtr _data;
 		bool _isShooting;

@@ -33,7 +33,7 @@ namespace GameEngine
 
 	void Centipede::MoveCentipede(float dt)
 	{
-		for (unsigned int i = 0; i < _centipedeSegments.size(); i++ )
+		for (unsigned int i = 0; i < _centipedeSegments.size(); i++)
 		{
 			_centipedeSegments.at(i).MoveCentipedeSegments(dt);
 		}

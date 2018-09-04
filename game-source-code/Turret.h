@@ -2,8 +2,10 @@
 #define TURRET_H
 
 #include "Game.h"
+#include "Bullet.h"
 #include "Direction.h"
 #include <SFML/Graphics.hpp>
+#include <vector>
 
 namespace GameEngine
 {
@@ -19,6 +21,10 @@ namespace GameEngine
 		float GetCenterYPosition();
 		void DrawTurret();
 		void MoveTurret(float dt);
+		void SpawnBullets();
+		void DrawBullets();
+		void MoveBullets(float dt);
+		void DestroyBullets();
 	private:
 		DataPtr _data;
 		sf::Sprite _turret;
@@ -26,6 +32,7 @@ namespace GameEngine
 		float _topLeftXPosition;
 		float _topLeftYPosition;
 		float _speed;
+		std::vector<Bullet> _bullets;
 	};
 }
 
