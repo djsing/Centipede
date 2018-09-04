@@ -10,6 +10,7 @@ namespace GameEngine
 	{
 	public:
 		Bullet(DataPtr data, float xpos, float ypos);
+		~Bullet();
 		bool IsDead();
 		float GetSpeed();
 		float GetTopLeftXPosition();

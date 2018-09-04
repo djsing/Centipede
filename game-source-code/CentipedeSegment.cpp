@@ -6,18 +6,6 @@
 
 namespace GameEngine
 {
-	CentipedeSegment::CentipedeSegment(bool firstSegment):
-	_direction(Direction::RIGHT),
-	_trajectory(Trajectory::DOWNWARD),
-	_topLeftXPosition(0),
-	_topLeftYPosition(0),
-	_turningLeft(true),
-	_firstSegment(firstSegment),
-	_speed(500)
-	{
-		
-	}
-
 	CentipedeSegment::CentipedeSegment(DataPtr data, bool firstSegment):
 	_data(data),
 	_direction(Direction::RIGHT),

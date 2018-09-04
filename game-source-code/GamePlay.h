@@ -8,6 +8,7 @@
 #include "Centipede.h"
 #include "Turret.h"
 #include "InputHandler.h"
+#include "CollisionHandler.h"
 
 namespace GameEngine
 {
@@ -28,6 +29,7 @@ namespace GameEngine
 		Turret *_turret;
 		int _numberOfCentipedeSegments;
 		InputHandler *_inputHandler;
+		CollisionHandler _collisionhandler;
 	};
 
 }

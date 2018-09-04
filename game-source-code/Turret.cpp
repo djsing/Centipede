@@ -2,6 +2,7 @@
 #include "Direction.h"
 #include "DEFINITIONS.h"
 #include <SFML/Graphics.hpp>
+#include <vector>
 
 namespace GameEngine
 {
@@ -116,6 +117,42 @@ namespace GameEngine
 
 			case Direction::HOVER:
 			default: break;
+		}
+	}
+
+	void Turret::SpawnBullets()
+	{
+		auto bullet = Bullet(_data,
+			(GetCenterXPosition() - BULLET_WIDTH/2),
+			_topLeftYPosition);
+		_bullets.push_back(bullet);
+	}
+
+	void Turret::DrawBullets()
+	{
+		for (unsigned int i = 0; i < _bullets.size(); i++) 
+		{
+			_bullets.at(i).DrawBullet();
+		}
+	}
+
+	void Turret::MoveBullets(float dt)
+	{
+		for (unsigned int i = 0; i < _bullets.size(); i++)
+		{
+			_bullets.at(i).MoveBullet(dt);
+		}
+	}
+
+	void Turret::DestroyBullets()
+	{
+		for (unsigned int i = 0; i < _bullets.size(); i++)
+		{
+			if (_bullets.at(i).IsDead())
+			{
+				_bullets.erase(_bullets.begin() + i);
+				i--;
+			}
 		}
 	}
 }

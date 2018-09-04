@@ -19,6 +19,7 @@ namespace GameEngine
 	{
 		delete _centipede;
 		delete _turret;
+		delete _inputHandler;
 	}
 
 	void GamePlay::Initialise()
@@ -70,8 +71,18 @@ namespace GameEngine
 			_centipede->SpawnCentipedeSegments();
 			_numberOfCentipedeSegments++;
 		}
+
+		if (_inputHandler->IsShooting())
+		{
+			_turret->SpawnBullets();
+		}
+		
 		_centipede->MoveCentipede(dt);
 		_turret->MoveTurret(dt);
+		_turret->MoveBullets(dt);
+		_collisionhandler.CheckBulletCollisions(_turret);
+		_collisionhandler.CheckCentipedeSegmentCollisions(_centipede);
+		_turret->DestroyBullets();
 	}
 
 	void GamePlay::Draw()
@@ -82,7 +93,9 @@ namespace GameEngine
 		//_data->window.draw(_background);
 		// display updated data
 		_centipede->DrawCentipedeSegments();
+		_turret->DrawBullets();
 		_turret->DrawTurret();
+		
 		_data->window.display();
 	}
 }

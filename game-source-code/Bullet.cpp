@@ -12,6 +12,12 @@ namespace GameEngine
 	_dead(false)
 	{
 		_bullet.setTexture(_data->resources.GetTexture("Bullet sprite"));
+		_bullet.setPosition(_topLeftXPosition,_topLeftYPosition);
+	}
+
+	Bullet::~Bullet()
+	{
+		
 	}
 
 	bool Bullet::IsDead()
@@ -52,9 +58,11 @@ namespace GameEngine
 	void Bullet::MoveBullet(float dt)
 	{
 		auto moveDistance = _speed*dt;
-		// Check whether centipede is moving to the top  of screen
+		// Check whether bullet is moving to the top  of screen
 		if (_topLeftYPosition <= 0)
 		{
+			_topLeftYPosition = 0;
+			_bullet.setPosition(_topLeftXPosition, _topLeftYPosition);
 			_dead = true;
 		}
 		else
