@@ -6,6 +6,18 @@
 
 namespace GameEngine
 {
+	CentipedeSegment::CentipedeSegment(bool firstSegment):
+	_direction(Direction::RIGHT),
+	_trajectory(Trajectory::DOWNWARD),
+	_topLeftXPosition(0),
+	_topLeftYPosition(0),
+	_turningLeft(true),
+	_firstSegment(firstSegment),
+	_speed(500)
+	{
+		
+	}
+
 	CentipedeSegment::CentipedeSegment(DataPtr data, bool firstSegment):
 	_data(data),
 	_direction(Direction::RIGHT),
@@ -13,20 +25,18 @@ namespace GameEngine
 	_topLeftXPosition(0),
 	_topLeftYPosition(0),
 	_turningLeft(true),
-	_firstSegment(false),
+	_firstSegment(firstSegment),
 	_speed(500)
 	{
-		SetFirstSegment(firstSegment);
-
 		if (_firstSegment)
 		{
 		_segment.setTexture(_data->resources.GetTexture("Segment sprite"));
-		_segment.setPosition(0, 0);
+		_segment.setPosition(_topLeftXPosition, _topLeftYPosition);
 		}
 		else
 		{
 		_segment.setTexture(_data->resources.GetTexture("Body Segment sprite"));
-		_segment.setPosition(0, 0);
+		_segment.setPosition(_topLeftXPosition, _topLeftYPosition);
 		}
 	}
 
@@ -151,6 +161,7 @@ namespace GameEngine
 					break;
 
 					case Direction::UP:
+					case Direction::HOVER:
 					default: break;
 				}
 				break;
@@ -205,6 +216,7 @@ namespace GameEngine
 					break;
 
 					case Direction::DOWN:
+					case Direction::HOVER:
 					default: break;
 				}
 				break;

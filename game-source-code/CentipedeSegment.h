@@ -11,6 +11,7 @@ namespace GameEngine
 	class CentipedeSegment
 	{
 	public:
+		CentipedeSegment(bool firstSegment);
 		CentipedeSegment(DataPtr data, bool firstSegment);
 		float GetSpeed();
 		bool IsFirstSegment();

@@ -6,6 +6,8 @@
 #include "Game.h"
 #include "CentipedeSegment.h"
 #include "Centipede.h"
+#include "Turret.h"
+#include "InputHandler.h"
 
 namespace GameEngine
 {
@@ -23,7 +25,9 @@ namespace GameEngine
 		DataPtr _data;
 		sf::Sprite _background;
 		Centipede *_centipede;
+		Turret *_turret;
 		int _numberOfCentipedeSegments;
+		InputHandler *_inputHandler;
 	};
 
 }

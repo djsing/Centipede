@@ -22,7 +22,12 @@
 
 #define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
 #define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.jpg"
+#define TURRET_FILEPATH "Resources\\turret.jpg"
+#define BULLET_FILEPATH "Resources\\bullet.jpg"
 
 #define CENTIPEDE_SPRITE_SIDE_SIZE 20
+#define TURRET_SPRITE_SIDE_SIZE 20
+#define BULLET_WIDTH 7
+#define BULLET_HEIGHT 20
 
 #endif

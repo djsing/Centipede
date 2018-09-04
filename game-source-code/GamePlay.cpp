@@ -3,6 +3,9 @@
 #include "DEFINITIONS.h"
 #include "CentipedeSegment.h"
 #include "Centipede.h"
+#include "Turret.h"
+#include "Direction.h"
+#include "InputHandler.h"
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine
@@ -15,6 +18,7 @@ namespace GameEngine
 	GamePlay::~GamePlay()
 	{
 		delete _centipede;
+		delete _turret;
 	}
 
 	void GamePlay::Initialise()
@@ -25,9 +29,15 @@ namespace GameEngine
 		//_background.setTexture(_data->resources.GetTexture("Game Screen Background"));
 		_data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
 		_data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
+		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
 		_centipede = new Centipede(_data);
 		_centipede->SpawnCentipedeSegments(true);
 		_numberOfCentipedeSegments++;
+
+		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
+		_turret = new Turret(_data);
+
+		_inputHandler = new InputHandler(_data);
 	}
 
 	void GamePlay::HandleInput()
@@ -41,11 +51,13 @@ namespace GameEngine
 			{
 				_data->window.close();
 			}
-			// if user presses f12, pasue game
+			// if user presses f12, pause game
 			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::F12))
 			{
 				_data->statehandler.AddState(StatePtr(new PauseGame(_data)), false);
 			}
+			// handle control keys
+			_inputHandler->SetControls(event);
 		}
 	}
 
@@ -59,6 +71,7 @@ namespace GameEngine
 			_numberOfCentipedeSegments++;
 		}
 		_centipede->MoveCentipede(dt);
+		_turret->MoveTurret(dt);
 	}
 
 	void GamePlay::Draw()
@@ -69,6 +82,7 @@ namespace GameEngine
 		//_data->window.draw(_background);
 		// display updated data
 		_centipede->DrawCentipedeSegments();
+		_turret->DrawTurret();
 		_data->window.display();
 	}
 }

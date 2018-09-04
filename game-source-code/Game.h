@@ -7,6 +7,7 @@
 #include "StateHandler.h"
 #include "ResourceManager.h"
 #include "StopWatch.h"
+#include "KeyboardControlsHandler.h"
 
 namespace GameEngine
 {
@@ -15,6 +16,7 @@ namespace GameEngine
 		StateHandler statehandler;
 		sf::RenderWindow window;
 		ResourceManager resources;
+		KeyboardControlsHandler keyboard;
 	};
 
 	typedef std::shared_ptr<GameData> DataPtr;

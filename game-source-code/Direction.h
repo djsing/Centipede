@@ -8,7 +8,8 @@ namespace GameEngine
 		UP,
 		DOWN,
 		LEFT,
-		RIGHT
+		RIGHT,
+		HOVER
 	};
 }
 
