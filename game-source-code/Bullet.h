@@ -2,6 +2,7 @@
 #define BULLET_H
 
 #include "Game.h"
+#include "Region.h"
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine
@@ -10,7 +11,6 @@ namespace GameEngine
 	{
 	public:
 		Bullet(DataPtr data, float xpos, float ypos);
-		~Bullet();
 		bool IsDead();
 		float GetSpeed();
 		float GetTopLeftXPosition();
@@ -26,6 +26,9 @@ namespace GameEngine
 		float _topLeftYPosition;
 		float _speed;
 		bool _dead;
+		Region _region;
+		Region _subregion;
+		void UpdateRegion();
 	};
 }
 

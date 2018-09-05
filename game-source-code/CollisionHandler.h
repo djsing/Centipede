@@ -12,7 +12,8 @@ namespace GameEngine
 		CollisionHandler(TurretPtr turret, CentPtr centipede);
 		void CheckBulletCollisions();
 		void CheckCentipedeSegmentCollisions();
-		float CheckDistanceBetweenBulletsAndSegments();
+		float CheckDistanceBetweenBulletsAndSegments(unsigned int bulletIndex, 
+			unsigned int centipedeSegmentIndex);
 	private:
 		TurretPtr _turret;
 		CentPtr _centipede;

@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "Direction.h"
 #include "Trajectory.h"
+#include "Region.h"
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine
@@ -37,6 +38,9 @@ namespace GameEngine
 		bool _firstSegment;
 		float _speed;
 		bool _dead;
+		Region _region;
+		Region _subregion;
+		void UpdateRegion();
 	};
 }
 

@@ -17,6 +17,8 @@ namespace GameEngine
 		void DrawCentipedeSegments();
 		void MoveCentipede(float dt);
 		void DestroyCentipedeSegments();
+		float GetSegmentCenterXPosition(unsigned int index);
+		float GetSegmentCenterYPosition(unsigned int index);
 	private:
 		DataPtr _data;
 		std::vector<CentipedeSegment> _centipedeSegments;

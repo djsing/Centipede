@@ -27,6 +27,8 @@ namespace GameEngine
 		void DrawBullets();
 		void MoveBullets(float dt);
 		void DestroyBullets();
+		float GetBulletCenterXPosition(unsigned int index);
+		float GetBulletCenterYPosition(unsigned int index);
 
 	private:
 		DataPtr _data;

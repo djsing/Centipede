@@ -164,4 +164,14 @@ namespace GameEngine
 			}
 		}
 	}
+
+	float Turret::GetBulletCenterXPosition(unsigned int index)
+	{
+		return _bullets.at(index).GetCenterXPosition();
+	}
+
+	float Turret::GetBulletCenterYPosition(unsigned int index)
+	{
+		return _bullets.at(index).GetCenterYPosition();
+	}
 }
