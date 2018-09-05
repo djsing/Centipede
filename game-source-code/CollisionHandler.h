@@ -9,10 +9,16 @@ namespace GameEngine
 	class CollisionHandler
 	{
 	public:
-		CollisionHandler();
-		void CheckBulletCollisions(Turret *turret);
-		void CheckCentipedeSegmentCollisions(Centipede *Centipede);
+		CollisionHandler(TurretPtr turret, CentPtr centipede);
+		void CheckBulletCollisions();
+		void CheckCentipedeSegmentCollisions();
+		float CheckDistanceBetweenBulletsAndSegments();
+	private:
+		TurretPtr _turret;
+		CentPtr _centipede;
 	};
+
+	typedef std::shared_ptr<CollisionHandler> CollisionHandlerPtr;
 }
 
 #endif

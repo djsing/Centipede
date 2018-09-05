@@ -4,7 +4,6 @@
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 #include "Game.h"
-#include "CentipedeSegment.h"
 #include "Centipede.h"
 #include "Turret.h"
 #include "InputHandler.h"
@@ -25,13 +24,12 @@ namespace GameEngine
 	private:
 		DataPtr _data;
 		sf::Sprite _background;
-		Centipede *_centipede;
-		Turret *_turret;
+		CentPtr _centipede;
+		TurretPtr _turret;
 		int _numberOfCentipedeSegments;
-		InputHandler *_inputHandler;
-		CollisionHandler _collisionhandler;
+		InputHandlerPtr _inputHandler;
+		CollisionHandlerPtr _collisionhandler;
 	};
-
 }
 
 #endif

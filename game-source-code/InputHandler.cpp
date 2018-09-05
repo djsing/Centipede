@@ -6,7 +6,11 @@ namespace GameEngine
 	InputHandler::InputHandler(DataPtr data):
 	_data(data),
 	_isShooting(false),
-	_direction(Direction::HOVER)
+	_direction(Direction::HOVER),
+	_isLeft(false),
+	_isRight(false),
+	_isUp(false),
+	_isDown(false)
 	{
 		_data->keyboard.SetDirection(_direction);
 		_data->keyboard.SetShooting(_isShooting);
@@ -20,47 +24,79 @@ namespace GameEngine
 			switch (event.key.code)
 			{
 				case sf::Keyboard::Left:
-				_data->keyboard.SetDirection(Direction::LEFT);
+				_isLeft = true;
 				break;
 
 				case sf::Keyboard::Right:
-				_data->keyboard.SetDirection(Direction::RIGHT);
+				_isRight = true;
 				break;
 
 				case sf::Keyboard::Up:
-				_data->keyboard.SetDirection(Direction::UP);
+				_isUp = true;
 				break;
 
 				case sf::Keyboard::Down:
-				_data->keyboard.SetDirection(Direction::DOWN);
+				_isDown = true;
 				break;
 
 				case sf::Keyboard::Space:
-				_isShooting = true;
-				_data->keyboard.SetShooting(_isShooting);
+				_data->window.setKeyRepeatEnabled(false);
+				if (_isShooting)
+				{
+					_isShooting = false;
+				} else _isShooting = true;
 
 				default: break;
 			}
 			break;
 
 			case sf::Event::KeyReleased:
-			if (event.key.code != sf::Keyboard::Space)
+			switch (event.key.code)
 			{
-				_data->keyboard.SetDirection(Direction::HOVER);
+				case sf::Keyboard::Left:
+				_isLeft = false;
 				break;
-			}
-			else if (event.key.code == sf::Keyboard::Space)
-			{
-				_isShooting = false;
-				_data->keyboard.SetShooting(_isShooting);
-			}
 
+				case sf::Keyboard::Right:
+				_isRight = false;
+				break;
+
+				case sf::Keyboard::Up:
+				_isUp = false;
+				break;
+
+				case sf::Keyboard::Down:
+				_isDown = false;
+				break;
+
+				case sf::Keyboard::Space:
+				_isShooting = false;
+
+				default: break;
+			}
 			default: break;
 		}
-	}
 
-	bool InputHandler::IsShooting()
-	{
-		return _isShooting;
+		_data->keyboard.SetShooting(_isShooting);
+
+		_direction = Direction::HOVER;
+		if (_isLeft)
+		{
+			_direction = Direction::LEFT;
+		}
+		if (_isRight)
+		{
+			_direction = Direction::RIGHT;
+		}
+		if (_isUp)
+		{
+			_direction = Direction::UP;
+		}
+		if (_isDown)
+		{
+			_direction = Direction::DOWN;
+		}
+
+		_data->keyboard.SetDirection(_direction);
 	}
 }

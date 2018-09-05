@@ -24,6 +24,7 @@ namespace GameEngine
 		float GetCenterYPosition();
 		void DrawSegments();
 		void MoveCentipedeSegments(float dt);
+
 	private:
 		DataPtr _data;
 		sf::Sprite _segment;

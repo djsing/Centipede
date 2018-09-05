@@ -11,7 +11,7 @@ namespace GameEngine
 	_direction(Direction::HOVER),
 	_topLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2),
 	_topLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE),
-	_speed(200)
+	_speed(500)
 	{
 		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
 		_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
@@ -45,6 +45,15 @@ namespace GameEngine
 	float Turret::GetCenterYPosition()
 	{
 		return _topLeftYPosition + TURRET_SPRITE_SIDE_SIZE/2;
+	}
+
+	float Turret::GetLastBulletYPosition()
+	{
+		if (_bullets.empty())
+		{
+			return GetTopLeftYPosition() - BULLET_HEIGHT;
+		}
+		return _bullets.back().GetTopLeftYPosition();
 	}
 
 	void Turret::DrawTurret()
@@ -104,9 +113,9 @@ namespace GameEngine
 
 			case Direction::UP:
 			// check if square is at top of the screen
-			if (_topLeftYPosition <= 0.75*SCREEN_HEIGHT)
+			if (_topLeftYPosition <= 0.6*SCREEN_HEIGHT)
 			{
-				_topLeftYPosition = 0.75*SCREEN_HEIGHT;
+				_topLeftYPosition = 0.6*SCREEN_HEIGHT;
 				_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
 			}
 			else

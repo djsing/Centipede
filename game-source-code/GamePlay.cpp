@@ -1,3 +1,4 @@
+#include <memory>
 #include "GamePlay.h"
 #include "PauseGame.h"
 #include "DEFINITIONS.h"
@@ -13,32 +14,26 @@ namespace GameEngine
 	GamePlay::GamePlay(DataPtr data):
 	_data(data),
 	_numberOfCentipedeSegments(0)
-	{}
-
-	GamePlay::~GamePlay()
 	{
-		delete _centipede;
-		delete _turret;
-		delete _inputHandler;
+		//load resources
+		//_data->resources.LoadTexture("Game Screen Background", GAME_BACKGROUND_FILEPATH);
+		//_background.setTexture(_data->resources.GetTexture("Game Screen Background"));
+		_data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
+		_data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
+		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
+		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
+
+		_centipede = std::make_shared<Centipede>(_data);
+		_turret = std::make_shared<Turret>(_data);
+		_inputHandler = std::make_shared<InputHandler>(_data);
+		_collisionhandler = std::make_shared<CollisionHandler>(_turret, _centipede);
 	}
 
 	void GamePlay::Initialise()
 	{
-		// for now keep black screen
-		//_data->resources.LoadTexture("Game Screen Background", GAME_BACKGROUND_FILEPATH);
-
-		//_background.setTexture(_data->resources.GetTexture("Game Screen Background"));
-		_data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-		_data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-		_centipede = new Centipede(_data);
+		// Spawn initial CentipedeSegment with correct 'head' sprite
 		_centipede->SpawnCentipedeSegments(true);
 		_numberOfCentipedeSegments++;
-
-		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-		_turret = new Turret(_data);
-
-		_inputHandler = new InputHandler(_data);
 	}
 
 	void GamePlay::HandleInput()
@@ -72,16 +67,21 @@ namespace GameEngine
 			_numberOfCentipedeSegments++;
 		}
 
-		if (_inputHandler->IsShooting())
+		if (_data->keyboard.IsShooting() && 
+			( _turret->GetTopLeftYPosition() >= (_turret->GetLastBulletYPosition() + BULLET_HEIGHT) ))
 		{
 			_turret->SpawnBullets();
+			_data->keyboard.SetShooting(false);
 		}
-		
+
+		// move entities
 		_centipede->MoveCentipede(dt);
 		_turret->MoveTurret(dt);
 		_turret->MoveBullets(dt);
-		_collisionhandler.CheckBulletCollisions(_turret);
-		_collisionhandler.CheckCentipedeSegmentCollisions(_centipede);
+		// check collisions
+		_collisionhandler->CheckBulletCollisions();
+		_collisionhandler->CheckCentipedeSegmentCollisions();
+		// delete destroyed entities
 		_turret->DestroyBullets();
 		_centipede->DestroyCentipedeSegments();
 	}
@@ -96,7 +96,7 @@ namespace GameEngine
 		_centipede->DrawCentipedeSegments();
 		_turret->DrawBullets();
 		_turret->DrawTurret();
-		
+
 		_data->window.display();
 	}
 }

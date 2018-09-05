@@ -6,6 +6,7 @@
 #include "Direction.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <memory>
 
 namespace GameEngine
 {
@@ -19,12 +20,14 @@ namespace GameEngine
 		float GetTopLeftYPosition();
 		float GetCenterXPosition();
 		float GetCenterYPosition();
+		float GetLastBulletYPosition();
 		void DrawTurret();
 		void MoveTurret(float dt);
 		void SpawnBullets();
 		void DrawBullets();
 		void MoveBullets(float dt);
 		void DestroyBullets();
+
 	private:
 		DataPtr _data;
 		sf::Sprite _turret;
@@ -34,6 +37,8 @@ namespace GameEngine
 		float _speed;
 		std::vector<Bullet> _bullets;
 	};
+
+	typedef std::shared_ptr<Turret> TurretPtr;
 }
 
 #endif

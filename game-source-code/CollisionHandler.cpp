@@ -1,18 +1,26 @@
 #include "CollisionHandler.h"
+#include <cmath>
 
 namespace GameEngine
 {
-	CollisionHandler::CollisionHandler()
+	CollisionHandler::CollisionHandler(TurretPtr turret, CentPtr centipede):
+	_turret(turret),
+	_centipede(centipede)
 	{
 		
 	}
 
-	void CollisionHandler::CheckBulletCollisions(Turret *turret)
+	void CollisionHandler::CheckBulletCollisions()
 	{
 		
 	}
 
-	void CollisionHandler::CheckCentipedeSegmentCollisions(Centipede *centipede)
+	void CollisionHandler::CheckCentipedeSegmentCollisions()
+	{
+		
+	}
+
+	float CollisionHandler::CheckDistanceBetweenBulletsAndSegments()
 	{
 		
 	}

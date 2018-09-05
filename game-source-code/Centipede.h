@@ -2,6 +2,7 @@
 #define CENTIPEDE_H
 
 #include <SFML/Graphics.hpp>
+#include <memory>
 #include "CentipedeSegment.h"
 #include "Game.h"
 
@@ -20,6 +21,8 @@ namespace GameEngine
 		DataPtr _data;
 		std::vector<CentipedeSegment> _centipedeSegments;
 	};
+
+	typedef std::shared_ptr<Centipede> CentPtr;
 }
 
 
