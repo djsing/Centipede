@@ -11,15 +11,35 @@ namespace GameEngine
 	_direction(Direction::HOVER),
 	_topLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2),
 	_topLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE),
-	_speed(500)
+	_speed(TURRET_SPEED)
 	{
 		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
 		_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
 	}
 
-	float Turret::GetSpeed()
+	sf::Sprite &Turret::GetTurretSprite()
 	{
-		return _speed;
+		return _turret;
+	}
+
+	std::vector<Bullet> &Turret::GetBullets()
+	{
+		return _bullets;
+	}
+
+	void Turret::SetSpritePosition(float xpos, float ypos)
+	{
+		_turret.setPosition(xpos, ypos);
+	}
+
+	void Turret::SetTopLeftXPosition(float xpos)
+	{
+		_topLeftXPosition = xpos;
+	}
+
+	void Turret::SetTopLeftYPosition(float ypos)
+	{
+		_topLeftYPosition = ypos;
 	}
 
 	Direction Turret::GetDirection()
@@ -56,115 +76,6 @@ namespace GameEngine
 		return _bullets.back().GetTopLeftYPosition();
 	}
 
-	void Turret::DrawTurret()
-	{
-		_data->window.draw(_turret);
-	}
-
-	void Turret::MoveTurret(float dt)
-	{
-		auto moveDistance = _speed*dt;
-		// move sprite moveDistance away in the current direction
-		// Check whether centipede is moving to the bottom/top  of screen
-		// check direction of centipede movement
-		switch (_data->keyboard.GetDirection())
-		{
-			case Direction::RIGHT:
-			// now check if square is at right side of screen 
-			if ((_topLeftXPosition + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
-				{
-					_topLeftXPosition = SCREEN_WIDTH - TURRET_SPRITE_SIDE_SIZE;
-					_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
-				} 
-			else
-				{
-					_turret.move(moveDistance, 0);
-					_topLeftXPosition += moveDistance;
-				}
-			break;
-
-			case Direction::DOWN:
-			// check if square is at bottom of the screen
-			if ((_topLeftYPosition + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_HEIGHT))
-			{
-				_topLeftYPosition = SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE;
-				_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
-			} 
-			else
-			{
-				_turret.move(0, moveDistance);
-				_topLeftYPosition += moveDistance;
-			}
-
-			break;
-
-			case Direction::LEFT:
-			if (_topLeftXPosition <= 0)
-			{
-				_topLeftXPosition = 0;
-				_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
-			} 
-			else 
-			{
-				_turret.move(-moveDistance, 0);
-				_topLeftXPosition -= moveDistance;
-			}
-			break;
-
-			case Direction::UP:
-			// check if square is at top of the screen
-			if (_topLeftYPosition <= 0.6*SCREEN_HEIGHT)
-			{
-				_topLeftYPosition = 0.6*SCREEN_HEIGHT;
-				_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
-			}
-			else
-			{
-				_turret.move(0, -moveDistance);
-				_topLeftYPosition -= moveDistance;
-			}
-
-			case Direction::HOVER:
-			default: break;
-		}
-	}
-
-	void Turret::SpawnBullets()
-	{
-		auto bullet = Bullet(_data,
-			(GetCenterXPosition() - BULLET_WIDTH/2),
-			_topLeftYPosition);
-		_bullets.push_back(bullet);
-	}
-
-	void Turret::DrawBullets()
-	{
-		for (unsigned int i = 0; i < _bullets.size(); i++) 
-		{
-			_bullets.at(i).DrawBullet();
-		}
-	}
-
-	void Turret::MoveBullets(float dt)
-	{
-		for (unsigned int i = 0; i < _bullets.size(); i++)
-		{
-			_bullets.at(i).MoveBullet(dt);
-		}
-	}
-
-	void Turret::DestroyBullets()
-	{
-		for (unsigned int i = 0; i < _bullets.size(); i++)
-		{
-			if (_bullets.at(i).IsDead())
-			{
-				_bullets.erase(_bullets.begin() + i);
-				i--;
-			}
-		}
-	}
-
 	float Turret::GetBulletCenterXPosition(unsigned int index)
 	{
 		return _bullets.at(index).GetCenterXPosition();
@@ -173,5 +84,18 @@ namespace GameEngine
 	float Turret::GetBulletCenterYPosition(unsigned int index)
 	{
 		return _bullets.at(index).GetCenterYPosition();
+	}
+
+	void Turret::DrawTurret()
+	{
+		_data->window.draw(_turret);
+	}
+
+	void Turret::DrawBullets()
+	{
+		for (unsigned int i = 0; i < _bullets.size(); i++) 
+		{
+			_bullets.at(i).DrawBullet();
+		}
 	}
 }

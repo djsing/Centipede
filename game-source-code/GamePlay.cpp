@@ -24,7 +24,9 @@ namespace GameEngine
 		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
 
 		_centipede = std::make_shared<Centipede>(_data);
+		_centipedeLogic = std::make_unique<CentipedeLogic>(_data, _centipede);
 		_turret = std::make_shared<Turret>(_data);
+		_turretLogic = std::make_unique<TurretLogic>(_data, _turret);
 		_inputHandler = std::make_shared<InputHandler>(_data);
 		_collisionhandler = std::make_shared<CollisionHandler>(_turret, _centipede);
 	}
@@ -32,7 +34,8 @@ namespace GameEngine
 	void GamePlay::Initialise()
 	{
 		// Spawn initial CentipedeSegment with correct 'head' sprite
-		_centipede->SpawnCentipedeSegments(true);
+		_centipedeLogic->Spawn();
+		//_centipede->SpawnCentipedeSegments(true);
 		_numberOfCentipedeSegments++;
 	}
 
@@ -59,30 +62,31 @@ namespace GameEngine
 
 	void GamePlay::Update(float dt)
 	{
-		// inital spawning of 12 centipede segments when the game begins
+		// inital spawning of INITIAL_CENTIPEDE_NUMBER centipede segments when the game begins
 		if ((_centipede->GetLastSpriteXPosition() >= CENTIPEDE_SPRITE_SIDE_SIZE) 
-				&& (_numberOfCentipedeSegments < 12 ))
+				&& (_numberOfCentipedeSegments < INITIAL_CENTIPEDE_NUMBER ))
 		{
-			_centipede->SpawnCentipedeSegments();
+			//_centipede->SpawnCentipedeSegments();
+			_centipedeLogic->Spawn();
 			_numberOfCentipedeSegments++;
 		}
 
 		if (_data->keyboard.IsShooting() && 
 			( _turret->GetTopLeftYPosition() >= (_turret->GetLastBulletYPosition() + BULLET_HEIGHT) ))
 		{
-			_turret->SpawnBullets();
+			_turretLogic->Spawn();
 			_data->keyboard.SetShooting(false);
 		}
 
 		// move entities
 		_centipede->MoveCentipede(dt);
-		_turret->MoveTurret(dt);
-		_turret->MoveBullets(dt);
+		_turretLogic->Move(dt);
+		_turretLogic->MoveProjectiles(dt);
 		// check collisions
 		_collisionhandler->CheckBulletCollisions();
 		_collisionhandler->CheckCentipedeSegmentCollisions();
 		// delete destroyed entities
-		_turret->DestroyBullets();
+		_turretLogic->CollisionHandle();
 		_centipede->DestroyCentipedeSegments();
 	}
 

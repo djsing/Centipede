@@ -8,11 +8,16 @@ namespace GameEngine
 	_data(data),
 	_topLeftXPosition(xpos),
 	_topLeftYPosition(ypos),
-	_speed(500),
+	_speed(BULLET_SPEED),
 	_dead(false)
 	{
 		_bullet.setTexture(_data->resources.GetTexture("Bullet sprite"));
 		_bullet.setPosition(_topLeftXPosition,_topLeftYPosition);
+	}
+
+	sf::Sprite &Bullet::GetBullet()
+	{
+		return _bullet;
 	}
 
 	bool Bullet::IsDead()
@@ -20,9 +25,14 @@ namespace GameEngine
 		return _dead;
 	}
 
-	float Bullet::GetSpeed()
+	void Bullet::SetDead(bool isDead)
 	{
-		return _speed;
+		_dead = isDead;
+	}
+
+	void Bullet::SetYPosition(float ypos)
+	{
+		_topLeftYPosition = ypos;
 	}
 
 	float Bullet::GetTopLeftXPosition()

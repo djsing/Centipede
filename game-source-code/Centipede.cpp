@@ -1,6 +1,7 @@
 #include "Centipede.h"
 #include "CentipedeSegment.h"
 #include "Game.h"
+#include "DEFINITIONS.h"
 #include <vector>
 
 namespace GameEngine
@@ -11,9 +12,17 @@ namespace GameEngine
 		
 	}
 
+	std::vector<CentipedeSegment> &Centipede::GetCentipede()
+	{
+		return _centipedeSegments;
+	}
+
 	float Centipede::GetLastSpriteXPosition()
 	{
-		return _centipedeSegments.back().GetTopLeftXPosition();
+		if (_centipedeSegments.empty())
+		{
+			return CENTIPEDE_SPRITE_SIDE_SIZE;
+		} else return _centipedeSegments.back().GetTopLeftXPosition();
 	}
 
 	void Centipede::SpawnCentipedeSegments(bool firstSegment)

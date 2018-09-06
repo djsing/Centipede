@@ -11,8 +11,10 @@ namespace GameEngine
 	{
 	public:
 		Bullet(DataPtr data, float xpos, float ypos);
+		sf::Sprite &GetBullet();
 		bool IsDead();
-		float GetSpeed();
+		void SetDead(bool isDead);
+		void SetYPosition(float ypos);
 		float GetTopLeftXPosition();
 		float GetTopLeftYPosition();
 		float GetCenterXPosition();

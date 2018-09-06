@@ -12,6 +12,7 @@ namespace GameEngine
 	{
 	public:
 		Centipede(DataPtr data);
+		std::vector<CentipedeSegment> &GetCentipede();
 		float GetLastSpriteXPosition();
 		void SpawnCentipedeSegments(bool firstSegment = false);
 		void DrawCentipedeSegments();
