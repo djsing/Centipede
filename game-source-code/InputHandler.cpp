@@ -1,5 +1,4 @@
 #include "InputHandler.h"
-#include "Direction.h"
 
 namespace GameEngine
 {

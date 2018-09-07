@@ -1,8 +1,5 @@
 #include "Turret.h"
-#include "Direction.h"
 #include "DEFINITIONS.h"
-#include <SFML/Graphics.hpp>
-#include <vector>
 
 namespace GameEngine
 {
@@ -10,8 +7,7 @@ namespace GameEngine
 	_data(data),
 	_direction(Direction::HOVER),
 	_topLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2),
-	_topLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE),
-	_speed(TURRET_SPEED)
+	_topLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE)
 	{
 		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
 		_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
@@ -84,18 +80,5 @@ namespace GameEngine
 	float Turret::GetBulletCenterYPosition(unsigned int index)
 	{
 		return _bullets.at(index).GetCenterYPosition();
-	}
-
-	void Turret::DrawTurret()
-	{
-		_data->window.draw(_turret);
-	}
-
-	void Turret::DrawBullets()
-	{
-		for (unsigned int i = 0; i < _bullets.size(); i++) 
-		{
-			_bullets.at(i).DrawBullet();
-		}
 	}
 }

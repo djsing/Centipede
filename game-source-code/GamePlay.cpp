@@ -1,13 +1,6 @@
-#include <memory>
 #include "GamePlay.h"
 #include "PauseGame.h"
 #include "DEFINITIONS.h"
-#include "CentipedeSegment.h"
-#include "Centipede.h"
-#include "Turret.h"
-#include "Direction.h"
-#include "InputHandler.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {
@@ -23,10 +16,15 @@ namespace GameEngine
 		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
 		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
 
+		// initialise Centipede pointers
 		_centipede = std::make_shared<Centipede>(_data);
 		_centipedeLogic = std::make_unique<CentipedeLogic>(_data, _centipede);
+		_centipedeRenderer = std::make_unique<CentipedeRendering>(_data, _centipede);
+		// initialise Turret pointers
 		_turret = std::make_shared<Turret>(_data);
 		_turretLogic = std::make_unique<TurretLogic>(_data, _turret);
+		_turretRenderer = std::make_unique<TurretRendering>(_data, _turret);
+		// initialise interface/collision pointers
 		_inputHandler = std::make_shared<InputHandler>(_data);
 		_collisionhandler = std::make_shared<CollisionHandler>(_turret, _centipede);
 	}
@@ -35,7 +33,6 @@ namespace GameEngine
 	{
 		// Spawn initial CentipedeSegment with correct 'head' sprite
 		_centipedeLogic->Spawn();
-		//_centipede->SpawnCentipedeSegments(true);
 		_numberOfCentipedeSegments++;
 	}
 
@@ -79,14 +76,18 @@ namespace GameEngine
 		}
 
 		// move entities
-		_centipede->MoveCentipede(dt);
+		_centipedeLogic->Move(dt);
 		_turretLogic->Move(dt);
-		_turretLogic->MoveProjectiles(dt);
+		_turretLogic->MoveProjectiles(dt);	// move bullets
+
 		// check collisions
 		_collisionhandler->CheckBulletCollisions();
 		_collisionhandler->CheckCentipedeSegmentCollisions();
+
 		// delete destroyed entities
 		_turretLogic->CollisionHandle();
+		_centipedeLogic->CollisionHandle();
+		//--------------------STILL TO BE REPLACED WITH LAYERING----------------
 		_centipede->DestroyCentipedeSegments();
 	}
 
@@ -94,12 +95,14 @@ namespace GameEngine
 	{
 		// clear screen to update data
 		_data->window.clear();
+
 		// draw background sprite with background texture loaded
 		//_data->window.draw(_background);
-		// display updated data
-		_centipede->DrawCentipedeSegments();
-		_turret->DrawBullets();
-		_turret->DrawTurret();
+
+		// draws centipede segments
+		_centipedeRenderer->Draw();
+		// Draws turret as well as bullets
+		_turretRenderer->Draw();
 
 		_data->window.display();
 	}

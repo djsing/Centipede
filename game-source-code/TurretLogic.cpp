@@ -91,7 +91,8 @@ namespace GameEngine
 	{
 		for (unsigned int i = 0; i < _turret->GetBullets().size(); i++)
 		{
-			_turret->GetBullets().at(i).MoveBullet(dt);
+			_bulletLogic = std::make_unique<BulletLogic>(_turret->GetBullets().at(i));
+			_bulletLogic->Move(dt);
 		}
 	}
 

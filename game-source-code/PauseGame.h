@@ -19,7 +19,8 @@ namespace GameEngine
 
 	private:
 		DataPtr _data;
-		sf::Sprite _background;
+		sf::Sprite _GAMEPAUSED;
+		sf::Sprite _PRESSSPACETORESUME;
 	};
 }
 

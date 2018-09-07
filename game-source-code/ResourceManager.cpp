@@ -1,5 +1,4 @@
 #include "ResourceManager.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {

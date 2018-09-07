@@ -1,8 +1,6 @@
 #include "MainMenu.h"
 #include "GamePlay.h"
-#include "Game.h"
 #include "DEFINITIONS.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {

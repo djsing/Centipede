@@ -27,6 +27,7 @@ namespace GameEngine
 		CentPtr _centipede;
 		float _speed;
 		bool _isFirstSegment;
+		void UpdateRegion(unsigned int i);
 	};
 
 	typedef std::unique_ptr<CentipedeLogic> CentLogicPtr;

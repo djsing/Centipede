@@ -11,25 +11,35 @@ namespace GameEngine
 	{
 	public:
 		Bullet(DataPtr data, float xpos, float ypos);
+
+		// Address Accessor Functions
 		sf::Sprite &GetBullet();
-		bool IsDead();
+
+		// Mutator Functions
 		void SetDead(bool isDead);
 		void SetYPosition(float ypos);
+		void SetRegion(Region region);
+		void SetSubRegion(Region subregion);
+
+		// Accessor Functions
+		bool IsDead();
 		float GetTopLeftXPosition();
 		float GetTopLeftYPosition();
 		float GetCenterXPosition();
 		float GetCenterYPosition();
-		void DrawBullet();
-		void MoveBullet(float dt);
+
 	private:
+		// pointer to GameData layer
 		DataPtr _data;
 		sf::Sprite _bullet;
+		// position information
 		float _topLeftXPosition;
 		float _topLeftYPosition;
-		float _speed;
-		bool _dead;
 		Region _region;
 		Region _subregion;
+		// bullet characteristics
+		float _speed;
+		bool _dead;
 		void UpdateRegion();
 	};
 }

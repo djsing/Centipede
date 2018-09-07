@@ -83,13 +83,13 @@ TEST_CASE("Left wall boundary behaviour for downward trajectory")
 	CHECK(segment.GetDirection()==Direction::RIGHT);
 }
 
-TEST_CASE("Segemnt right wall behaviour for upward trajectory")
+TEST_CASE("Segment right wall behaviour for upward trajectory")
 {
-		DataPtr data = std::make_shared<GameData>();
+	DataPtr data = std::make_shared<GameData>();
 	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
 	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	auto segment = CentipedeSegment(data, true);
-	for (int i=0;i<(SCREEN_HEIGHT);i++)
+	for (unsigned int i=0;i<(SCREEN_HEIGHT);i++)
 	{
 		segment.MoveCentipedeSegments(SCREEN_WIDTH);
 		segment.MoveCentipedeSegments(1);
@@ -99,7 +99,7 @@ TEST_CASE("Segemnt right wall behaviour for upward trajectory")
 				CHECK(segment.GetTrajectory()==Trajectory::UPWARD);
 				segment.MoveCentipedeSegments(1);//Move a level up
 				CHECK(segment.GetTopLeftYPosition()<SCREEN_HEIGHT);
-				CHECK(segment.GetDirection()==Direction::LEFT);//Check if the direction is Left
+				CHECK(segment.GetDirection() == Direction::LEFT);//Check if the direction is Left
 				break;
 			}
 	}
@@ -107,11 +107,11 @@ TEST_CASE("Segemnt right wall behaviour for upward trajectory")
 
 TEST_CASE("Segment's left wall behaviour for upward trajectory")
 {
-		DataPtr data = std::make_shared<GameData>();
+	DataPtr data = std::make_shared<GameData>();
 	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
 	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	auto segment = CentipedeSegment(data, true);
-	for (int i=0;i<(SCREEN_HEIGHT);i++)
+	for (unsigned int i=0;i<(SCREEN_HEIGHT);i++)
 	{
 		segment.MoveCentipedeSegments(SCREEN_WIDTH);
 		segment.MoveCentipedeSegments(1);
@@ -138,7 +138,7 @@ TEST_CASE("Segment on upward trajectory and reaches the upper boundary of game s
 	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
 	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	auto segment = CentipedeSegment(data, true);
-	for (int i=0;i<(SCREEN_HEIGHT);i++)
+	for (unsigned int i=0;i<(SCREEN_HEIGHT);i++)
 	{
 		segment.MoveCentipedeSegments(SCREEN_WIDTH);
 		segment.MoveCentipedeSegments(1);
@@ -151,7 +151,7 @@ TEST_CASE("Segment on upward trajectory and reaches the upper boundary of game s
 			}
 	}
 	//Centipede needs to be pushed up to the roof
-	for (int i=0;i<(SCREEN_HEIGHT);i++)
+	for (unsigned int i=0;i<(SCREEN_HEIGHT);i++)
 	{
 		segment.MoveCentipedeSegments(SCREEN_WIDTH);
 		segment.MoveCentipedeSegments(1);

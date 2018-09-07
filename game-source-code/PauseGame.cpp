@@ -1,18 +1,25 @@
 #include "PauseGame.h"
 #include "GamePlay.h"
 #include "DEFINITIONS.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {
 	PauseGame::PauseGame(DataPtr data):
 	_data(data)
-	{}
+	{
+		_data->resources.LoadTexture("Game Paused Sprite", PAUSE_FILEPATH);
+		_data->resources.LoadTexture("Press Space Resume", PAUSE_SPACE_FILEPATH);
+		_GAMEPAUSED.setTexture(_data->resources.GetTexture("Game Paused Sprite"));
+		_PRESSSPACETORESUME.setTexture(_data->resources.GetTexture("Press Space Resume"));
+	}
 
 	void PauseGame::Initialise()
 	{
-		_data->resources.LoadTexture("Pause Screen Background", PAUSE_BACKGROUND_FILEPATH);
-		_background.setTexture(_data->resources.GetTexture("Pause Screen Background"));
+		_GAMEPAUSED.setPosition(SCREEN_WIDTH/2 -_GAMEPAUSED.getGlobalBounds().width/2,
+			SCREEN_HEIGHT/2 - _GAMEPAUSED.getGlobalBounds().height);
+
+		_PRESSSPACETORESUME.setPosition(SCREEN_WIDTH/2 - _PRESSSPACETORESUME.getGlobalBounds().width/2 
+			, SCREEN_HEIGHT/2);
 	}
 
 	void PauseGame::HandleInput()
@@ -42,10 +49,10 @@ namespace GameEngine
 
 	void PauseGame::Draw()
 	{
-		// clear screen to update data
 		_data->window.clear();
 		// draw background sprite with background texture loaded
-		_data->window.draw(_background);
+		_data->window.draw(_GAMEPAUSED);
+		_data->window.draw(_PRESSSPACETORESUME);
 		// display updated data
 		_data->window.display();
 	}

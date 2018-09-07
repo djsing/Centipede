@@ -6,8 +6,10 @@
 #include "Game.h"
 #include "Centipede.h"
 #include "CentipedeLogic.h"
+#include "CentipedeRendering.h"
 #include "Turret.h"
 #include "TurretLogic.h"
+#include "TurretRendering.h"
 #include "InputHandler.h"
 #include "CollisionHandler.h"
 
@@ -32,10 +34,14 @@ namespace GameEngine
 		CentPtr _centipede;
 		// Centipede logic unique pointer
 		CentLogicPtr _centipedeLogic;
+		// Centipede Renderer pointer
+		CentRenderPtr _centipedeRenderer;
 		// Turret object pointer
 		TurretPtr _turret;
 		// Turret Logic pointer
 		TurretLogicPtr _turretLogic;
+		// Turret Renderer pointer
+		TurretRenderPtr _turretRenderer;
 		// track initially spawned centipede segments
 		unsigned int _numberOfCentipedeSegments;
 		// Input Handler Pointer

@@ -5,6 +5,7 @@
 #include "EntityLogic.h"
 #include "Game.h"
 #include "Turret.h"
+#include "BulletLogic.h"
 
 namespace GameEngine
 {
@@ -25,6 +26,7 @@ namespace GameEngine
 	private:
 		DataPtr _data;
 		TurretPtr _turret;
+		BulletLogicPtr _bulletLogic;
 		float _speed;
 	};
 

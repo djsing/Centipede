@@ -34,10 +34,6 @@ namespace GameEngine
 		float GetBulletCenterXPosition(unsigned int index);
 		float GetBulletCenterYPosition(unsigned int index);
 
-//------------STILL TO REMOVE FOR LAYERING--------------
-		void DrawTurret();
-		void DrawBullets();
-
 	private:
 		// Data layer pointer
 		DataPtr _data;
@@ -47,7 +43,6 @@ namespace GameEngine
 		Direction _direction;
 		float _topLeftXPosition;
 		float _topLeftYPosition;
-		float _speed;
 		// Container to store all visible bullets
 		std::vector<Bullet> _bullets;
 	};

@@ -18,7 +18,8 @@
 
 #define GAME_OVER_BACKGROUND_FILEPATH "Resources\\losebackground.jpg"
 #define GAME_WIN_BACKGROUND_FILEPATH "Resources\\winbackground.jpg"
-#define PAUSE_BACKGROUND_FILEPATH "Resources\\pausebackground.jpg"
+#define PAUSE_FILEPATH "Resources\\gamepaused.png"
+#define PAUSE_SPACE_FILEPATH "Resources\\resume.png"
 
 #define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
 #define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.jpg"
@@ -29,7 +30,7 @@
 #define TURRET_SPRITE_SIDE_SIZE 20
 #define BULLET_WIDTH 8
 #define BULLET_HEIGHT 20
-#define BULLET_SPEED 500
+#define BULLET_SPEED 1000
 #define TURRET_SPEED 500
 #define CENTIPEDE_SPEED 500
 #define INITIAL_CENTIPEDE_NUMBER 12

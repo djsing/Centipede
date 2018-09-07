@@ -15,6 +15,27 @@ namespace GameEngine
 		_bullet.setPosition(_topLeftXPosition,_topLeftYPosition);
 	}
 
+	void Bullet::SetDead(bool isDead)
+	{
+		_dead = isDead;
+	}
+
+	void Bullet::SetYPosition(float ypos)
+	{
+		_topLeftYPosition = ypos;
+	}
+
+
+	void Bullet::SetRegion(Region region)
+	{
+		_region = region;
+	}
+
+	void Bullet::SetSubRegion(Region subregion)
+	{
+		_subregion = subregion;
+	}
+
 	sf::Sprite &Bullet::GetBullet()
 	{
 		return _bullet;
@@ -25,15 +46,6 @@ namespace GameEngine
 		return _dead;
 	}
 
-	void Bullet::SetDead(bool isDead)
-	{
-		_dead = isDead;
-	}
-
-	void Bullet::SetYPosition(float ypos)
-	{
-		_topLeftYPosition = ypos;
-	}
 
 	float Bullet::GetTopLeftXPosition()
 	{
@@ -55,31 +67,7 @@ namespace GameEngine
 		return _topLeftYPosition + CENTIPEDE_SPRITE_SIDE_SIZE/2;
 	}
 
-	void Bullet::DrawBullet()
-	{
-		_data->window.draw(_bullet);
-	}
-
-	void Bullet::MoveBullet(float dt)
-	{
-		auto moveDistance = _speed*dt;
-		// Check whether bullet is moving to the top  of screen
-		if (_topLeftYPosition <= 0)
-		{
-			_topLeftYPosition = 0;
-			_bullet.setPosition(_topLeftXPosition, _topLeftYPosition);
-			_dead = true;
-		}
-		else
-		{
-			_bullet.move(0, -moveDistance);
-			_topLeftYPosition -= moveDistance;
-		}
-
-		UpdateRegion();
-	}
-
-		void Bullet::UpdateRegion()
+	void Bullet::UpdateRegion()
 	{	// left side of screen
 		if (_topLeftXPosition <= (SCREEN_WIDTH/2 - BULLET_WIDTH))
 		{

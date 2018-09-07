@@ -1,7 +1,6 @@
 #include "SplashScreen.h"
 #include "MainMenu.h"
 #include "DEFINITIONS.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {
