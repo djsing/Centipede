@@ -18,6 +18,7 @@ namespace GameEngine
 		sf::Sprite &GetSegmentSprite();
 
 		// Mutator Functions
+		void SetDead(bool isDead);
 		void SetDirection(Direction direction);
 		void SetTrajectory(Trajectory trajectory);
 		void SetTopLeftXPosition(float xpos);
@@ -32,6 +33,8 @@ namespace GameEngine
 		bool IsDead();
 		Trajectory GetTrajectory();
 		Direction GetDirection();
+		Region GetRegion();
+		Region GetSubRegion();
 		float GetTopLeftXPosition();
 		float GetTopLeftYPosition();
 		float GetCenterXPosition();

@@ -15,6 +15,7 @@ namespace GameEngine
 		_data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
 		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
+		_data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
 
 		// initialise Centipede pointers
 		_centipede = std::make_shared<Centipede>(_data);
@@ -24,9 +25,12 @@ namespace GameEngine
 		_turret = std::make_shared<Turret>(_data);
 		_turretLogic = std::make_unique<TurretLogic>(_data, _turret);
 		_turretRenderer = std::make_unique<TurretRendering>(_data, _turret);
+		// initialise mushroom pointers
+		_field = std::make_shared<GameField>();
+		_mushRenderer = std::make_unique<MushroomRendering>(_data, _field);
 		// initialise interface/collision pointers
 		_inputHandler = std::make_shared<InputHandler>(_data);
-		_collisionhandler = std::make_shared<CollisionHandler>(_turret, _centipede);
+		_collisionhandler = std::make_shared<CollisionHandler>(_data, _turret, _centipede, _field);
 	}
 
 	void GamePlay::Initialise()
@@ -63,7 +67,6 @@ namespace GameEngine
 		if ((_centipede->GetLastSpriteXPosition() >= CENTIPEDE_SPRITE_SIDE_SIZE) 
 				&& (_numberOfCentipedeSegments < INITIAL_CENTIPEDE_NUMBER ))
 		{
-			//_centipede->SpawnCentipedeSegments();
 			_centipedeLogic->Spawn();
 			_numberOfCentipedeSegments++;
 		}
@@ -82,13 +85,14 @@ namespace GameEngine
 
 		// check collisions
 		_collisionhandler->CheckBulletCollisions();
-		_collisionhandler->CheckCentipedeSegmentCollisions();
 
-		// delete destroyed entities
+		// delete after bullet/segment collisions detected
 		_turretLogic->CollisionHandle();
 		_centipedeLogic->CollisionHandle();
-		//--------------------STILL TO BE REPLACED WITH LAYERING----------------
-		_centipede->DestroyCentipedeSegments();
+
+		//_collisionhandler->CheckCentipedeSegmentCollisions();
+		// delete other destroyed entities
+		
 	}
 
 	void GamePlay::Draw()
@@ -101,6 +105,7 @@ namespace GameEngine
 
 		// draws centipede segments
 		_centipedeRenderer->Draw();
+		_mushRenderer->Draw();
 		// Draws turret as well as bullets
 		_turretRenderer->Draw();
 

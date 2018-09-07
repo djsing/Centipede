@@ -32,16 +32,4 @@ namespace GameEngine
 	{
 		return _centipedeSegments.at(index).GetCenterYPosition();
 	}
-
-	void Centipede::DestroyCentipedeSegments()
-	{
-		for (unsigned int i = 0; i < _centipedeSegments.size(); i++)
-		{
-			if (_centipedeSegments.at(i).IsDead())
-			{
-				_centipedeSegments.erase(_centipedeSegments.begin() + i);
-				i--;
-			}
-		}
-	}
 }

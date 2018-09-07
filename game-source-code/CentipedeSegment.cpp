@@ -33,6 +33,10 @@ namespace GameEngine
 		return _segment;
 	}
 
+	void CentipedeSegment::SetDead(bool isDead)
+	{
+		_dead = isDead;
+	}
 
 	void CentipedeSegment::SetDirection(Direction direction)
 	{
@@ -92,6 +96,16 @@ namespace GameEngine
 	Direction CentipedeSegment::GetDirection()
 	{
 		return _direction;
+	}
+
+	Region CentipedeSegment::GetRegion()
+	{
+		return _region;
+	}
+
+	Region CentipedeSegment::GetSubRegion()
+	{
+		return _subregion;
 	}
 
 	float CentipedeSegment::GetTopLeftXPosition()

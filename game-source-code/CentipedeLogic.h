@@ -16,9 +16,7 @@ namespace GameEngine
 		void Spawn();
 		// for centipede class, move() refers to centipede segments
 		void Move(float dt);
-		// for centipede class, MoveProjectiles() is empty
 		void MoveProjectiles(float dt){}
-		void CollisionCheck();
 		// deletes centipede segments
 		void CollisionHandle();
 

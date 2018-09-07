@@ -27,16 +27,6 @@ namespace GameEngine
 		UpdateRegion();
 	}
 
-	void BulletLogic::CollisionCheck()
-	{
-		
-	}
-
-	void BulletLogic::CollisionHandle()
-	{
-		
-	}
-
 	void BulletLogic::UpdateRegion()
 	{
 		// left side of screen

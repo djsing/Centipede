@@ -25,12 +25,15 @@
 #define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.jpg"
 #define TURRET_FILEPATH "Resources\\turret.jpg"
 #define BULLET_FILEPATH "Resources\\bullet.jpg"
+#define MUSHROOM_FILEPATH "Resources\\mushroom.jpg"
 
 #define CENTIPEDE_SPRITE_SIDE_SIZE 20
+#define CENTIPEDE_SEGMENT_HIT_RADIUS 10
 #define TURRET_SPRITE_SIDE_SIZE 20
 #define BULLET_WIDTH 8
 #define BULLET_HEIGHT 20
 #define BULLET_SPEED 1000
+#define BULLET_HIT_RADIUS 5
 #define TURRET_SPEED 500
 #define CENTIPEDE_SPEED 500
 #define INITIAL_CENTIPEDE_NUMBER 12

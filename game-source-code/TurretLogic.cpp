@@ -96,11 +96,6 @@ namespace GameEngine
 		}
 	}
 
-	void TurretLogic::CollisionCheck()
-	{
-		
-	}
-
 	void TurretLogic::CollisionHandle()
 	{
 		//------------------------------- implement GAMEOVER if turret is hit ----------------------------------

@@ -23,6 +23,8 @@ namespace GameEngine
 
 		// Accessor Functions
 		bool IsDead();
+		Region GetRegion();
+		Region GetSubRegion();
 		float GetTopLeftXPosition();
 		float GetTopLeftYPosition();
 		float GetCenterXPosition();
@@ -40,7 +42,6 @@ namespace GameEngine
 		// bullet characteristics
 		float _speed;
 		bool _dead;
-		void UpdateRegion();
 	};
 }
 

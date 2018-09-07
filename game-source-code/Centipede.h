@@ -21,8 +21,6 @@ namespace GameEngine
 		float GetSegmentCenterXPosition(unsigned int index);
 		float GetSegmentCenterYPosition(unsigned int index);
 
-		// ----------------------STILL TO REMOVE WITH LAYERING------------------
-		void DestroyCentipedeSegments(); // logic layering required
 	private:
 		// pointer to GameData layer
 		DataPtr _data;

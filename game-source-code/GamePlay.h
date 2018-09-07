@@ -12,6 +12,8 @@
 #include "TurretRendering.h"
 #include "InputHandler.h"
 #include "CollisionHandler.h"
+#include "GameField.h"
+#include "MushroomRendering.h"
 
 namespace GameEngine
 {
@@ -42,12 +44,16 @@ namespace GameEngine
 		TurretLogicPtr _turretLogic;
 		// Turret Renderer pointer
 		TurretRenderPtr _turretRenderer;
-		// track initially spawned centipede segments
-		unsigned int _numberOfCentipedeSegments;
+		// Mushroom Renderer pointer
+		MushRenderPtr _mushRenderer;
 		// Input Handler Pointer
 		InputHandlerPtr _inputHandler;
 		// CollisionHandler pointer
 		CollisionHandlerPtr _collisionhandler;
+		// Game field pointer
+		FieldPtr _field;
+		// track initially spawned centipede segments
+		unsigned int _numberOfCentipedeSegments;
 	};
 }
 

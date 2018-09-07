@@ -29,8 +29,6 @@ namespace GameEngine
 		auto moveDistance = _speed*dt;
 		for (unsigned int i = 0; i < _centipede->GetCentipede().size(); i++)
 		{
-			//_centipede->GetCentipede().at(i).MoveCentipedeSegments(dt);	//WAS THERE
-
 			// move sprite moveDistance away in the current direction
 			// Check whether centipede is moving to the bottom/top  of screen
 			switch (_centipede->GetCentipede().at(i).GetTrajectory())
@@ -194,11 +192,6 @@ namespace GameEngine
 		// update regions after moving
 		UpdateRegion(i);
 		}
-	}
-
-	void CentipedeLogic::CollisionCheck()
-	{
-		
 	}
 
 	void CentipedeLogic::CollisionHandle()

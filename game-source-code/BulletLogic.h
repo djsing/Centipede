@@ -12,15 +12,11 @@ namespace GameEngine
 	{
 	public:
 		BulletLogic(Bullet &bullet);
-		// for Bullet class, spawn() is empty
 		void Spawn(){}
 		// for Bullet class, move() refers to moving the bullet
 		void Move(float dt);
-		// for Bullet class, MoveProjectiles() is empty
 		void MoveProjectiles(float dt){}
-		void CollisionCheck();
-		// deletes Bullets
-		void CollisionHandle();
+		void CollisionHandle(){}
 
 	private:
 		Bullet &_bullet;
