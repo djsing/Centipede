@@ -27,6 +27,7 @@ namespace GameEngine
 		_turretRenderer = std::make_unique<TurretRendering>(_data, _turret);
 		// initialise mushroom pointers
 		_field = std::make_shared<GameField>();
+		_mushLogicPtr = std::make_unique<MushroomLogic>(_field, _data);
 		_mushRenderer = std::make_unique<MushroomRendering>(_data, _field);
 		// initialise interface/collision pointers
 		_inputHandler = std::make_shared<InputHandler>(_data);
@@ -36,6 +37,7 @@ namespace GameEngine
 	void GamePlay::Initialise()
 	{
 		// Spawn initial CentipedeSegment with correct 'head' sprite
+		_mushLogicPtr->Spawn();
 		_centipedeLogic->Spawn();
 		_numberOfCentipedeSegments++;
 	}
@@ -84,15 +86,11 @@ namespace GameEngine
 		_turretLogic->MoveProjectiles(dt);	// move bullets
 
 		// check collisions
-		_collisionhandler->CheckBulletCollisions();
-
+		_collisionhandler->CheckBulletSegmentCollisions();
+		_collisionhandler->CheckSegmentMushroomCollisions();
 		// delete after bullet/segment collisions detected
 		_turretLogic->CollisionHandle();
 		_centipedeLogic->CollisionHandle();
-
-		//_collisionhandler->CheckCentipedeSegmentCollisions();
-		// delete other destroyed entities
-		
 	}
 
 	void GamePlay::Draw()
@@ -103,9 +101,10 @@ namespace GameEngine
 		// draw background sprite with background texture loaded
 		//_data->window.draw(_background);
 
+		// draws mushrooms
+		_mushRenderer->Draw();
 		// draws centipede segments
 		_centipedeRenderer->Draw();
-		_mushRenderer->Draw();
 		// Draws turret as well as bullets
 		_turretRenderer->Draw();
 

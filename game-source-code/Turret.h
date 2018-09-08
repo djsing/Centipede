@@ -31,8 +31,6 @@ namespace GameEngine
 		float GetCenterXPosition();
 		float GetCenterYPosition();
 		float GetLastBulletYPosition();
-		float GetBulletCenterXPosition(unsigned int index);
-		float GetBulletCenterYPosition(unsigned int index);
 
 	private:
 		// Data layer pointer

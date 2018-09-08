@@ -10,7 +10,7 @@ namespace GameEngine
 	class Mushroom
 	{
 	public:
-		Mushroom(DataPtr data, float xpos, float ypos, Region region, Region subregion);
+		Mushroom(DataPtr data, float xpos, float ypos);
 
 		// Accessor functions
 		sf::Sprite &GetMushroomSprite();
@@ -18,14 +18,14 @@ namespace GameEngine
 		float GetTopLeftYPosition();
 		Region GetRegion();
 		Region GetSubRegion();
+		float GetMushroomCenterXPosition();
+		float GetMushroomCenterYPosition();
 
 	private:
 		DataPtr _data;
 		sf::Sprite _mushroom;
 		float _topLeftXPosition;
 		float _topLeftYPosition;
-		Region _region;
-		Region _subregion;
 		bool isPoisoned;
 		bool isDead;
 	};

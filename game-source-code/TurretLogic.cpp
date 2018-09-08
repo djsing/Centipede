@@ -71,9 +71,9 @@ namespace GameEngine
 
 			case Direction::UP:
 			// check if square is at top of player box
-			if (_turret->GetTopLeftYPosition() <= 0.6*SCREEN_HEIGHT)
+			if (_turret->GetTopLeftYPosition() <= TURRET_SCREEN_FRACTION*SCREEN_HEIGHT)
 			{
-				_turret->SetTopLeftYPosition(0.6*SCREEN_HEIGHT);
+				_turret->SetTopLeftYPosition(TURRET_SCREEN_FRACTION*SCREEN_HEIGHT);
 				_turret->GetTurretSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
 			}
 			else

@@ -13,6 +13,7 @@
 #include "InputHandler.h"
 #include "CollisionHandler.h"
 #include "GameField.h"
+#include "MushroomLogic.h"
 #include "MushroomRendering.h"
 
 namespace GameEngine
@@ -44,6 +45,8 @@ namespace GameEngine
 		TurretLogicPtr _turretLogic;
 		// Turret Renderer pointer
 		TurretRenderPtr _turretRenderer;
+		// Mushroom Logic Pointer
+		MushLogicPtr _mushLogicPtr;
 		// Mushroom Renderer pointer
 		MushRenderPtr _mushRenderer;
 		// Input Handler Pointer

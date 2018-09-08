@@ -71,14 +71,4 @@ namespace GameEngine
 		}
 		return _bullets.back().GetTopLeftYPosition();
 	}
-
-	float Turret::GetBulletCenterXPosition(unsigned int index)
-	{
-		return _bullets.at(index).GetCenterXPosition();
-	}
-
-	float Turret::GetBulletCenterYPosition(unsigned int index)
-	{
-		return _bullets.at(index).GetCenterYPosition();
-	}
 }

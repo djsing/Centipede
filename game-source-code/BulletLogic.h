@@ -21,7 +21,6 @@ namespace GameEngine
 	private:
 		Bullet &_bullet;
 		float _speed;
-		void UpdateRegion();
 	};
 
 	typedef std::unique_ptr<BulletLogic> BulletLogicPtr;

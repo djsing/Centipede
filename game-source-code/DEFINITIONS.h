@@ -5,6 +5,7 @@
 
 #define SCREEN_WIDTH sf::VideoMode::getDesktopMode().width
 #define SCREEN_HEIGHT sf::VideoMode::getDesktopMode().height
+#define TURRET_SCREEN_FRACTION 0.6
 #define WINDOW_TITLE "Centipede"
 
 #define SPLASH_TIME 3.0
@@ -37,5 +38,8 @@
 #define TURRET_SPEED 500
 #define CENTIPEDE_SPEED 500
 #define INITIAL_CENTIPEDE_NUMBER 12
+#define MUSHROOMS_SPAWNED 50
+#define MUSHROOM_SPRITE_SIZE 20
+#define MUSHROOM_HIT_RADIUS 10
 
 #endif

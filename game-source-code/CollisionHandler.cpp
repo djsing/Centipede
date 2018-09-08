@@ -2,6 +2,8 @@
 #include "Region.h"
 #include "Mushroom.h"
 #include "DEFINITIONS.h"
+#include "Direction.h"
+#include "Trajectory.h"
 #include <cmath>
 
 namespace GameEngine
@@ -15,10 +17,11 @@ namespace GameEngine
 		
 	}
 
-	void CollisionHandler::CheckBulletCollisions()
+	void CollisionHandler::CheckBulletSegmentCollisions()
 	{
 		for (unsigned int i = 0; i < _turret->GetBullets().size(); i++)
 		{
+			// collision checking between bullets and centipedes
 			for (unsigned int j = 0; j < _centipede->GetCentipede().size(); j++)
 			{
 				if (_turret->GetBullets().at(i).GetRegion() != _centipede->GetCentipede().at(j).GetRegion())
@@ -35,9 +38,7 @@ namespace GameEngine
 					_centipede->GetCentipede().at(j).SetDead(true);
 					auto mushroom = Mushroom{_data,
 						_centipede->GetCentipede().at(j).GetTopLeftXPosition(),
-						_centipede->GetCentipede().at(j).GetTopLeftYPosition(),
-						_centipede->GetCentipede().at(j).GetRegion(),
-						_centipede->GetCentipede().at(j).GetSubRegion()};
+						_centipede->GetCentipede().at(j).GetTopLeftYPosition()};
 					_field->GetMushrooms().push_back(mushroom);
 
 					// --------------ADD FUNCTIONALITY SO THAT THIS DOES NOT AFFECT ALL SPLIT SEGMENTS
@@ -45,22 +46,44 @@ namespace GameEngine
 					{
 						_centipede->GetCentipede().at(j+1).GetSegmentSprite().setTexture(_data->resources.GetTexture("Segment sprite"));
 					}
-					
-					// not breaking the loop accounts for bullets hitting segments at the same time
+					break;
 				}
 			}
 		}
 	}
 
-	void CollisionHandler::CheckCentipedeSegmentCollisions()
+	void CollisionHandler::CheckSegmentMushroomCollisions()
 	{
-		
+		for (unsigned int i = 0; i < _centipede->GetCentipede().size(); i++)
+		{
+			for (unsigned int j = 0; j < _field->GetMushrooms().size(); j++)
+			{
+				if ((_centipede->GetCentipede().at(i).GetDirection() == Direction::LEFT) || 
+					(_centipede->GetCentipede().at(i).GetDirection() == Direction::RIGHT))
+				{
+					if (CheckDistanceBetweenSegmentsAndMushrooms(j, i) <= (CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS))
+					{
+						if (_centipede->GetCentipede().at(i).GetTrajectory() == Trajectory::DOWNWARD)
+						{
+							_centipede->GetCentipede().at(i).SetDirection(Direction::DOWN);
+						} else _centipede->GetCentipede().at(i).SetDirection(Direction::UP);
+					}
+				}
+			}
+		}
 	}
 
 	float CollisionHandler::CheckDistanceBetweenBulletsAndSegments(unsigned int BulletIndex, 
 		unsigned int CentipedeSegmentIndex)
 	{
-		return sqrt(pow(_turret->GetBulletCenterXPosition(BulletIndex)-_centipede->GetSegmentCenterXPosition(CentipedeSegmentIndex), 2)
-		+ pow(_turret->GetBulletCenterYPosition(BulletIndex)-_centipede->GetSegmentCenterYPosition(CentipedeSegmentIndex), 2));
+		return sqrt(pow(_turret->GetBullets().at(BulletIndex).GetCenterXPosition()-_centipede->GetSegmentCenterXPosition(CentipedeSegmentIndex), 2)
+		+ pow(_turret->GetBullets().at(BulletIndex).GetCenterYPosition()-_centipede->GetSegmentCenterYPosition(CentipedeSegmentIndex), 2));
+	}
+
+	float CollisionHandler::CheckDistanceBetweenSegmentsAndMushrooms(unsigned int mushroomIndex, 
+		unsigned int CentipedeSegmentIndex)
+	{
+		return sqrt(pow(_field->GetMushrooms().at(mushroomIndex).GetMushroomCenterXPosition()-_centipede->GetSegmentCenterXPosition(CentipedeSegmentIndex), 2)
+		+ pow(_field->GetMushrooms().at(mushroomIndex).GetMushroomCenterYPosition()-_centipede->GetSegmentCenterYPosition(CentipedeSegmentIndex), 2));
 	}
 }

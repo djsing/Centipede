@@ -1,13 +1,12 @@
 #include "Mushroom.h"
+#include "DEFINITIONS.h"
 
 namespace GameEngine
 {
-	Mushroom::Mushroom(DataPtr data, float xpos, float ypos, Region region, Region subregion):
+	Mushroom::Mushroom(DataPtr data, float xpos, float ypos):
 	_data(data),
 	_topLeftXPosition(xpos),
-	_topLeftYPosition(ypos),
-	_region(region),
-	_subregion(subregion)
+	_topLeftYPosition(ypos)
 	{
 		_mushroom.setTexture(_data->resources.GetTexture("Mushroom Sprite"));
 		_mushroom.setPosition(_topLeftXPosition, _topLeftYPosition);
@@ -28,13 +27,13 @@ namespace GameEngine
 		return _topLeftYPosition;
 	}
 
-	Region Mushroom::GetRegion()
+	float Mushroom::GetMushroomCenterXPosition()
 	{
-		return _region;
+		return _topLeftXPosition + MUSHROOM_SPRITE_SIZE/2;
 	}
 
-	Region Mushroom::GetSubRegion()
+	float Mushroom::GetMushroomCenterYPosition()
 	{
-		return _subregion;
+		return _topLeftYPosition + MUSHROOM_SPRITE_SIZE/2;
 	}
 }
