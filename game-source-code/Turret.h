@@ -7,6 +7,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <memory>
+#include "Region.h"
 
 namespace GameEngine
 {
@@ -23,9 +24,15 @@ namespace GameEngine
 		void SetSpritePosition(float xpos, float ypos);
 		void SetTopLeftXPosition(float xpos);
 		void SetTopLeftYPosition(float ypos);
+		void SetRegion(Region region);
+		void SetSubRegion(Region subregion);
+		void SetDead(bool isDead);
 
 		// Accessor functions
+		bool IsDead();
 		Direction GetDirection();
+		Region GetRegion();
+		Region GetSubRegion();
 		float GetTopLeftXPosition();
 		float GetTopLeftYPosition();
 		float GetCenterXPosition();
@@ -41,6 +48,9 @@ namespace GameEngine
 		Direction _direction;
 		float _topLeftXPosition;
 		float _topLeftYPosition;
+		Region _region;
+		Region _subregion;
+		bool _isDead;
 		// Container to store all visible bullets
 		std::vector<Bullet> _bullets;
 	};

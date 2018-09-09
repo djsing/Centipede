@@ -1,6 +1,8 @@
 #include "TurretLogic.h"
 #include "Bullet.h"
 #include "DEFINITIONS.h"
+#include "RegionHandler.h"
+#include "GameOver.h"
 
 namespace GameEngine
 {
@@ -85,6 +87,10 @@ namespace GameEngine
 			case Direction::HOVER:
 			default: break;
 		}
+
+		auto turretRegion = RegionHandler{_turret->GetCenterXPosition(), _turret->GetCenterYPosition()};
+		_turret->SetRegion(turretRegion.GetRegion());
+		_turret->SetSubRegion(turretRegion.GetSubRegion());
 	}
 
 	void TurretLogic::MoveProjectiles(float dt)
@@ -98,7 +104,10 @@ namespace GameEngine
 
 	void TurretLogic::CollisionHandle()
 	{
-		//------------------------------- implement GAMEOVER if turret is hit ----------------------------------
+		if (_turret->IsDead())
+		{
+			_data->statehandler.AddState(StatePtr(new GameOver(_data)));
+		}
 
 		// delete collided bullets 
 		for (unsigned int i = 0; i < _turret->GetBullets().size(); i++)

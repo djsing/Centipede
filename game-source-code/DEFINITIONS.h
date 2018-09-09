@@ -5,6 +5,8 @@
 
 #define SCREEN_WIDTH sf::VideoMode::getDesktopMode().width
 #define SCREEN_HEIGHT sf::VideoMode::getDesktopMode().height
+#define SCREEN_LHS 0
+#define SCREEN_HEIGHT_BUFFER_FACTOR 2
 #define TURRET_SCREEN_FRACTION 0.6
 #define WINDOW_TITLE "Centipede"
 
@@ -19,24 +21,29 @@
 
 #define GAME_OVER_BACKGROUND_FILEPATH "Resources\\losebackground.jpg"
 #define GAME_WIN_BACKGROUND_FILEPATH "Resources\\winbackground.jpg"
+#define GAME_WON "Resources\\youwin.png"
 #define PAUSE_FILEPATH "Resources\\gamepaused.png"
 #define PAUSE_SPACE_FILEPATH "Resources\\resume.png"
+#define GAME_OVER_FILEPATH "Resources\\gameover.png"
+#define GAME_OVER_RESTART_FILEPATH "Resources\\gamerestart.png"
+#define GAME_WIN_RESTART_FILEPATH "Resources\\gamerestart.png"
 
 #define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
 #define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.jpg"
-#define TURRET_FILEPATH "Resources\\turret.jpg"
+#define TURRET_FILEPATH "Resources\\turret.png"
 #define BULLET_FILEPATH "Resources\\bullet.jpg"
-#define MUSHROOM_FILEPATH "Resources\\mushroom.jpg"
+#define MUSHROOM_FILEPATH "Resources\\mushroom.png"
 
 #define CENTIPEDE_SPRITE_SIDE_SIZE 20
 #define CENTIPEDE_SEGMENT_HIT_RADIUS 10
 #define TURRET_SPRITE_SIDE_SIZE 20
+#define TURRET_HIT_RADIUS 10
 #define BULLET_WIDTH 8
 #define BULLET_HEIGHT 20
-#define BULLET_SPEED 1000
+#define BULLET_SPEED 2000
 #define BULLET_HIT_RADIUS 5
 #define TURRET_SPEED 500
-#define CENTIPEDE_SPEED 500
+#define CENTIPEDE_SPEED 1000
 #define INITIAL_CENTIPEDE_NUMBER 12
 #define MUSHROOMS_SPAWNED 50
 #define MUSHROOM_SPRITE_SIZE 20

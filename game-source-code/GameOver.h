@@ -20,6 +20,8 @@ namespace GameEngine
 	private:
 		DataPtr _data;
 		sf::Sprite _background;
+		sf::Sprite _gameOver;
+		sf::Sprite _pressF12ToRestart;
 	};
 }
 #endif

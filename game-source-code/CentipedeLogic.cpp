@@ -5,6 +5,7 @@
 #include "Direction.h"
 #include "Region.h"
 #include "RegionHandler.h"
+#include "GameWon.h"
 
 namespace GameEngine
 {
@@ -40,17 +41,10 @@ namespace GameEngine
 					{
 						case Direction::RIGHT:
 						// check if square is at bottom of the screen
-						if ((_centipede->GetCentipede().at(i).GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_HEIGHT))
+						if ((_centipede->GetCentipede().at(i).GetTopLeftYPosition() + SCREEN_HEIGHT_BUFFER_FACTOR*CENTIPEDE_SPRITE_SIDE_SIZE)
+							>= (SCREEN_HEIGHT))
 						{
-
 							_centipede->GetCentipede().at(i).SetTrajectory(Trajectory::UPWARD);
-
-							_centipede->GetCentipede().at(i).SetTopLeftYPosition(SCREEN_HEIGHT - CENTIPEDE_SPRITE_SIDE_SIZE);
-
-							_centipede->GetCentipede().at(i).GetSegmentSprite().setPosition(
-								_centipede->GetCentipede().at(i).GetTopLeftXPosition(), 
-								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
-
 						}	// now check if square is at right side of screen 
 						else if ((_centipede->GetCentipede().at(i).GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
 						{
@@ -90,15 +84,16 @@ namespace GameEngine
 						break;
 
 						case Direction::LEFT:
-						if ((_centipede->GetCentipede().at(i).GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_HEIGHT))
+						if ((_centipede->GetCentipede().at(i).GetTopLeftYPosition() + SCREEN_HEIGHT_BUFFER_FACTOR*CENTIPEDE_SPRITE_SIDE_SIZE)
+							>= (SCREEN_HEIGHT))
 						{
 							_centipede->GetCentipede().at(i).SetTrajectory(Trajectory::UPWARD);
 						} 
-						else if (_centipede->GetCentipede().at(i).GetTopLeftXPosition() <= 0)
+						else if (_centipede->GetCentipede().at(i).GetTopLeftXPosition() <= SCREEN_LHS)
 						{
 							_centipede->GetCentipede().at(i).SetDirection(Direction::DOWN);
 
-							_centipede->GetCentipede().at(i).SetTopLeftXPosition(0);
+							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_LHS);
 
 							_centipede->GetCentipede().at(i).GetSegmentSprite().setPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
@@ -167,11 +162,11 @@ namespace GameEngine
 
 						case Direction::LEFT:
 						// x value of top left position
-						if (_centipede->GetCentipede().at(i).GetTopLeftXPosition() <= 0)
+						if (_centipede->GetCentipede().at(i).GetTopLeftXPosition() <= SCREEN_LHS)
 						{
 							_centipede->GetCentipede().at(i).SetDirection(Direction::UP);
 
-							_centipede->GetCentipede().at(i).SetTopLeftXPosition(0);
+							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_LHS);
 
 							_centipede->GetCentipede().at(i).GetSegmentSprite().setPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
@@ -192,8 +187,8 @@ namespace GameEngine
 			}
 
 		// update regions after moving
-		auto segmentRegion = RegionHandler{_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
-			_centipede->GetCentipede().at(i).GetTopLeftYPosition()};
+		auto segmentRegion = RegionHandler{_centipede->GetCentipede().at(i).GetCenterXPosition(),
+			_centipede->GetCentipede().at(i).GetCenterYPosition()};
 		_centipede->GetCentipede().at(i).SetRegion(segmentRegion.GetRegion());
 		_centipede->GetCentipede().at(i).SetSubRegion(segmentRegion.GetSubRegion());
 		}
@@ -209,6 +204,12 @@ namespace GameEngine
 				_centipede->GetCentipede().erase(_centipede->GetCentipede().begin() + i);
 				i--;
 			}
+		}
+
+		// if after deleting segments, the centipede is empty, end (win) the game
+		if (_centipede->GetCentipede().empty())
+		{
+			_data->statehandler.AddState(StatePtr(new GameWon(_data)));
 		}
 	}
 }

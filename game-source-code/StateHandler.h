@@ -7,7 +7,6 @@
 
 namespace GameEngine
 {
-	typedef std::unique_ptr<GameState> StatePtr;
 	class StateHandler
 	{
 	public:

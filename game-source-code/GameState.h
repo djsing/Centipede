@@ -11,11 +11,9 @@ namespace GameEngine
 		virtual void HandleInput() = 0;
 		virtual void Update(float dt) = 0;
 		virtual void Draw() = 0;
-
-		// empty Functions to represent pause and resume a particular game state
-		virtual void Pause(){}
-		virtual void Resume(){}
 	};
+
+	typedef std::unique_ptr<GameState> StatePtr;
 }
 
 #endif

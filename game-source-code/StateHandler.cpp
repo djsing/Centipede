@@ -21,11 +21,6 @@ namespace GameEngine
 		if (_isRemoving && !_states.empty())
 		{
 			_states.pop();
-
-			if (!_states.empty())
-			{
-				_states.top()->Resume();
-			}
 			_isRemoving = false;
 		}
 
@@ -36,10 +31,6 @@ namespace GameEngine
 				if (_isReplacing)
 				{
 					_states.pop();
-				}
-				else // we are just adding, before adding a game state, pause the current state
-				{
-					_states.top()->Pause();
 				}
 			}
 			// move location of _newState to stack

@@ -14,15 +14,17 @@ namespace GameEngine
 		CollisionHandler(DataPtr data, TurretPtr turret, CentPtr centipede, FieldPtr field);
 		void CheckBulletSegmentCollisions();
 		void CheckSegmentMushroomCollisions();
+		void CheckTurretSegmentCollisions();
 	private:
 		DataPtr _data;
 		TurretPtr _turret;
 		CentPtr _centipede;
 		FieldPtr _field;
 		float CheckDistanceBetweenBulletsAndSegments(unsigned int bulletIndex, 
-			unsigned int centipedeSegmentIndex);
+			unsigned int segmentIndex);
 		float CheckDistanceBetweenSegmentsAndMushrooms(unsigned int mushroomIndex, 
-			unsigned int centipedeSegmentIndex);
+			unsigned int segmentIndex);
+		float CheckDistanceBetweenSegmentsAndTurret(unsigned int segmentIndex);
 	};
 
 	typedef std::shared_ptr<CollisionHandler> CollisionHandlerPtr;

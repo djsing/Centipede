@@ -1,5 +1,6 @@
 #include "GamePlay.h"
 #include "PauseGame.h"
+#include "GameWon.h"
 #include "DEFINITIONS.h"
 
 namespace GameEngine
@@ -86,10 +87,12 @@ namespace GameEngine
 		_turretLogic->MoveProjectiles(dt);	// move bullets
 
 		// check collisions
+		_collisionhandler->CheckTurretSegmentCollisions();
 		_collisionhandler->CheckBulletSegmentCollisions();
 		_collisionhandler->CheckSegmentMushroomCollisions();
-		// delete after bullet/segment collisions detected
+		// delete after bullet/segment collisions, ends game if turret isDead
 		_turretLogic->CollisionHandle();
+		// deletes segments after bullet/segment collisions
 		_centipedeLogic->CollisionHandle();
 	}
 

@@ -7,7 +7,8 @@ namespace GameEngine
 	_data(data),
 	_direction(Direction::HOVER),
 	_topLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2),
-	_topLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE)
+	_topLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE),
+	_isDead(false)
 	{
 		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
 		_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
@@ -38,9 +39,39 @@ namespace GameEngine
 		_topLeftYPosition = ypos;
 	}
 
+	void Turret::SetRegion(Region region)
+	{
+		_region = region;
+	}
+
+	void Turret::SetSubRegion(Region subregion)
+	{
+		_subregion = subregion;
+	}
+
+	void Turret::SetDead(bool isDead)
+	{
+		_isDead = isDead;
+	}
+
+	bool Turret::IsDead()
+	{
+		return _isDead;
+	}
+
 	Direction Turret::GetDirection()
 	{
 		return _direction;
+	}
+
+	Region Turret::GetRegion()
+	{
+		return _region;
+	}
+
+	Region Turret::GetSubRegion()
+	{
+		return _subregion;
 	}
 
 	float Turret::GetTopLeftXPosition()

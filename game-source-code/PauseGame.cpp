@@ -34,7 +34,7 @@ namespace GameEngine
 				_data->window.close();
 			}
 
-			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Space))
+			if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::F12))
 			{
 				// if player presses space in pause screen, resume game
 				_data->statehandler.RemoveState();
