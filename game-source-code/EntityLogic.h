@@ -11,6 +11,7 @@ namespace GameEngine
 		virtual void MoveProjectiles(float dt) = 0;
 		virtual void CollisionHandle() = 0;
 	};
+	typedef std::unique_ptr<EntityLogic> LogicPtr;
 }
 
 #endif

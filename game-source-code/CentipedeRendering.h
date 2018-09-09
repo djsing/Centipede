@@ -17,8 +17,6 @@ namespace GameEngine
 		DataPtr _data;
 		CentPtr _centipede;
 	};
-
-	typedef std::unique_ptr<CentipedeRendering> CentRenderPtr;
 }
 
 #endif

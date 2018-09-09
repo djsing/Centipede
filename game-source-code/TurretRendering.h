@@ -19,8 +19,6 @@ namespace GameEngine
 		TurretPtr _turret;
 		BulletRenderPtr _bullet;
 	};
-
-	typedef std::unique_ptr<TurretRendering> TurretRenderPtr;
 }
 
 #endif

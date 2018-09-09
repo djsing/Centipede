@@ -26,8 +26,6 @@ namespace GameEngine
 		float _speed;
 		bool _isFirstSegment;
 	};
-
-	typedef std::unique_ptr<CentipedeLogic> CentLogicPtr;
 }
 
 #endif

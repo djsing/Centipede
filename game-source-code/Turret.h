@@ -7,11 +7,12 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <memory>
+#include "Entity.h"
 #include "Region.h"
 
 namespace GameEngine
 {
-	class Turret
+	class Turret: public Entity
 	{
 	public:
 		Turret(DataPtr data);
@@ -29,12 +30,6 @@ namespace GameEngine
 		void SetDead(bool isDead);
 
 		// Accessor functions
-		bool IsDead();
-		Direction GetDirection();
-		Region GetRegion();
-		Region GetSubRegion();
-		float GetTopLeftXPosition();
-		float GetTopLeftYPosition();
 		float GetCenterXPosition();
 		float GetCenterYPosition();
 		float GetLastBulletYPosition();
@@ -44,13 +39,6 @@ namespace GameEngine
 		DataPtr _data;
 		// Turret sprite
 		sf::Sprite _turret;
-		// Turret Position/Movement Attributes
-		Direction _direction;
-		float _topLeftXPosition;
-		float _topLeftYPosition;
-		Region _region;
-		Region _subregion;
-		bool _isDead;
 		// Container to store all visible bullets
 		std::vector<Bullet> _bullets;
 	};

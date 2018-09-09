@@ -4,14 +4,13 @@
 namespace GameEngine
 {
 	Turret::Turret(DataPtr data):
-	_data(data),
-	_direction(Direction::HOVER),
-	_topLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2),
-	_topLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE),
-	_isDead(false)
+	Entity(Direction::HOVER, SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2,
+			SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE),
+	_data(data)
 	{
 		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
-		_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
+		//_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
+		_turret.setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
 	}
 
 	sf::Sprite &Turret::GetTurretSprite()
@@ -31,67 +30,37 @@ namespace GameEngine
 
 	void Turret::SetTopLeftXPosition(float xpos)
 	{
-		_topLeftXPosition = xpos;
+		Entity::SetTopLeftXPosition(xpos);
 	}
 
 	void Turret::SetTopLeftYPosition(float ypos)
 	{
-		_topLeftYPosition = ypos;
+		Entity::SetTopLeftYPosition(ypos);
 	}
 
 	void Turret::SetRegion(Region region)
 	{
-		_region = region;
+		Entity::SetRegion(region);
 	}
 
 	void Turret::SetSubRegion(Region subregion)
 	{
-		_subregion = subregion;
+		Entity::SetSubRegion(subregion);
 	}
 
 	void Turret::SetDead(bool isDead)
 	{
-		_isDead = isDead;
-	}
-
-	bool Turret::IsDead()
-	{
-		return _isDead;
-	}
-
-	Direction Turret::GetDirection()
-	{
-		return _direction;
-	}
-
-	Region Turret::GetRegion()
-	{
-		return _region;
-	}
-
-	Region Turret::GetSubRegion()
-	{
-		return _subregion;
-	}
-
-	float Turret::GetTopLeftXPosition()
-	{
-		return _topLeftXPosition;
-	}
-
-	float Turret::GetTopLeftYPosition()
-	{
-		return _topLeftYPosition;
+		Entity::SetDead(isDead);
 	}
 
 	float Turret::GetCenterXPosition()
 	{
-		return _topLeftXPosition + TURRET_SPRITE_SIDE_SIZE/2;
+		return Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2;
 	}
 
 	float Turret::GetCenterYPosition()
 	{
-		return _topLeftYPosition + TURRET_SPRITE_SIDE_SIZE/2;
+		return Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2;
 	}
 
 	float Turret::GetLastBulletYPosition()

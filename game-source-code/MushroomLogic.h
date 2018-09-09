@@ -22,8 +22,6 @@ namespace GameEngine
 		DataPtr _data;
 		FieldPtr _field;
 	};
-
-	typedef std::unique_ptr<MushroomLogic> MushLogicPtr;
 }
 
 #endif

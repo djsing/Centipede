@@ -28,8 +28,6 @@ namespace GameEngine
 		BulletLogicPtr _bulletLogic;
 		float _speed;
 	};
-
-	typedef std::unique_ptr<TurretLogic> TurretLogicPtr;
 }
 
 #endif

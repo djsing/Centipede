@@ -4,17 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 #include "Game.h"
+#include "EntityLogic.h"
+#include "EntityRendering.h"
 #include "Centipede.h"
-#include "CentipedeLogic.h"
-#include "CentipedeRendering.h"
 #include "Turret.h"
-#include "TurretLogic.h"
-#include "TurretRendering.h"
 #include "InputHandler.h"
 #include "CollisionHandler.h"
 #include "GameField.h"
-#include "MushroomLogic.h"
-#include "MushroomRendering.h"
 
 namespace GameEngine
 {
@@ -36,19 +32,19 @@ namespace GameEngine
 		// Centipede object shared pointer
 		CentPtr _centipede;
 		// Centipede logic unique pointer
-		CentLogicPtr _centipedeLogic;
+		LogicPtr _centipedeLogic;
 		// Centipede Renderer pointer
-		CentRenderPtr _centipedeRenderer;
+		RenderPtr _centipedeRenderer;
 		// Turret object pointer
 		TurretPtr _turret;
 		// Turret Logic pointer
-		TurretLogicPtr _turretLogic;
+		LogicPtr _turretLogic;
 		// Turret Renderer pointer
-		TurretRenderPtr _turretRenderer;
+		RenderPtr _turretRenderer;
 		// Mushroom Logic Pointer
-		MushLogicPtr _mushLogicPtr;
+		LogicPtr _mushLogicPtr;
 		// Mushroom Renderer pointer
-		MushRenderPtr _mushRenderer;
+		RenderPtr _mushRenderer;
 		// Input Handler Pointer
 		InputHandlerPtr _inputHandler;
 		// CollisionHandler pointer

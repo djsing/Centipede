@@ -2,6 +2,12 @@
 #include "PauseGame.h"
 #include "GameWon.h"
 #include "DEFINITIONS.h"
+#include "CentipedeLogic.h"
+#include "TurretLogic.h"
+#include "MushroomLogic.h"
+#include "CentipedeRendering.h"
+#include "TurretRendering.h"
+#include "MushroomRendering.h"
 
 namespace GameEngine
 {

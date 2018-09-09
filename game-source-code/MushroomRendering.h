@@ -16,8 +16,6 @@ namespace GameEngine
 		DataPtr _data;
 		FieldPtr _field;
 	};
-
-	typedef std::unique_ptr<MushroomRendering> MushRenderPtr;
 }
 
 #endif
