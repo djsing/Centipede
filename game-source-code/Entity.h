@@ -14,6 +14,7 @@ namespace GameEngine
 		Entity(Direction direction, float topLeftXPosition,
 				float topLeftYPosition);
 		// Mutator functions
+		virtual void SetDirection(Direction direction);
 		virtual void SetTopLeftXPosition(float xpos);
 		virtual void SetTopLeftYPosition(float ypos);
 		virtual void SetRegion(Region region);

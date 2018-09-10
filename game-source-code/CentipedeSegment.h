@@ -6,10 +6,11 @@
 #include "Trajectory.h"
 #include "Region.h"
 #include <SFML/Graphics.hpp>
+#include "Entity.h"
 
 namespace GameEngine
 {
-	class CentipedeSegment
+	class CentipedeSegment: public Entity
 	{
 	public:
 		CentipedeSegment(DataPtr data, bool firstSegment);
@@ -19,26 +20,21 @@ namespace GameEngine
 
 		// Mutator Functions
 		void SetDead(bool isDead);
-		void SetDirection(Direction direction);
-		void SetTrajectory(Trajectory trajectory);
-		void SetTopLeftXPosition(float xpos);
-		void SetTopLeftYPosition(float ypos);
-		void SetTurningLeft(bool isTurningLeft);
 		void SetRegion(Region region);
 		void SetSubRegion(Region subregion);
+		void SetTopLeftXPosition(float xpos);
+		void SetTopLeftYPosition(float ypos);
 
-		// Accessor Functions
-		bool IsFirstSegment();
-		bool IsTurningLeft();
-		bool IsDead();
+		// Mutators specific to CentipedeSegment
+		void SetTrajectory(Trajectory trajectory);
+		void SetTurningLeft(bool isTurningLeft);
+
+		// Accessor Functions specifc to Centipede Segment
 		Trajectory GetTrajectory();
-		Direction GetDirection();
-		Region GetRegion();
-		Region GetSubRegion();
-		float GetTopLeftXPosition();
-		float GetTopLeftYPosition();
 		float GetCenterXPosition();
 		float GetCenterYPosition();
+		bool IsFirstSegment();
+		bool IsTurningLeft();
 
 	private:
 		// pointer to GameData layer
@@ -46,17 +42,9 @@ namespace GameEngine
 		sf::Sprite _segment;
 		// movement information
 		bool _turningLeft;
-		Direction _direction;
 		Trajectory _trajectory;
-		// position information
-		float _topLeftXPosition;
-		float _topLeftYPosition;
-		Region _region;
-		Region _subregion;
 		// segment characteristics
 		bool _firstSegment;
-		float _speed;
-		bool _dead;
 	};
 }
 

@@ -12,6 +12,11 @@ namespace GameEngine
 		
 	}
 
+	void Entity::SetDirection(Direction direction)
+	{
+		_direction = direction;
+	}
+
 	void Entity::SetTopLeftXPosition(float xpos)
 	{
 		_topLeftXPosition = xpos;

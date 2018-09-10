@@ -29,7 +29,7 @@ namespace GameEngine
 		void SetSubRegion(Region subregion);
 		void SetDead(bool isDead);
 
-		// Accessor functions
+		// Accessor functions specific to Turret
 		float GetCenterXPosition();
 		float GetCenterYPosition();
 		float GetLastBulletYPosition();

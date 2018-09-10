@@ -9,7 +9,6 @@ namespace GameEngine
 	_data(data)
 	{
 		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
-		//_turret.setPosition(_topLeftXPosition, _topLeftYPosition);
 		_turret.setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
 	}
 
