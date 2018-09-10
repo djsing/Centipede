@@ -13,10 +13,10 @@ namespace GameEngine
 	{
 	public:
 		MushroomLogic(FieldPtr field, DataPtr data);
-		void Spawn();
+		void Spawn() override;
 		void Move(float dt){}
 		void MoveProjectiles(float dt){}
-		void CollisionHandle(); // yet to implement
+		void CollisionHandle() override; // yet to implement
 		
 	private:
 		DataPtr _data;

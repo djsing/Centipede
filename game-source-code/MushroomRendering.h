@@ -11,7 +11,7 @@ namespace GameEngine
 	{
 	public:
 		MushroomRendering(DataPtr data, FieldPtr field);
-		void Draw();
+		void Draw() override;
 	private:
 		DataPtr _data;
 		FieldPtr _field;

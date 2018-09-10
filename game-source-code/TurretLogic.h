@@ -14,13 +14,13 @@ namespace GameEngine
 	public:
 		TurretLogic(DataPtr data, TurretPtr turret);
 		// for turret class, spawn() refers to spawning bullets
-		void Spawn();
+		void Spawn() override;
 		// for turret class, move() refers to turret movement
-		void Move(float dt);
+		void Move(float dt) override;
 		// for turret class, MoveProjectiles() refers to moving bullets
-		void MoveProjectiles(float dt);
+		void MoveProjectiles(float dt) override;
 		// deletes dead bullets, ends game if turret collides with deadly entity
-		void CollisionHandle();	// incomplete
+		void CollisionHandle() override;
 
 	private:
 		DataPtr _data;

@@ -12,7 +12,7 @@ namespace GameEngine
 	{
 	public:
 		CentipedeRendering(DataPtr data, CentPtr centipede);
-		void Draw();
+		void Draw() override;
 	private:
 		DataPtr _data;
 		CentPtr _centipede;

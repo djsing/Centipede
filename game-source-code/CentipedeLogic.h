@@ -13,9 +13,9 @@ namespace GameEngine
 	public:
 		CentipedeLogic(DataPtr data, CentPtr centipede);
 		// for centipede class, spawn() refers to spawning centipede segments
-		void Spawn();
+		void Spawn() override;
 		// for centipede class, move() refers to centipede segments
-		void Move(float dt);
+		void Move(float dt) override;
 		void MoveProjectiles(float dt){}
 		// deletes centipede segments
 		void CollisionHandle();

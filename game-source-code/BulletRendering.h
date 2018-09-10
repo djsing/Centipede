@@ -12,7 +12,7 @@ namespace GameEngine
 	{
 	public:
 		BulletRendering(DataPtr data, Bullet &bullet);
-		void Draw();
+		void Draw() override;
 	private:
 		DataPtr _data;
 		Bullet &_bullet;

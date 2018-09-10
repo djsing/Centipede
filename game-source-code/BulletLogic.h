@@ -14,7 +14,7 @@ namespace GameEngine
 		BulletLogic(Bullet &bullet);
 		void Spawn(){}
 		// for Bullet class, move() refers to moving the bullet
-		void Move(float dt);
+		void Move(float dt) override;
 		void MoveProjectiles(float dt){}
 		void CollisionHandle(){}
 

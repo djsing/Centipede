@@ -13,7 +13,7 @@ namespace GameEngine
 	{
 	public:
 		TurretRendering(DataPtr data, TurretPtr turret);
-		void Draw();
+		void Draw() override;
 	private:
 		DataPtr _data;
 		TurretPtr _turret;
