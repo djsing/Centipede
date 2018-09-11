@@ -22,6 +22,7 @@ namespace GameEngine
 		sf::Sprite _background;
 		sf::Sprite _title;
 		sf::Sprite _subtitle;
+		sf::Sprite _instructions;
 	};
 
 }

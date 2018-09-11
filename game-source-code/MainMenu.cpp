@@ -23,6 +23,7 @@ namespace GameEngine
 	{
 		_data->resources.LoadTexture("Menu Screen Title", GAME_TITLE_FILEPATH);
 		_data->resources.LoadTexture("Subtitle", GAME_SUBTITLE_FILEPATH);
+		_data->resources.LoadTexture("Instructions", GAME_INSTRUCTIONS);
 
 		_title.setTexture(_data->resources.GetTexture("Menu Screen Title"));
 		_title.setPosition((SCREEN_WIDTH/2)-(_title.getGlobalBounds().width/2),
@@ -31,6 +32,10 @@ namespace GameEngine
 		_subtitle.setTexture(_data->resources.GetTexture("Subtitle"));
 		_subtitle.setPosition((SCREEN_WIDTH/2)-(_subtitle.getGlobalBounds().width/2),
 			SCREEN_HEIGHT/2);
+			
+		_instructions.setTexture(_data->resources.GetTexture("Instructions"));
+		_instructions.setPosition((SCREEN_WIDTH/2)-(_instructions.getGlobalBounds().width/2),
+			SCREEN_HEIGHT/2 + _subtitle.getGlobalBounds().height);
 	}
 
 	void MainMenu::HandleInput()
@@ -66,6 +71,7 @@ namespace GameEngine
 		_data->window.draw(_background);
 		_data->window.draw(_title);
 		_data->window.draw(_subtitle);
+		_data->window.draw(_instructions);
 		// display updated data
 		_data->window.display();
 	}

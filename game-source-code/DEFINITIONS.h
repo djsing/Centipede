@@ -28,6 +28,7 @@
 #define GAME_OVER_FILEPATH "Resources\\gameover.png"
 #define GAME_OVER_RESTART_FILEPATH "Resources\\gamerestart.png"
 #define GAME_WIN_RESTART_FILEPATH "Resources\\gamerestart.png"
+#define GAME_INSTRUCTIONS "Resources\\instructions.png"
 
 #define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
 #define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.png"
