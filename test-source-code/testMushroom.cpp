@@ -6,7 +6,6 @@
 
 using GameEngine::GameData;
 using GameEngine::DataPtr;
-using GameEngine::Direction;
 using GameEngine::Region;
 using GameEngine::Mushroom;
 
@@ -16,7 +15,7 @@ TEST_CASE("Mushroom Initialised with correct values when created")
 {
 	DataPtr data = std::make_shared<GameData>();
 	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
-	auto mushroom = Mushroom{data, 0, 0, Region::TOP_LEFT, Region::TOP_LEFT};
+	auto mushroom = Mushroom{data, 0, 0};
 	// check that position tracker initalised with top left corner at (0,0)
 	CHECK(mushroom.GetRegion() == Region::TOP_LEFT);
 	CHECK(mushroom.GetSubRegion() == Region::TOP_LEFT);
@@ -25,4 +24,6 @@ TEST_CASE("Mushroom Initialised with correct values when created")
 	// since sprite size is 20x20, the center should be (10,10) if initialised at (0,0)
 	CHECK(mushroom.GetMushroomCenterXPosition() == 10);
 	CHECK(mushroom.GetMushroomCenterYPosition() == 10);
+	CHECK(mushroom.IsDead() == false);
+	// LATER CHECK THAT ISPOISONED IS SET TO FALSE
 }

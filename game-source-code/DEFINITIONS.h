@@ -30,7 +30,7 @@
 #define GAME_WIN_RESTART_FILEPATH "Resources\\gamerestart.png"
 
 #define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
-#define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.jpg"
+#define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.png"
 #define TURRET_FILEPATH "Resources\\turret.png"
 #define BULLET_FILEPATH "Resources\\bullet.jpg"
 #define MUSHROOM_FILEPATH "Resources\\mushroom.png"
