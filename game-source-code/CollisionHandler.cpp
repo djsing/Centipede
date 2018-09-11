@@ -38,9 +38,7 @@ namespace GameEngine
 					_centipede->GetCentipede().at(j).SetDead(true);
 					auto mushroom = Mushroom{_data,
 						_centipede->GetCentipede().at(j).GetTopLeftXPosition(),
-						_centipede->GetCentipede().at(j).GetTopLeftYPosition(),
-						_centipede->GetCentipede().at(j).GetRegion(),
-						_centipede->GetCentipede().at(j).GetSubRegion()};
+						_centipede->GetCentipede().at(j).GetTopLeftYPosition()};
 					_field->GetMushrooms().push_back(mushroom);
 
 					// --------------ADD FUNCTIONALITY SO THAT THIS DOES NOT AFFECT ALL SPLIT SEGMENTS

@@ -1,8 +1,5 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
 #include <memory>
 #include <vector>
-#include <SFML/Graphics.hpp>
 #include "../game-source-code/Centipede.h"
 #include "../game-source-code/CentipedeLogic.h"
 #include "../game-source-code/Game.h"
@@ -17,6 +14,9 @@ using GameEngine::Trajectory;
 using GameEngine::CentPtr;
 using GameEngine::Centipede;
 using GameEngine::CentipedeLogic;
+
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include <doctest.h>
 
 TEST_CASE("Centipede Segment Initialised with correct values")
 {

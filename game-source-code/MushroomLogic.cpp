@@ -22,9 +22,7 @@ namespace GameEngine
 			int randLevel = std::rand()%maxLevels;
 			int maxScreenPosition = SCREEN_WIDTH-MUSHROOM_SPRITE_SIZE;
 			int randXPos = std::rand()%maxScreenPosition;
-			auto mushRegion = RegionHandler{static_cast<float>(randXPos), static_cast<float>(randLevel*MUSHROOM_SPRITE_SIZE)};
-			auto mushroom = Mushroom{_data, static_cast<float>(randXPos), static_cast<float>(randLevel*MUSHROOM_SPRITE_SIZE),
-				mushRegion.GetRegion(), mushRegion.GetSubRegion()};
+			auto mushroom = Mushroom{_data, static_cast<float>(randXPos), static_cast<float>(randLevel*MUSHROOM_SPRITE_SIZE)};
 			_field->GetMushrooms().push_back(mushroom);
 		}
 	}

@@ -1,4 +1,5 @@
 #include "Entity.h"
+#include "RegionHandler.h"
 
 namespace GameEngine
 {
@@ -9,7 +10,9 @@ namespace GameEngine
 	_topLeftYPosition(topLeftYPosition),
 	_isDead(false)
 	{
-		
+		auto regionHandler = RegionHandler{_topLeftXPosition, _topLeftYPosition};
+		SetRegion(regionHandler.GetRegion());
+		SetSubRegion(regionHandler.GetSubRegion());
 	}
 
 	void Entity::SetDirection(Direction direction)

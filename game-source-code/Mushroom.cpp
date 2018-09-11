@@ -1,17 +1,16 @@
 #include "Mushroom.h"
+#include "Direction.h"
 #include "DEFINITIONS.h"
 
 namespace GameEngine
 {
-	Mushroom::Mushroom(DataPtr data, float xpos, float ypos, Region region, Region subregion):
+	Mushroom::Mushroom(DataPtr data, float xpos, float ypos):
+	Entity(Direction::HOVER, xpos, ypos),
 	_data(data),
-	_topLeftXPosition(xpos),
-	_topLeftYPosition(ypos),
-	_region(region),
-	_subregion(subregion)
+	_isPoisoned(false)
 	{
 		_mushroom.setTexture(_data->resources.GetTexture("Mushroom Sprite"));
-		_mushroom.setPosition(_topLeftXPosition, _topLeftYPosition);
+		_mushroom.setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 	}
 
 	sf::Sprite &Mushroom::GetMushroomSprite()
@@ -19,33 +18,13 @@ namespace GameEngine
 		return _mushroom;
 	}
 
-	float Mushroom::GetTopLeftXPosition()
-	{
-		return _topLeftXPosition;
-	}
-
-	float Mushroom::GetTopLeftYPosition()
-	{
-		return _topLeftYPosition;
-	}
-
-	Region Mushroom::GetRegion()
-	{
-		return _region;
-	}
-
-	Region Mushroom::GetSubRegion()
-	{
-		return _subregion;
-	}
-
 	float Mushroom::GetMushroomCenterXPosition()
 	{
-		return _topLeftXPosition + MUSHROOM_SPRITE_SIZE/2;
+		return Entity::GetTopLeftXPosition() + MUSHROOM_SPRITE_SIZE/2;
 	}
 
 	float Mushroom::GetMushroomCenterYPosition()
 	{
-		return _topLeftYPosition + MUSHROOM_SPRITE_SIZE/2;
+		return Entity::GetTopLeftYPosition() + MUSHROOM_SPRITE_SIZE/2;
 	}
 }

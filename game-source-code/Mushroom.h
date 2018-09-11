@@ -4,32 +4,25 @@
 #include <SFML/Graphics.hpp>
 #include "Region.h"
 #include "Game.h"
+#include "Entity.h"
 
 namespace GameEngine
 {
-	class Mushroom
+	class Mushroom: public Entity
 	{
 	public:
-		Mushroom(DataPtr data, float xpos, float ypos, Region region, Region subregion);
+		Mushroom(DataPtr data, float xpos, float ypos);
 
-		// Accessor functions
+		// Address Accessor functions
 		sf::Sprite &GetMushroomSprite();
-		float GetTopLeftXPosition();
-		float GetTopLeftYPosition();
-		Region GetRegion();
-		Region GetSubRegion();
+		// Accessor functions specific to Mushroom
 		float GetMushroomCenterXPosition();
 		float GetMushroomCenterYPosition();
 
 	private:
 		DataPtr _data;
 		sf::Sprite _mushroom;
-		float _topLeftXPosition;
-		float _topLeftYPosition;
-		Region _region;
-		Region _subregion;
-		bool isPoisoned;
-		bool isDead;
+		bool _isPoisoned;
 	};
 }
 

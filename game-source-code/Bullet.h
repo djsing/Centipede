@@ -3,11 +3,12 @@
 
 #include "Game.h"
 #include "Region.h"
+#include "Entity.h"
 #include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {
-	class Bullet
+	class Bullet: public Entity
 	{
 	public:
 		Bullet(DataPtr data, float xpos, float ypos);
@@ -17,16 +18,9 @@ namespace GameEngine
 
 		// Mutator Functions
 		void SetDead(bool isDead);
-		void SetYPosition(float ypos);
-		void SetRegion(Region region);
-		void SetSubRegion(Region subregion);
+		void SetTopLeftYPosition(float ypos);
 
 		// Accessor Functions
-		bool IsDead();
-		Region GetRegion();
-		Region GetSubRegion();
-		float GetTopLeftXPosition();
-		float GetTopLeftYPosition();
 		float GetCenterXPosition();
 		float GetCenterYPosition();
 
@@ -34,14 +28,8 @@ namespace GameEngine
 		// pointer to GameData layer
 		DataPtr _data;
 		sf::Sprite _bullet;
-		// position information
-		float _topLeftXPosition;
-		float _topLeftYPosition;
-		Region _region;
-		Region _subregion;
 		// bullet characteristics
 		float _speed;
-		bool _dead;
 	};
 }
 
