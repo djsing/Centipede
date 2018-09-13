@@ -30,8 +30,6 @@ namespace GameEngine
 		void SetDead(bool isDead);
 
 		// Accessor functions specific to Turret
-		float GetCenterXPosition();
-		float GetCenterYPosition();
 		float GetLastBulletYPosition();
 
 	private:

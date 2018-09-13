@@ -10,6 +10,8 @@ namespace GameEngine
 	{
 		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
 		_turret.setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 	}
 
 	sf::Sprite &Turret::GetTurretSprite()
@@ -30,11 +32,13 @@ namespace GameEngine
 	void Turret::SetTopLeftXPosition(float xpos)
 	{
 		Entity::SetTopLeftXPosition(xpos);
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 	}
 
 	void Turret::SetTopLeftYPosition(float ypos)
 	{
 		Entity::SetTopLeftYPosition(ypos);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 	}
 
 	void Turret::SetRegion(Region region)
@@ -50,16 +54,6 @@ namespace GameEngine
 	void Turret::SetDead(bool isDead)
 	{
 		Entity::SetDead(isDead);
-	}
-
-	float Turret::GetCenterXPosition()
-	{
-		return Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2;
-	}
-
-	float Turret::GetCenterYPosition()
-	{
-		return Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2;
 	}
 
 	float Turret::GetLastBulletYPosition()

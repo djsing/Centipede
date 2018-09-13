@@ -45,6 +45,16 @@ namespace GameEngine
 		_isDead = isDead;
 	}
 
+	void Entity::SetCenterXPosition(float xpos)
+	{
+		_centerXPosition = xpos;
+	}
+
+	void Entity::SetCenterYPosition(float ypos)
+	{
+		_centerYPosition = ypos;
+	}
+
 	bool Entity::IsDead() const
 	{
 		return _isDead;
@@ -73,5 +83,15 @@ namespace GameEngine
 	float Entity::GetTopLeftYPosition() const
 	{
 		return _topLeftYPosition;
+	}
+
+	float Entity::GetCenterXPosition() const
+	{
+		return _centerXPosition;
+	}
+
+	float Entity::GetCenterYPosition() const
+	{
+		return _centerYPosition;
 	}
 }

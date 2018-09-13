@@ -32,7 +32,8 @@ namespace GameEngine
 				{
 					continue;
 				}
-				else if (CheckDistanceBetweenBulletsAndSegments(i,j) < (CENTIPEDE_SEGMENT_HIT_RADIUS + BULLET_HIT_RADIUS))
+				else if (CheckDistanceBetweenEntities(_centipede->GetCentipede().at(j), _turret->GetBullets().at(i)) 
+					< (CENTIPEDE_SEGMENT_HIT_RADIUS + BULLET_HIT_RADIUS))
 				{
 					_turret->GetBullets().at(i).SetDead(true);
 					_centipede->GetCentipede().at(j).SetDead(true);
@@ -44,7 +45,7 @@ namespace GameEngine
 					// --------------ADD FUNCTIONALITY SO THAT THIS DOES NOT AFFECT ALL SPLIT SEGMENTS
 					if ((j+1) != (_centipede->GetCentipede().size()))
 					{
-						_centipede->GetCentipede().at(j+1).GetSegmentSprite().setTexture(_data->resources.GetTexture("Segment sprite"));
+						_centipede->GetCentipede().at(j+1).SetFirstSegment(true);
 					}
 					break;
 				}
@@ -61,7 +62,8 @@ namespace GameEngine
 				if ((_centipede->GetCentipede().at(i).GetDirection() == Direction::LEFT) || 
 					(_centipede->GetCentipede().at(i).GetDirection() == Direction::RIGHT))
 				{
-					if (CheckDistanceBetweenSegmentsAndMushrooms(j, i) < (CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS))
+					if (CheckDistanceBetweenEntities(_centipede->GetCentipede().at(i), _field->GetMushrooms().at(j)) 
+						< (CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS))
 					{
 						if (_centipede->GetCentipede().at(i).GetTrajectory() == Trajectory::DOWNWARD)
 						{
@@ -79,7 +81,7 @@ namespace GameEngine
 		{
 			if (_centipede->GetCentipede().at(i).GetRegion() == _turret->GetRegion())
 			{
-				if (CheckDistanceBetweenSegmentsAndTurret(i) < (CENTIPEDE_SEGMENT_HIT_RADIUS + TURRET_HIT_RADIUS))
+				if (CheckDistanceBetweenEntities(_centipede->GetCentipede().at(i), *_turret) < (CENTIPEDE_SEGMENT_HIT_RADIUS + TURRET_HIT_RADIUS))
 				{
 					_turret->SetDead(true);
 				}
@@ -87,23 +89,9 @@ namespace GameEngine
 		}
 	}
 
-	float CollisionHandler::CheckDistanceBetweenBulletsAndSegments(unsigned int BulletIndex, 
-		unsigned int segmentIndex)
+	float CollisionHandler::CheckDistanceBetweenEntities(Entity &entity1, Entity &entity2)
 	{
-		return sqrt(pow(_turret->GetBullets().at(BulletIndex).GetCenterXPosition()-_centipede->GetSegmentCenterXPosition(segmentIndex), 2)
-		+ pow(_turret->GetBullets().at(BulletIndex).GetCenterYPosition()-_centipede->GetSegmentCenterYPosition(segmentIndex), 2));
-	}
-
-	float CollisionHandler::CheckDistanceBetweenSegmentsAndMushrooms(unsigned int mushroomIndex, 
-		unsigned int segmentIndex)
-	{
-		return sqrt(pow(_field->GetMushrooms().at(mushroomIndex).GetMushroomCenterXPosition()-_centipede->GetSegmentCenterXPosition(segmentIndex), 2)
-		+ pow(_field->GetMushrooms().at(mushroomIndex).GetMushroomCenterYPosition()-_centipede->GetSegmentCenterYPosition(segmentIndex), 2));
-	}
-
-	float CollisionHandler::CheckDistanceBetweenSegmentsAndTurret(unsigned int segmentIndex)
-	{
-		return sqrt(pow(_turret->GetCenterXPosition()-_centipede->GetSegmentCenterXPosition(segmentIndex), 2)
-		+ pow(_turret->GetCenterYPosition()-_centipede->GetSegmentCenterYPosition(segmentIndex), 2));
+		return sqrt(pow(entity1.GetCenterXPosition() - entity2.GetCenterXPosition(),2)
+			+ pow(entity1.GetCenterYPosition() - entity2.GetCenterYPosition(),2));
 	}
 }

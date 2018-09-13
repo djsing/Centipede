@@ -11,20 +11,12 @@ namespace GameEngine
 	{
 		_mushroom.setTexture(_data->resources.GetTexture("Mushroom Sprite"));
 		_mushroom.setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + MUSHROOM_SPRITE_SIZE/2);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + MUSHROOM_SPRITE_SIZE/2);
 	}
 
 	sf::Sprite &Mushroom::GetMushroomSprite()
 	{
 		return _mushroom;
-	}
-
-	float Mushroom::GetMushroomCenterXPosition()
-	{
-		return Entity::GetTopLeftXPosition() + MUSHROOM_SPRITE_SIZE/2;
-	}
-
-	float Mushroom::GetMushroomCenterYPosition()
-	{
-		return Entity::GetTopLeftYPosition() + MUSHROOM_SPRITE_SIZE/2;
 	}
 }

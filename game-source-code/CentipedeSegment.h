@@ -24,6 +24,7 @@ namespace GameEngine
 		void SetSubRegion(Region subregion);
 		void SetTopLeftXPosition(float xpos);
 		void SetTopLeftYPosition(float ypos);
+		void SetFirstSegment(bool isFirstSegment);
 
 		// Mutators specific to CentipedeSegment
 		void SetTrajectory(Trajectory trajectory);
@@ -31,8 +32,6 @@ namespace GameEngine
 
 		// Accessor Functions specifc to Centipede Segment
 		Trajectory GetTrajectory();
-		float GetCenterXPosition();
-		float GetCenterYPosition();
 		bool IsFirstSegment();
 		bool IsTurningLeft();
 

@@ -20,6 +20,8 @@ namespace GameEngine
 		virtual void SetRegion(Region region);
 		virtual void SetSubRegion(Region subregion);
 		virtual void SetDead(bool isDead);
+		virtual void SetCenterXPosition(float xpos);
+		virtual void SetCenterYPosition(float ypos);
 
 		// Accessor Functions
 		virtual bool IsDead() const;
@@ -28,12 +30,16 @@ namespace GameEngine
 		virtual Region GetSubRegion() const;
 		virtual float GetTopLeftXPosition() const;
 		virtual float GetTopLeftYPosition() const;
+		virtual float GetCenterXPosition() const;
+		virtual float GetCenterYPosition() const;
 
 	private:
 		// Turret Position/Movement Attributes
 		Direction _direction;
 		float _topLeftXPosition;
 		float _topLeftYPosition;
+		float _centerXPosition;
+		float _centerYPosition;
 		Region _region;
 		Region _subregion;
 		bool _isDead;

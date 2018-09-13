@@ -15,9 +15,6 @@ namespace GameEngine
 
 		// Address Accessor functions
 		sf::Sprite &GetMushroomSprite();
-		// Accessor functions specific to Mushroom
-		float GetMushroomCenterXPosition();
-		float GetMushroomCenterYPosition();
 
 	private:
 		DataPtr _data;

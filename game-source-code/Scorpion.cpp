@@ -17,11 +17,13 @@ namespace GameEngine
 	void Scorpion::SetTopLeftXPosition(float xpos)
 	{
 		Entity::SetTopLeftXPosition(xpos);
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SCORPION_SPIRTE_SIZE/2);
 	}
 
 	void Scorpion::SetTopLeftYPosition(float ypos)
 	{
 		Entity::SetTopLeftYPosition(ypos);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SCORPION_SPIRTE_SIZE/2);
 	}
 
 	void Scorpion::SetRegion(Region region)

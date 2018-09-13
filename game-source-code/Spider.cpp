@@ -18,11 +18,13 @@ namespace GameEngine
 	void Spider::SetTopLeftXPosition(float xpos)
 	{
 		Entity::SetTopLeftXPosition(xpos);
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SPIDER_SPRITE_SIZE/2);
 	}
 
 	void Spider::SetTopLeftYPosition(float ypos)
 	{
 		Entity::SetTopLeftYPosition(ypos);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SPIDER_SPRITE_SIZE/2);
 	}
 
 	void Spider::SetRegion(Region region)

@@ -11,6 +11,7 @@ namespace GameEngine
 	{
 		_bullet.setTexture(_data->resources.GetTexture("Bullet sprite"));
 		_bullet.setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + BULLET_WIDTH/2);
 	}
 
 	void Bullet::SetDead(bool isDead)
@@ -21,20 +22,11 @@ namespace GameEngine
 	void Bullet::SetTopLeftYPosition(float ypos)
 	{
 		Entity::SetTopLeftYPosition(ypos);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + BULLET_HEIGHT/2);
 	}
 
 	sf::Sprite &Bullet::GetBullet()
 	{
 		return _bullet;
-	}
-
-	float Bullet::GetCenterXPosition()
-	{
-		return Entity::GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE/2;
-	}
-
-	float Bullet::GetCenterYPosition()
-	{
-		return Entity::GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE/2;
 	}
 }

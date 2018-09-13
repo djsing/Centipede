@@ -40,12 +40,20 @@ namespace GameEngine
 	void CentipedeSegment::SetTopLeftXPosition(float xpos)
 	{
 		Entity::SetTopLeftXPosition(xpos);
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE/2);
 	}
 
 	void CentipedeSegment::SetTopLeftYPosition(float ypos)
 	{
 		Entity::SetTopLeftYPosition(ypos);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE/2);
 	}
+
+	void CentipedeSegment::SetFirstSegment(bool isFirstSegment)
+	{
+		_firstSegment = isFirstSegment;
+	}
+
 
 	void CentipedeSegment::SetTurningLeft(bool isTurningLeft)
 	{
@@ -75,15 +83,5 @@ namespace GameEngine
 	Trajectory CentipedeSegment::GetTrajectory()
 	{
 		return _trajectory;
-	}
-
-	float CentipedeSegment::GetCenterXPosition()
-	{
-		return Entity::GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE/2;
-	}
-
-	float CentipedeSegment::GetCenterYPosition()
-	{
-		return Entity::GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE/2;
 	}
 }

@@ -20,11 +20,7 @@ namespace GameEngine
 		TurretPtr _turret;
 		CentPtr _centipede;
 		FieldPtr _field;
-		float CheckDistanceBetweenBulletsAndSegments(unsigned int bulletIndex, 
-			unsigned int segmentIndex);
-		float CheckDistanceBetweenSegmentsAndMushrooms(unsigned int mushroomIndex, 
-			unsigned int segmentIndex);
-		float CheckDistanceBetweenSegmentsAndTurret(unsigned int segmentIndex);
+		float CheckDistanceBetweenEntities(Entity &entity1, Entity &entity2);
 	};
 
 	typedef std::shared_ptr<CollisionHandler> CollisionHandlerPtr;

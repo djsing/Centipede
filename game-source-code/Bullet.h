@@ -20,10 +20,6 @@ namespace GameEngine
 		void SetDead(bool isDead);
 		void SetTopLeftYPosition(float ypos);
 
-		// Accessor Functions
-		float GetCenterXPosition();
-		float GetCenterYPosition();
-
 	private:
 		// pointer to GameData layer
 		DataPtr _data;
