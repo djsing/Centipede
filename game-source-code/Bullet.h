@@ -13,9 +13,6 @@ namespace GameEngine
 	public:
 		Bullet(DataPtr data, float xpos, float ypos);
 
-		// Address Accessor Functions
-		sf::Sprite &GetBullet();
-
 		// Mutator Functions
 		void SetDead(bool isDead);
 		void SetTopLeftYPosition(float ypos);
@@ -23,9 +20,6 @@ namespace GameEngine
 	private:
 		// pointer to GameData layer
 		DataPtr _data;
-		sf::Sprite _bullet;
-		// bullet characteristics
-		float _speed;
 	};
 }
 

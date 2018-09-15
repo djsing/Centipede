@@ -15,9 +15,9 @@ namespace GameEngine
 		{
 			if (_centipede->GetCentipede().at(i).IsFirstSegment())
 			{
-				_centipede->GetCentipede().at(i).GetSegmentSprite().setTexture(_data->resources.GetTexture("Segment sprite"));
+				_centipede->GetCentipede().at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Segment sprite"));
 			}
-			_data->window.draw(_centipede->GetCentipede().at(i).GetSegmentSprite());
+			_data->window.draw(_centipede->GetCentipede().at(i).GetObjectSprite());
 		}
 	}
 }

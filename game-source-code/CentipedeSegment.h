@@ -15,9 +15,6 @@ namespace GameEngine
 	public:
 		CentipedeSegment(DataPtr data, bool firstSegment);
 
-		// Address Accessor Functions
-		sf::Sprite &GetSegmentSprite();
-
 		// Mutator Functions
 		void SetDead(bool isDead);
 		void SetRegion(Region region);
@@ -38,7 +35,6 @@ namespace GameEngine
 	private:
 		// pointer to GameData layer
 		DataPtr _data;
-		sf::Sprite _segment;
 		// movement information
 		bool _turningLeft;
 		Trajectory _trajectory;

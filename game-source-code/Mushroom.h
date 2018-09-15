@@ -13,13 +13,17 @@ namespace GameEngine
 	public:
 		Mushroom(DataPtr data, float xpos, float ypos);
 
-		// Address Accessor functions
-		sf::Sprite &GetMushroomSprite();
+		// Mutator functions
+		void SetPoisoned(bool isPoisoned);
+
+		// Accessor Functions
+		bool IsPoisoned();
+		int GetLivesRemaining();
 
 	private:
 		DataPtr _data;
-		sf::Sprite _mushroom;
 		bool _isPoisoned;
+		int _livesRemaining;
 	};
 }
 

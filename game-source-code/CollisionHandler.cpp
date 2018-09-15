@@ -5,6 +5,8 @@
 #include "Direction.h"
 #include "Trajectory.h"
 #include <cmath>
+#include <ctime>
+#include <cstdlib>
 
 namespace GameEngine
 {
@@ -14,7 +16,8 @@ namespace GameEngine
 	_centipede(centipede),
 	_field(field)
 	{
-		
+		std::srand(std::time(nullptr));
+		_chance = std::rand()%100;
 	}
 
 	void CollisionHandler::CheckBulletSegmentCollisions()
@@ -84,6 +87,54 @@ namespace GameEngine
 				if (CheckDistanceBetweenEntities(_centipede->GetCentipede().at(i), *_turret) < (CENTIPEDE_SEGMENT_HIT_RADIUS + TURRET_HIT_RADIUS))
 				{
 					_turret->SetDead(true);
+				}
+			}
+		}
+	}
+
+	void CollisionHandler::CheckTurretSpiderCollisions()
+	{
+		if (!_field->GetSpiders().empty())
+		{
+			for (unsigned int i = 0; i < _field->GetSpiders().size(); i++)
+			{
+				if (CheckDistanceBetweenEntities(_field->GetSpiders().at(i), *_turret) < (TURRET_HIT_RADIUS + SPIDER_HIT_RADIUS))
+				{
+					_turret->SetDead(true);
+				}
+			}
+		}
+	}
+
+	void CollisionHandler::CheckMushroomScorpionCollisions()
+	{
+		for (unsigned int i = 0; i < _field->GetMushrooms().size(); i++)
+		{
+			for (unsigned int j = 0; j < _field->GetScorpions().size(); j++)
+			{
+				if (CheckDistanceBetweenEntities(_field->GetMushrooms().at(i), _field->GetScorpions().at(j)) 
+					< (MUSHROOM_HIT_RADIUS + SCORPION_HIT_RADIUS))
+				{
+					_field->GetMushrooms().at(i).SetPoisoned(true);
+				}
+			}
+		}
+	}
+
+	void CollisionHandler::CheckMushroomSpiderCollisions()
+	{
+		for (unsigned int i = 0; i < _field->GetMushrooms().size(); i++)
+		{
+			for (unsigned int j = 0; j < _field->GetSpiders().size(); j++)
+			{
+				if (CheckDistanceBetweenEntities(_field->GetMushrooms().at(i), _field->GetSpiders().at(j)) 
+					< (MUSHROOM_HIT_RADIUS + SPIDER_HIT_RADIUS))
+				{
+					_chance = std::rand()%100;
+					if (_chance <= 20)
+					{
+						_field->GetMushrooms().at(i).SetDead(true);
+					}
 				}
 			}
 		}

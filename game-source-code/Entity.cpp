@@ -3,9 +3,7 @@
 
 namespace GameEngine
 {
-	Entity::Entity(Direction direction, float topLeftXPosition,
-				float topLeftYPosition):
-	_direction(direction),
+	Entity::Entity(float topLeftXPosition, float topLeftYPosition):
 	_topLeftXPosition(topLeftXPosition),
 	_topLeftYPosition(topLeftYPosition),
 	_isDead(false)
@@ -13,6 +11,11 @@ namespace GameEngine
 		auto regionHandler = RegionHandler{_topLeftXPosition, _topLeftYPosition};
 		SetRegion(regionHandler.GetRegion());
 		SetSubRegion(regionHandler.GetSubRegion());
+	}
+
+	sf::Sprite &Entity::GetObjectSprite()
+	{
+		return _object;
 	}
 
 	void Entity::SetDirection(Direction direction)

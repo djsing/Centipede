@@ -4,10 +4,12 @@
 namespace GameEngine
 {
 	Turret::Turret(DataPtr data):
-	Entity(Direction::HOVER, SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2,
+	Entity(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2,
 			SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE),
-	_data(data)
+	_data(data),
+	_livesRemaining(3)
 	{
+		Entity::SetDirection(Direction::HOVER);
 		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
 		_turret.setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2);
@@ -63,5 +65,10 @@ namespace GameEngine
 			return GetTopLeftYPosition() - BULLET_HEIGHT;
 		}
 		return _bullets.back().GetTopLeftYPosition();
+	}
+
+	int Turret::GetLivesRemaining()
+	{
+		return _livesRemaining;
 	}
 }

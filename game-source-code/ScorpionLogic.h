@@ -3,19 +3,24 @@
 
 #include "EntityLogic.h"
 #include "GameField.h"
+#include "Game.h"
 
 namespace GameEngine
 {
 	class ScorpionLogic: public EntityLogic
 	{
 	public:
-		ScorpionLogic(FieldPtr field);
+		ScorpionLogic(FieldPtr field, DataPtr data);
 		void Spawn() override;
 		void Move(float dt) override;
 		void MoveProjectiles(float dt){}
 		void CollisionHandle() override;
 	private:
+		DataPtr _data;
 		FieldPtr _field;
+		float _totalTimePerMovement;
+		float _angle;
+		float _speed;
 	};
 }
 

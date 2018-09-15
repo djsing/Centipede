@@ -3,27 +3,26 @@
 
 namespace GameEngine
 {
-	Scorpion::Scorpion():
-	Entity(Direction::HOVER, SCREEN_WIDTH/2 - SCORPION_SPIRTE_SIZE/2, 0.25*SCREEN_HEIGHT)
+	Scorpion::Scorpion(DataPtr data):
+	Entity(SCREEN_WIDTH/2 - SCORPION_SPRITE_SIZE/2, 0.25*SCREEN_HEIGHT),
+	_data(data)
 	{
-		//LOAD SCORPION SPRITE HERE
-	}
-
-	void Scorpion::SetDirection(Direction direction)
-	{
-		Entity::SetDirection(direction);
+		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Scorpion sprite"));
+		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SCORPION_SPRITE_SIZE/2);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SCORPION_SPRITE_SIZE/2);
 	}
 
 	void Scorpion::SetTopLeftXPosition(float xpos)
 	{
 		Entity::SetTopLeftXPosition(xpos);
-		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SCORPION_SPIRTE_SIZE/2);
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SCORPION_SPRITE_SIZE/2);
 	}
 
 	void Scorpion::SetTopLeftYPosition(float ypos)
 	{
 		Entity::SetTopLeftYPosition(ypos);
-		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SCORPION_SPIRTE_SIZE/2);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SCORPION_SPRITE_SIZE/2);
 	}
 
 	void Scorpion::SetRegion(Region region)

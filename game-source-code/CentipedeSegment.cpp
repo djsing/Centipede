@@ -4,27 +4,23 @@
 namespace GameEngine
 {
 	CentipedeSegment::CentipedeSegment(DataPtr data, bool firstSegment):
-	Entity(Direction::RIGHT, SCREEN_LHS, SCREEN_TOP),
+	Entity(SCREEN_LHS, SCREEN_TOP),
 	_data(data),
 	_turningLeft(true),
 	_trajectory(Trajectory::DOWNWARD),
 	_firstSegment(firstSegment)
 	{
+		Entity::SetDirection(Direction::RIGHT);
 		if (_firstSegment)
 		{
-		_segment.setTexture(_data->resources.GetTexture("Segment sprite"));
+		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Segment sprite"));
 		}
 		else
 		{
-		_segment.setTexture(_data->resources.GetTexture("Body Segment sprite"));
+		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Body Segment sprite"));
 		}
 
-		_segment.setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
-	}
-
-	sf::Sprite &CentipedeSegment::GetSegmentSprite()
-	{
-		return _segment;
+		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 	}
 
 	void CentipedeSegment::SetDead(bool isDead)

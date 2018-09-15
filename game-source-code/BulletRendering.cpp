@@ -11,6 +11,6 @@ namespace GameEngine
 
 	void BulletRendering::Draw()
 	{
-		_data->window.draw(_bullet.GetBullet());
+		_data->window.draw(_bullet.GetObjectSprite());
 	}
 }

@@ -15,11 +15,15 @@ namespace GameEngine
 		void CheckBulletSegmentCollisions();
 		void CheckSegmentMushroomCollisions();
 		void CheckTurretSegmentCollisions();
+		void CheckTurretSpiderCollisions();
+		void CheckMushroomScorpionCollisions();
+		void CheckMushroomSpiderCollisions();
 	private:
 		DataPtr _data;
 		TurretPtr _turret;
 		CentPtr _centipede;
 		FieldPtr _field;
+		float _chance;
 		float CheckDistanceBetweenEntities(Entity &entity1, Entity &entity2);
 	};
 

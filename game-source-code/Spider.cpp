@@ -3,16 +3,14 @@
 
 namespace GameEngine
 {
-	Spider::Spider():
-	Entity(Direction::HOVER, SCREEN_WIDTH/2 - SPIDER_SPRITE_SIZE/2, TURRET_SCREEN_FRACTION*SCREEN_HEIGHT)
+	Spider::Spider(DataPtr data):
+	Entity(SCREEN_WIDTH/2 - SPIDER_SPRITE_SIZE/2, 0.8*SCREEN_HEIGHT),
+	_data(data)
 	{
-		// LOAD SPIDER SPRITE HERE
-		// Initialised with Direction::HOVER since it is the default direction, movement will not depend on type Direction
-	}
-
-	void Spider::SetDirection(Direction direction)
-	{
-		Entity::SetDirection(direction);
+		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Spider sprite"));
+		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SPIDER_SPRITE_SIZE/2);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SPIDER_SPRITE_SIZE/2);
 	}
 
 	void Spider::SetTopLeftXPosition(float xpos)

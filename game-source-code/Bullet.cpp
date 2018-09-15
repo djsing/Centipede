@@ -5,13 +5,14 @@
 namespace GameEngine
 {
 	Bullet::Bullet(DataPtr data, float xpos, float ypos):
-	Entity(Direction::UP, xpos, ypos),
-	_data(data),
-	_speed(BULLET_SPEED)
+	Entity(xpos, ypos),
+	_data(data)
 	{
-		_bullet.setTexture(_data->resources.GetTexture("Bullet sprite"));
-		_bullet.setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
+		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Bullet sprite"));
+		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + BULLET_WIDTH/2);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + BULLET_HEIGHT/2);
+		Entity::SetDirection(Direction::UP);
 	}
 
 	void Bullet::SetDead(bool isDead)
@@ -23,10 +24,5 @@ namespace GameEngine
 	{
 		Entity::SetTopLeftYPosition(ypos);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + BULLET_HEIGHT/2);
-	}
-
-	sf::Sprite &Bullet::GetBullet()
-	{
-		return _bullet;
 	}
 }

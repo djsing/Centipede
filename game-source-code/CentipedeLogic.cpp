@@ -53,7 +53,7 @@ namespace GameEngine
 
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
 
-							_centipede->GetCentipede().at(i).GetSegmentSprite().setPosition(
+							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
 								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 
@@ -61,7 +61,7 @@ namespace GameEngine
 						else
 						{
 
-							_centipede->GetCentipede().at(i).GetSegmentSprite().move(moveDistance, 0);
+							_centipede->GetCentipede().at(i).GetObjectSprite().move(moveDistance, 0);
 
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition() + moveDistance);
@@ -70,7 +70,7 @@ namespace GameEngine
 						break;
 
 						case Direction::DOWN:
-						_centipede->GetCentipede().at(i).GetSegmentSprite().move(0, CENTIPEDE_SPRITE_SIDE_SIZE);
+						_centipede->GetCentipede().at(i).GetObjectSprite().move(0, CENTIPEDE_SPRITE_SIDE_SIZE);
 						_centipede->GetCentipede().at(i).SetTopLeftYPosition(
 							_centipede->GetCentipede().at(i).GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE);
 
@@ -95,13 +95,13 @@ namespace GameEngine
 
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_LHS);
 
-							_centipede->GetCentipede().at(i).GetSegmentSprite().setPosition(
+							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
 								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 						}
 						else 
 						{
-							_centipede->GetCentipede().at(i).GetSegmentSprite().move(-moveDistance, 0);
+							_centipede->GetCentipede().at(i).GetObjectSprite().move(-moveDistance, 0);
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition()
 								- moveDistance);
@@ -122,7 +122,7 @@ namespace GameEngine
 
 							_centipede->GetCentipede().at(i).SetTopLeftYPosition(0);
 
-							_centipede->GetCentipede().at(i).GetSegmentSprite().setPosition(
+							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
 								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 						}
@@ -132,20 +132,20 @@ namespace GameEngine
 
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
 
-							_centipede->GetCentipede().at(i).GetSegmentSprite().setPosition(
+							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
 								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 						}
 						else
 						{
-							_centipede->GetCentipede().at(i).GetSegmentSprite().move(moveDistance, 0);
+							_centipede->GetCentipede().at(i).GetObjectSprite().move(moveDistance, 0);
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition() + moveDistance);
 						}
 						break;
 
 						case Direction::UP:
-						_centipede->GetCentipede().at(i).GetSegmentSprite().move(0, -CENTIPEDE_SPRITE_SIDE_SIZE);
+						_centipede->GetCentipede().at(i).GetObjectSprite().move(0, -CENTIPEDE_SPRITE_SIDE_SIZE);
 
 						_centipede->GetCentipede().at(i).SetTopLeftYPosition(
 							_centipede->GetCentipede().at(i).GetTopLeftYPosition() - CENTIPEDE_SPRITE_SIDE_SIZE);
@@ -168,13 +168,13 @@ namespace GameEngine
 
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_LHS);
 
-							_centipede->GetCentipede().at(i).GetSegmentSprite().setPosition(
+							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
 								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 						}
 						else 
 						{
-							_centipede->GetCentipede().at(i).GetSegmentSprite().move(-moveDistance, 0);
+							_centipede->GetCentipede().at(i).GetObjectSprite().move(-moveDistance, 0);
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition()
 								- moveDistance);
@@ -197,17 +197,18 @@ namespace GameEngine
 	void CentipedeLogic::CollisionHandle()
 	{
 		// delete collided segments 
-		for (unsigned int i = 0; i < _centipede->GetCentipede().size(); i++)
+		if (!_centipede->GetCentipede().empty())
 		{
-			if (_centipede->GetCentipede().at(i).IsDead())
+			for (unsigned int i = 0; i < _centipede->GetCentipede().size(); i++)
 			{
-				_centipede->GetCentipede().erase(_centipede->GetCentipede().begin() + i);
-				i--;
+				if (_centipede->GetCentipede().at(i).IsDead())
+				{
+					_centipede->GetCentipede().erase(_centipede->GetCentipede().begin() + i);
+					i--;
+				}
 			}
-		}
-
-		// if after deleting segments, the centipede is empty, end (win) the game
-		if (_centipede->GetCentipede().empty())
+		} 
+		else	// if after deleting segments, the centipede is empty, end (win) the game
 		{
 			_data->statehandler.AddState(StatePtr(new GameWon(_data)));
 		}

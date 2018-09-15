@@ -31,6 +31,7 @@ namespace GameEngine
 
 		// Accessor functions specific to Turret
 		float GetLastBulletYPosition();
+		int GetLivesRemaining();
 
 	private:
 		// Data layer pointer
@@ -39,6 +40,7 @@ namespace GameEngine
 		sf::Sprite _turret;
 		// Container to store all visible bullets
 		std::vector<Bullet> _bullets;
+		int _livesRemaining;
 	};
 
 	// Shared pointer to a Turret Object

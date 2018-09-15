@@ -11,8 +11,7 @@ namespace GameEngine
 	class Entity
 	{
 	public:
-		Entity(Direction direction, float topLeftXPosition,
-				float topLeftYPosition);
+		Entity(float topLeftXPosition, float topLeftYPosition);
 		// Mutator functions
 		virtual void SetDirection(Direction direction);
 		virtual void SetTopLeftXPosition(float xpos);
@@ -24,17 +23,19 @@ namespace GameEngine
 		virtual void SetCenterYPosition(float ypos);
 
 		// Accessor Functions
-		virtual bool IsDead() const;
-		virtual Direction GetDirection() const;
-		virtual Region GetRegion() const;
-		virtual Region GetSubRegion() const;
-		virtual float GetTopLeftXPosition() const;
-		virtual float GetTopLeftYPosition() const;
-		virtual float GetCenterXPosition() const;
-		virtual float GetCenterYPosition() const;
+		sf::Sprite &GetObjectSprite();
+		bool IsDead() const;
+		Direction GetDirection() const;
+		Region GetRegion() const;
+		Region GetSubRegion() const;
+		float GetTopLeftXPosition() const;
+		float GetTopLeftYPosition() const;
+		float GetCenterXPosition() const;
+		float GetCenterYPosition() const;
 
 	private:
-		// Turret Position/Movement Attributes
+		sf::Sprite _object;
+		// Position/Movement Attributes
 		Direction _direction;
 		float _topLeftXPosition;
 		float _topLeftYPosition;

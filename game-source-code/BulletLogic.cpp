@@ -21,7 +21,7 @@ namespace GameEngine
 		}
 		else
 		{
-			_bullet.GetBullet().move(0, -moveDistance);
+			_bullet.Entity::GetObjectSprite().move(0, -moveDistance);
 			_bullet.SetTopLeftYPosition(_bullet.GetTopLeftYPosition() - moveDistance);
 		}
 		// Update the bullet's region after it has moved - prepare for collision checking

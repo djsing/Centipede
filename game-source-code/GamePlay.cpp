@@ -5,9 +5,13 @@
 #include "CentipedeLogic.h"
 #include "TurretLogic.h"
 #include "MushroomLogic.h"
+#include "SpiderLogic.h"
+#include "ScorpionLogic.h"
 #include "CentipedeRendering.h"
 #include "TurretRendering.h"
 #include "MushroomRendering.h"
+#include "SpiderRendering.h"
+#include "ScorpionRendering.h"
 
 namespace GameEngine
 {
@@ -23,6 +27,9 @@ namespace GameEngine
 		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
 		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
 		_data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
+		_data->resources.LoadTexture("Poisoned Mushroom", POISONED_MUSHROOM_FILEPATH);
+		_data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
+		_data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
 
 		// initialise Centipede pointers
 		_centipede = std::make_shared<Centipede>(_data);
@@ -36,6 +43,11 @@ namespace GameEngine
 		_field = std::make_shared<GameField>();
 		_mushLogicPtr = std::make_unique<MushroomLogic>(_field, _data);
 		_mushRenderer = std::make_unique<MushroomRendering>(_data, _field);
+		// spider logic pointers
+		_spiderLogic = std::make_unique<SpiderLogic>(_field, _data);
+		_spiderRenderer = std::make_unique<SpiderRendering>(_data, _field);
+		_scorpionLogic = std::make_unique<ScorpionLogic>(_field, _data);
+		_scorpionRenderer = std::make_unique<ScorpionRendering>(_data, _field);
 		// initialise interface/collision pointers
 		_inputHandler = std::make_shared<InputHandler>(_data);
 		_collisionhandler = std::make_shared<CollisionHandler>(_data, _turret, _centipede, _field);
@@ -43,8 +55,12 @@ namespace GameEngine
 
 	void GamePlay::Initialise()
 	{
-		// Spawn initial CentipedeSegment with correct 'head' sprite
+		// spawn field elements before anything else
 		_mushLogicPtr->Spawn();
+		_spiderLogic->Spawn();
+		_scorpionLogic->Spawn();
+
+		// spawn centipede head at start of the game
 		_centipedeLogic->Spawn();
 		_numberOfCentipedeSegments++;
 	}
@@ -89,12 +105,16 @@ namespace GameEngine
 
 		// move entities
 		_centipedeLogic->Move(dt);
+		_spiderLogic->Move(dt);
+		_scorpionLogic->Move(dt);
 		_turretLogic->Move(dt);
 		_turretLogic->MoveProjectiles(dt);	// move bullets
 
 		// check collisions
+		_collisionhandler->CheckTurretSpiderCollisions();
 		_collisionhandler->CheckTurretSegmentCollisions();
 		_collisionhandler->CheckBulletSegmentCollisions();
+		_collisionhandler->CheckMushroomScorpionCollisions();
 		_collisionhandler->CheckSegmentMushroomCollisions();
 		// delete after bullet/segment collisions, ends game if turret isDead
 		_turretLogic->CollisionHandle();
@@ -112,11 +132,12 @@ namespace GameEngine
 
 		// draws mushrooms
 		_mushRenderer->Draw();
-		// draws centipede segments
+		// draw top section of game screen
 		_centipedeRenderer->Draw();
-		// Draws turret as well as bullets
+		_scorpionRenderer->Draw();
+		// draw bottom section of game screen
 		_turretRenderer->Draw();
-
+		_spiderRenderer->Draw();
 		_data->window.display();
 	}
 }

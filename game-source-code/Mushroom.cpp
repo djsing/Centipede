@@ -5,18 +5,30 @@
 namespace GameEngine
 {
 	Mushroom::Mushroom(DataPtr data, float xpos, float ypos):
-	Entity(Direction::HOVER, xpos, ypos),
+	Entity(xpos, ypos),
 	_data(data),
-	_isPoisoned(false)
+	_isPoisoned(false),
+	_livesRemaining(4)
 	{
-		_mushroom.setTexture(_data->resources.GetTexture("Mushroom Sprite"));
-		_mushroom.setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
+		Entity::SetDirection(Direction::HOVER);
+		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Mushroom Sprite"));
+		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + MUSHROOM_SPRITE_SIZE/2);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + MUSHROOM_SPRITE_SIZE/2);
 	}
 
-	sf::Sprite &Mushroom::GetMushroomSprite()
+	void Mushroom::SetPoisoned(bool isPoisoned)
 	{
-		return _mushroom;
+		_isPoisoned = isPoisoned;
+	}
+
+	bool Mushroom::IsPoisoned()
+	{
+		return _isPoisoned;
+	}
+
+	int Mushroom::GetLivesRemaining()
+	{
+		return _livesRemaining;
 	}
 }

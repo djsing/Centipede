@@ -45,6 +45,14 @@ namespace GameEngine
 		LogicPtr _mushLogicPtr;
 		// Mushroom Renderer pointer
 		RenderPtr _mushRenderer;
+		// Spider Logic pointer
+		LogicPtr _spiderLogic;
+		// Spider Render pointer
+		RenderPtr _spiderRenderer;
+		// Spider Logic pointer
+		LogicPtr _scorpionLogic;
+		// Spider Render pointer
+		RenderPtr _scorpionRenderer;
 		// Input Handler Pointer
 		InputHandlerPtr _inputHandler;
 		// CollisionHandler pointer

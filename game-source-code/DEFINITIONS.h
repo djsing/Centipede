@@ -2,6 +2,8 @@
 #define DEFINITIONS_H
 
 #include <SFML/Graphics.hpp>
+#include <cmath>
+const double PI = 4*atan(1);
 
 #define SCREEN_WIDTH sf::VideoMode::getDesktopMode().width
 #define SCREEN_HEIGHT sf::VideoMode::getDesktopMode().height
@@ -35,6 +37,9 @@
 #define TURRET_FILEPATH "Resources\\turret.png"
 #define BULLET_FILEPATH "Resources\\bullet.jpg"
 #define MUSHROOM_FILEPATH "Resources\\mushroom.png"
+#define POISONED_MUSHROOM_FILEPATH "Resources\\mushroompoisoned.png"
+#define SPIDER_FILEPATH "Resources\\spider.png"
+#define SCORPION_FILEPATH "Resources\\scorpion.png"
 
 #define CENTIPEDE_SPRITE_SIDE_SIZE 20
 #define CENTIPEDE_SEGMENT_HIT_RADIUS 10
@@ -51,6 +56,12 @@
 #define MUSHROOM_SPRITE_SIZE 20
 #define MUSHROOM_HIT_RADIUS 10
 #define SPIDER_SPRITE_SIZE 20
-#define SCORPION_SPIRTE_SIZE 20
+#define SPIDER_HIT_RADIUS 10
+#define SPIDER_SPEED 500
+#define SPIDER_MOVEMENT_TIME 1
+#define SCORPION_MOVEMENT_TIME 1
+#define SCORPION_SPRITE_SIZE 20
+#define SCORPION_HIT_RADIUS 10
+#define SCORPION_SPEED 500
 
 #endif
