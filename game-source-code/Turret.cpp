@@ -58,6 +58,16 @@ namespace GameEngine
 		Entity::SetDead(isDead);
 	}
 
+	void Turret::DecrementLives()
+	{
+		Entity::SetTopLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2);
+		Entity::SetTopLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
+		_turret.setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2);
+		_livesRemaining--;
+	}
+
 	float Turret::GetLastBulletYPosition()
 	{
 		if (_bullets.empty())

@@ -22,6 +22,11 @@ namespace GameEngine
 			int randLevel = std::rand()%maxLevels;
 			int maxScreenPosition = SCREEN_WIDTH-MUSHROOM_SPRITE_SIZE;
 			int randXPos = std::rand()%maxScreenPosition;
+			if (randLevel == 0)
+			{
+				i--;
+				continue;
+			}
 			auto mushroom = Mushroom{_data, static_cast<float>(randXPos), static_cast<float>(randLevel*MUSHROOM_SPRITE_SIZE)};
 			_field->GetMushrooms().push_back(mushroom);
 		}
@@ -31,7 +36,11 @@ namespace GameEngine
 	{
 		for (unsigned int i = 0; i < _field->GetMushrooms().size(); i++)
 		{
-			
+			if (_field->GetMushrooms().at(i).IsDead())
+			{
+				_field->GetMushrooms().erase(_field->GetMushrooms().begin() + i);
+				i--;
+			}
 		}
 	}
 }

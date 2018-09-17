@@ -15,6 +15,7 @@ namespace GameEngine
 
 		// Mutator functions
 		void SetPoisoned(bool isPoisoned);
+		void DecrementLives();
 
 		// Accessor Functions
 		bool IsPoisoned();

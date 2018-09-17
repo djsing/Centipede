@@ -18,12 +18,13 @@ namespace GameEngine
 		void CheckTurretSpiderCollisions();
 		void CheckMushroomScorpionCollisions();
 		void CheckMushroomSpiderCollisions();
+		void CheckBulletSpiderCollisions();
+		void CheckBulletMushroomCollisions();
 	private:
 		DataPtr _data;
 		TurretPtr _turret;
 		CentPtr _centipede;
 		FieldPtr _field;
-		float _chance;
 		float CheckDistanceBetweenEntities(Entity &entity1, Entity &entity2);
 	};
 

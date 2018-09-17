@@ -31,6 +31,22 @@ namespace GameEngine
 		auto moveDistance = _speed*dt;
 		for (unsigned int i = 0; i < _centipede->GetCentipede().size(); i++)
 		{
+			// if segment is poisoned, move downwards
+			if (_centipede->GetCentipede().at(i).IsPoisoned())
+			{
+				_centipede->GetCentipede().at(i).GetObjectSprite().move(0, CENTIPEDE_SPRITE_SIDE_SIZE);
+				_centipede->GetCentipede().at(i).SetTopLeftYPosition(
+					_centipede->GetCentipede().at(i).GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE);
+
+				// once in turret area, resume normal behaviour
+				if (_centipede->GetCentipede().at(i).GetTopLeftYPosition() >= TURRET_SCREEN_FRACTION*SCREEN_HEIGHT)
+				{
+					_centipede->GetCentipede().at(i).SetPoisoned(false);
+					continue;
+				}
+
+				continue;
+			}
 			// move sprite moveDistance away in the current direction
 			// Check whether centipede is moving to the bottom/top  of screen
 			switch (_centipede->GetCentipede().at(i).GetTrajectory())
@@ -116,11 +132,11 @@ namespace GameEngine
 					switch (_centipede->GetCentipede().at(i).GetDirection())
 					{
 						case Direction::RIGHT:
-							if (_centipede->GetCentipede().at(i).GetTopLeftYPosition() <= 0)
+						if (_centipede->GetCentipede().at(i).GetTopLeftYPosition() <= SCREEN_TOP)
 						{
 							_centipede->GetCentipede().at(i).SetTrajectory(Trajectory::DOWNWARD);
 
-							_centipede->GetCentipede().at(i).SetTopLeftYPosition(0);
+							_centipede->GetCentipede().at(i).SetTopLeftYPosition(SCREEN_LHS);
 
 							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),

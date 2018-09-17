@@ -27,9 +27,11 @@ namespace GameEngine
 		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
 		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
 		_data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
+		_data->resources.LoadTexture("Mushroom3", MUSHROOM3_FILEPATH);
 		_data->resources.LoadTexture("Poisoned Mushroom", POISONED_MUSHROOM_FILEPATH);
 		_data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 		_data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
+		_data->resources.LoadTexture("heart sprite", HEART_FILEPATH);
 
 		// initialise Centipede pointers
 		_centipede = std::make_shared<Centipede>(_data);
@@ -114,12 +116,18 @@ namespace GameEngine
 		_collisionhandler->CheckTurretSpiderCollisions();
 		_collisionhandler->CheckTurretSegmentCollisions();
 		_collisionhandler->CheckBulletSegmentCollisions();
+		_collisionhandler->CheckBulletSpiderCollisions();
+		_collisionhandler->CheckBulletMushroomCollisions();
 		_collisionhandler->CheckMushroomScorpionCollisions();
+		_collisionhandler->CheckMushroomSpiderCollisions();
 		_collisionhandler->CheckSegmentMushroomCollisions();
+
 		// delete after bullet/segment collisions, ends game if turret isDead
 		_turretLogic->CollisionHandle();
 		// deletes segments after bullet/segment collisions
 		_centipedeLogic->CollisionHandle();
+		_spiderLogic->CollisionHandle();
+		_mushLogicPtr->CollisionHandle();
 	}
 
 	void GamePlay::Draw()

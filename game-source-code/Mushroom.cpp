@@ -27,6 +27,11 @@ namespace GameEngine
 		return _isPoisoned;
 	}
 
+	void Mushroom::DecrementLives()
+	{
+		_livesRemaining--;
+	}
+
 	int Mushroom::GetLivesRemaining()
 	{
 		return _livesRemaining;

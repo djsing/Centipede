@@ -26,11 +26,13 @@ namespace GameEngine
 		// Mutators specific to CentipedeSegment
 		void SetTrajectory(Trajectory trajectory);
 		void SetTurningLeft(bool isTurningLeft);
+		void SetPoisoned(bool isPoisoned);
 
 		// Accessor Functions specifc to Centipede Segment
 		Trajectory GetTrajectory();
 		bool IsFirstSegment();
 		bool IsTurningLeft();
+		bool IsPoisoned();
 
 	private:
 		// pointer to GameData layer
@@ -40,6 +42,7 @@ namespace GameEngine
 		Trajectory _trajectory;
 		// segment characteristics
 		bool _firstSegment;
+		bool _isPoisoned;
 	};
 }
 

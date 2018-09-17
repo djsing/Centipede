@@ -10,7 +10,7 @@ const double PI = 4*atan(1);
 #define SCREEN_LHS 0
 #define SCREEN_TOP 0
 #define SCREEN_HEIGHT_BUFFER_FACTOR 2
-#define TURRET_SCREEN_FRACTION 0.75
+#define TURRET_SCREEN_FRACTION 0.65
 #define WINDOW_TITLE "Centipede"
 
 #define SPLASH_TIME 3.0
@@ -37,9 +37,11 @@ const double PI = 4*atan(1);
 #define TURRET_FILEPATH "Resources\\turret.png"
 #define BULLET_FILEPATH "Resources\\bullet.jpg"
 #define MUSHROOM_FILEPATH "Resources\\mushroom.png"
+#define MUSHROOM3_FILEPATH "Resources\\mushroom3lives.png"
 #define POISONED_MUSHROOM_FILEPATH "Resources\\mushroompoisoned.png"
 #define SPIDER_FILEPATH "Resources\\spider.png"
 #define SCORPION_FILEPATH "Resources\\scorpion.png"
+#define HEART_FILEPATH "Resources\\lives.png"
 
 #define CENTIPEDE_SPRITE_SIDE_SIZE 20
 #define CENTIPEDE_SEGMENT_HIT_RADIUS 10
@@ -48,7 +50,7 @@ const double PI = 4*atan(1);
 #define BULLET_WIDTH 8
 #define BULLET_HEIGHT 20
 #define BULLET_SPEED 2000
-#define BULLET_HIT_RADIUS 5
+#define BULLET_HIT_RADIUS 10
 #define TURRET_SPEED 500
 #define CENTIPEDE_SPEED 800
 #define INITIAL_CENTIPEDE_NUMBER 12
@@ -57,11 +59,12 @@ const double PI = 4*atan(1);
 #define MUSHROOM_HIT_RADIUS 10
 #define SPIDER_SPRITE_SIZE 20
 #define SPIDER_HIT_RADIUS 10
-#define SPIDER_SPEED 500
-#define SPIDER_MOVEMENT_TIME 1
-#define SCORPION_MOVEMENT_TIME 1
+#define SPIDER_SPEED 800
+#define SPIDER_MOVEMENT_TIME 2
+#define SCORPION_MOVEMENT_TIME 2
 #define SCORPION_SPRITE_SIZE 20
 #define SCORPION_HIT_RADIUS 10
-#define SCORPION_SPEED 500
+#define SCORPION_SPEED 800
+#define HEART_SIZE 20
 
 #endif

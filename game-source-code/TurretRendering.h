@@ -6,6 +6,7 @@
 #include "BulletRendering.h"
 #include "Game.h"
 #include <memory>
+#include <vector>
 
 namespace GameEngine
 {
@@ -18,6 +19,8 @@ namespace GameEngine
 		DataPtr _data;
 		TurretPtr _turret;
 		BulletRenderPtr _bullet;
+		std::vector<sf::Sprite> _lives;
+		
 	};
 }
 

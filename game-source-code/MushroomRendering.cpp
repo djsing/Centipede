@@ -15,9 +15,23 @@ namespace GameEngine
 		{
 			if (_field->GetMushrooms().at(i).IsPoisoned())
 			{
-				_field->GetMushrooms().at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Poisoned Mushroom"));
+				switch (_field->GetMushrooms().at(i).GetLivesRemaining())
+				{
+					default:
+					_field->GetMushrooms().at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Poisoned Mushroom"));
+				}
 			}
-
+			else
+			{
+				switch(_field->GetMushrooms().at(i).GetLivesRemaining())
+				{
+					case 3:
+					_field->GetMushrooms().at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Mushroom3"));
+					break;
+					default:
+					_field->GetMushrooms().at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Mushroom Sprite"));
+				}
+			}
 			_data->window.draw(_field->GetMushrooms().at(i).GetObjectSprite());
 		}
 	}

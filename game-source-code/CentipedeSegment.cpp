@@ -8,7 +8,8 @@ namespace GameEngine
 	_data(data),
 	_turningLeft(true),
 	_trajectory(Trajectory::DOWNWARD),
-	_firstSegment(firstSegment)
+	_firstSegment(firstSegment),
+	_isPoisoned(false)
 	{
 		Entity::SetDirection(Direction::RIGHT);
 		if (_firstSegment)
@@ -28,9 +29,14 @@ namespace GameEngine
 		Entity::SetDead(isDead);
 	}
 
-	void CentipedeSegment::SetTrajectory(Trajectory trajectory)
+	void CentipedeSegment::SetRegion(Region region)
 	{
-		_trajectory = trajectory;
+		Entity::SetRegion(region);
+	}
+
+	void CentipedeSegment::SetSubRegion(Region subregion)
+	{
+		Entity::SetSubRegion(subregion);
 	}
 
 	void CentipedeSegment::SetTopLeftXPosition(float xpos)
@@ -50,20 +56,24 @@ namespace GameEngine
 		_firstSegment = isFirstSegment;
 	}
 
+	void CentipedeSegment::SetTrajectory(Trajectory trajectory)
+	{
+		_trajectory = trajectory;
+	}
 
 	void CentipedeSegment::SetTurningLeft(bool isTurningLeft)
 	{
 		_turningLeft = isTurningLeft;
 	}
 
-	void CentipedeSegment::SetRegion(Region region)
+	void CentipedeSegment::SetPoisoned(bool isPoisoned)
 	{
-		Entity::SetRegion(region);
+		_isPoisoned = isPoisoned;
 	}
 
-	void CentipedeSegment::SetSubRegion(Region subregion)
+	Trajectory CentipedeSegment::GetTrajectory()
 	{
-		Entity::SetSubRegion(subregion);
+		return _trajectory;
 	}
 
 	bool CentipedeSegment::IsFirstSegment()
@@ -76,8 +86,8 @@ namespace GameEngine
 		return _turningLeft;
 	}
 
-	Trajectory CentipedeSegment::GetTrajectory()
+	bool CentipedeSegment::IsPoisoned()
 	{
-		return _trajectory;
+		return _isPoisoned;
 	}
 }
