@@ -1,4 +1,3 @@
-#include <memory>
 #include "../game-source-code/Spider.h"
 #include "../game-source-code/DEFINITIONS.h"
 

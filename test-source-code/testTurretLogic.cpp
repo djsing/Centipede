@@ -1,11 +1,8 @@
-#include <memory>
-#include "../game-source-code/Turret.h"
 #include "../game-source-code/TurretLogic.h"
 #include "../game-source-code/Game.h"
 #include "../game-source-code/DEFINITIONS.h"
 #include "../game-source-code/KeyboardControlsHandler.h"
 #include "../game-source-code/GameField.h"
-#include "../game-source-code/Centipede.h"
 #include "../game-source-code/CentipedeLogic.h"
 #include "../game-source-code/CollisionHandler.h"
 #include "../game-source-code/RegionHandler.h"

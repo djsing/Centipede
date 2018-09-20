@@ -1,7 +1,4 @@
-#include <memory>
-#include <vector>
 #include "../game-source-code/MushroomLogic.h"
-#include "../game-source-code/Game.h"
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;

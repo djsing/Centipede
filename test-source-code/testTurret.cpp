@@ -1,6 +1,4 @@
-#include <memory>
 #include "../game-source-code/Turret.h"
-#include "../game-source-code/Game.h"
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;

@@ -1,4 +1,3 @@
-#include <memory>
 #include "../game-source-code/Scorpion.h"
 #include "../game-source-code/DEFINITIONS.h"
 
