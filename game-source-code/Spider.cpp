@@ -4,7 +4,7 @@
 namespace GameEngine
 {
 	Spider::Spider(DataPtr data):
-	Entity(SCREEN_WIDTH/2 - SPIDER_SPRITE_SIZE/2, 0.8*SCREEN_HEIGHT),
+	Entity(SCREEN_WIDTH/2 - SPIDER_SPRITE_SIZE/2, TURRET_SCREEN_FRACTION*SCREEN_HEIGHT),
 	_data(data)
 	{
 		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Spider sprite"));

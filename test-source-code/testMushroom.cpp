@@ -22,8 +22,8 @@ TEST_CASE("Mushroom Initialised with correct values when created")
 	CHECK(mushroom.GetTopLeftXPosition() == 0);
 	CHECK(mushroom.GetTopLeftYPosition() == 0);
 	// since sprite size is 20x20, the center should be (10,10) if initialised at (0,0)
-	CHECK(mushroom.GetMushroomCenterXPosition() == 10);
-	CHECK(mushroom.GetMushroomCenterYPosition() == 10);
+	CHECK(mushroom.GetCenterXPosition() == 10);
+	CHECK(mushroom.GetCenterYPosition() == 10);
 	CHECK(mushroom.IsDead() == false);
 	// LATER CHECK THAT ISPOISONED IS SET TO FALSE
 }

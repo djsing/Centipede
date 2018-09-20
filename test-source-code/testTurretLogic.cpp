@@ -59,7 +59,8 @@ TEST_CASE("Check if turret stays within the confines of the left/right wall, the
 		turretLogic->Move(1);
 	}
 
-	CHECK(turret->GetTopLeftYPosition() == TURRET_SCREEN_FRACTION*SCREEN_HEIGHT);
+	// allow for a 1% error as a result of floating point accuracy
+	CHECK(doctest::Approx(turret->GetTopLeftYPosition()).epsilon(0.01) == TURRET_SCREEN_FRACTION*SCREEN_HEIGHT);
 
 	data->keyboard.SetDirection(Direction::DOWN);
 	// move 10x500 units DOWN, check if turret is stopped at a y position of SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE
@@ -125,7 +126,7 @@ TEST_CASE("Check that bullets are automatically deleted when it hits the boundar
 	CHECK(turret->GetBullets().size() == 1);
 }
 
-TEST_CASE("Check if turret is set to dead when it collides with a centipede.")
+TEST_CASE("Check if turret is set to dead when it collides with a centipede after losing 3 lives.")
 {
 	DataPtr data = std::make_shared<GameData>();
 	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
@@ -163,8 +164,31 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede.")
 	regionHandler = RegionHandler(centipede->GetCentipede().at(0).GetCenterXPosition(), centipede->GetCentipede().at(0).GetCenterXPosition());
 	centipede->GetCentipede().at(0).SetRegion(regionHandler.GetRegion());
 	centipede->GetCentipede().at(0).SetSubRegion(regionHandler.GetSubRegion());
-
+	// before any collisions, check that turret has 3 lives
+	CHECK(turret->GetLivesRemaining() == 3);
+	// register a collision with a segment
 	collision->CheckTurretSegmentCollisions();
-	// check that player is flagged as dead when it collides with a segment
+	// check that turret resets position to spawn position after losing a life
+	CHECK(turret->GetTopLeftYPosition() == SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
+	CHECK(turret->GetTopLeftXPosition() == SCREEN_WIDTH/2- TURRET_SPRITE_SIDE_SIZE/2);
+	// check that turret loses a life after registering a collision
+	CHECK(turret->GetLivesRemaining() == 2);
+
+	// move turret into segment
+	while (turret->GetTopLeftYPosition() != (centipede->GetCentipede().at(0).GetTopLeftYPosition()))
+	{
+		turretLogic->Move(0.001);
+	}
+	collision->CheckTurretSegmentCollisions();
+	CHECK(turret->GetLivesRemaining() == 1);
+
+	// move turret into segment
+	while (turret->GetTopLeftYPosition() != (centipede->GetCentipede().at(0).GetTopLeftYPosition()))
+	{
+		turretLogic->Move(0.001);
+	}
+	collision->CheckTurretSegmentCollisions();
+	CHECK(turret->GetLivesRemaining() == 0);
+	// check that the turret dies after losing three lives
 	CHECK(turret->IsDead() == true);
 }

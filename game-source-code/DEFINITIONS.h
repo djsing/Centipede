@@ -11,6 +11,7 @@ const double PI = 4*atan(1);
 #define SCREEN_TOP 0
 #define SCREEN_HEIGHT_BUFFER_FACTOR 2
 #define TURRET_SCREEN_FRACTION 0.65
+#define SCORPION_STARTING_Y_POSITION_FRACTION 0.25
 #define WINDOW_TITLE "Centipede"
 
 #define SPLASH_TIME 3.0

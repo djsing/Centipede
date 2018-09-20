@@ -21,6 +21,8 @@ namespace GameEngine
 		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Body Segment sprite"));
 		}
 
+		SetTopLeftXPosition(SCREEN_LHS);
+		SetTopLeftYPosition(SCREEN_TOP);
 		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 	}
 
