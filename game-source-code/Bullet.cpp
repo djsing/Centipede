@@ -20,6 +20,12 @@ namespace GameEngine
 		Entity::SetDead(isDead);
 	}
 
+	void Bullet::SetTopLeftXPosition(float ypos)
+	{
+		Entity::SetTopLeftXPosition(ypos);
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + BULLET_WIDTH/2);
+	}
+
 	void Bullet::SetTopLeftYPosition(float ypos)
 	{
 		Entity::SetTopLeftYPosition(ypos);

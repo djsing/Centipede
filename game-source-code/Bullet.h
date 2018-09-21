@@ -15,6 +15,7 @@ namespace GameEngine
 
 		// Mutator Functions
 		void SetDead(bool isDead);
+		void SetTopLeftXPosition(float ypos);
 		void SetTopLeftYPosition(float ypos);
 
 	private:
