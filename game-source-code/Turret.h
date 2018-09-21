@@ -18,11 +18,9 @@ namespace GameEngine
 		Turret(DataPtr data);
 
 		// Address Accessor functions
-		sf::Sprite &GetTurretSprite();
 		std::vector<Bullet> &GetBullets();
 
 		// Mutator functions
-		void SetSpritePosition(float xpos, float ypos);
 		void SetTopLeftXPosition(float xpos);
 		void SetTopLeftYPosition(float ypos);
 		void SetRegion(Region region);
@@ -37,8 +35,6 @@ namespace GameEngine
 	private:
 		// Data layer pointer
 		DataPtr _data;
-		// Turret sprite
-		sf::Sprite _turret;
 		// Container to store all visible bullets
 		std::vector<Bullet> _bullets;
 		int _livesRemaining;

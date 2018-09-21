@@ -32,6 +32,9 @@ namespace GameEngine
 					_field->GetMushrooms().at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Mushroom Sprite"));
 				}
 			}
+			_field->GetMushrooms().at(i).GetObjectSprite().setPosition(
+				_field->GetMushrooms().at(i).GetTopLeftXPosition(),
+				_field->GetMushrooms().at(i).GetTopLeftYPosition());
 			_data->window.draw(_field->GetMushrooms().at(i).GetObjectSprite());
 		}
 	}

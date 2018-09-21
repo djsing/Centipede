@@ -18,8 +18,6 @@ namespace GameEngine
 
 		// Accessor Fucntions
 		float GetLastSpriteXPosition();
-		float GetSegmentCenterXPosition(unsigned int index);
-		float GetSegmentCenterYPosition(unsigned int index);
 
 	private:
 		// pointer to GameData layer

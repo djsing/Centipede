@@ -34,7 +34,6 @@ namespace GameEngine
 			// if segment is poisoned, move downwards
 			if (_centipede->GetCentipede().at(i).IsPoisoned())
 			{
-				_centipede->GetCentipede().at(i).GetObjectSprite().move(0, CENTIPEDE_SPRITE_SIDE_SIZE);
 				_centipede->GetCentipede().at(i).SetTopLeftYPosition(
 					_centipede->GetCentipede().at(i).GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE);
 
@@ -64,29 +63,17 @@ namespace GameEngine
 						}	// now check if square is at right side of screen 
 						else if ((_centipede->GetCentipede().at(i).GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
 						{
-
 							_centipede->GetCentipede().at(i).SetDirection(Direction::DOWN);
-
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
-
-							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
-								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
-								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
-
 						} 
 						else
 						{
-
-							_centipede->GetCentipede().at(i).GetObjectSprite().move(moveDistance, 0);
-
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition() + moveDistance);
-
 						}
 						break;
 
 						case Direction::DOWN:
-						_centipede->GetCentipede().at(i).GetObjectSprite().move(0, CENTIPEDE_SPRITE_SIDE_SIZE);
 						_centipede->GetCentipede().at(i).SetTopLeftYPosition(
 							_centipede->GetCentipede().at(i).GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE);
 
@@ -108,16 +95,10 @@ namespace GameEngine
 						else if (_centipede->GetCentipede().at(i).GetTopLeftXPosition() <= SCREEN_LHS)
 						{
 							_centipede->GetCentipede().at(i).SetDirection(Direction::DOWN);
-
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_LHS);
-
-							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
-								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
-								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 						}
 						else 
 						{
-							_centipede->GetCentipede().at(i).GetObjectSprite().move(-moveDistance, 0);
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition()
 								- moveDistance);
@@ -135,34 +116,21 @@ namespace GameEngine
 						if (_centipede->GetCentipede().at(i).GetTopLeftYPosition() <= SCREEN_TOP)
 						{
 							_centipede->GetCentipede().at(i).SetTrajectory(Trajectory::DOWNWARD);
-
 							_centipede->GetCentipede().at(i).SetTopLeftYPosition(SCREEN_LHS);
-
-							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
-								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
-								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 						}
 						else if ((_centipede->GetCentipede().at(i).GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
 						{
 							_centipede->GetCentipede().at(i).SetDirection(Direction::UP);
-
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
-
-							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
-								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
-								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 						}
 						else
 						{
-							_centipede->GetCentipede().at(i).GetObjectSprite().move(moveDistance, 0);
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition() + moveDistance);
 						}
 						break;
 
 						case Direction::UP:
-						_centipede->GetCentipede().at(i).GetObjectSprite().move(0, -CENTIPEDE_SPRITE_SIDE_SIZE);
-
 						_centipede->GetCentipede().at(i).SetTopLeftYPosition(
 							_centipede->GetCentipede().at(i).GetTopLeftYPosition() - CENTIPEDE_SPRITE_SIDE_SIZE);
 
@@ -181,16 +149,10 @@ namespace GameEngine
 						if (_centipede->GetCentipede().at(i).GetTopLeftXPosition() <= SCREEN_LHS)
 						{
 							_centipede->GetCentipede().at(i).SetDirection(Direction::UP);
-
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(SCREEN_LHS);
-
-							_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
-								_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
-								_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 						}
 						else 
 						{
-							_centipede->GetCentipede().at(i).GetObjectSprite().move(-moveDistance, 0);
 							_centipede->GetCentipede().at(i).SetTopLeftXPosition(
 								_centipede->GetCentipede().at(i).GetTopLeftXPosition()
 								- moveDistance);

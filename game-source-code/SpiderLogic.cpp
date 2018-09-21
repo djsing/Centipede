@@ -38,10 +38,7 @@ namespace GameEngine
 				{
 					// keep sprite from moving off screen
 					_field->GetSpiders().at(i).SetTopLeftYPosition(TURRET_SCREEN_FRACTION*SCREEN_HEIGHT);
-					_field->GetSpiders().at(i).GetObjectSprite().setPosition(_field->GetSpiders().at(i).GetTopLeftXPosition(),
-						_field->GetSpiders().at(i).GetTopLeftYPosition());
 					// move
-					_field->GetSpiders().at(i).GetObjectSprite().move(0, _speed*dt);
 					_field->GetSpiders().at(i).SetTopLeftXPosition(_field->GetSpiders().at(i).GetTopLeftXPosition());
 					_field->GetSpiders().at(i).SetTopLeftYPosition(_field->GetSpiders().at(i).GetTopLeftYPosition() +
 						_speed*dt);
@@ -53,10 +50,7 @@ namespace GameEngine
 				{
 					// keep sprite from moving off screen
 					_field->GetSpiders().at(i).SetTopLeftYPosition(SCREEN_HEIGHT - SPIDER_SPRITE_SIZE);
-					_field->GetSpiders().at(i).GetObjectSprite().setPosition(_field->GetSpiders().at(i).GetTopLeftXPosition(),
-						_field->GetSpiders().at(i).GetTopLeftYPosition());
 					// move
-					_field->GetSpiders().at(i).GetObjectSprite().move(0, -_speed*dt);
 					_field->GetSpiders().at(i).SetTopLeftXPosition(_field->GetSpiders().at(i).GetTopLeftXPosition());
 					_field->GetSpiders().at(i).SetTopLeftYPosition(_field->GetSpiders().at(i).GetTopLeftYPosition() -
 						_speed*dt);
@@ -68,10 +62,7 @@ namespace GameEngine
 				{
 					// keep sprite from moving off screen
 					_field->GetSpiders().at(i).SetTopLeftXPosition(SCREEN_LHS);
-					_field->GetSpiders().at(i).GetObjectSprite().setPosition(_field->GetSpiders().at(i).GetTopLeftXPosition(),
-						_field->GetSpiders().at(i).GetTopLeftYPosition());
 					// move
-					_field->GetSpiders().at(i).GetObjectSprite().move(_speed*dt, 0);
 					_field->GetSpiders().at(i).SetTopLeftXPosition(_field->GetSpiders().at(i).GetTopLeftXPosition() +
 						_speed*dt);
 					_field->GetSpiders().at(i).SetTopLeftYPosition(_field->GetSpiders().at(i).GetTopLeftYPosition());
@@ -83,10 +74,7 @@ namespace GameEngine
 				{
 					// keep sprite from moving off screen
 					_field->GetSpiders().at(i).SetTopLeftXPosition(SCREEN_WIDTH - SPIDER_SPRITE_SIZE);
-					_field->GetSpiders().at(i).GetObjectSprite().setPosition(_field->GetSpiders().at(i).GetTopLeftXPosition(),
-						_field->GetSpiders().at(i).GetTopLeftYPosition());
 					// move
-					_field->GetSpiders().at(i).GetObjectSprite().move(0, -_speed*dt);
 					_field->GetSpiders().at(i).SetTopLeftXPosition(_field->GetSpiders().at(i).GetTopLeftXPosition() -
 						_speed*dt);
 					_field->GetSpiders().at(i).SetTopLeftYPosition(_field->GetSpiders().at(i).GetTopLeftYPosition());
@@ -96,7 +84,6 @@ namespace GameEngine
 				}
 				else
 				{
-					_field->GetSpiders().at(i).GetObjectSprite().move(_speed*dt*cos(_angle), _speed*dt*sin(_angle));
 					_field->GetSpiders().at(i).SetTopLeftXPosition(_field->GetSpiders().at(i).GetTopLeftXPosition() +
 						_speed*dt*cos(_angle));
 					_field->GetSpiders().at(i).SetTopLeftYPosition(_field->GetSpiders().at(i).GetTopLeftYPosition() +

@@ -17,6 +17,9 @@ namespace GameEngine
 			{
 				_centipede->GetCentipede().at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Segment sprite"));
 			}
+			_centipede->GetCentipede().at(i).GetObjectSprite().setPosition(
+				_centipede->GetCentipede().at(i).GetTopLeftXPosition(),
+				_centipede->GetCentipede().at(i).GetTopLeftYPosition());
 			_data->window.draw(_centipede->GetCentipede().at(i).GetObjectSprite());
 		}
 	}

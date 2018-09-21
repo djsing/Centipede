@@ -15,6 +15,9 @@ namespace GameEngine
 		{
 			for (unsigned int i = 0; i < _field->GetScorpions().size(); i++)
 			{
+				_field->GetScorpions().at(i).GetObjectSprite().setPosition(
+					_field->GetScorpions().at(i).GetTopLeftXPosition(),
+					_field->GetScorpions().at(i).GetTopLeftYPosition());
 				_data->window.draw(_field->GetScorpions().at(i).GetObjectSprite());
 			}
 		}

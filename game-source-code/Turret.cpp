@@ -10,25 +10,15 @@ namespace GameEngine
 	_livesRemaining(3)
 	{
 		Entity::SetDirection(Direction::HOVER);
-		_turret.setTexture(_data->resources.GetTexture("Turret Sprite"));
-		_turret.setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
+		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Turret Sprite"));
+		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2);
-	}
-
-	sf::Sprite &Turret::GetTurretSprite()
-	{
-		return _turret;
 	}
 
 	std::vector<Bullet> &Turret::GetBullets()
 	{
 		return _bullets;
-	}
-
-	void Turret::SetSpritePosition(float xpos, float ypos)
-	{
-		_turret.setPosition(xpos, ypos);
 	}
 
 	void Turret::SetTopLeftXPosition(float xpos)
@@ -62,7 +52,7 @@ namespace GameEngine
 	{
 		Entity::SetTopLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2);
 		Entity::SetTopLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
-		_turret.setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
+		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 		_livesRemaining--;

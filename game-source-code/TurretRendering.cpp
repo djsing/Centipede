@@ -22,7 +22,8 @@ namespace GameEngine
 			_bullet = std::make_unique<BulletRendering>(_data, _turret->GetBullets().at(i));
 			_bullet->Draw();
 		}
-		_data->window.draw(_turret->GetTurretSprite());
+		_turret->GetObjectSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
+		_data->window.draw(_turret->GetObjectSprite());
 
 		while (_lives.size() != static_cast<unsigned int>(_turret->GetLivesRemaining()))
 		{

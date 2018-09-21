@@ -35,10 +35,7 @@ namespace GameEngine
 				{
 					// keep sprite from moving off screen
 					_field->GetScorpions().at(i).SetTopLeftYPosition(SCREEN_TOP);
-					_field->GetScorpions().at(i).GetObjectSprite().setPosition(_field->GetScorpions().at(i).GetTopLeftXPosition(),
-						_field->GetScorpions().at(i).GetTopLeftYPosition());
 					// move
-					_field->GetScorpions().at(i).GetObjectSprite().move(0, _speed*dt);
 					_field->GetScorpions().at(i).SetTopLeftXPosition(_field->GetScorpions().at(i).GetTopLeftXPosition());
 					_field->GetScorpions().at(i).SetTopLeftYPosition(_field->GetScorpions().at(i).GetTopLeftYPosition() +
 						_speed*dt);
@@ -50,10 +47,7 @@ namespace GameEngine
 				{
 					// keep sprite from moving off screen
 					_field->GetScorpions().at(i).SetTopLeftYPosition(TURRET_SCREEN_FRACTION*SCREEN_HEIGHT - SCORPION_SPRITE_SIZE);
-					_field->GetScorpions().at(i).GetObjectSprite().setPosition(_field->GetScorpions().at(i).GetTopLeftXPosition(),
-						_field->GetScorpions().at(i).GetTopLeftYPosition());
 					// move
-					_field->GetScorpions().at(i).GetObjectSprite().move(0, -_speed*dt);
 					_field->GetScorpions().at(i).SetTopLeftXPosition(_field->GetScorpions().at(i).GetTopLeftXPosition());
 					_field->GetScorpions().at(i).SetTopLeftYPosition(_field->GetScorpions().at(i).GetTopLeftYPosition() -
 						_speed*dt);
@@ -65,10 +59,7 @@ namespace GameEngine
 				{
 					// keep sprite from moving off screen
 					_field->GetScorpions().at(i).SetTopLeftXPosition(SCREEN_LHS);
-					_field->GetScorpions().at(i).GetObjectSprite().setPosition(_field->GetScorpions().at(i).GetTopLeftXPosition(),
-						_field->GetScorpions().at(i).GetTopLeftYPosition());
 					// move
-					_field->GetScorpions().at(i).GetObjectSprite().move(_speed*dt, 0);
 					_field->GetScorpions().at(i).SetTopLeftXPosition(_field->GetScorpions().at(i).GetTopLeftXPosition() +
 						_speed*dt);
 					_field->GetScorpions().at(i).SetTopLeftYPosition(_field->GetScorpions().at(i).GetTopLeftYPosition());
@@ -80,10 +71,7 @@ namespace GameEngine
 				{
 					// keep sprite from moving off screen
 					_field->GetScorpions().at(i).SetTopLeftXPosition(SCREEN_WIDTH - SCORPION_SPRITE_SIZE);
-					_field->GetScorpions().at(i).GetObjectSprite().setPosition(_field->GetScorpions().at(i).GetTopLeftXPosition(),
-						_field->GetScorpions().at(i).GetTopLeftYPosition());
 					// move
-					_field->GetScorpions().at(i).GetObjectSprite().move(0, -_speed*dt);
 					_field->GetScorpions().at(i).SetTopLeftXPosition(_field->GetScorpions().at(i).GetTopLeftXPosition() -
 						_speed*dt);
 					_field->GetScorpions().at(i).SetTopLeftYPosition(_field->GetScorpions().at(i).GetTopLeftYPosition());
@@ -93,7 +81,6 @@ namespace GameEngine
 				}
 				else
 				{
-					_field->GetScorpions().at(i).GetObjectSprite().move(_speed*dt*cos(_angle), _speed*dt*sin(_angle));
 					_field->GetScorpions().at(i).SetTopLeftXPosition(_field->GetScorpions().at(i).GetTopLeftXPosition() +
 						_speed*dt*cos(_angle));
 					_field->GetScorpions().at(i).SetTopLeftYPosition(_field->GetScorpions().at(i).GetTopLeftYPosition() +

@@ -34,11 +34,9 @@ namespace GameEngine
 			if ((_turret->GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
 				{
 					_turret->SetTopLeftXPosition(SCREEN_WIDTH - TURRET_SPRITE_SIDE_SIZE);
-					_turret->GetTurretSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
 				} 
 			else
 				{
-					_turret->GetTurretSprite().move(moveDistance, 0);
 					_turret->SetTopLeftXPosition(_turret->GetTopLeftXPosition() + moveDistance);
 				}
 			break;
@@ -48,11 +46,9 @@ namespace GameEngine
 			if ((_turret->GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_HEIGHT))
 			{
 				_turret->SetTopLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
-				_turret->GetTurretSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
 			}
 			else
 			{
-				_turret->GetTurretSprite().move(0, moveDistance);
 				_turret->SetTopLeftYPosition(_turret->GetTopLeftYPosition() + moveDistance);
 			}
 
@@ -62,11 +58,9 @@ namespace GameEngine
 			if (_turret->GetTopLeftXPosition() <= 0)
 			{
 				_turret->SetTopLeftXPosition(0);
-				_turret->GetTurretSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
 			}
 			else
 			{
-				_turret->GetTurretSprite().move(-moveDistance, 0);
 				_turret->SetTopLeftXPosition(_turret->GetTopLeftXPosition() - moveDistance);
 			}
 			break;
@@ -76,11 +70,9 @@ namespace GameEngine
 			if (_turret->GetTopLeftYPosition() <= TURRET_SCREEN_FRACTION*SCREEN_HEIGHT)
 			{
 				_turret->SetTopLeftYPosition(TURRET_SCREEN_FRACTION*SCREEN_HEIGHT);
-				_turret->GetTurretSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
 			}
 			else
 			{
-				_turret->GetTurretSprite().move(0, -moveDistance);
 				_turret->SetTopLeftYPosition(_turret->GetTopLeftYPosition() - moveDistance);
 			}
 

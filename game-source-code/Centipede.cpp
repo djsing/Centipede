@@ -22,14 +22,4 @@ namespace GameEngine
 			return CENTIPEDE_SPRITE_SIDE_SIZE;
 		} else return _centipedeSegments.back().GetTopLeftXPosition();
 	}
-
-	float Centipede::GetSegmentCenterXPosition(unsigned int index)
-	{
-		return _centipedeSegments.at(index).GetCenterXPosition();
-	}
-
-	float Centipede::GetSegmentCenterYPosition(unsigned int index)
-	{
-		return _centipedeSegments.at(index).GetCenterYPosition();
-	}
 }
