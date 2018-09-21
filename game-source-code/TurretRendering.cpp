@@ -7,6 +7,13 @@ namespace GameEngine
 	_data(data),
 	_turret(turret)
 	{
+		// load turret, bullet, heart sprites
+		_data->resources.LoadTexture("heart sprite", HEART_FILEPATH);
+		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
+		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
+		turret->GetObjectSprite().setTexture(_data->resources.GetTexture("Turret Sprite"));
+
+		// create life indicators
 		for (int i = 0; i < _turret->GetLivesRemaining(); i++)
 		{
 			auto heart = sf::Sprite();

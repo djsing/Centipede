@@ -1,4 +1,5 @@
 #include "ScorpionRendering.h"
+#include "DEFINITIONS.h"
 
 namespace GameEngine
 {
@@ -6,7 +7,7 @@ namespace GameEngine
 	_data(data),
 	_field(field)
 	{
-		
+		_data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
 	}
 
 	void ScorpionRendering::Draw()
@@ -15,6 +16,7 @@ namespace GameEngine
 		{
 			for (unsigned int i = 0; i < _field->GetScorpions().size(); i++)
 			{
+				_field->GetScorpions().at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Scorpion sprite"));
 				_field->GetScorpions().at(i).GetObjectSprite().setPosition(
 					_field->GetScorpions().at(i).GetTopLeftXPosition(),
 					_field->GetScorpions().at(i).GetTopLeftYPosition());

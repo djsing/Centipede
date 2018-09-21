@@ -7,8 +7,6 @@ namespace GameEngine
 	Entity(SCREEN_WIDTH/2 - SCORPION_SPRITE_SIZE/2, 0.25*SCREEN_HEIGHT),
 	_data(data)
 	{
-		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Scorpion sprite"));
-		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SCORPION_SPRITE_SIZE/2);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SCORPION_SPRITE_SIZE/2);
 	}

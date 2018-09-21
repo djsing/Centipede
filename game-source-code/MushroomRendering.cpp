@@ -1,4 +1,5 @@
 #include "MushroomRendering.h"
+#include "DEFINITIONS.h"
 
 namespace GameEngine
 {
@@ -6,7 +7,9 @@ namespace GameEngine
 	_data(data),
 	_field(field)
 	{
-		
+		_data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
+		_data->resources.LoadTexture("Mushroom3", MUSHROOM3_FILEPATH);
+		_data->resources.LoadTexture("Poisoned Mushroom", POISONED_MUSHROOM_FILEPATH);
 	}
 
 	void MushroomRendering::Draw()

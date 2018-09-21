@@ -8,8 +8,6 @@ namespace GameEngine
 	Entity(xpos, ypos),
 	_data(data)
 	{
-		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Bullet sprite"));
-		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + BULLET_WIDTH/2);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + BULLET_HEIGHT/2);
 		Entity::SetDirection(Direction::UP);

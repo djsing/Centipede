@@ -11,8 +11,6 @@ namespace GameEngine
 	_livesRemaining(4)
 	{
 		Entity::SetDirection(Direction::HOVER);
-		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Mushroom Sprite"));
-		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + MUSHROOM_SPRITE_SIZE/2);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + MUSHROOM_SPRITE_SIZE/2);
 	}

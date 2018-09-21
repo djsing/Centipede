@@ -6,7 +6,7 @@ namespace GameEngine
 	_data(data),
 	_bullet(bullet)
 	{
-		
+		_bullet.GetObjectSprite().setTexture(_data->resources.GetTexture("Bullet sprite"));
 	}
 
 	void BulletRendering::Draw()

@@ -10,8 +10,6 @@ namespace GameEngine
 	_livesRemaining(3)
 	{
 		Entity::SetDirection(Direction::HOVER);
-		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Turret Sprite"));
-		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 	}
@@ -52,7 +50,6 @@ namespace GameEngine
 	{
 		Entity::SetTopLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2);
 		Entity::SetTopLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
-		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(),Entity::GetTopLeftYPosition());
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 		_livesRemaining--;

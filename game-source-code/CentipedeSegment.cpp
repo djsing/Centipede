@@ -12,18 +12,8 @@ namespace GameEngine
 	_isPoisoned(false)
 	{
 		Entity::SetDirection(Direction::RIGHT);
-		if (_firstSegment)
-		{
-		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Segment sprite"));
-		}
-		else
-		{
-		Entity::GetObjectSprite().setTexture(_data->resources.GetTexture("Body Segment sprite"));
-		}
-
 		SetTopLeftXPosition(SCREEN_LHS);
 		SetTopLeftYPosition(SCREEN_TOP);
-		Entity::GetObjectSprite().setPosition(Entity::GetTopLeftXPosition(), Entity::GetTopLeftYPosition());
 	}
 
 	void CentipedeSegment::SetDead(bool isDead)

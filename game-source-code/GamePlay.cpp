@@ -19,20 +19,6 @@ namespace GameEngine
 	_data(data),
 	_numberOfCentipedeSegments(0)
 	{
-		//load resources
-		//_data->resources.LoadTexture("Game Screen Background", GAME_BACKGROUND_FILEPATH);
-		//_background.setTexture(_data->resources.GetTexture("Game Screen Background"));
-		_data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-		_data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-		_data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-		_data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-		_data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
-		_data->resources.LoadTexture("Mushroom3", MUSHROOM3_FILEPATH);
-		_data->resources.LoadTexture("Poisoned Mushroom", POISONED_MUSHROOM_FILEPATH);
-		_data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
-		_data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
-		_data->resources.LoadTexture("heart sprite", HEART_FILEPATH);
-
 		// initialise Centipede pointers
 		_centipede = std::make_shared<Centipede>(_data);
 		_centipedeLogic = std::make_unique<CentipedeLogic>(_data, _centipede);
