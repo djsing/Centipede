@@ -2,11 +2,8 @@
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;
-using GameEngine::DataPtr;
-using GameEngine::LogicPtr;
 using GameEngine::Direction;
 using GameEngine::Trajectory;
-using GameEngine::CentPtr;
 using GameEngine::Centipede;
 using GameEngine::CentipedeLogic;
 
@@ -14,9 +11,9 @@ using GameEngine::CentipedeLogic;
 
 TEST_CASE("Check if centipede turns downward at the right wall for downward trajectory")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
 
 	// since sprite is already moving RIGHT, set sprite to right edge of screen
@@ -31,9 +28,9 @@ TEST_CASE("Check if centipede turns downward at the right wall for downward traj
 
 TEST_CASE("Check if cenitpede moves to the left once it hits right wall for downward trajectory.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
 
 	// since sprite is already moving RIGHT, set sprite to right edge of screen
@@ -49,9 +46,9 @@ TEST_CASE("Check if cenitpede moves to the left once it hits right wall for down
 
 TEST_CASE("Check if cenitpede moves to the right once it hits left wall for downward trajectory.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
 
 	// since sprite is already moving RIGHT, set sprite to right edge of screen
@@ -78,9 +75,9 @@ TEST_CASE("Check if cenitpede moves to the right once it hits left wall for down
 
 TEST_CASE("Segment left and right wall behaviour for upward trajectory.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
 
 	// manually move the segment across the screen in steps which measure CENTIPEDE_SPEED units in length,
@@ -133,9 +130,9 @@ TEST_CASE("Segment left and right wall behaviour for upward trajectory.")
 
 TEST_CASE("Segment on upward trajectory and reaches the upper boundary of game screen")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
 
 	// move segment to bottom of the screen

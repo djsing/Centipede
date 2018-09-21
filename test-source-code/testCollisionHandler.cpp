@@ -8,19 +8,13 @@
 #include "../game-source-code/ScorpionLogic.h"
 #include <memory>
 
-using GameEngine::DataPtr;
 using GameEngine::GameData;
-using GameEngine::LogicPtr;
-using GameEngine::CentPtr;
 using GameEngine::Centipede;
 using GameEngine::CentipedeLogic;
 using GameEngine::Turret;
-using GameEngine::TurretPtr;
 using GameEngine::TurretLogic;
 using GameEngine::GameField;
-using GameEngine::FieldPtr;
 using GameEngine::CollisionHandler;
-using GameEngine::CollisionHandlerPtr;
 using GameEngine::RegionHandler;
 using GameEngine::MushroomLogic;
 using GameEngine::Mushroom;
@@ -33,13 +27,13 @@ using GameEngine::ScorpionLogic;
 
 TEST_CASE("Check that bullet-segment collisions are handled correctly.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
-	TurretPtr turret = std::make_shared<Turret>(data);
-	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
-	FieldPtr field = std::make_shared<GameField>();
-	CollisionHandlerPtr collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto turret = std::make_shared<Turret>(data);
+	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
+	auto field = std::make_shared<GameField>();
+	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
 
 	CHECK(turret->GetBullets().empty());
 	CHECK(centipede->GetCentipede().empty());
@@ -81,14 +75,14 @@ TEST_CASE("Check that bullet-segment collisions are handled correctly.")
 
 TEST_CASE("Check that segment-mushroom collisions are handled correctly when trajectory is downward.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
-	TurretPtr turret = std::make_shared<Turret>(data);
-	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr mushLogic = std::make_unique<MushroomLogic>(field, data);
-	CollisionHandlerPtr collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto turret = std::make_shared<Turret>(data);
+	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
+	auto field = std::make_shared<GameField>();
+	auto mushLogic = std::make_unique<MushroomLogic>(field, data);
+	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
 
 	CHECK(field->GetMushrooms().empty());
 	CHECK(centipede->GetCentipede().empty());
@@ -116,14 +110,14 @@ TEST_CASE("Check that segment-mushroom collisions are handled correctly when tra
 
 TEST_CASE("Check that segment-mushroom collisions are handled correctly when trajectory is upward.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
-	TurretPtr turret = std::make_shared<Turret>(data);
-	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr mushLogic = std::make_unique<MushroomLogic>(field, data);
-	CollisionHandlerPtr collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto turret = std::make_shared<Turret>(data);
+	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
+	auto field = std::make_shared<GameField>();
+	auto mushLogic = std::make_unique<MushroomLogic>(field, data);
+	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
 
 	CHECK(field->GetMushrooms().empty());
 	CHECK(centipede->GetCentipede().empty());
@@ -159,14 +153,14 @@ TEST_CASE("Check that segment-mushroom collisions are handled correctly when tra
 
 TEST_CASE("Check that segment/poisoned-mushroom collisions are handled correctly.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
-	TurretPtr turret = std::make_shared<Turret>(data);
-	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr mushLogic = std::make_unique<MushroomLogic>(field, data);
-	CollisionHandlerPtr collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto turret = std::make_shared<Turret>(data);
+	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
+	auto field = std::make_shared<GameField>();
+	auto mushLogic = std::make_unique<MushroomLogic>(field, data);
+	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
 
 	CHECK(field->GetMushrooms().empty());
 	CHECK(centipede->GetCentipede().empty());
@@ -197,7 +191,7 @@ TEST_CASE("Check that segment/poisoned-mushroom collisions are handled correctly
 
 TEST_CASE("Check if turret loses a life when it collides with a segment.")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto centipede = std::make_shared<Centipede>(data);
@@ -242,7 +236,7 @@ TEST_CASE("Check if turret loses a life when it collides with a segment.")
 
 TEST_CASE("Check if turret is set to dead when it collides with a centipede after losing 3 lives.")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto centipede = std::make_shared<Centipede>(data);
@@ -305,7 +299,7 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 
 TEST_CASE("Check if turret loses a life when it collides with a spider.")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto centipede = std::make_shared<Centipede>(data);
@@ -347,7 +341,7 @@ TEST_CASE("Check if turret loses a life when it collides with a spider.")
 
 TEST_CASE("Check if turret is set to dead when it collides with a centipede after losing 3 lives.")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto centipede = std::make_shared<Centipede>(data);
@@ -407,15 +401,15 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 
 TEST_CASE("Check that scorpion-mushroom collisions are handled correctly.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
-	TurretPtr turret = std::make_shared<Turret>(data);
-	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr mushLogic = std::make_unique<MushroomLogic>(field, data);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto turret = std::make_shared<Turret>(data);
+	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
+	auto field = std::make_shared<GameField>();
+	auto mushLogic = std::make_unique<MushroomLogic>(field, data);
 	auto scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
-	CollisionHandlerPtr collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
 
 	CHECK(field->GetMushrooms().empty());
 	CHECK(field->GetScorpions().empty());
@@ -436,15 +430,15 @@ TEST_CASE("Check that scorpion-mushroom collisions are handled correctly.")
 
 TEST_CASE("Check that spider-mushroom collisions are handled correctly.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
-	TurretPtr turret = std::make_shared<Turret>(data);
-	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr mushLogic = std::make_unique<MushroomLogic>(field, data);
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
+	auto turret = std::make_shared<Turret>(data);
+	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
+	auto field = std::make_shared<GameField>();
+	auto mushLogic = std::make_unique<MushroomLogic>(field, data);
 	auto spiderLogic = std::make_unique<SpiderLogic>(field, data);
-	CollisionHandlerPtr collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
 
 	CHECK(field->GetMushrooms().empty());
 	CHECK(field->GetSpiders().empty());
@@ -465,13 +459,13 @@ TEST_CASE("Check that spider-mushroom collisions are handled correctly.")
 
 TEST_CASE("Check that bullet-spider collisions are handled correctly.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	TurretPtr turret = std::make_shared<Turret>(data);
-	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
-	FieldPtr field = std::make_shared<GameField>();
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto turret = std::make_shared<Turret>(data);
+	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
+	auto field = std::make_shared<GameField>();
 	auto spiderLogic = std::make_unique<SpiderLogic>(field, data);
-	CollisionHandlerPtr collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
 
 	CHECK(turret->GetBullets().empty());
 	CHECK(field->GetSpiders().empty());
@@ -515,13 +509,13 @@ TEST_CASE("Check that bullet-spider collisions are handled correctly.")
 
 TEST_CASE("Check that bullet-mushroom collisions are handled correctly.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	CentPtr centipede = std::make_shared<Centipede>(data);
-	TurretPtr turret = std::make_shared<Turret>(data);
-	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
-	FieldPtr field = std::make_shared<GameField>();
+	auto data = std::make_shared<GameData>();
+	auto centipede = std::make_shared<Centipede>(data);
+	auto turret = std::make_shared<Turret>(data);
+	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
+	auto field = std::make_shared<GameField>();
 	auto mushLogic = std::make_unique<MushroomLogic>(field, data);
-	CollisionHandlerPtr collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
 
 	CHECK(turret->GetBullets().empty());
 	CHECK(field->GetMushrooms().empty());

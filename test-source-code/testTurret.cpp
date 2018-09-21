@@ -2,7 +2,6 @@
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;
-using GameEngine::DataPtr;
 using GameEngine::Turret;
 using GameEngine::Direction;
 
@@ -10,7 +9,7 @@ using GameEngine::Direction;
 
 TEST_CASE("Turret was initialized properly")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto turret = Turret{data};
 	CHECK(turret.GetTopLeftXPosition() == SCREEN_WIDTH/2- TURRET_SPRITE_SIDE_SIZE/2);
 	CHECK(turret.GetTopLeftYPosition() == SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);

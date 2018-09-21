@@ -2,7 +2,6 @@
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;
-using GameEngine::DataPtr;
 using GameEngine::CentipedeSegment;
 using GameEngine::Direction;
 using GameEngine::Trajectory;
@@ -12,7 +11,7 @@ using GameEngine::Trajectory;
 
 TEST_CASE("Centipede Segment Initialised with correct values")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	// single centipede head
 	auto segment = CentipedeSegment(data, true);
 

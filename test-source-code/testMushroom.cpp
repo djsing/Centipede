@@ -2,7 +2,6 @@
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;
-using GameEngine::DataPtr;
 using GameEngine::Region;
 using GameEngine::Mushroom;
 
@@ -10,7 +9,7 @@ using GameEngine::Mushroom;
 
 TEST_CASE("Mushroom Initialised with correct values when created")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto mushroom = Mushroom{data, 0, 0};
 	// check that position tracker initalised with top left corner at (0,0)
 	CHECK(mushroom.GetRegion() == Region::TOP_LEFT);

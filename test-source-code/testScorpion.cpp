@@ -2,14 +2,13 @@
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;
-using GameEngine::DataPtr;
 using GameEngine::Scorpion;
 
 #include <doctest.h>
 
 TEST_CASE("Check that scorpion is initialised with correct values.")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto scorpion = Scorpion(data);
 	CHECK(scorpion.GetTopLeftXPosition() == SCREEN_WIDTH/2 - SCORPION_SPRITE_SIZE/2);
 	// check within 1% accuracy

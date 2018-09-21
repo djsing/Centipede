@@ -8,14 +8,14 @@ using GameEngine::Direction;
 
 TEST_CASE("Initialised correct.")
 {	
-	KeyboardControlsHandler trial_Keyboard;
+	auto trial_Keyboard = KeyboardControlsHandler();
 	CHECK(trial_Keyboard.GetDirection() == Direction::HOVER);
 	CHECK_FALSE(trial_Keyboard.IsShooting());
 }
 
 TEST_CASE("isShooting function works with SetShooting function.")
 {
-	KeyboardControlsHandler trial_Keyboard;
+	auto trial_Keyboard = KeyboardControlsHandler();
 	trial_Keyboard.SetShooting(true);
 	CHECK(trial_Keyboard.IsShooting());
 	trial_Keyboard.SetShooting(false);
@@ -24,7 +24,7 @@ TEST_CASE("isShooting function works with SetShooting function.")
 
 TEST_CASE("GetDirection function returns the answer given from the SetDirection")
 {
-	KeyboardControlsHandler trial_Keyboard;	
+	auto trial_Keyboard = KeyboardControlsHandler();
 	trial_Keyboard.SetDirection(Direction::UP);
 	CHECK(trial_Keyboard.GetDirection() == Direction::UP);
 	trial_Keyboard.SetDirection(Direction::DOWN);

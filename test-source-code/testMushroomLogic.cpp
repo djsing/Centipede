@@ -2,9 +2,6 @@
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;
-using GameEngine::DataPtr;
-using GameEngine::LogicPtr;
-using GameEngine::FieldPtr;
 using GameEngine::GameField;
 using GameEngine::MushroomLogic;
 
@@ -12,9 +9,9 @@ using GameEngine::MushroomLogic;
 
 TEST_CASE("Check that size of mushroom vector is the same as MUSHROOMS_SPAWNED")
 {
-	DataPtr data = std::make_shared<GameData>();
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr mushroomLogic = std::make_unique<MushroomLogic>(field, data);
+	auto data = std::make_shared<GameData>();
+	auto field = std::make_shared<GameField>();
+	auto mushroomLogic = std::make_unique<MushroomLogic>(field, data);
 	mushroomLogic->Spawn();
 
 	CHECK(field->GetMushrooms().size() == MUSHROOMS_SPAWNED);

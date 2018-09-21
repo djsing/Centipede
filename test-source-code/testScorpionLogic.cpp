@@ -1,20 +1,17 @@
 #include "../game-source-code/ScorpionLogic.h"
 #include "../game-source-code/DEFINITIONS.h"
 
-using GameEngine::DataPtr;
 using GameEngine::GameData;
-using GameEngine::FieldPtr;
 using GameEngine::GameField;
-using GameEngine::LogicPtr;
 using GameEngine::ScorpionLogic;
 
 #include <doctest.h>
 
 TEST_CASE("Check that scorpion deaths are handled correctly.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
+	auto data = std::make_shared<GameData>();
+	auto field = std::make_shared<GameField>();
+	auto scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 
 	// check that field object created an empty scorpion container
 	CHECK(field->GetScorpions().size() == 0);
@@ -37,9 +34,9 @@ TEST_CASE("Check that scorpion deaths are handled correctly.")
 
 TEST_CASE("Check that scorpion is bounded by the turret-box ceiling.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
+	auto data = std::make_shared<GameData>();
+	auto field = std::make_shared<GameField>();
+	auto scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 	scorpionLogic->Spawn();
 
 	// set the scorpion below the ceiling of the turret box
@@ -53,9 +50,9 @@ TEST_CASE("Check that scorpion is bounded by the turret-box ceiling.")
 
 TEST_CASE("Check that scorpion is bounded by the left wall.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
+	auto data = std::make_shared<GameData>();
+	auto field = std::make_shared<GameField>();
+	auto scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 	scorpionLogic->Spawn();
 
 	// set the scorpion outside of the left wall
@@ -69,9 +66,9 @@ TEST_CASE("Check that scorpion is bounded by the left wall.")
 
 TEST_CASE("Check that scorpion is bounded by the right wall.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
+	auto data = std::make_shared<GameData>();
+	auto field = std::make_shared<GameField>();
+	auto scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 	scorpionLogic->Spawn();
 
 	// set the scorpion outside of the right wall
@@ -85,9 +82,9 @@ TEST_CASE("Check that scorpion is bounded by the right wall.")
 
 TEST_CASE("Check that scorpion is bounded by the screen ceiling.")
 {
-	DataPtr data = std::make_shared<GameData>();
-	FieldPtr field = std::make_shared<GameField>();
-	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
+	auto data = std::make_shared<GameData>();
+	auto field = std::make_shared<GameField>();
+	auto scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 	scorpionLogic->Spawn();
 
 	// set the scorpion below the ceiling of the turret box

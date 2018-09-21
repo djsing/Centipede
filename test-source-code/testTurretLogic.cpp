@@ -10,7 +10,6 @@
 
 using GameEngine::GameData;
 using GameEngine::GameState;
-using GameEngine::DataPtr;
 using GameEngine::Turret;
 using GameEngine::TurretLogic;
 using GameEngine::Direction;
@@ -25,7 +24,7 @@ using GameEngine::RegionHandler;
 
 TEST_CASE("Check if turret stays within the confines of the left/right wall, the bottom of the game screen, and the fraction of the screen height that is permitted.")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	data->keyboard.SetDirection(Direction::LEFT);
@@ -69,7 +68,7 @@ TEST_CASE("Check if turret stays within the confines of the left/right wall, the
 
 TEST_CASE("Check that bullets are automatically deleted when it hits the boundary.")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 

@@ -2,14 +2,13 @@
 #include "../game-source-code/DEFINITIONS.h"
 
 using GameEngine::GameData;
-using GameEngine::DataPtr;
 using GameEngine::Spider;
 
 #include <doctest.h>
 
 TEST_CASE("Check that spider is initialised with correct values.")
 {
-	DataPtr data = std::make_shared<GameData>();
+	auto data = std::make_shared<GameData>();
 	auto spider = Spider(data);
 	CHECK(spider.GetTopLeftXPosition() == SCREEN_WIDTH/2 - SPIDER_SPRITE_SIZE/2);
 	// check within 1% accuracy

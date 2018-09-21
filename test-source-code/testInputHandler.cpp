@@ -3,7 +3,6 @@
 #include "../game-source-code/KeyboardControlsHandler.h"
 
 using GameEngine::GameData;
-using GameEngine::DataPtr;
 using GameEngine::KeyboardControlsHandler;
 using GameEngine::InputHandler;
 using GameEngine::Direction;
@@ -12,8 +11,8 @@ using GameEngine::Direction;
 
 TEST_CASE("Left key is pressed")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyPressed;
 	trialEvent.key.code = sf::Keyboard::Left;
 	InputHandler Trial(data);
@@ -23,8 +22,8 @@ TEST_CASE("Left key is pressed")
 
 TEST_CASE("Right key is pressed")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyPressed;
 	trialEvent.key.code = sf::Keyboard::Right;
 	InputHandler Trial(data);
@@ -34,8 +33,8 @@ TEST_CASE("Right key is pressed")
 
 TEST_CASE("Up key is pressed")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyPressed;
 	trialEvent.key.code = sf::Keyboard::Up;
 	InputHandler Trial(data);
@@ -45,8 +44,8 @@ TEST_CASE("Up key is pressed")
 
 TEST_CASE("Down key is pressed")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyPressed;
 	trialEvent.key.code = sf::Keyboard::Down;
 	InputHandler Trial(data);
@@ -56,8 +55,8 @@ TEST_CASE("Down key is pressed")
 
 TEST_CASE("Space key is pressed for the first time")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyPressed;
 	trialEvent.key.code = sf::Keyboard::Space;
 	InputHandler Trial(data);
@@ -67,8 +66,8 @@ TEST_CASE("Space key is pressed for the first time")
 
 TEST_CASE("Space key is being held down")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyPressed;
 	trialEvent.key.code = sf::Keyboard::Space;
 	InputHandler Trial(data);
@@ -79,8 +78,8 @@ TEST_CASE("Space key is being held down")
 
 TEST_CASE("Left key is released")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyReleased;
 	trialEvent.key.code = sf::Keyboard::Left;
 	InputHandler Trial(data);
@@ -90,8 +89,8 @@ TEST_CASE("Left key is released")
 
 TEST_CASE("Right key is released")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyReleased;
 	trialEvent.key.code = sf::Keyboard::Right;
 	InputHandler Trial(data);
@@ -101,8 +100,8 @@ TEST_CASE("Right key is released")
 
 TEST_CASE("Up key is released")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyReleased;
 	trialEvent.key.code = sf::Keyboard::Up;
 	InputHandler Trial(data);
@@ -112,8 +111,8 @@ TEST_CASE("Up key is released")
 
 TEST_CASE("Down key is released")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyReleased;
 	trialEvent.key.code = sf::Keyboard::Down;
 	InputHandler Trial(data);
@@ -123,8 +122,8 @@ TEST_CASE("Down key is released")
 
 TEST_CASE("Space key is pressed for the first time and released")
 {
-	DataPtr data = std::make_shared<GameData>();
-	sf::Event trialEvent;
+	auto data = std::make_shared<GameData>();
+	auto trialEvent = sf::Event();
 	trialEvent.type = sf::Event::KeyPressed;
 	trialEvent.key.code = sf::Keyboard::Space;
 	InputHandler Trial(data);
