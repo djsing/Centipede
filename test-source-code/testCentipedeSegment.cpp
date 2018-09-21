@@ -13,8 +13,6 @@ using GameEngine::Trajectory;
 TEST_CASE("Centipede Segment Initialised with correct values")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	// single centipede head
 	auto segment = CentipedeSegment(data, true);
 

@@ -13,7 +13,6 @@ using GameEngine::ScorpionLogic;
 TEST_CASE("Check that scorpion deaths are handled correctly.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 
@@ -39,7 +38,6 @@ TEST_CASE("Check that scorpion deaths are handled correctly.")
 TEST_CASE("Check that scorpion is bounded by the turret-box ceiling.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 	scorpionLogic->Spawn();
@@ -56,7 +54,6 @@ TEST_CASE("Check that scorpion is bounded by the turret-box ceiling.")
 TEST_CASE("Check that scorpion is bounded by the left wall.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 	scorpionLogic->Spawn();
@@ -73,7 +70,6 @@ TEST_CASE("Check that scorpion is bounded by the left wall.")
 TEST_CASE("Check that scorpion is bounded by the right wall.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 	scorpionLogic->Spawn();
@@ -90,7 +86,6 @@ TEST_CASE("Check that scorpion is bounded by the right wall.")
 TEST_CASE("Check that scorpion is bounded by the screen ceiling.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
 	scorpionLogic->Spawn();

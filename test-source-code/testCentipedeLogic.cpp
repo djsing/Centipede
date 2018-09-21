@@ -15,8 +15,6 @@ using GameEngine::CentipedeLogic;
 TEST_CASE("Check if centipede turns downward at the right wall for downward trajectory")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
@@ -34,8 +32,6 @@ TEST_CASE("Check if centipede turns downward at the right wall for downward traj
 TEST_CASE("Check if cenitpede moves to the left once it hits right wall for downward trajectory.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
@@ -54,8 +50,6 @@ TEST_CASE("Check if cenitpede moves to the left once it hits right wall for down
 TEST_CASE("Check if cenitpede moves to the right once it hits left wall for downward trajectory.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
@@ -85,8 +79,6 @@ TEST_CASE("Check if cenitpede moves to the right once it hits left wall for down
 TEST_CASE("Segment left and right wall behaviour for upward trajectory.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();
@@ -142,8 +134,6 @@ TEST_CASE("Segment left and right wall behaviour for upward trajectory.")
 TEST_CASE("Segment on upward trajectory and reaches the upper boundary of game screen")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	centipedeLogic->Spawn();

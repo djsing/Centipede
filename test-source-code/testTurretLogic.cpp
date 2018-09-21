@@ -26,8 +26,6 @@ using GameEngine::RegionHandler;
 TEST_CASE("Check if turret stays within the confines of the left/right wall, the bottom of the game screen, and the fraction of the screen height that is permitted.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	data->keyboard.SetDirection(Direction::LEFT);
@@ -72,8 +70,6 @@ TEST_CASE("Check if turret stays within the confines of the left/right wall, the
 TEST_CASE("Check that bullets are automatically deleted when it hits the boundary.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 
@@ -115,8 +111,8 @@ TEST_CASE("Check that bullets are automatically deleted when it hits the boundar
 	// move first bullet off screen
 	turretLogic->MoveProjectiles(0.001);
 	// check that first bullet is marked as dead, but not the second
-	CHECK(turret->GetBullets().at(0).IsDead() == true);
-	CHECK(turret->GetBullets().at(1).IsDead() == false);
+	CHECK(turret->GetBullets().at(0).IsDead());
+	CHECK_FALSE(turret->GetBullets().at(1).IsDead());
 	// handle collisions
 	turretLogic->CollisionHandle();
 	// check if there is one bullet after collisions are handled, i.e. the first bullet is deleted, but the second is not

@@ -13,7 +13,6 @@ using GameEngine::SpiderLogic;
 TEST_CASE("Check that spider deaths are handled correctly.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr spiderLogic = std::make_unique<SpiderLogic>(field, data);
 
@@ -39,7 +38,6 @@ TEST_CASE("Check that spider deaths are handled correctly.")
 TEST_CASE("Check that spider is bounded by the turret box ceiling.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr spiderLogic = std::make_unique<SpiderLogic>(field, data);
 	spiderLogic->Spawn();
@@ -56,7 +54,6 @@ TEST_CASE("Check that spider is bounded by the turret box ceiling.")
 TEST_CASE("Check that spider is bounded by the left wall.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr spiderLogic = std::make_unique<SpiderLogic>(field, data);
 	spiderLogic->Spawn();
@@ -73,7 +70,6 @@ TEST_CASE("Check that spider is bounded by the left wall.")
 TEST_CASE("Check that spider is bounded by the right wall.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr spiderLogic = std::make_unique<SpiderLogic>(field, data);
 	spiderLogic->Spawn();
@@ -90,7 +86,6 @@ TEST_CASE("Check that spider is bounded by the right wall.")
 TEST_CASE("Check that spider is bounded by the screen floor.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr spiderLogic = std::make_unique<SpiderLogic>(field, data);
 	spiderLogic->Spawn();

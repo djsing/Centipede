@@ -34,11 +34,6 @@ using GameEngine::ScorpionLogic;
 TEST_CASE("Check that bullet-segment collisions are handled correctly.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	TurretPtr turret = std::make_shared<Turret>(data);
@@ -87,11 +82,6 @@ TEST_CASE("Check that bullet-segment collisions are handled correctly.")
 TEST_CASE("Check that segment-mushroom collisions are handled correctly when trajectory is downward.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	TurretPtr turret = std::make_shared<Turret>(data);
@@ -127,11 +117,6 @@ TEST_CASE("Check that segment-mushroom collisions are handled correctly when tra
 TEST_CASE("Check that segment-mushroom collisions are handled correctly when trajectory is upward.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	TurretPtr turret = std::make_shared<Turret>(data);
@@ -175,11 +160,6 @@ TEST_CASE("Check that segment-mushroom collisions are handled correctly when tra
 TEST_CASE("Check that segment/poisoned-mushroom collisions are handled correctly.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	TurretPtr turret = std::make_shared<Turret>(data);
@@ -218,10 +198,6 @@ TEST_CASE("Check that segment/poisoned-mushroom collisions are handled correctly
 TEST_CASE("Check if turret loses a life when it collides with a segment.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto centipede = std::make_shared<Centipede>(data);
@@ -267,10 +243,6 @@ TEST_CASE("Check if turret loses a life when it collides with a segment.")
 TEST_CASE("Check if turret is set to dead when it collides with a centipede after losing 3 lives.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto centipede = std::make_shared<Centipede>(data);
@@ -334,8 +306,6 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 TEST_CASE("Check if turret loses a life when it collides with a spider.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto centipede = std::make_shared<Centipede>(data);
@@ -378,8 +348,6 @@ TEST_CASE("Check if turret loses a life when it collides with a spider.")
 TEST_CASE("Check if turret is set to dead when it collides with a centipede after losing 3 lives.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	auto turret = std::make_shared<Turret>(data);
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto centipede = std::make_shared<Centipede>(data);
@@ -440,12 +408,6 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 TEST_CASE("Check that scorpion-mushroom collisions are handled correctly.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
-	data->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	TurretPtr turret = std::make_shared<Turret>(data);
@@ -475,12 +437,6 @@ TEST_CASE("Check that scorpion-mushroom collisions are handled correctly.")
 TEST_CASE("Check that spider-mushroom collisions are handled correctly.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	LogicPtr centipedeLogic = std::make_unique<CentipedeLogic>(data, centipede);
 	TurretPtr turret = std::make_shared<Turret>(data);
@@ -510,11 +466,6 @@ TEST_CASE("Check that spider-mushroom collisions are handled correctly.")
 TEST_CASE("Check that bullet-spider collisions are handled correctly.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	TurretPtr turret = std::make_shared<Turret>(data);
 	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);
@@ -565,12 +516,6 @@ TEST_CASE("Check that bullet-spider collisions are handled correctly.")
 TEST_CASE("Check that bullet-mushroom collisions are handled correctly.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
-	data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	data->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
-	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
 	CentPtr centipede = std::make_shared<Centipede>(data);
 	TurretPtr turret = std::make_shared<Turret>(data);
 	LogicPtr turretLogic = std::make_unique<TurretLogic>(data, turret);

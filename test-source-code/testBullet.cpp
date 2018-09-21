@@ -10,8 +10,7 @@ using GameEngine::Bullet;
 TEST_CASE("Bullet Initialised with correct values.")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
-	auto bullet = Bullet{data,10,20};
+	auto bullet = Bullet{data, 10, 20};
 	CHECK(bullet.GetCenterXPosition() == (10 + BULLET_WIDTH/2));
 	CHECK(bullet.GetCenterYPosition() == (20 + BULLET_HEIGHT/2));
 }

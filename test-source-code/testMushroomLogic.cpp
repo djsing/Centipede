@@ -13,7 +13,6 @@ using GameEngine::MushroomLogic;
 TEST_CASE("Check that size of mushroom vector is the same as MUSHROOMS_SPAWNED")
 {
 	DataPtr data = std::make_shared<GameData>();
-	data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
 	FieldPtr field = std::make_shared<GameField>();
 	LogicPtr mushroomLogic = std::make_unique<MushroomLogic>(field, data);
 	mushroomLogic->Spawn();
