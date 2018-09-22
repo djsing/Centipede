@@ -5,18 +5,19 @@
 
 namespace GameEngine
 {
-	class KeyboardControlsHandler
-	{
-	public:
-		KeyboardControlsHandler();
-		bool IsShooting();
-		void SetShooting(bool isShooting);
-		Direction GetDirection();
-		void SetDirection(Direction direction);
-	private:
-		Direction _direction;
-		bool _isShooting;
-	};
-}
+class KeyboardControlsHandler
+{
+  public:
+    KeyboardControlsHandler();
+    bool IsShooting();
+    void SetShooting(bool isShooting);
+    Direction GetDirection();
+    void SetDirection(Direction direction);
+
+  private:
+    Direction _direction;
+    bool _isShooting;
+};
+} // namespace GameEngine
 
 #endif

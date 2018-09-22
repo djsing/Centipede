@@ -2,20 +2,21 @@
 #define MUSHROOMRENDERING_H
 
 #include "EntityRendering.h"
-#include "GameField.h"
 #include "Game.h"
+#include "GameField.h"
 
 namespace GameEngine
 {
-	class MushroomRendering: public EntityRendering
-	{
-	public:
-		MushroomRendering(DataPtr data, FieldPtr field);
-		void Draw() override;
-	private:
-		DataPtr _data;
-		FieldPtr _field;
-	};
-}
+class MushroomRendering : public EntityRendering
+{
+  public:
+    MushroomRendering(DataPtr data, FieldPtr field);
+    void Draw() override;
+
+  private:
+    DataPtr _data;
+    FieldPtr _field;
+};
+} // namespace GameEngine
 
 #endif

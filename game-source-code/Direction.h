@@ -3,14 +3,14 @@
 
 namespace GameEngine
 {
-	enum class Direction
-	{
-		UP,
-		DOWN,
-		LEFT,
-		RIGHT,
-		HOVER
-	};
+enum class Direction
+{
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT,
+    HOVER
+};
 }
 
 #endif

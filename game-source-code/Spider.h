@@ -7,16 +7,16 @@
 
 namespace GameEngine
 {
-	class Spider: public Entity
-	{
-	public:
-		Spider(DataPtr data);
-		void SetTopLeftXPosition(float xpos);
-		void SetTopLeftYPosition(float ypos);
+class Spider : public Entity
+{
+  public:
+    Spider(DataPtr data);
+    void SetTopLeftXPosition(float xpos);
+    void SetTopLeftYPosition(float ypos);
 
-	private:
-		DataPtr _data;
-	};
-}
+  private:
+    DataPtr _data;
+};
+} // namespace GameEngine
 
 #endif

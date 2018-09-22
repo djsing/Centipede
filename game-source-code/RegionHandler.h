@@ -5,21 +5,24 @@
 
 namespace GameEngine
 {
-	class RegionHandler
-	{
-	public:
-		// default constructor
-		RegionHandler(){}
-		// takes in center point
-		RegionHandler(float xpos, float ypos);
-		Region GetRegion();
-		Region GetSubRegion();
-	private:
-		float _xpos;
-		float _ypos;
-		Region _region;
-		Region _subregion;
-	};
-}
+class RegionHandler
+{
+  public:
+    // default constructor
+    RegionHandler()
+    {
+    }
+    // takes in center point
+    RegionHandler(float xpos, float ypos);
+    Region GetRegion();
+    Region GetSubRegion();
+
+  private:
+    float _xpos;
+    float _ypos;
+    Region _region;
+    Region _subregion;
+};
+} // namespace GameEngine
 
 #endif

@@ -1,27 +1,27 @@
 #ifndef SPLASHSCREEN_H
 #define SPLASHSCREEN_H
 
-#include <SFML/Graphics.hpp>
-#include "GameState.h"
 #include "Game.h"
+#include "GameState.h"
 #include "StopWatch.h"
+#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {
-	class SplashScreen: public GameState
-	{
-	public:
-		SplashScreen(DataPtr data);
+class SplashScreen : public GameState
+{
+  public:
+    SplashScreen(DataPtr data);
 
-		void HandleInput() override;
-		void Update(float dt) override;
-		void Draw() override;
+    void HandleInput() override;
+    void Update(float dt) override;
+    void Draw() override;
 
-	private:
-		DataPtr _data;
-		StopWatch _watch;
-		sf::Sprite _background;
-	};
+  private:
+    DataPtr _data;
+    StopWatch _watch;
+    sf::Sprite _background;
+};
 
-}
+} // namespace GameEngine
 #endif

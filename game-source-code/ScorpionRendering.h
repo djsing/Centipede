@@ -7,15 +7,16 @@
 
 namespace GameEngine
 {
-	class ScorpionRendering: public EntityRendering
-	{
-	public:
-		ScorpionRendering(DataPtr data, FieldPtr field);
-		void Draw() override;
-	private:
-		DataPtr _data;
-		FieldPtr _field;
-	};
-}
+class ScorpionRendering : public EntityRendering
+{
+  public:
+    ScorpionRendering(DataPtr data, FieldPtr field);
+    void Draw() override;
+
+  private:
+    DataPtr _data;
+    FieldPtr _field;
+};
+} // namespace GameEngine
 
 #endif

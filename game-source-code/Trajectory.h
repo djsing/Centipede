@@ -3,11 +3,11 @@
 
 namespace GameEngine
 {
-	enum class Trajectory
-	{
-		UPWARD,
-		DOWNWARD
-	};
+enum class Trajectory
+{
+    UPWARD,
+    DOWNWARD
+};
 }
 
 #endif

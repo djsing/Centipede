@@ -7,16 +7,16 @@
 
 namespace GameEngine
 {
-	class Scorpion: public Entity
-	{
-	public:
-		Scorpion(DataPtr data);
-		void SetTopLeftXPosition(float xpos);
-		void SetTopLeftYPosition(float ypos);
+class Scorpion : public Entity
+{
+  public:
+    Scorpion(DataPtr data);
+    void SetTopLeftXPosition(float xpos);
+    void SetTopLeftYPosition(float ypos);
 
-	private:
-		DataPtr _data;
-	};
-}
+  private:
+    DataPtr _data;
+};
+} // namespace GameEngine
 
 #endif

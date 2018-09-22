@@ -7,15 +7,16 @@
 
 namespace GameEngine
 {
-	class SpiderRendering: public EntityRendering
-	{
-	public:
-		SpiderRendering(DataPtr data, FieldPtr field);
-		void Draw() override;
-	private:
-		DataPtr _data;
-		FieldPtr _field;
-	};
-}
+class SpiderRendering : public EntityRendering
+{
+  public:
+    SpiderRendering(DataPtr data, FieldPtr field);
+    void Draw() override;
+
+  private:
+    DataPtr _data;
+    FieldPtr _field;
+};
+} // namespace GameEngine
 
 #endif

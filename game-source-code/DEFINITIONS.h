@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <cmath>
-const double PI = 4*atan(1);
+const double PI = 4 * atan(1);
 
 #define SCREEN_WIDTH sf::VideoMode::getDesktopMode().width
 #define SCREEN_HEIGHT sf::VideoMode::getDesktopMode().height
@@ -45,26 +45,26 @@ const double PI = 4*atan(1);
 #define HEART_FILEPATH "Resources\\lives.png"
 
 #define CENTIPEDE_SPRITE_SIDE_SIZE 20
-#define CENTIPEDE_SEGMENT_HIT_RADIUS 10
+#define CENTIPEDE_SEGMENT_HIT_RADIUS 9
 #define TURRET_SPRITE_SIDE_SIZE 20
-#define TURRET_HIT_RADIUS 10
+#define TURRET_HIT_RADIUS 9
 #define BULLET_WIDTH 8
 #define BULLET_HEIGHT 20
 #define BULLET_SPEED 2000
-#define BULLET_HIT_RADIUS 10
+#define BULLET_HIT_RADIUS 9
 #define TURRET_SPEED 500
 #define CENTIPEDE_SPEED 800
 #define INITIAL_CENTIPEDE_NUMBER 12
 #define MUSHROOMS_SPAWNED 50
 #define MUSHROOM_SPRITE_SIZE 20
-#define MUSHROOM_HIT_RADIUS 10
+#define MUSHROOM_HIT_RADIUS 9
 #define SPIDER_SPRITE_SIZE 20
 #define SPIDER_HIT_RADIUS 10
 #define SPIDER_SPEED 800
 #define SPIDER_MOVEMENT_TIME 1
 #define SCORPION_MOVEMENT_TIME 2
 #define SCORPION_SPRITE_SIZE 20
-#define SCORPION_HIT_RADIUS 10
+#define SCORPION_HIT_RADIUS 9
 #define SCORPION_SPEED 800
 #define HEART_SIZE 20
 
