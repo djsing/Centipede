@@ -13,6 +13,14 @@ namespace GameEngine
 
 	void Scorpion::SetTopLeftXPosition(float xpos)
 	{
+		if (xpos < SCREEN_LHS - SCORPION_SPRITE_SIZE)
+		{
+			xpos = SCREEN_WIDTH + SCORPION_SPRITE_SIZE;
+		}
+		else if (xpos > SCREEN_WIDTH + SCORPION_SPRITE_SIZE)
+		{
+			xpos = SCREEN_LHS - SCORPION_SPRITE_SIZE;
+		}
 		Entity::SetTopLeftXPosition(xpos);
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SCORPION_SPRITE_SIZE/2);
 	}

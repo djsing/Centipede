@@ -13,6 +13,14 @@ namespace GameEngine
 
 	void Spider::SetTopLeftXPosition(float xpos)
 	{
+		if (xpos < SCREEN_LHS - SPIDER_SPRITE_SIZE)
+		{
+			xpos = SCREEN_WIDTH + SPIDER_SPRITE_SIZE;
+		}
+		else if (xpos > SCREEN_WIDTH + SPIDER_SPRITE_SIZE)
+		{
+			xpos = SCREEN_LHS - SPIDER_SPRITE_SIZE;
+		}
 		Entity::SetTopLeftXPosition(xpos);
 		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + SPIDER_SPRITE_SIZE/2);
 	}
