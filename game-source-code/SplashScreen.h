@@ -13,7 +13,6 @@ namespace GameEngine
 	public:
 		SplashScreen(DataPtr data);
 
-		void Initialise() override;
 		void HandleInput() override;
 		void Update(float dt) override;
 		void Draw() override;

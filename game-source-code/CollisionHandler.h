@@ -12,6 +12,12 @@ namespace GameEngine
 	{
 	public:
 		CollisionHandler(DataPtr data, TurretPtr turret, CentPtr centipede, FieldPtr field);
+		void CheckCollisions();
+	private:
+		DataPtr _data;
+		TurretPtr _turret;
+		CentPtr _centipede;
+		FieldPtr _field;
 		void CheckBulletSegmentCollisions();
 		void CheckSegmentMushroomCollisions();
 		void CheckTurretSegmentCollisions();
@@ -20,11 +26,6 @@ namespace GameEngine
 		void CheckMushroomSpiderCollisions();
 		void CheckBulletSpiderCollisions();
 		void CheckBulletMushroomCollisions();
-	private:
-		DataPtr _data;
-		TurretPtr _turret;
-		CentPtr _centipede;
-		FieldPtr _field;
 		float CheckDistanceBetweenEntities(Entity &entity1, Entity &entity2);
 	};
 

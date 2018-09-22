@@ -16,8 +16,7 @@
 namespace GameEngine
 {
 	GamePlay::GamePlay(DataPtr data):
-	_data(data),
-	_numberOfCentipedeSegments(0)
+	_data(data)
 	{
 		// initialise Centipede pointers
 		_centipede = std::make_shared<Centipede>(_data);
@@ -41,24 +40,13 @@ namespace GameEngine
 		_collisionhandler = std::make_shared<CollisionHandler>(_data, _turret, _centipede, _field);
 	}
 
-	void GamePlay::Initialise()
-	{
-		// spawn field elements before anything else
-		_mushLogicPtr->Spawn();
-		_spiderLogic->Spawn();
-		_scorpionLogic->Spawn();
-
-		// spawn centipede head at start of the game
-		_centipedeLogic->Spawn();
-		_numberOfCentipedeSegments++;
-	}
-
 	void GamePlay::HandleInput()
 	{
 		sf::Event event;
 
 		while (_data->window.pollEvent(event))
 		{
+			// if user presses escape, close the window
 			if (((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))||
 				(event.type == sf::Event::Closed))
 			{
@@ -76,20 +64,12 @@ namespace GameEngine
 
 	void GamePlay::Update(float dt)
 	{
-		// inital spawning of INITIAL_CENTIPEDE_NUMBER centipede segments when the game begins
-		if ((_centipede->GetLastSpriteXPosition() >= CENTIPEDE_SPRITE_SIDE_SIZE) 
-				&& (_numberOfCentipedeSegments < INITIAL_CENTIPEDE_NUMBER ))
-		{
-			_centipedeLogic->Spawn();
-			_numberOfCentipedeSegments++;
-		}
-
-		if (_data->keyboard.IsShooting() && 
-			( _turret->GetTopLeftYPosition() >= (_turret->GetLastBulletYPosition() + BULLET_HEIGHT) ))
-		{
-			_turretLogic->Spawn();
-			_data->keyboard.SetShooting(false);
-		}
+		// spawn entities
+		_mushLogicPtr->Spawn();
+		_scorpionLogic->Spawn();
+		_spiderLogic->Spawn();
+		_centipedeLogic->Spawn();
+		_turretLogic->Spawn();	// spawn bullets
 
 		// move entities
 		_centipedeLogic->Move(dt);
@@ -99,14 +79,7 @@ namespace GameEngine
 		_turretLogic->MoveProjectiles(dt);	// move bullets
 
 		// check collisions
-		_collisionhandler->CheckTurretSpiderCollisions();
-		_collisionhandler->CheckTurretSegmentCollisions();
-		_collisionhandler->CheckBulletSegmentCollisions();
-		_collisionhandler->CheckBulletSpiderCollisions();
-		_collisionhandler->CheckBulletMushroomCollisions();
-		_collisionhandler->CheckMushroomScorpionCollisions();
-		_collisionhandler->CheckMushroomSpiderCollisions();
-		_collisionhandler->CheckSegmentMushroomCollisions();
+		_collisionhandler->CheckCollisions();
 
 		// delete after bullet/segment collisions, ends game if turret isDead
 		_turretLogic->CollisionHandle();

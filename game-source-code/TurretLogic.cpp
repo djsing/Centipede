@@ -15,11 +15,15 @@ namespace GameEngine
 
 	void TurretLogic::Spawn()
 	{
-		auto bullet = Bullet(_data,
-			(_turret->GetCenterXPosition() - BULLET_WIDTH/2),
-			_turret->GetTopLeftYPosition());
-
-		_turret->GetBullets().push_back(bullet);
+		if (_data->keyboard.IsShooting() && 
+			( _turret->GetTopLeftYPosition() >= (_turret->GetLastBulletYPosition() + BULLET_HEIGHT)))
+		{
+			auto bullet = Bullet(_data,
+				_turret->GetCenterXPosition() - BULLET_WIDTH/2,
+				_turret->GetTopLeftYPosition());
+			_turret->GetBullets().push_back(bullet);
+			_data->keyboard.SetShooting(false);
+		}
 	}
 
 	void TurretLogic::Move(float dt)

@@ -2,5 +2,5 @@
 #include "DEFINITIONS.h"
 int main()
 {
-	GameEngine::Game(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
+	GameEngine::Game(800, 600, WINDOW_TITLE);
 }

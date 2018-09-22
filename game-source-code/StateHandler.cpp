@@ -35,8 +35,6 @@ namespace GameEngine
 			}
 			// move location of _newState to stack
 			_states.push(std::move(_newState));
-			// initialise the new game state
-			_states.top()->Initialise();
 			// we are no longer adding a state
 			_isAdding = false;
 		}

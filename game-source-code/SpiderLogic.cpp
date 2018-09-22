@@ -18,8 +18,11 @@ namespace GameEngine
 
 	void SpiderLogic::Spawn()
 	{
-		auto spider = Spider(_data);
-		_field->GetSpiders().push_back(spider);
+		if (_field->GetSpiders().empty())
+		{
+			auto spider = Spider(_data);
+			_field->GetSpiders().push_back(spider);			
+		}
 	}
 
 	void SpiderLogic::Move(float dt)

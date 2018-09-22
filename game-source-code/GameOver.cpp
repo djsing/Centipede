@@ -11,12 +11,10 @@ namespace GameEngine
 		//_background.setTexture(_data->resources.GetTexture("Game Over Screen Background"));
 		_data->resources.LoadTexture("Game Over Sprite", GAME_OVER_FILEPATH);
 		_data->resources.LoadTexture("Press F12 Restart", GAME_OVER_RESTART_FILEPATH);
+
 		_gameOver.setTexture(_data->resources.GetTexture("Game Over Sprite"));
 		_pressF12ToRestart.setTexture(_data->resources.GetTexture("Press F12 Restart"));
-	}
 
-	void GameOver::Initialise()
-	{
 		_gameOver.setPosition(SCREEN_WIDTH/2 -_gameOver.getGlobalBounds().width/2,
 			SCREEN_HEIGHT/2 - _gameOver.getGlobalBounds().height);
 

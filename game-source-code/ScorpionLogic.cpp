@@ -16,8 +16,11 @@ namespace GameEngine
 
 	void ScorpionLogic::Spawn()
 	{
-		auto scorpion = Scorpion(_data);
-		_field->GetScorpions().push_back(scorpion);
+		if (_field->GetScorpions().empty())
+		{
+			auto scorpion = Scorpion(_data);
+			_field->GetScorpions().push_back(scorpion);
+		}
 	}
 
 	void ScorpionLogic::Move(float dt)

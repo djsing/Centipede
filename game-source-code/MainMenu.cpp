@@ -17,10 +17,7 @@ namespace GameEngine
 				WINDOW_TITLE, sf::Style::None);
 		}
 		_data->window.setVerticalSyncEnabled(true);
-	}
 
-	void MainMenu::Initialise()
-	{
 		_data->resources.LoadTexture("Menu Screen Title", GAME_TITLE_FILEPATH);
 		_data->resources.LoadTexture("Subtitle", GAME_SUBTITLE_FILEPATH);
 		_data->resources.LoadTexture("Instructions", GAME_INSTRUCTIONS);

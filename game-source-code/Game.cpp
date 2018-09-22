@@ -5,7 +5,7 @@ namespace GameEngine
 {
 	Game::Game(int width, int height, std::string windowTitle)
 	{
-		_data->window.create(sf::VideoMode(800, 600),
+		_data->window.create(sf::VideoMode(width, height),
 			windowTitle, sf::Style::None);
 		_data->statehandler.AddState(StatePtr(new SplashScreen(_data)));
 		Run();
@@ -13,7 +13,8 @@ namespace GameEngine
 
 	void Game::Run()
 	{
-		float newTime, frameTime;
+		auto newTime = 0.f;
+		auto frameTime = 0.f;
 		auto currentTime = _watch.getElapsedTime();
 		auto accumulator = 0.f;
 

@@ -19,6 +19,18 @@ namespace GameEngine
 		
 	}
 
+	void CollisionHandler::CheckCollisions()
+	{
+		CheckTurretSpiderCollisions();
+		CheckTurretSegmentCollisions();
+		CheckBulletSegmentCollisions();
+		CheckBulletSpiderCollisions();
+		CheckBulletMushroomCollisions();
+		CheckMushroomScorpionCollisions();
+		CheckMushroomSpiderCollisions();
+		CheckSegmentMushroomCollisions();
+	}
+
 	void CollisionHandler::CheckBulletSegmentCollisions()
 	{
 		if (!_turret->GetBullets().empty())

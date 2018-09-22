@@ -11,12 +11,10 @@ namespace GameEngine
 		//_background.setTexture(_data->resources.GetTexture("Game Win Screen Background"));
 		_data->resources.LoadTexture("Game Win Sprite", GAME_WON);
 		_data->resources.LoadTexture("Press F12 Restart", GAME_WIN_RESTART_FILEPATH);
+
 		_gameWon.setTexture(_data->resources.GetTexture("Game Win Sprite"));
 		_pressF12ToRestart.setTexture(_data->resources.GetTexture("Press F12 Restart"));
-	}
 
-	void GameWon::Initialise()
-	{
 		_gameWon.setPosition(SCREEN_WIDTH/2 -_gameWon.getGlobalBounds().width/2,
 			SCREEN_HEIGHT/2 - _gameWon.getGlobalBounds().height);
 

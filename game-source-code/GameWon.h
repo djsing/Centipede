@@ -12,7 +12,6 @@ namespace GameEngine
 	public:
 		GameWon(DataPtr data);
 
-		void Initialise() override;
 		void HandleInput() override;
 		void Update(float dt) override;
 		void Draw() override;

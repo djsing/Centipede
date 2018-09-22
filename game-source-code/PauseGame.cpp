@@ -11,15 +11,12 @@ namespace GameEngine
 		_data->resources.LoadTexture("Press Space Resume", PAUSE_SPACE_FILEPATH);
 		_GAMEPAUSED.setTexture(_data->resources.GetTexture("Game Paused Sprite"));
 		_PRESSSPACETORESUME.setTexture(_data->resources.GetTexture("Press Space Resume"));
-	}
 
-	void PauseGame::Initialise()
-	{
 		_GAMEPAUSED.setPosition(SCREEN_WIDTH/2 -_GAMEPAUSED.getGlobalBounds().width/2,
 			SCREEN_HEIGHT/2 - _GAMEPAUSED.getGlobalBounds().height);
 
-		_PRESSSPACETORESUME.setPosition(SCREEN_WIDTH/2 - _PRESSSPACETORESUME.getGlobalBounds().width/2 
-			, SCREEN_HEIGHT/2);
+		_PRESSSPACETORESUME.setPosition(SCREEN_WIDTH/2 - _PRESSSPACETORESUME.getGlobalBounds().width/2,
+			SCREEN_HEIGHT/2);
 	}
 
 	void PauseGame::HandleInput()

@@ -6,9 +6,6 @@ namespace GameEngine
 {
 	SplashScreen::SplashScreen(DataPtr data):
 	_data(data)
-	{}
-
-	void SplashScreen::Initialise()
 	{
 		_data->resources.LoadTexture("Splash Screen Background", SPLASH_BACKGROUND_FILEPATH);
 		_background.setTexture(_data->resources.GetTexture("Splash Screen Background"));

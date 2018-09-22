@@ -25,6 +25,8 @@ namespace GameEngine
 		CentPtr _centipede;
 		float _speed;
 		bool _isFirstSegment;
+		// track initially spawned centipede segments
+		unsigned int _numberOfCentipedeSegments;
 	};
 }
 

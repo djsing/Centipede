@@ -19,7 +19,7 @@ namespace GameEngine
 	public:
 		GamePlay(DataPtr data);
 		~GamePlay();
-		void Initialise() override;
+
 		void HandleInput() override;
 		void Update(float dt) override;
 		void Draw() override;
@@ -59,8 +59,6 @@ namespace GameEngine
 		CollisionHandlerPtr _collisionhandler;
 		// Game field pointer
 		FieldPtr _field;
-		// track initially spawned centipede segments
-		unsigned int _numberOfCentipedeSegments;
 	};
 }
 

@@ -7,7 +7,6 @@ namespace GameEngine
 	{
 	public:
 		// All game states should have its own declaration of the following functions
-		virtual void Initialise() = 0;
 		virtual void HandleInput() = 0;
 		virtual void Update(float dt) = 0;
 		virtual void Draw() = 0;
