@@ -14,3 +14,21 @@ TEST_CASE("Check that spider is initialised with correct values.")
 	// check within 1% accuracy
 	CHECK(spider.GetTopLeftYPosition() == doctest::Approx(TURRET_SCREEN_FRACTION*SCREEN_HEIGHT).epsilon(0.01));
 }
+
+TEST_CASE("Check that spider wraps around from the left to right screen side.")
+{
+	auto data = std::make_shared<GameData>();
+	auto spider = Spider(data);
+
+	spider.SetTopLeftXPosition(SCREEN_LHS - 2*SPIDER_SPRITE_SIZE);
+	CHECK(spider.GetTopLeftXPosition() == SCREEN_WIDTH + SPIDER_SPRITE_SIZE);
+}
+
+TEST_CASE("Check that spider wraps around from the right to left screen side.")
+{
+	auto data = std::make_shared<GameData>();
+	auto spider = Spider(data);
+
+	spider.SetTopLeftXPosition(SCREEN_WIDTH + 2*SPIDER_SPRITE_SIZE);
+	CHECK(spider.GetTopLeftXPosition() == SCREEN_LHS - SPIDER_SPRITE_SIZE);
+}

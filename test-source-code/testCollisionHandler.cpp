@@ -34,6 +34,7 @@ TEST_CASE("Check that bullet-segment collisions are handled correctly.")
 	auto turretLogic = std::make_unique<TurretLogic>(data, turret);
 	auto field = std::make_shared<GameField>();
 	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	data->keyboard.SetShooting(true);
 
 	CHECK(turret->GetBullets().empty());
 	CHECK(centipede->GetCentipede().empty());
@@ -60,7 +61,7 @@ TEST_CASE("Check that bullet-segment collisions are handled correctly.")
 	{
 		centipedeLogic->Move(0.001);
 		// detect collisions
-		collisionhandler->CheckBulletSegmentCollisions();
+		collisionhandler->CheckCollisions();
 	}
 
 	CHECK(turret->GetBullets().at(0).IsDead());
@@ -101,7 +102,7 @@ TEST_CASE("Check that segment-mushroom collisions are handled correctly when tra
 	{
 		centipedeLogic->Move(0.001);
 		// detect collisions
-		collisionhandler->CheckSegmentMushroomCollisions();
+		collisionhandler->CheckCollisions();
 	}
 
 	// check that when the collision is detected, the direction changes to DOWN
@@ -144,7 +145,7 @@ TEST_CASE("Check that segment-mushroom collisions are handled correctly when tra
 	{
 		centipedeLogic->Move(0.001);
 		// detect collisions
-		collisionhandler->CheckSegmentMushroomCollisions();
+		collisionhandler->CheckCollisions();
 	}
 
 	// check that when the collision is detected, the direction changes to UP
@@ -181,7 +182,7 @@ TEST_CASE("Check that segment/poisoned-mushroom collisions are handled correctly
 	{
 		centipedeLogic->Move(0.001);
 		// detect collisions
-		collisionhandler->CheckSegmentMushroomCollisions();
+		collisionhandler->CheckCollisions();
 	}
 
 	// check that when the collision is detected, the centipede is poisoned
@@ -220,7 +221,7 @@ TEST_CASE("Check if turret loses a life when it collides with a segment.")
 	// before any collisions, check that turret has 3 lives
 	CHECK(turret->GetLivesRemaining() == 3);
 	// register a collision with a segment
-	collision->CheckTurretSegmentCollisions();
+	collision->CheckCollisions();
 	// check that turret resets position to spawn position after losing a life
 	CHECK(turret->GetTopLeftYPosition() == SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
 	CHECK(turret->GetTopLeftXPosition() == SCREEN_WIDTH/2- TURRET_SPRITE_SIDE_SIZE/2);
@@ -258,7 +259,7 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 	// before any collisions, check that turret has 3 lives
 	CHECK(turret->GetLivesRemaining() == 3);
 	// register a collision with a segment
-	collision->CheckTurretSegmentCollisions();
+	collision->CheckCollisions();
 	// check that turret resets position to spawn position after losing a life
 	CHECK(turret->GetTopLeftYPosition() == SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
 	CHECK(turret->GetTopLeftXPosition() == SCREEN_WIDTH/2- TURRET_SPRITE_SIDE_SIZE/2);
@@ -270,7 +271,7 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 	{
 		turretLogic->Move(0.001);
 	}
-	collision->CheckTurretSegmentCollisions();
+	collision->CheckCollisions();
 	CHECK(turret->GetLivesRemaining() == 1);
 
 	// move turret into segment
@@ -278,7 +279,7 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 	{
 		turretLogic->Move(0.001);
 	}
-	collision->CheckTurretSegmentCollisions();
+	collision->CheckCollisions();
 	CHECK(turret->GetLivesRemaining() == 0);
 	// check that the turret dies after losing three lives
 	CHECK(turret->IsDead() == true);
@@ -312,7 +313,7 @@ TEST_CASE("Check if turret loses a life when it collides with a spider.")
 	// before any collisions, check that turret has 3 lives
 	CHECK(turret->GetLivesRemaining() == 3);
 	// register a collision with a segment
-	collision->CheckTurretSpiderCollisions();
+	collision->CheckCollisions();
 	// check that turret resets position to spawn position after losing a life
 	CHECK(turret->GetTopLeftXPosition() == SCREEN_WIDTH/2- TURRET_SPRITE_SIDE_SIZE/2);
 	CHECK(turret->GetTopLeftYPosition() == SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
@@ -348,7 +349,7 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 	// before any collisions, check that turret has 3 lives
 	CHECK(turret->GetLivesRemaining() == 3);
 	// register a collision with a segment
-	collision->CheckTurretSpiderCollisions();
+	collision->CheckCollisions();
 	// check that turret resets position to spawn position after losing a life
 	CHECK(turret->GetTopLeftXPosition() == SCREEN_WIDTH/2- TURRET_SPRITE_SIDE_SIZE/2);
 	CHECK(turret->GetTopLeftYPosition() == SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
@@ -360,7 +361,7 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 	{
 		turretLogic->Move(0.001);
 	}
-	collision->CheckTurretSpiderCollisions();
+	collision->CheckCollisions();
 	CHECK(turret->GetLivesRemaining() == 1);
 
 	// move turret into segment
@@ -368,7 +369,7 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 	{
 		turretLogic->Move(0.001);
 	}
-	collision->CheckTurretSpiderCollisions();
+	collision->CheckCollisions();
 	CHECK(turret->GetLivesRemaining() == 0);
 	// check that the turret dies after losing three lives
 	CHECK(turret->IsDead() == true);
@@ -398,7 +399,7 @@ TEST_CASE("Check that scorpion-mushroom collisions are handled correctly.")
 		field->GetScorpions().at(0).GetTopLeftYPosition());
 	field->GetMushrooms().push_back(mushroom);
 	CHECK(field->GetMushrooms().size() == 1);
-	collisionhandler->CheckMushroomScorpionCollisions();
+	collisionhandler->CheckCollisions();
 
 	CHECK(field->GetMushrooms().at(0).IsPoisoned());
 }
@@ -427,7 +428,7 @@ TEST_CASE("Check that spider-mushroom collisions are handled correctly.")
 		field->GetSpiders().at(0).GetTopLeftYPosition());
 	field->GetMushrooms().push_back(mushroom);
 	CHECK(field->GetMushrooms().size() == 1);
-	collisionhandler->CheckMushroomSpiderCollisions();
+	collisionhandler->CheckCollisions();
 	mushLogic->CollisionHandle();
 	CHECK(field->GetMushrooms().empty());
 }
@@ -441,6 +442,7 @@ TEST_CASE("Check that bullet-spider collisions are handled correctly.")
 	auto field = std::make_shared<GameField>();
 	auto spiderLogic = std::make_unique<SpiderLogic>(field, data);
 	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	data->keyboard.SetShooting(true);
 
 	CHECK(turret->GetBullets().empty());
 	CHECK(field->GetSpiders().empty());
@@ -460,7 +462,7 @@ TEST_CASE("Check that bullet-spider collisions are handled correctly.")
 	CHECK(field->GetSpiders().at(0).GetTopLeftXPosition() == turret->GetBullets().at(0).GetTopLeftXPosition());
 	CHECK(field->GetSpiders().at(0).GetTopLeftYPosition() == turret->GetBullets().at(0).GetTopLeftYPosition());
 
-	collisionhandler->CheckBulletSpiderCollisions();
+	collisionhandler->CheckCollisions();
 
 	CHECK(turret->GetBullets().at(0).IsDead());
 	CHECK(field->GetSpiders().at(0).IsDead());
@@ -481,6 +483,7 @@ TEST_CASE("Check that bullet-mushroom collisions are handled correctly.")
 	auto field = std::make_shared<GameField>();
 	auto mushLogic = std::make_unique<MushroomLogic>(field, data);
 	auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
+	data->keyboard.SetShooting(true);
 
 	CHECK(turret->GetBullets().empty());
 	CHECK(field->GetMushrooms().empty());
@@ -503,17 +506,17 @@ TEST_CASE("Check that bullet-mushroom collisions are handled correctly.")
 
 	CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 4);
 	
-	collisionhandler->CheckBulletMushroomCollisions();
+	collisionhandler->CheckCollisions();
 
 	CHECK(turret->GetBullets().at(0).IsDead());
 	CHECK_FALSE(field->GetMushrooms().at(0).IsDead());
 
 	CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 3);
-	collisionhandler->CheckBulletMushroomCollisions();
+	collisionhandler->CheckCollisions();
 	CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 2);
-	collisionhandler->CheckBulletMushroomCollisions();
+	collisionhandler->CheckCollisions();
 	CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 1);
-	collisionhandler->CheckBulletMushroomCollisions();
+	collisionhandler->CheckCollisions();
 	CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 0);
 
 	CHECK(field->GetMushrooms().at(0).IsDead());

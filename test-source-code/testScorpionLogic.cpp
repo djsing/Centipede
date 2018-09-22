@@ -48,38 +48,6 @@ TEST_CASE("Check that scorpion is bounded by the turret-box ceiling.")
 	CHECK(field->GetScorpions().at(0).GetTopLeftYPosition() <= TURRET_SCREEN_FRACTION*SCREEN_HEIGHT);
 }
 
-TEST_CASE("Check that scorpion is bounded by the left wall.")
-{
-	auto data = std::make_shared<GameData>();
-	auto field = std::make_shared<GameField>();
-	auto scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
-	scorpionLogic->Spawn();
-
-	// set the scorpion outside of the left wall
-	field->GetScorpions().at(0).SetTopLeftXPosition(-SCORPION_SPRITE_SIZE);
-
-	// check that move() sets the position of the scorpion outside of the left wall
-	scorpionLogic->Move(0.01);
-	// check that it resets to a random position that is right of the left wall
-	CHECK(field->GetScorpions().at(0).GetTopLeftXPosition() > SCREEN_LHS);
-}
-
-TEST_CASE("Check that scorpion is bounded by the right wall.")
-{
-	auto data = std::make_shared<GameData>();
-	auto field = std::make_shared<GameField>();
-	auto scorpionLogic = std::make_unique<ScorpionLogic>(field, data);
-	scorpionLogic->Spawn();
-
-	// set the scorpion outside of the right wall
-	field->GetScorpions().at(0).SetTopLeftXPosition(SCREEN_WIDTH - SCORPION_SPRITE_SIZE);
-
-	// check that move() sets the position of the scorpion outside of the left wall
-	scorpionLogic->Move(0.01);
-	// check that it resets to a random position that is left of the right wall
-	CHECK(field->GetScorpions().at(0).GetTopLeftXPosition() <= SCREEN_WIDTH - SCORPION_SPRITE_SIZE);
-}
-
 TEST_CASE("Check that scorpion is bounded by the screen ceiling.")
 {
 	auto data = std::make_shared<GameData>();

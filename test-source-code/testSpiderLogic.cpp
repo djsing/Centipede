@@ -48,38 +48,6 @@ TEST_CASE("Check that spider is bounded by the turret box ceiling.")
 	CHECK(field->GetSpiders().at(0).GetTopLeftYPosition() >= TURRET_SCREEN_FRACTION*SCREEN_HEIGHT);
 }
 
-TEST_CASE("Check that spider is bounded by the left wall.")
-{
-	auto data = std::make_shared<GameData>();
-	auto field = std::make_shared<GameField>();
-	auto spiderLogic = std::make_unique<SpiderLogic>(field, data);
-	spiderLogic->Spawn();
-
-	// set the spider outside of the left wall
-	field->GetSpiders().at(0).SetTopLeftXPosition(-SPIDER_SPRITE_SIZE);
-
-	// check that move() sets the position of the spider outside of the left wall
-	spiderLogic->Move(0.01);
-	// check that it resets to a random position that is right of the left wall
-	CHECK(field->GetSpiders().at(0).GetTopLeftXPosition() > SCREEN_LHS);
-}
-
-TEST_CASE("Check that spider is bounded by the right wall.")
-{
-	auto data = std::make_shared<GameData>();
-	auto field = std::make_shared<GameField>();
-	auto spiderLogic = std::make_unique<SpiderLogic>(field, data);
-	spiderLogic->Spawn();
-
-	// set the spider outside of the right wall
-	field->GetSpiders().at(0).SetTopLeftXPosition(SCREEN_WIDTH - SPIDER_SPRITE_SIZE);
-
-	// check that move() sets the position of the spider outside of the left wall
-	spiderLogic->Move(0.01);
-	// check that it resets to a random position that is left of the right wall
-	CHECK(field->GetSpiders().at(0).GetTopLeftXPosition() <= SCREEN_WIDTH - SPIDER_SPRITE_SIZE);
-}
-
 TEST_CASE("Check that spider is bounded by the screen floor.")
 {
 	auto data = std::make_shared<GameData>();

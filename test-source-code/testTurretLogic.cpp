@@ -86,6 +86,8 @@ TEST_CASE("Check that bullets are automatically deleted when it hits the boundar
 	CHECK(turret->GetTopLeftYPosition() == SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
 	// check that bullet has moved
 	CHECK(turret->GetBullets().at(0).GetTopLeftYPosition() == turret->GetTopLeftYPosition() - 40);
+
+	data->keyboard.SetShooting(true);
 	// spawn another bullet
 	turretLogic->Spawn();
 
