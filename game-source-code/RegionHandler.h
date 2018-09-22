@@ -8,6 +8,8 @@ namespace GameEngine
 	class RegionHandler
 	{
 	public:
+		// default constructor
+		RegionHandler(){}
 		// takes in center point
 		RegionHandler(float xpos, float ypos);
 		Region GetRegion();

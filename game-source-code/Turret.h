@@ -23,9 +23,6 @@ namespace GameEngine
 		// Mutator functions
 		void SetTopLeftXPosition(float xpos);
 		void SetTopLeftYPosition(float ypos);
-		void SetRegion(Region region);
-		void SetSubRegion(Region subregion);
-		void SetDead(bool isDead);
 		void DecrementLives();
 
 		// Accessor functions specific to Turret

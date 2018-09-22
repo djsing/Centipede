@@ -12,10 +12,10 @@ namespace GameEngine
 	public:
 		GameOver(DataPtr data);
 
-		void Initialise();
-		void HandleInput();
-		void Update(float dt);
-		void Draw();
+		void Initialise() override;
+		void HandleInput() override;
+		void Update(float dt) override;
+		void Draw() override;
 
 	private:
 		DataPtr _data;

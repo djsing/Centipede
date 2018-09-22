@@ -16,9 +16,6 @@ namespace GameEngine
 		CentipedeSegment(DataPtr data, bool firstSegment);
 
 		// Mutator Functions
-		void SetDead(bool isDead);
-		void SetRegion(Region region);
-		void SetSubRegion(Region subregion);
 		void SetTopLeftXPosition(float xpos);
 		void SetTopLeftYPosition(float ypos);
 		void SetFirstSegment(bool isFirstSegment);

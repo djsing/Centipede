@@ -2,6 +2,7 @@
 #define ENTITY_H
 
 #include "Region.h"
+#include "RegionHandler.h"
 #include "Direction.h"
 #include <SFML/Graphics.hpp>
 #include <memory>
@@ -41,6 +42,7 @@ namespace GameEngine
 		float _topLeftYPosition;
 		float _centerXPosition;
 		float _centerYPosition;
+		RegionHandler _regionHandler;
 		Region _region;
 		Region _subregion;
 		bool _isDead;

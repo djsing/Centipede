@@ -12,23 +12,8 @@ namespace GameEngine
 	_isPoisoned(false)
 	{
 		Entity::SetDirection(Direction::RIGHT);
-		SetTopLeftXPosition(SCREEN_LHS);
-		SetTopLeftYPosition(SCREEN_TOP);
-	}
-
-	void CentipedeSegment::SetDead(bool isDead)
-	{
-		Entity::SetDead(isDead);
-	}
-
-	void CentipedeSegment::SetRegion(Region region)
-	{
-		Entity::SetRegion(region);
-	}
-
-	void CentipedeSegment::SetSubRegion(Region subregion)
-	{
-		Entity::SetSubRegion(subregion);
+		Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE/2);
+		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE/2);
 	}
 
 	void CentipedeSegment::SetTopLeftXPosition(float xpos)

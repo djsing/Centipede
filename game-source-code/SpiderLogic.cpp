@@ -1,7 +1,6 @@
 #include "SpiderLogic.h"
 #include "Spider.h"
 #include "DEFINITIONS.h"
-#include "RegionHandler.h"
 #include <ctime>
 #include <cstdlib>
 
@@ -90,11 +89,6 @@ namespace GameEngine
 						_speed*dt*sin(_angle));
 					_totalTimePerMovement += dt;
 				}
-
-				auto region = RegionHandler(_field->GetSpiders().at(i).GetCenterXPosition(),
-					_field->GetSpiders().at(i).GetCenterYPosition());
-				_field->GetSpiders().at(i).SetRegion(region.GetRegion());
-				_field->GetSpiders().at(i).SetSubRegion(region.GetSubRegion());
 			}
 		}
 	}

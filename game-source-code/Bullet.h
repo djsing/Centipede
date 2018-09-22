@@ -14,7 +14,6 @@ namespace GameEngine
 		Bullet(DataPtr data, float xpos, float ypos);
 
 		// Mutator Functions
-		void SetDead(bool isDead);
 		void SetTopLeftXPosition(float ypos);
 		void SetTopLeftYPosition(float ypos);
 

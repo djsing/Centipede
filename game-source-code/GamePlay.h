@@ -19,10 +19,10 @@ namespace GameEngine
 	public:
 		GamePlay(DataPtr data);
 		~GamePlay();
-		void Initialise();
-		void HandleInput();
-		void Update(float dt);
-		void Draw();
+		void Initialise() override;
+		void HandleInput() override;
+		void Update(float dt) override;
+		void Draw() override;
 
 	private:
 		// Data layer pointer

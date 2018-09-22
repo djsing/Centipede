@@ -22,19 +22,4 @@ namespace GameEngine
 		Entity::SetTopLeftYPosition(ypos);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SCORPION_SPRITE_SIZE/2);
 	}
-
-	void Scorpion::SetRegion(Region region)
-	{
-		Entity::SetRegion(region);
-	}
-
-	void Scorpion::SetSubRegion(Region subregion)
-	{
-		Entity::SetSubRegion(subregion);
-	}
-
-	void Scorpion::SetDead(bool isDead)
-	{
-		Entity::SetDead(isDead);
-	}
 }

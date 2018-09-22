@@ -13,11 +13,6 @@ namespace GameEngine
 		Entity::SetDirection(Direction::UP);
 	}
 
-	void Bullet::SetDead(bool isDead)
-	{
-		Entity::SetDead(isDead);
-	}
-
 	void Bullet::SetTopLeftXPosition(float ypos)
 	{
 		Entity::SetTopLeftXPosition(ypos);

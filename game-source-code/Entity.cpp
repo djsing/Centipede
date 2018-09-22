@@ -1,5 +1,4 @@
 #include "Entity.h"
-#include "RegionHandler.h"
 
 namespace GameEngine
 {
@@ -8,9 +7,7 @@ namespace GameEngine
 	_topLeftYPosition(topLeftYPosition),
 	_isDead(false)
 	{
-		auto regionHandler = RegionHandler{_topLeftXPosition, _topLeftYPosition};
-		SetRegion(regionHandler.GetRegion());
-		SetSubRegion(regionHandler.GetSubRegion());
+		
 	}
 
 	sf::Sprite &Entity::GetObjectSprite()
@@ -51,11 +48,19 @@ namespace GameEngine
 	void Entity::SetCenterXPosition(float xpos)
 	{
 		_centerXPosition = xpos;
+
+		_regionHandler = RegionHandler{_centerXPosition, _centerYPosition};
+		SetRegion(_regionHandler.GetRegion());
+		SetSubRegion(_regionHandler.GetSubRegion());
 	}
 
 	void Entity::SetCenterYPosition(float ypos)
 	{
 		_centerYPosition = ypos;
+
+		_regionHandler = RegionHandler{_centerXPosition, _centerYPosition};
+		SetRegion(_regionHandler.GetRegion());
+		SetSubRegion(_regionHandler.GetSubRegion());
 	}
 
 	bool Entity::IsDead() const

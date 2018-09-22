@@ -31,21 +31,6 @@ namespace GameEngine
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE/2);
 	}
 
-	void Turret::SetRegion(Region region)
-	{
-		Entity::SetRegion(region);
-	}
-
-	void Turret::SetSubRegion(Region subregion)
-	{
-		Entity::SetSubRegion(subregion);
-	}
-
-	void Turret::SetDead(bool isDead)
-	{
-		Entity::SetDead(isDead);
-	}
-
 	void Turret::DecrementLives()
 	{
 		Entity::SetTopLeftXPosition(SCREEN_WIDTH/2 - TURRET_SPRITE_SIDE_SIZE/2);

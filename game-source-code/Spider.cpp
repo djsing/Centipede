@@ -22,19 +22,4 @@ namespace GameEngine
 		Entity::SetTopLeftYPosition(ypos);
 		Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + SPIDER_SPRITE_SIZE/2);
 	}
-
-	void Spider::SetRegion(Region region)
-	{
-		Entity::SetRegion(region);
-	}
-
-	void Spider::SetSubRegion(Region subregion)
-	{
-		Entity::SetSubRegion(subregion);
-	}
-
-	void Spider::SetDead(bool isDead)
-	{
-		Entity::SetDead(isDead);
-	}
 }

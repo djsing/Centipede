@@ -13,9 +13,6 @@ namespace GameEngine
 		Spider(DataPtr data);
 		void SetTopLeftXPosition(float xpos);
 		void SetTopLeftYPosition(float ypos);
-		void SetRegion(Region region);
-		void SetSubRegion(Region subregion);
-		void SetDead(bool isDead);
 
 	private:
 		DataPtr _data;

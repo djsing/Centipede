@@ -23,9 +23,5 @@ namespace GameEngine
 		{
 			_bullet.SetTopLeftYPosition(_bullet.GetTopLeftYPosition() - moveDistance);
 		}
-		// Update the bullet's region after it has moved - prepare for collision checking
-		auto bulletRegion = RegionHandler{_bullet.GetCenterXPosition(), _bullet.GetCenterYPosition()};
-		_bullet.SetRegion(bulletRegion.GetRegion());
-		_bullet.SetSubRegion(bulletRegion.GetSubRegion());
 	}
 }
