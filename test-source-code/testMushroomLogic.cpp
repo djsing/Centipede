@@ -15,4 +15,9 @@ TEST_CASE("Check that size of mushroom vector is the same as MUSHROOMS_SPAWNED")
 	mushroomLogic->Spawn();
 
 	CHECK(field->GetMushrooms().size() == MUSHROOMS_SPAWNED);
+
+	field->GetMushrooms().at(0).SetDead(true);
+	mushroomLogic->CollisionHandle();
+
+	CHECK(field->GetMushrooms().size() == MUSHROOMS_SPAWNED - 1);
 }

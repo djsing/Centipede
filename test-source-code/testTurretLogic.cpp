@@ -5,7 +5,6 @@
 #include "../game-source-code/GameField.h"
 #include "../game-source-code/CentipedeLogic.h"
 #include "../game-source-code/CollisionHandler.h"
-#include "../game-source-code/RegionHandler.h"
 #include "../game-source-code/GameState.h"
 
 using GameEngine::GameData;
@@ -18,7 +17,6 @@ using GameEngine::GameField;
 using GameEngine::Centipede;
 using GameEngine::CentipedeLogic;
 using GameEngine::CollisionHandler;
-using GameEngine::RegionHandler;
 
 #include <doctest.h>
 

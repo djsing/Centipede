@@ -213,16 +213,10 @@ TEST_CASE("Check if turret loses a life when it collides with a segment.")
 		turretLogic->Move(0.001);
 	}
 
-	// check that objects are collided
+	// check that objects are in same positions
 	CHECK(turret->GetTopLeftXPosition() == centipede->GetCentipede().at(0).GetTopLeftXPosition());
 	CHECK(turret->GetTopLeftYPosition() == centipede->GetCentipede().at(0).GetTopLeftYPosition());
-	// set region of entities
-	auto regionHandler = RegionHandler(turret->GetCenterXPosition(), turret->GetCenterYPosition());
-	turret->SetRegion(regionHandler.GetRegion());
-	turret->SetSubRegion(regionHandler.GetSubRegion());
-	regionHandler = RegionHandler(centipede->GetCentipede().at(0).GetCenterXPosition(), centipede->GetCentipede().at(0).GetCenterXPosition());
-	centipede->GetCentipede().at(0).SetRegion(regionHandler.GetRegion());
-	centipede->GetCentipede().at(0).SetSubRegion(regionHandler.GetSubRegion());
+
 	// before any collisions, check that turret has 3 lives
 	CHECK(turret->GetLivesRemaining() == 3);
 	// register a collision with a segment
@@ -261,13 +255,6 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 	// check that objects are collided
 	CHECK(turret->GetTopLeftXPosition() == centipede->GetCentipede().at(0).GetTopLeftXPosition());
 	CHECK(turret->GetTopLeftYPosition() == centipede->GetCentipede().at(0).GetTopLeftYPosition());
-	// set region of entities
-	auto regionHandler = RegionHandler(turret->GetCenterXPosition(), turret->GetCenterYPosition());
-	turret->SetRegion(regionHandler.GetRegion());
-	turret->SetSubRegion(regionHandler.GetSubRegion());
-	regionHandler = RegionHandler(centipede->GetCentipede().at(0).GetCenterXPosition(), centipede->GetCentipede().at(0).GetCenterXPosition());
-	centipede->GetCentipede().at(0).SetRegion(regionHandler.GetRegion());
-	centipede->GetCentipede().at(0).SetSubRegion(regionHandler.GetSubRegion());
 	// before any collisions, check that turret has 3 lives
 	CHECK(turret->GetLivesRemaining() == 3);
 	// register a collision with a segment
@@ -321,13 +308,7 @@ TEST_CASE("Check if turret loses a life when it collides with a spider.")
 	// check that objects are collided
 	CHECK(turret->GetTopLeftXPosition() == field->GetSpiders().at(0).GetTopLeftXPosition());
 	CHECK(turret->GetTopLeftYPosition() == field->GetSpiders().at(0).GetTopLeftYPosition());
-	// set region of entities
-	auto regionHandler = RegionHandler(turret->GetCenterXPosition(), turret->GetCenterYPosition());
-	turret->SetRegion(regionHandler.GetRegion());
-	turret->SetSubRegion(regionHandler.GetSubRegion());
-	regionHandler = RegionHandler(field->GetSpiders().at(0).GetCenterXPosition(), field->GetSpiders().at(0).GetCenterXPosition());
-	field->GetSpiders().at(0).SetRegion(regionHandler.GetRegion());
-	field->GetSpiders().at(0).SetSubRegion(regionHandler.GetSubRegion());
+
 	// before any collisions, check that turret has 3 lives
 	CHECK(turret->GetLivesRemaining() == 3);
 	// register a collision with a segment
@@ -363,13 +344,7 @@ TEST_CASE("Check if turret is set to dead when it collides with a centipede afte
 	// check that objects are collided
 	CHECK(turret->GetTopLeftXPosition() == field->GetSpiders().at(0).GetTopLeftXPosition());
 	CHECK(turret->GetTopLeftYPosition() == field->GetSpiders().at(0).GetTopLeftYPosition());
-	// set region of entities
-	auto regionHandler = RegionHandler(turret->GetCenterXPosition(), turret->GetCenterYPosition());
-	turret->SetRegion(regionHandler.GetRegion());
-	turret->SetSubRegion(regionHandler.GetSubRegion());
-	regionHandler = RegionHandler(field->GetSpiders().at(0).GetCenterXPosition(), field->GetSpiders().at(0).GetCenterXPosition());
-	field->GetSpiders().at(0).SetRegion(regionHandler.GetRegion());
-	field->GetSpiders().at(0).SetSubRegion(regionHandler.GetSubRegion());
+
 	// before any collisions, check that turret has 3 lives
 	CHECK(turret->GetLivesRemaining() == 3);
 	// register a collision with a segment
@@ -484,16 +459,6 @@ TEST_CASE("Check that bullet-spider collisions are handled correctly.")
 
 	CHECK(field->GetSpiders().at(0).GetTopLeftXPosition() == turret->GetBullets().at(0).GetTopLeftXPosition());
 	CHECK(field->GetSpiders().at(0).GetTopLeftYPosition() == turret->GetBullets().at(0).GetTopLeftYPosition());
-
-	auto regionHandler = RegionHandler(field->GetSpiders().at(0).GetCenterXPosition(),
-		field->GetSpiders().at(0).GetCenterYPosition());
-	field->GetSpiders().at(0).SetRegion(regionHandler.GetRegion());
-	field->GetSpiders().at(0).SetSubRegion(regionHandler.GetSubRegion());
-
-	regionHandler = RegionHandler(turret->GetBullets().at(0).GetCenterXPosition(),
-		turret->GetBullets().at(0).GetCenterYPosition());
-	turret->GetBullets().at(0).SetRegion(regionHandler.GetRegion());
-	turret->GetBullets().at(0).SetSubRegion(regionHandler.GetSubRegion());
 
 	collisionhandler->CheckBulletSpiderCollisions();
 

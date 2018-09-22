@@ -17,8 +17,7 @@ TEST_CASE("Bullet positioned at the upper boundary is set to Dead State.")
 	auto TestBullet = BulletLogic(Bullet_);
 	TestBullet.Move(1);
 	CHECK(Bullet_.IsDead() == true);
-	auto bulletRegion = RegionHandler{Bullet_.GetCenterXPosition(), Bullet_.GetCenterYPosition()};
-	CHECK((bulletRegion.GetRegion() == Region::TOP_LEFT));
+	CHECK((Bullet_.GetRegion() == Region::TOP_LEFT));
 }
 
 TEST_CASE("Bullet is positioned below the left half of the upper boundary condition and moves as needed")
@@ -28,8 +27,7 @@ TEST_CASE("Bullet is positioned below the left half of the upper boundary condit
 	auto TestBullet = BulletLogic(Bullet_);
 	TestBullet.Move(0.01);	//expecting bullet to move up by 20
 	CHECK(Bullet_.GetTopLeftYPosition() == ((SCREEN_HEIGHT/2) - 20));
-	auto bulletRegion = RegionHandler{Bullet_.GetCenterXPosition(), Bullet_.GetCenterYPosition()};
-	CHECK(bulletRegion.GetRegion() == Region::TOP_LEFT);
+	CHECK(Bullet_.GetRegion() == Region::TOP_LEFT);
 }
 
 TEST_CASE("Bullet is positioned below the right half of the upper boundary condition and moves as needed")
@@ -40,8 +38,7 @@ TEST_CASE("Bullet is positioned below the right half of the upper boundary condi
 	auto TestBullet = BulletLogic(Bullet_);
 	TestBullet.Move(0.01);//expecting bullet to move up by 20
 	CHECK(Bullet_.GetTopLeftYPosition() == ((SCREEN_HEIGHT/2) - 20));
-	auto bulletRegion = RegionHandler{Bullet_.GetCenterXPosition(), Bullet_.GetCenterYPosition()};
-	CHECK(bulletRegion.GetRegion() == Region::TOP_RIGHT);
+	CHECK(Bullet_.GetRegion() == Region::TOP_RIGHT);
 }
 
 TEST_CASE("Bullet is positioned in the bottom left region and moves as needed")
@@ -51,8 +48,7 @@ TEST_CASE("Bullet is positioned in the bottom left region and moves as needed")
 	auto TestBullet = BulletLogic(Bullet_);
 	TestBullet.Move(0.001);	//expecting bullet to move up by 2
 	CHECK(Bullet_.GetTopLeftYPosition() == ((SCREEN_HEIGHT-BULLET_HEIGHT) - 2));
-	auto bulletRegion = RegionHandler{Bullet_.GetCenterXPosition(), Bullet_.GetCenterYPosition()};
-	CHECK(bulletRegion.GetRegion() == Region::BOTTOM_LEFT);
+	CHECK(Bullet_.GetRegion() == Region::BOTTOM_LEFT);
 }
 
 TEST_CASE("Bullet is positioned in the bottom right region and moves as needed")
@@ -62,6 +58,5 @@ TEST_CASE("Bullet is positioned in the bottom right region and moves as needed")
 	auto TestBullet = BulletLogic(Bullet_);
 	TestBullet.Move(0.001);//expecting bullet to move up by 2
 	CHECK(Bullet_.GetTopLeftYPosition() == ((SCREEN_HEIGHT-BULLET_HEIGHT)-2));
-	auto bulletRegion = RegionHandler{Bullet_.GetCenterXPosition(), Bullet_.GetCenterYPosition()};
-	CHECK((bulletRegion.GetRegion() == Region::BOTTOM_RIGHT));
+	CHECK((Bullet_.GetRegion() == Region::BOTTOM_RIGHT));
 }
