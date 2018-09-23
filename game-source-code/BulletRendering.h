@@ -11,12 +11,12 @@ namespace GameEngine
 class BulletRendering : public EntityRendering
 {
   public:
-    BulletRendering(DataPtr data, Bullet& bullet);
+    BulletRendering(DataPtr data, std::vector<Bullet>& bullets);
     void Draw() override;
 
   private:
     DataPtr _data;
-    Bullet& _bullet;
+    std::vector<Bullet>& _bullets;
 };
 
 typedef std::unique_ptr<BulletRendering> BulletRenderPtr;

@@ -13,6 +13,8 @@ TurretRendering::TurretRendering(DataPtr data, TurretPtr turret)
     _data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
     turret->GetObjectSprite().setTexture(_data->resources.GetTexture("Turret Sprite"));
 
+    _bullets = std::make_unique<BulletRendering>(_data, _turret->GetBullets());
+
     // create life indicators
     for(int i = 0; i < _turret->GetLivesRemaining(); i++)
 	{
@@ -24,11 +26,7 @@ TurretRendering::TurretRendering(DataPtr data, TurretPtr turret)
 
 void TurretRendering::Draw()
 {
-    for(unsigned int i = 0; i < _turret->GetBullets().size(); i++)
-	{
-	    _bullet = std::make_unique<BulletRendering>(_data, _turret->GetBullets().at(i));
-	    _bullet->Draw();
-	}
+    _bullets->Draw();
     _turret->GetObjectSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
     _data->window.draw(_turret->GetObjectSprite());
 

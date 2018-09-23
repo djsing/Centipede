@@ -2,16 +2,20 @@
 
 namespace GameEngine
 {
-BulletRendering::BulletRendering(DataPtr data, Bullet& bullet)
+BulletRendering::BulletRendering(DataPtr data, std::vector<Bullet>& bullets)
     : _data(data)
-    , _bullet(bullet)
+    , _bullets(bullets)
 {
-    _bullet.GetObjectSprite().setTexture(_data->resources.GetTexture("Bullet sprite"));
 }
 
 void BulletRendering::Draw()
 {
-    _bullet.GetObjectSprite().setPosition(_bullet.GetTopLeftXPosition(), _bullet.GetTopLeftYPosition());
-    _data->window.draw(_bullet.GetObjectSprite());
+    for(unsigned int i = 0; i < _bullets.size(); i++)
+	{
+	    _bullets.at(i).GetObjectSprite().setTexture(_data->resources.GetTexture("Bullet sprite"));
+	    _bullets.at(i).GetObjectSprite().setPosition(_bullets.at(i).GetTopLeftXPosition(),
+	                                                 _bullets.at(i).GetTopLeftYPosition());
+	    _data->window.draw(_bullets.at(i).GetObjectSprite());
+	}
 }
 } // namespace GameEngine
