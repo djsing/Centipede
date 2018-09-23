@@ -10,6 +10,7 @@ TurretLogic::TurretLogic(DataPtr data, TurretPtr turret)
     , _turret(turret)
     , _speed(TURRET_SPEED)
 {
+    _bulletLogic = std::make_unique<BulletLogic>(_turret->GetBullets());
 }
 
 void TurretLogic::Spawn()
@@ -85,11 +86,7 @@ void TurretLogic::Move(float dt)
 
 void TurretLogic::MoveProjectiles(float dt)
 {
-    for(unsigned int i = 0; i < _turret->GetBullets().size(); i++)
-	{
-	    _bulletLogic = std::make_unique<BulletLogic>(_turret->GetBullets().at(i));
-	    _bulletLogic->Move(dt);
-	}
+    _bulletLogic->Move(dt);
 }
 
 void TurretLogic::CollisionHandle()
@@ -99,14 +96,6 @@ void TurretLogic::CollisionHandle()
 	    _data->statehandler.AddState(StatePtr(new GameOver(_data)));
 	}
 
-    // delete collided bullets
-    for(unsigned int i = 0; i < _turret->GetBullets().size(); i++)
-	{
-	    if(_turret->GetBullets().at(i).IsDead())
-		{
-		    _turret->GetBullets().erase(_turret->GetBullets().begin() + i);
-		    i--;
-		}
-	}
+    _bulletLogic->CollisionHandle();
 }
 } // namespace GameEngine

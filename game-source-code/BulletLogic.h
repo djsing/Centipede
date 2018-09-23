@@ -11,21 +11,15 @@ namespace GameEngine
 class BulletLogic : public EntityLogic
 {
   public:
-    BulletLogic(Bullet& bullet);
-    void Spawn()
-    {
-    }
+    BulletLogic(std::vector<Bullet>& bullets);
+    void Spawn() override;
     // for Bullet class, move() refers to moving the bullet
     void Move(float dt) override;
-    void MoveProjectiles(float dt)
-    {
-    }
-    void CollisionHandle()
-    {
-    }
+    void MoveProjectiles(float dt) override;
+    void CollisionHandle() override;
 
   private:
-    Bullet& _bullet;
+    std::vector<Bullet>& _bullets;
     float _speed;
 };
 
