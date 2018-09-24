@@ -3,38 +3,38 @@
 
 namespace GameEngine
 {
-Turret::Turret(DataPtr data)
-    : Entity(SCREEN_WIDTH / 2 - TURRET_SPRITE_SIDE_SIZE / 2, SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE)
-    , _data(data)
-{
-    Entity::SetDirection(Direction::HOVER);
-    Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE / 2);
-    Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE / 2);
-}
-
-std::vector<Bullet>& Turret::GetBullets()
-{
-    return _bullets;
-}
-
-void Turret::SetTopLeftXPosition(float xpos)
-{
-    Entity::SetTopLeftXPosition(xpos);
-    Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE / 2);
-}
-
-void Turret::SetTopLeftYPosition(float ypos)
-{
-    Entity::SetTopLeftYPosition(ypos);
-    Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE / 2);
-}
-
-float Turret::GetLastBulletYPosition()
-{
-    if(_bullets.empty())
+	Turret::Turret()
+		: Entity ( SCREEN_WIDTH / 2 - TURRET_SPRITE_SIDE_SIZE / 2, SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE )
 	{
-	    return GetTopLeftYPosition() - BULLET_HEIGHT;
+		Entity::SetDirection ( Direction::HOVER );
+		Entity::SetCenterXPosition ( Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE / 2 );
+		Entity::SetCenterYPosition ( Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE / 2 );
 	}
-    return _bullets.back().GetTopLeftYPosition();
-}
+
+	std::vector<Bullet>& Turret::GetBullets()
+	{
+		return bullets_;
+	}
+
+	void Turret::SetTopLeftXPosition ( float xpos )
+	{
+		Entity::SetTopLeftXPosition ( xpos );
+		Entity::SetCenterXPosition ( Entity::GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE / 2 );
+	}
+
+	void Turret::SetTopLeftYPosition ( float ypos )
+	{
+		Entity::SetTopLeftYPosition ( ypos );
+		Entity::SetCenterYPosition ( Entity::GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE / 2 );
+	}
+
+	float Turret::GetLastBulletYPosition()
+	{
+		if ( bullets_.empty() )
+		{
+			return GetTopLeftYPosition() - BULLET_HEIGHT;
+		}
+
+		return bullets_.back().GetTopLeftYPosition();
+	}
 } // namespace GameEngine

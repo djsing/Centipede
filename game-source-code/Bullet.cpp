@@ -4,24 +4,23 @@
 
 namespace GameEngine
 {
-Bullet::Bullet(DataPtr data, float xpos, float ypos)
-    : Entity(xpos, ypos)
-    , _data(data)
-{
-    Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + BULLET_WIDTH / 2);
-    Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + BULLET_HEIGHT / 2);
-    Entity::SetDirection(Direction::UP);
-}
+	Bullet::Bullet ( float xpos, float ypos )
+		: Entity ( xpos, ypos )
+	{
+		Entity::SetCenterXPosition ( Entity::GetTopLeftXPosition() + BULLET_WIDTH / 2 );
+		Entity::SetCenterYPosition ( Entity::GetTopLeftYPosition() + BULLET_HEIGHT / 2 );
+		Entity::SetDirection ( Direction::UP );
+	}
 
-void Bullet::SetTopLeftXPosition(float ypos)
-{
-    Entity::SetTopLeftXPosition(ypos);
-    Entity::SetCenterXPosition(Entity::GetTopLeftXPosition() + BULLET_WIDTH / 2);
-}
+	void Bullet::SetTopLeftXPosition ( float ypos )
+	{
+		Entity::SetTopLeftXPosition ( ypos );
+		Entity::SetCenterXPosition ( Entity::GetTopLeftXPosition() + BULLET_WIDTH / 2 );
+	}
 
-void Bullet::SetTopLeftYPosition(float ypos)
-{
-    Entity::SetTopLeftYPosition(ypos);
-    Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + BULLET_HEIGHT / 2);
-}
+	void Bullet::SetTopLeftYPosition ( float ypos )
+	{
+		Entity::SetTopLeftYPosition ( ypos );
+		Entity::SetCenterYPosition ( Entity::GetTopLeftYPosition() + BULLET_HEIGHT / 2 );
+	}
 } // namespace GameEngine

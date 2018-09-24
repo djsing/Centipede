@@ -2,105 +2,112 @@
 
 namespace GameEngine
 {
-InputHandler::InputHandler(DataPtr data)
-    : _data(data)
-    , _isShooting(false)
-    , _direction(Direction::HOVER)
-    , _isLeft(false)
-    , _isRight(false)
-    , _isUp(false)
-    , _isDown(false)
-{
-    _data->keyboard.SetDirection(_direction);
-    _data->keyboard.SetShooting(_isShooting);
-}
-
-void InputHandler::SetControls(sf::Event event)
-{
-    switch(event.type)
+	InputHandler::InputHandler ( DataPtr data )
+		: data_ ( data )
+		, is_shooting_ ( false )
+		, direction_ ( Direction::HOVER )
+		, is_left_ ( false )
+		, is_right_ ( false )
+		, is_up_ ( false )
+		, is_down_ ( false )
 	{
-	case sf::Event::KeyPressed:
-	    switch(event.key.code)
+		data_->keyboard.SetDirection ( direction_ );
+		data_->keyboard.SetShooting ( is_shooting_ );
+	}
+
+	void InputHandler::SetControls ( sf::Event event )
+	{
+		switch ( event.type )
 		{
-		case sf::Keyboard::Left:
-		    _isLeft = true;
-		    break;
-
-		case sf::Keyboard::Right:
-		    _isRight = true;
-		    break;
-
-		case sf::Keyboard::Up:
-		    _isUp = true;
-		    break;
-
-		case sf::Keyboard::Down:
-		    _isDown = true;
-		    break;
-
-		case sf::Keyboard::Space:
-		    _data->window.setKeyRepeatEnabled(false);
-		    if(_isShooting)
+		case sf::Event::KeyPressed:
+			switch ( event.key.code )
 			{
-			    _isShooting = false;
+			case sf::Keyboard::Left:
+				is_left_ = true;
+				break;
+
+			case sf::Keyboard::Right:
+				is_right_ = true;
+				break;
+
+			case sf::Keyboard::Up:
+				is_up_ = true;
+				break;
+
+			case sf::Keyboard::Down:
+				is_down_ = true;
+				break;
+
+			case sf::Keyboard::Space:
+				data_->window.setKeyRepeatEnabled ( false );
+
+				if ( is_shooting_ )
+				{
+					is_shooting_ = false;
+				}
+				else
+					is_shooting_ = true;
+
+			default:
+				break;
 			}
-		    else
-			_isShooting = true;
+
+			break;
+
+		case sf::Event::KeyReleased:
+			switch ( event.key.code )
+			{
+			case sf::Keyboard::Left:
+				is_left_ = false;
+				break;
+
+			case sf::Keyboard::Right:
+				is_right_ = false;
+				break;
+
+			case sf::Keyboard::Up:
+				is_up_ = false;
+				break;
+
+			case sf::Keyboard::Down:
+				is_down_ = false;
+				break;
+
+			case sf::Keyboard::Space:
+				is_shooting_ = false;
+
+			default:
+				break;
+			}
 
 		default:
-		    break;
+			break;
 		}
-	    break;
 
-	case sf::Event::KeyReleased:
-	    switch(event.key.code)
+		data_->keyboard.SetShooting ( is_shooting_ );
+
+		direction_ = Direction::HOVER;
+
+		if ( is_left_ )
 		{
-		case sf::Keyboard::Left:
-		    _isLeft = false;
-		    break;
-
-		case sf::Keyboard::Right:
-		    _isRight = false;
-		    break;
-
-		case sf::Keyboard::Up:
-		    _isUp = false;
-		    break;
-
-		case sf::Keyboard::Down:
-		    _isDown = false;
-		    break;
-
-		case sf::Keyboard::Space:
-		    _isShooting = false;
-
-		default:
-		    break;
+			direction_ = Direction::LEFT;
 		}
-	default:
-	    break;
-	}
 
-    _data->keyboard.SetShooting(_isShooting);
+		if ( is_right_ )
+		{
+			direction_ = Direction::RIGHT;
+		}
 
-    _direction = Direction::HOVER;
-    if(_isLeft)
-	{
-	    _direction = Direction::LEFT;
-	}
-    if(_isRight)
-	{
-	    _direction = Direction::RIGHT;
-	}
-    if(_isUp)
-	{
-	    _direction = Direction::UP;
-	}
-    if(_isDown)
-	{
-	    _direction = Direction::DOWN;
-	}
+		if ( is_up_ )
+		{
+			direction_ = Direction::UP;
+		}
 
-    _data->keyboard.SetDirection(_direction);
-}
+		if ( is_down_ )
+		{
+			direction_ = Direction::DOWN;
+		}
+
+		data_->keyboard.SetDirection ( direction_ );
+	}
 } // namespace GameEngine

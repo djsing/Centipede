@@ -3,20 +3,20 @@
 
 namespace GameEngine
 {
-class LivesHandler
-{
-  public:
-    LivesHandler();
+	class LivesHandler
+	{
+	public:
+		LivesHandler();
 
-    int LivesRemaining();
+		int LivesRemaining();
 
-    void LifeLost();
-    void LifeGained();
-    void ResetLives();
+		void LifeLost();
+		void LifeGained();
+		void ResetLives();
 
-  private:
-    int _livesRemaining;
-};
+	private:
+		int lives_remaining_;
+	};
 } // namespace GameEngine
 
 #endif

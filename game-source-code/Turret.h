@@ -12,31 +12,28 @@
 
 namespace GameEngine
 {
-class Turret : public Entity
-{
-  public:
-    Turret(DataPtr data);
+	class Turret : public Entity
+	{
+	public:
+		Turret ();
 
-    // Address Accessor functions
-    std::vector<Bullet>& GetBullets();
+		// Address Accessor functions
+		std::vector<Bullet>& GetBullets();
 
-    // Mutator functions
-    void SetTopLeftXPosition(float xpos);
-    void SetTopLeftYPosition(float ypos);
+		// Mutator functions
+		void SetTopLeftXPosition ( float xpos );
+		void SetTopLeftYPosition ( float ypos );
 
-    // Accessor functions specific to Turret
-    float GetLastBulletYPosition();
-    int GetLivesRemaining();
+		// Accessor functions specific to Turret
+		float GetLastBulletYPosition();
+		int GetLivesRemaining();
 
-  private:
-    // Data layer pointer
-    DataPtr _data;
-    // Container to store all bullets
-    std::vector<Bullet> _bullets;
-};
+	private:
+		// Container to store all bullets
+		std::vector<Bullet> bullets_;
+	};
 
-// Shared pointer to a Turret Object
-typedef std::shared_ptr<Turret> TurretPtr;
+	using TurretPtr = std::shared_ptr<Turret>;
 } // namespace GameEngine
 
 #endif

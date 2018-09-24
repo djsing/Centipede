@@ -8,16 +8,16 @@
 
 namespace GameEngine
 {
-class CentipedeRendering : public EntityRendering
-{
-  public:
-    CentipedeRendering(DataPtr data, CentPtr centipede);
-    void Draw() override;
+	class CentipedeRendering : public EntityRendering
+	{
+	public:
+		CentipedeRendering ( DataPtr data, CentPtr centipede );
+		void Draw() override;
 
-  private:
-    DataPtr _data;
-    CentPtr _centipede;
-};
+	private:
+		DataPtr data_;
+		CentPtr centipede_;
+	};
 } // namespace GameEngine
 
 #endif

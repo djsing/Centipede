@@ -8,29 +8,29 @@
 
 namespace GameEngine
 {
-class CollisionHandler
-{
-  public:
-    CollisionHandler(DataPtr data, TurretPtr turret, CentPtr centipede, FieldPtr field);
-    void CheckCollisions();
+	class CollisionHandler
+	{
+	public:
+		CollisionHandler ( DataPtr data, TurretPtr turret, CentPtr centipede, FieldPtr field );
+		void CheckCollisions();
 
-  private:
-    DataPtr _data;
-    TurretPtr _turret;
-    CentPtr _centipede;
-    FieldPtr _field;
-    void CheckBulletSegmentCollisions();
-    void CheckSegmentMushroomCollisions();
-    void CheckTurretSegmentCollisions();
-    void CheckTurretSpiderCollisions();
-    void CheckMushroomScorpionCollisions();
-    void CheckMushroomSpiderCollisions();
-    void CheckBulletSpiderCollisions();
-    void CheckBulletMushroomCollisions();
-    float CheckDistanceBetweenEntities(Entity& entity1, Entity& entity2);
-};
+	private:
+		DataPtr data_;
+		TurretPtr turret_;
+		CentPtr centipede_;
+		FieldPtr field_;
+		void CheckBulletSegmentCollisions();
+		void CheckSegmentMushroomCollisions();
+		void CheckTurretSegmentCollisions();
+		void CheckTurretSpiderCollisions();
+		void CheckMushroomScorpionCollisions();
+		void CheckMushroomSpiderCollisions();
+		void CheckBulletSpiderCollisions();
+		void CheckBulletMushroomCollisions();
+		float CheckDistanceBetweenEntities ( Entity& entity1, Entity& entity2 );
+	};
 
-typedef std::shared_ptr<CollisionHandler> CollisionHandlerPtr;
+	using CollisionHandlerPtr = std::shared_ptr<CollisionHandler>;
 } // namespace GameEngine
 
 #endif

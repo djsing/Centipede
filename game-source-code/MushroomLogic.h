@@ -9,24 +9,24 @@
 
 namespace GameEngine
 {
-class MushroomLogic : public EntityLogic
-{
-  public:
-    MushroomLogic(FieldPtr field, DataPtr data);
-    void Spawn() override;
-    void Move(float dt)
-    {
-    }
-    void MoveProjectiles(float dt)
-    {
-    }
-    void CollisionHandle() override; // yet to implement
+	class MushroomLogic : public EntityLogic
+	{
+	public:
+		MushroomLogic ( FieldPtr field );
+		void Spawn() override;
+		void Move ( float dt )
+		{
+		}
+		void MoveProjectiles ( float dt )
+		{
+		}
+		void CollisionHandle() override; // yet to implement
 
-  private:
-    DataPtr _data;
-    FieldPtr _field;
-    int _deathChance;
-};
+	private:
+		DataPtr _data;
+		FieldPtr _field;
+		int _deathChance;
+	};
 } // namespace GameEngine
 
 #endif

@@ -8,25 +8,23 @@
 
 namespace GameEngine
 {
-class Centipede
-{
-  public:
-    Centipede(DataPtr data);
+	class Centipede
+	{
+	public:
+		Centipede ();
 
-    // Address Accessor Functions
-    std::vector<CentipedeSegment>& GetCentipede();
+		// Address Accessor Functions
+		std::vector<CentipedeSegment>& GetCentipede();
 
-    // Accessor Fucntions
-    float GetLastSpriteXPosition();
+		// Accessor Fucntions
+		float GetLastSpriteXPosition();
 
-  private:
-    // pointer to GameData layer
-    DataPtr _data;
-    // data container to store CentipedeSegments
-    std::vector<CentipedeSegment> _centipedeSegments;
-};
+	private:
+		// data container to store CentipedeSegments
+		std::vector<CentipedeSegment> centipede_segments_;
+	};
 
-typedef std::shared_ptr<Centipede> CentPtr;
+	using CentPtr = std::shared_ptr<Centipede>;
 } // namespace GameEngine
 
 #endif

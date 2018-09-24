@@ -8,27 +8,26 @@
 
 namespace GameEngine
 {
-class Mushroom : public Entity
-{
-  public:
-    Mushroom(DataPtr data, float xpos, float ypos);
+	class Mushroom : public Entity
+	{
+	public:
+		Mushroom ( float xpos, float ypos );
 
-    // Mutator functions
-    void SetBitten(bool isBitten);
-    void SetPoisoned(bool isPoisoned);
-    void DecrementLives();
+		// Mutator functions
+		void SetBitten ( bool isBitten );
+		void SetPoisoned ( bool isPoisoned );
+		void DecrementLives();
 
-    // Accessor Functions
-    bool IsBitten();
-    bool IsPoisoned();
-    int GetLivesRemaining();
+		// Accessor Functions
+		bool IsBitten();
+		bool IsPoisoned();
+		int GetLivesRemaining();
 
-  private:
-    DataPtr _data;
-    bool _isBitten;
-    bool _isPoisoned;
-    int _livesRemaining;
-};
+	private:
+		bool is_bitten_;
+		bool is_poisoned_;
+		int lives_remaining_;
+	};
 } // namespace GameEngine
 
 #endif

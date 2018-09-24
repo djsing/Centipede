@@ -1,7 +1,6 @@
 #include "../game-source-code/MushroomLogic.h"
 #include "../game-source-code/DEFINITIONS.h"
 
-using GameEngine::GameData;
 using GameEngine::GameField;
 using GameEngine::MushroomLogic;
 
@@ -9,9 +8,8 @@ using GameEngine::MushroomLogic;
 
 TEST_CASE("Check that size of mushroom vector is the same as MUSHROOMS_SPAWNED")
 {
-	auto data = std::make_shared<GameData>();
 	auto field = std::make_shared<GameField>();
-	auto mushroomLogic = std::make_unique<MushroomLogic>(field, data);
+	auto mushroomLogic = std::make_unique<MushroomLogic>(field);
 	mushroomLogic->Spawn();
 
 	CHECK(field->GetMushrooms().size() == MUSHROOMS_SPAWNED);

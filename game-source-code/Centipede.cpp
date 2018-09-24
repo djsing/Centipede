@@ -4,23 +4,22 @@
 
 namespace GameEngine
 {
-Centipede::Centipede(DataPtr data)
-    : _data(data)
-{
-}
-
-std::vector<CentipedeSegment>& Centipede::GetCentipede()
-{
-    return _centipedeSegments;
-}
-
-float Centipede::GetLastSpriteXPosition()
-{
-    if(_centipedeSegments.empty())
+	Centipede::Centipede ()
 	{
-	    return CENTIPEDE_SPRITE_SIDE_SIZE;
 	}
-    else
-	return _centipedeSegments.back().GetTopLeftXPosition();
-}
+
+	std::vector<CentipedeSegment>& Centipede::GetCentipede()
+	{
+		return centipede_segments_;
+	}
+
+	float Centipede::GetLastSpriteXPosition()
+	{
+		if ( centipede_segments_.empty() )
+		{
+			return CENTIPEDE_SPRITE_SIDE_SIZE;
+		}
+		else
+			return centipede_segments_.back().GetTopLeftXPosition();
+	}
 } // namespace GameEngine

@@ -2,29 +2,29 @@
 
 namespace GameEngine
 {
-KeyboardControlsHandler::KeyboardControlsHandler()
-    : _direction(Direction::HOVER)
-    , _isShooting(false)
-{
-}
+	KeyboardControlsHandler::KeyboardControlsHandler()
+		: direction_ ( Direction::HOVER )
+		, is_shooting_ ( false )
+	{
+	}
 
-bool KeyboardControlsHandler::IsShooting()
-{
-    return _isShooting;
-}
+	bool KeyboardControlsHandler::IsShooting()
+	{
+		return is_shooting_;
+	}
 
-void KeyboardControlsHandler::SetShooting(bool isShooting)
-{
-    _isShooting = isShooting;
-}
+	void KeyboardControlsHandler::SetShooting ( bool isShooting )
+	{
+		is_shooting_ = isShooting;
+	}
 
-Direction KeyboardControlsHandler::GetDirection()
-{
-    return _direction;
-}
+	Direction KeyboardControlsHandler::GetDirection()
+	{
+		return direction_;
+	}
 
-void KeyboardControlsHandler::SetDirection(Direction direction)
-{
-    _direction = direction;
-}
+	void KeyboardControlsHandler::SetDirection ( Direction direction )
+	{
+		direction_ = direction;
+	}
 } // namespace GameEngine

@@ -5,20 +5,18 @@
 namespace GameEngine
 {
 	GameOver::GameOver ( DataPtr data )
-		: _data ( data )
+		: data_ ( data )
 	{
-		//_data->resources.LoadTexture("Game Over Screen Background", GAME_OVER_BACKGROUND_FILEPATH);
-		//_background.setTexture(_data->resources.GetTexture("Game Over Screen Background"));
-		_data->resources.LoadTexture ( "Game Over Sprite", GAME_OVER_FILEPATH );
-		_data->resources.LoadTexture ( "Press F12 Restart", GAME_OVER_RESTART_FILEPATH );
+		data_->resources.LoadTexture ( "Game Over Sprite", GAME_OVER_FILEPATH );
+		data_->resources.LoadTexture ( "Press F12 Restart", GAME_OVER_RESTART_FILEPATH );
 
-		_gameOver.setTexture ( _data->resources.GetTexture ( "Game Over Sprite" ) );
-		_pressF12ToRestart.setTexture ( _data->resources.GetTexture ( "Press F12 Restart" ) );
+		game_over_.setTexture ( data_->resources.GetTexture ( "Game Over Sprite" ) );
+		press_f12_to_restart_.setTexture ( data_->resources.GetTexture ( "Press F12 Restart" ) );
 
-		_gameOver.setPosition ( SCREEN_WIDTH / 2 - _gameOver.getGlobalBounds().width / 2,
-		                        SCREEN_HEIGHT / 2 - _gameOver.getGlobalBounds().height );
+		game_over_.setPosition ( SCREEN_WIDTH / 2 - game_over_.getGlobalBounds().width / 2,
+		                        SCREEN_HEIGHT / 2 - game_over_.getGlobalBounds().height );
 
-		_pressF12ToRestart.setPosition ( SCREEN_WIDTH / 2 - _pressF12ToRestart.getGlobalBounds().width / 2,
+		press_f12_to_restart_.setPosition ( SCREEN_WIDTH / 2 - press_f12_to_restart_.getGlobalBounds().width / 2,
 		                                 SCREEN_HEIGHT / 2 );
 	}
 
@@ -26,18 +24,18 @@ namespace GameEngine
 	{
 		sf::Event event;
 
-		while ( _data->window.pollEvent ( event ) && event.type == sf::Event::KeyPressed )
+		while ( data_->window.pollEvent ( event ) && event.type == sf::Event::KeyPressed )
 		{
 			if ( event.key.code == sf::Keyboard::Escape )
 			{
-				_data->window.close();
+				data_->window.close();
 			}
 
 			else if ( event.key.code == sf::Keyboard::F12 )
 			{
 				// if player presses f12 after losing, start a new instance of the game
-				_data->lives.ResetLives();
-				_data->statehandler.AddState ( StatePtr ( new GamePlay ( _data ) ) );
+				data_->lives.ResetLives();
+				data_->statehandler.AddState ( StatePtr ( new GamePlay ( data_ ) ) );
 			}
 		}
 	}
@@ -49,12 +47,10 @@ namespace GameEngine
 	void GameOver::Draw()
 	{
 		// clear screen to update data
-		_data->window.clear();
-		// draw background sprite with background texture loaded
-		//_data->window.draw(_background);
-		_data->window.draw ( _gameOver );
-		_data->window.draw ( _pressF12ToRestart );
+		data_->window.clear();
+		data_->window.draw ( game_over_ );
+		data_->window.draw ( press_f12_to_restart_ );
 		// display updated data
-		_data->window.display();
+		data_->window.display();
 	}
 } // namespace GameEngine

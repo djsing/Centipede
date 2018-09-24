@@ -2,103 +2,103 @@
 
 namespace GameEngine
 {
-Entity::Entity(float topLeftXPosition, float topLeftYPosition)
-    : _topLeftXPosition(topLeftXPosition)
-    , _topLeftYPosition(topLeftYPosition)
-    , _isDead(false)
-{
-}
+	Entity::Entity ( float topLeftXPosition, float topLeftYPosition )
+		: top_left_x_position_ ( topLeftXPosition )
+		, top_left_y_position_ ( topLeftYPosition )
+		, isDead_ ( false )
+	{
+	}
 
-sf::Sprite& Entity::GetObjectSprite()
-{
-    return _object;
-}
+	void Entity::SetDirection ( Direction direction )
+	{
+		direction_ = direction;
+	}
 
-void Entity::SetDirection(Direction direction)
-{
-    _direction = direction;
-}
+	void Entity::SetTopLeftXPosition ( float xpos )
+	{
+		top_left_x_position_ = xpos;
+	}
 
-void Entity::SetTopLeftXPosition(float xpos)
-{
-    _topLeftXPosition = xpos;
-}
+	void Entity::SetTopLeftYPosition ( float ypos )
+	{
+		top_left_y_position_ = ypos;
+	}
 
-void Entity::SetTopLeftYPosition(float ypos)
-{
-    _topLeftYPosition = ypos;
-}
+	void Entity::SetRegion ( Region region )
+	{
+		region_ = region;
+	}
 
-void Entity::SetRegion(Region region)
-{
-    _region = region;
-}
+	void Entity::SetSubRegion ( Region subregion )
+	{
+		subregion_ = subregion;
+	}
 
-void Entity::SetSubRegion(Region subregion)
-{
-    _subregion = subregion;
-}
+	void Entity::SetDead ( bool isDead )
+	{
+		isDead_ = isDead;
+	}
 
-void Entity::SetDead(bool isDead)
-{
-    _isDead = isDead;
-}
+	void Entity::SetCenterXPosition ( float xpos )
+	{
+		center_x_position_ = xpos;
 
-void Entity::SetCenterXPosition(float xpos)
-{
-    _centerXPosition = xpos;
+		region_handler_ = RegionHandler{center_x_position_, center_y_position_};
+		SetRegion ( region_handler_.GetRegion() );
+		SetSubRegion ( region_handler_.GetSubRegion() );
+	}
 
-    _regionHandler = RegionHandler{_centerXPosition, _centerYPosition};
-    SetRegion(_regionHandler.GetRegion());
-    SetSubRegion(_regionHandler.GetSubRegion());
-}
+	void Entity::SetCenterYPosition ( float ypos )
+	{
+		center_y_position_ = ypos;
 
-void Entity::SetCenterYPosition(float ypos)
-{
-    _centerYPosition = ypos;
+		region_handler_ = RegionHandler{center_x_position_, center_y_position_};
+		SetRegion ( region_handler_.GetRegion() );
+		SetSubRegion ( region_handler_.GetSubRegion() );
+	}
 
-    _regionHandler = RegionHandler{_centerXPosition, _centerYPosition};
-    SetRegion(_regionHandler.GetRegion());
-    SetSubRegion(_regionHandler.GetSubRegion());
-}
+	sf::Sprite& Entity::GetObjectSprite()
+	{
+		return object_;
+	}
 
-bool Entity::IsDead() const
-{
-    return _isDead;
-}
+	bool Entity::IsDead() const
+	{
+		return isDead_;
+	}
 
-Direction Entity::GetDirection() const
-{
-    return _direction;
-}
+	Direction Entity::GetDirection() const
+	{
+		return direction_;
+	}
 
-Region Entity::GetRegion() const
-{
-    return _region;
-}
+	Region Entity::GetRegion() const
+	{
+		return region_;
+	}
 
-Region Entity::GetSubRegion() const
-{
-    return _subregion;
-}
+	Region Entity::GetSubRegion() const
+	{
+		return subregion_;
+	}
 
-float Entity::GetTopLeftXPosition() const
-{
-    return _topLeftXPosition;
-}
+	float Entity::GetTopLeftXPosition() const
+	{
+		return top_left_x_position_;
+	}
 
-float Entity::GetTopLeftYPosition() const
-{
-    return _topLeftYPosition;
-}
+	float Entity::GetTopLeftYPosition() const
+	{
+		return top_left_y_position_;
+	}
 
-float Entity::GetCenterXPosition() const
-{
-    return _centerXPosition;
-}
+	float Entity::GetCenterXPosition() const
+	{
+		return center_x_position_;
+	}
 
-float Entity::GetCenterYPosition() const
-{
-    return _centerYPosition;
-}
+	float Entity::GetCenterYPosition() const
+	{
+		return center_y_position_;
+	}
 } // namespace GameEngine

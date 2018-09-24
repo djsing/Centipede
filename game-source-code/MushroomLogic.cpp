@@ -7,9 +7,8 @@
 
 namespace GameEngine
 {
-	MushroomLogic::MushroomLogic ( FieldPtr field, DataPtr data )
-		: _data ( data )
-		, _field ( field )
+	MushroomLogic::MushroomLogic ( FieldPtr field )
+		: _field ( field )
 		, _deathChance ( 0 )
 	{
 		std::srand ( std::time ( nullptr ) );
@@ -32,8 +31,8 @@ namespace GameEngine
 					continue;
 				}
 
-				auto mushroom = Mushroom{_data, static_cast<float> ( randXPos ),
-				                         static_cast<float> ( randLevel * MUSHROOM_SPRITE_SIZE ) };
+				auto mushroom = Mushroom{ static_cast<float> ( randXPos ),
+				                          static_cast<float> ( randLevel * MUSHROOM_SPRITE_SIZE ) };
 				_field->GetMushrooms().push_back ( mushroom );
 			}
 		}

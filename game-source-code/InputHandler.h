@@ -8,23 +8,23 @@
 
 namespace GameEngine
 {
-class InputHandler
-{
-  public:
-    InputHandler(DataPtr data);
-    void SetControls(sf::Event event);
+	class InputHandler
+	{
+	public:
+		InputHandler ( DataPtr data );
+		void SetControls ( sf::Event event );
 
-  private:
-    DataPtr _data;
-    bool _isShooting;
-    Direction _direction;
-    bool _isLeft;
-    bool _isRight;
-    bool _isUp;
-    bool _isDown;
-};
+	private:
+		DataPtr data_;
+		bool is_shooting_;
+		Direction direction_;
+		bool is_left_;
+		bool is_right_;
+		bool is_up_;
+		bool is_down_;
+	};
 
-typedef std::shared_ptr<InputHandler> InputHandlerPtr;
+	using InputHandlerPtr = std::shared_ptr<InputHandler>;
 } // namespace GameEngine
 
 #endif

@@ -3,37 +3,37 @@
 
 namespace GameEngine
 {
-Game::Game(int width, int height, std::string windowTitle)
-{
-    _data->window.create(sf::VideoMode(width, height), windowTitle, sf::Style::None);
-    _data->statehandler.AddState(StatePtr(new SplashScreen(_data)));
-    Run();
-}
-
-void Game::Run()
-{
-    auto newTime = 0.f;
-    auto frameTime = 0.f;
-    auto currentTime = _watch.getElapsedTime();
-    auto accumulator = 0.f;
-
-    while(_data->window.isOpen())
+	Game::Game ( int width, int height, std::string windowTitle )
 	{
-	    _data->statehandler.ProcessStateChanges();
-
-	    newTime = _watch.getElapsedTime();
-	    frameTime = newTime - currentTime;
-	    currentTime = newTime;
-	    accumulator += frameTime;
-
-	    while((accumulator >= _dt) && (_data->window.isOpen()))
-		{
-		    _data->statehandler.GetActiveGameState()->HandleInput();
-		    _data->statehandler.GetActiveGameState()->Update(_dt);
-		    accumulator -= _dt;
-		}
-
-	    _data->statehandler.GetActiveGameState()->Draw();
+		data_->window.create ( sf::VideoMode ( width, height ), windowTitle, sf::Style::None );
+		data_->statehandler.AddState ( StatePtr ( new SplashScreen ( data_ ) ) );
+		Run();
 	}
-}
+
+	void Game::Run()
+	{
+		auto newTime = 0.f;
+		auto frameTime = 0.f;
+		auto currentTime = watch_.getElapsedTime();
+		auto accumulator = 0.f;
+
+		while ( data_->window.isOpen() )
+		{
+			data_->statehandler.ProcessStateChanges();
+
+			newTime = watch_.getElapsedTime();
+			frameTime = newTime - currentTime;
+			currentTime = newTime;
+			accumulator += frameTime;
+
+			while ( ( accumulator >= dt_ ) && ( data_->window.isOpen() ) )
+			{
+				data_->statehandler.GetActiveGameState()->HandleInput();
+				data_->statehandler.GetActiveGameState()->Update ( dt_ );
+				accumulator -= dt_;
+			}
+
+			data_->statehandler.GetActiveGameState()->Draw();
+		}
+	}
 } // namespace GameEngine

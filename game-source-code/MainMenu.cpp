@@ -5,43 +5,43 @@
 namespace GameEngine
 {
 	MainMenu::MainMenu ( DataPtr data )
-		: _data ( data )
+		: data_ ( data )
 	{
-		_data->window.create ( sf::VideoMode ( SCREEN_WIDTH, SCREEN_HEIGHT ), WINDOW_TITLE, sf::Style::None );
-		_data->window.setVerticalSyncEnabled ( true );
-		_data->window.setPosition ( sf::Vector2i ( sf::VideoMode().getDesktopMode().width / 3, 0 ) );
+		data_->window.create ( sf::VideoMode ( SCREEN_WIDTH, SCREEN_HEIGHT ), WINDOW_TITLE, sf::Style::None );
+		data_->window.setVerticalSyncEnabled ( true );
+		data_->window.setPosition ( sf::Vector2i ( sf::VideoMode().getDesktopMode().width / 3, 0 ) );
 
-		_data->resources.LoadTexture ( "Menu Screen Title", GAME_TITLE_FILEPATH );
-		_data->resources.LoadTexture ( "Subtitle", GAME_SUBTITLE_FILEPATH );
-		_data->resources.LoadTexture ( "Instructions", GAME_INSTRUCTIONS );
+		data_->resources.LoadTexture ( "Menu Screen Title", GAME_TITLE_FILEPATH );
+		data_->resources.LoadTexture ( "Subtitle", GAME_SUBTITLE_FILEPATH );
+		data_->resources.LoadTexture ( "Instructions", GAME_INSTRUCTIONS );
 
-		_title.setTexture ( _data->resources.GetTexture ( "Menu Screen Title" ) );
-		_title.setPosition ( ( SCREEN_WIDTH / 2 ) - ( _title.getGlobalBounds().width / 2 ),
-		                     SCREEN_HEIGHT / 2 - _title.getGlobalBounds().height );
+		title_.setTexture ( data_->resources.GetTexture ( "Menu Screen Title" ) );
+		title_.setPosition ( ( SCREEN_WIDTH / 2 ) - ( title_.getGlobalBounds().width / 2 ),
+		                     SCREEN_HEIGHT / 2 - title_.getGlobalBounds().height );
 
-		_subtitle.setTexture ( _data->resources.GetTexture ( "Subtitle" ) );
-		_subtitle.setPosition ( ( SCREEN_WIDTH / 2 ) - ( _subtitle.getGlobalBounds().width / 2 ), SCREEN_HEIGHT / 2 );
+		subtitle_.setTexture ( data_->resources.GetTexture ( "Subtitle" ) );
+		subtitle_.setPosition ( ( SCREEN_WIDTH / 2 ) - ( subtitle_.getGlobalBounds().width / 2 ), SCREEN_HEIGHT / 2 );
 
-		_instructions.setTexture ( _data->resources.GetTexture ( "Instructions" ) );
-		_instructions.setPosition ( ( SCREEN_WIDTH / 2 ) - ( _instructions.getGlobalBounds().width / 2 ),
-		                            SCREEN_HEIGHT / 2 + _subtitle.getGlobalBounds().height );
+		instructions_.setTexture ( data_->resources.GetTexture ( "Instructions" ) );
+		instructions_.setPosition ( ( SCREEN_WIDTH / 2 ) - ( instructions_.getGlobalBounds().width / 2 ),
+		                            SCREEN_HEIGHT / 2 + subtitle_.getGlobalBounds().height );
 	}
 
 	void MainMenu::HandleInput()
 	{
 		sf::Event event;
 
-		while ( _data->window.pollEvent ( event ) && event.type == sf::Event::KeyPressed )
+		while ( data_->window.pollEvent ( event ) && event.type == sf::Event::KeyPressed )
 		{
 			if (  event.key.code == sf::Keyboard::Escape )
 			{
-				_data->window.close();
+				data_->window.close();
 			}
 
 			else if  ( event.key.code == sf::Keyboard::Space )
 			{
 				// if player presses space, start game
-				_data->statehandler.AddState ( StatePtr ( new GamePlay ( _data ) ) );
+				data_->statehandler.AddState ( StatePtr ( new GamePlay ( data_ ) ) );
 			}
 		}
 	}
@@ -53,13 +53,13 @@ namespace GameEngine
 	void MainMenu::Draw()
 	{
 		// clear screen to update data
-		_data->window.clear();
+		data_->window.clear();
 		// draw all menu sprites
-		_data->window.draw ( _background );
-		_data->window.draw ( _title );
-		_data->window.draw ( _subtitle );
-		_data->window.draw ( _instructions );
+		data_->window.draw ( background_ );
+		data_->window.draw ( title_ );
+		data_->window.draw ( subtitle_ );
+		data_->window.draw ( instructions_ );
 		// display updated data
-		_data->window.display();
+		data_->window.display();
 	}
 } // namespace GameEngine

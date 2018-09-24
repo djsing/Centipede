@@ -7,22 +7,22 @@
 
 namespace GameEngine
 {
-class MainMenu : public GameState
-{
-  public:
-    MainMenu(DataPtr data);
+	class MainMenu : public GameState
+	{
+	public:
+		MainMenu ( DataPtr data );
 
-    void HandleInput() override;
-    void Update(float dt) override;
-    void Draw() override;
+		void HandleInput() override;
+		void Update ( float dt ) override;
+		void Draw() override;
 
-  private:
-    DataPtr _data;
-    sf::Sprite _background;
-    sf::Sprite _title;
-    sf::Sprite _subtitle;
-    sf::Sprite _instructions;
-};
+	private:
+		DataPtr data_;
+		sf::Sprite background_;
+		sf::Sprite title_;
+		sf::Sprite subtitle_;
+		sf::Sprite instructions_;
+	};
 
 } // namespace GameEngine
 #endif

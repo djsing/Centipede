@@ -12,29 +12,29 @@
 
 namespace GameEngine
 {
-struct GameData
-{
-    StateHandler statehandler;
-    sf::RenderWindow window;
-    ResourceManager resources;
-    KeyboardControlsHandler keyboard;
-    LivesHandler lives;
-};
+	struct GameData
+	{
+		StateHandler statehandler;
+		sf::RenderWindow window;
+		ResourceManager resources;
+		KeyboardControlsHandler keyboard;
+		LivesHandler lives;
+	};
 
-typedef std::shared_ptr<GameData> DataPtr;
+	using DataPtr = std::shared_ptr<GameData>;
 
-class Game
-{
-  public:
-    Game(int width, int height, std::string windowTitle);
+	class Game
+	{
+	public:
+		Game ( int width, int height, std::string windowTitle );
 
-  private:
-    const float _dt = 1.0f / 120.0f;
-    StopWatch _watch;
-    DataPtr _data = std::make_shared<GameData>();
-    // Starts game loop
-    void Run();
-};
+	private:
+		const float dt_ = 1.0f / 120.0f;
+		StopWatch watch_;
+		DataPtr data_ = std::make_shared<GameData>();
+		// Starts game loop
+		void Run();
+	};
 } // namespace GameEngine
 
 #endif

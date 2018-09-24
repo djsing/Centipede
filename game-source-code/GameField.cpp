@@ -2,18 +2,18 @@
 
 namespace GameEngine
 {
-std::vector<Mushroom>& GameField::GetMushrooms()
-{
-    return _mushrooms;
-}
+	std::vector<Mushroom>& GameField::GetMushrooms()
+	{
+		return mushrooms_;
+	}
 
-std::vector<Spider>& GameField::GetSpiders()
-{
-    return _spiders;
-}
+	std::vector<Spider>& GameField::GetSpiders()
+	{
+		return spiders_;
+	}
 
-std::vector<Scorpion>& GameField::GetScorpions()
-{
-    return _scorpions;
-}
+	std::vector<Scorpion>& GameField::GetScorpions()
+	{
+		return scorpions_;
+	}
 } // namespace GameEngine

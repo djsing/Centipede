@@ -8,18 +8,18 @@
 
 namespace GameEngine
 {
-class BulletRendering : public EntityRendering
-{
-  public:
-    BulletRendering(DataPtr data, std::vector<Bullet>& bullets);
-    void Draw() override;
+	class BulletRendering : public EntityRendering
+	{
+	public:
+		BulletRendering ( DataPtr data, std::vector<Bullet>& bullets );
+		void Draw() override;
 
-  private:
-    DataPtr _data;
-    std::vector<Bullet>& _bullets;
-};
+	private:
+		DataPtr data_;
+		std::vector<Bullet>& bullets_;
+	};
 
-typedef std::unique_ptr<BulletRendering> BulletRenderPtr;
+	using BulletRenderPtr = std::unique_ptr<BulletRendering>;
 } // namespace GameEngine
 
 #endif

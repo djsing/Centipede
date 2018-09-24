@@ -9,23 +9,23 @@
 
 namespace GameEngine
 {
-class GameField
-{
-  public:
-    GameField()
-    {
-    }
-    std::vector<Mushroom>& GetMushrooms();
-    std::vector<Spider>& GetSpiders();
-    std::vector<Scorpion>& GetScorpions();
+	class GameField
+	{
+	public:
+		GameField()
+		{
+		}
+		std::vector<Mushroom>& GetMushrooms();
+		std::vector<Spider>& GetSpiders();
+		std::vector<Scorpion>& GetScorpions();
 
-  private:
-    std::vector<Mushroom> _mushrooms;
-    std::vector<Spider> _spiders;
-    std::vector<Scorpion> _scorpions;
-};
+	private:
+		std::vector<Mushroom> mushrooms_;
+		std::vector<Spider> spiders_;
+		std::vector<Scorpion> scorpions_;
+	};
 
-typedef std::shared_ptr<GameField> FieldPtr;
+	using FieldPtr = std::shared_ptr<GameField>;
 } // namespace GameEngine
 
 #endif

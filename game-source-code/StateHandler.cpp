@@ -2,46 +2,48 @@
 
 namespace GameEngine
 {
-void StateHandler::AddState(StatePtr newState, bool isReplacing)
-{
-    // track changes to be made
-    _isAdding = true;
-    _isReplacing = isReplacing;
-    // move location of newState to _newState
-    _newState = std::move(newState);
-}
-
-void StateHandler::RemoveState()
-{
-    _isRemoving = true;
-}
-
-void StateHandler::ProcessStateChanges()
-{
-    if(_isRemoving && !_states.empty())
+	void StateHandler::AddState ( StatePtr newState, bool replacing )
 	{
-	    _states.pop();
-	    _isRemoving = false;
+		// track changes to be made
+		adding_ = true;
+		replacing_ = replacing;
+		// move location of newState to new_state_
+		new_state_ = std::move ( newState );
 	}
 
-    if(_isAdding)
+	void StateHandler::RemoveState()
 	{
-	    if(!_states.empty())
-		{ // if we are replacing, first remove the state at the top of the stack
-		    if(_isReplacing)
-			{
-			    _states.pop();
-			}
+		removing_ = true;
+	}
+
+	void StateHandler::ProcessStateChanges()
+	{
+		if ( removing_ && !states_.empty() )
+		{
+			states_.pop();
+			removing_ = false;
 		}
-	    // move location of _newState to stack
-	    _states.push(std::move(_newState));
-	    // we are no longer adding a state
-	    _isAdding = false;
-	}
-}
 
-StatePtr& StateHandler::GetActiveGameState()
-{
-    return _states.top();
-}
+		if ( adding_ )
+		{
+			if ( !states_.empty() )
+			{
+				// if we are replacing, first remove the state at the top of the stack
+				if ( replacing_ )
+				{
+					states_.pop();
+				}
+			}
+
+			// move location of new_state_ to stack
+			states_.push ( std::move ( new_state_ ) );
+			// we are no longer adding a state
+			adding_ = false;
+		}
+	}
+
+	StatePtr& StateHandler::GetActiveGameState()
+	{
+		return states_.top();
+	}
 } // namespace GameEngine

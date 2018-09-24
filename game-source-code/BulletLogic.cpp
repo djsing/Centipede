@@ -4,47 +4,48 @@
 
 namespace GameEngine
 {
-BulletLogic::BulletLogic(std::vector<Bullet>& bullets)
-    : _bullets(bullets)
-    , _speed(BULLET_SPEED)
-{
-}
-
-void BulletLogic::Spawn()
-{
-}
-
-void BulletLogic::Move(float dt)
-{
-    auto moveDistance = _speed * dt;
-    for(unsigned int i = 0; i < _bullets.size(); i++)
+	BulletLogic::BulletLogic ( std::vector<Bullet>& bullets )
+		: bullets_ ( bullets )
+		, speed_ ( BULLET_SPEED )
 	{
-	    // Check whether bullet is moving to the top  of screen
-	    if(_bullets.at(i).GetTopLeftYPosition() <= SCREEN_TOP)
+	}
+
+	void BulletLogic::Spawn()
+	{
+	}
+
+	void BulletLogic::Move ( float dt )
+	{
+		auto moveDistance = speed_ * dt;
+
+		for ( unsigned int i = 0; i < bullets_.size(); i++ )
 		{
-		    _bullets.at(i).SetDead(true);
-		}
-	    else
-		{
-		    _bullets.at(i).SetTopLeftYPosition(_bullets.at(i).GetTopLeftYPosition() - moveDistance);
+			// Check whether bullet is moving to the top  of screen
+			if ( bullets_.at ( i ).GetTopLeftYPosition() <= SCREEN_TOP )
+			{
+				bullets_.at ( i ).SetDead ( true );
+			}
+			else
+			{
+				bullets_.at ( i ).SetTopLeftYPosition ( bullets_.at ( i ).GetTopLeftYPosition() - moveDistance );
+			}
 		}
 	}
-}
 
-void BulletLogic::MoveProjectiles(float dt)
-{
-}
-
-void BulletLogic::CollisionHandle()
-{
-    // delete collided bullets
-    for(unsigned int i = 0; i < _bullets.size(); i++)
+	void BulletLogic::MoveProjectiles ( float dt )
 	{
-	    if(_bullets.at(i).IsDead())
+	}
+
+	void BulletLogic::CollisionHandle()
+	{
+		// delete collided bullets
+		for ( unsigned int i = 0; i < bullets_.size(); i++ )
 		{
-		    _bullets.erase(_bullets.begin() + i);
-		    i--;
+			if ( bullets_.at ( i ).IsDead() )
+			{
+				bullets_.erase ( bullets_.begin() + i );
+				i--;
+			}
 		}
 	}
-}
 } // namespace GameEngine

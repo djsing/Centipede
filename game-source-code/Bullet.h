@@ -8,19 +8,15 @@
 
 namespace GameEngine
 {
-class Bullet : public Entity
-{
-  public:
-    Bullet(DataPtr data, float xpos, float ypos);
+	class Bullet : public Entity
+	{
+	public:
+		Bullet ( float xpos, float ypos );
 
-    // Mutator Functions
-    void SetTopLeftXPosition(float ypos);
-    void SetTopLeftYPosition(float ypos);
-
-  private:
-    // pointer to GameData layer
-    DataPtr _data;
-};
+		// Mutator Functions
+		void SetTopLeftXPosition ( float ypos );
+		void SetTopLeftYPosition ( float ypos );
+	};
 } // namespace GameEngine
 
 #endif
