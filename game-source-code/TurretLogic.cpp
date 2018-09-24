@@ -1,6 +1,7 @@
 #include "Bullet.h"
 #include "DEFINITIONS.h"
 #include "GameOver.h"
+#include "GamePlay.h"
 #include "TurretLogic.h"
 
 namespace GameEngine
@@ -57,9 +58,9 @@ void TurretLogic::Move(float dt)
 	    break;
 
 	case Direction::LEFT:
-	    if(_turret->GetTopLeftXPosition() <= 0)
+	    if(_turret->GetTopLeftXPosition() <= SCREEN_LHS)
 		{
-		    _turret->SetTopLeftXPosition(0);
+		    _turret->SetTopLeftXPosition(SCREEN_LHS);
 		}
 	    else
 		{
@@ -91,9 +92,13 @@ void TurretLogic::MoveProjectiles(float dt)
 
 void TurretLogic::CollisionHandle()
 {
-    if(_turret->IsDead())
+    if(_data->lives.LivesRemaining() == 0)
 	{
 	    _data->statehandler.AddState(StatePtr(new GameOver(_data)));
+	}
+    else if(_turret->IsDead())
+	{
+	    _data->statehandler.AddState(StatePtr(new GamePlay(_data)));
 	}
 
     _bulletLogic->CollisionHandle();

@@ -7,44 +7,60 @@
 
 namespace GameEngine
 {
-MushroomLogic::MushroomLogic(FieldPtr field, DataPtr data)
-    : _data(data)
-    , _field(field)
-{
-    std::srand(std::time(nullptr));
-}
-
-void MushroomLogic::Spawn()
-{
-    if(_field->GetMushrooms().empty())
+	MushroomLogic::MushroomLogic ( FieldPtr field, DataPtr data )
+		: _data ( data )
+		, _field ( field )
+		, _deathChance ( 0 )
 	{
-	    for(unsigned int i = 0; i < MUSHROOMS_SPAWNED; i++)
+		std::srand ( std::time ( nullptr ) );
+	}
+
+	void MushroomLogic::Spawn()
+	{
+		if ( _field->GetMushrooms().empty() )
 		{
-		    int maxLevels = TURRET_SCREEN_FRACTION * SCREEN_HEIGHT / MUSHROOM_SPRITE_SIZE;
-		    int randLevel = std::rand() % maxLevels;
-		    int maxScreenPosition = SCREEN_WIDTH - MUSHROOM_SPRITE_SIZE;
-		    int randXPos = std::rand() % maxScreenPosition;
-		    if(randLevel == 0)
+			for ( unsigned int i = 0; i < MUSHROOMS_SPAWNED; i++ )
 			{
-			    i--;
-			    continue;
-			}
-		    auto mushroom = Mushroom{_data, static_cast<float>(randXPos),
-		                             static_cast<float>(randLevel * MUSHROOM_SPRITE_SIZE)};
-		    _field->GetMushrooms().push_back(mushroom);
-		}
-	}
-}
+				int maxLevels = SCREEN_HEIGHT / MUSHROOM_SPRITE_SIZE;
+				int randLevel = std::rand() % maxLevels;
+				int maxScreenPosition = SCREEN_WIDTH - MUSHROOM_SPRITE_SIZE;
+				int randXPos = std::rand() % maxScreenPosition;
 
-void MushroomLogic::CollisionHandle()
-{
-    for(unsigned int i = 0; i < _field->GetMushrooms().size(); i++)
-	{
-	    if(_field->GetMushrooms().at(i).IsDead())
-		{
-		    _field->GetMushrooms().erase(_field->GetMushrooms().begin() + i);
-		    i--;
+				if ( randLevel < 3 || randLevel > maxLevels - 0.25 * maxLevels )
+				{
+					i--;
+					continue;
+				}
+
+				auto mushroom = Mushroom{_data, static_cast<float> ( randXPos ),
+				                         static_cast<float> ( randLevel * MUSHROOM_SPRITE_SIZE ) };
+				_field->GetMushrooms().push_back ( mushroom );
+			}
 		}
 	}
-}
+
+	void MushroomLogic::CollisionHandle()
+	{
+		_deathChance = std::rand() % 100;
+
+		for ( unsigned int i = 0; i < _field->GetMushrooms().size(); i++ )
+		{
+			if ( _field->GetMushrooms().at ( i ).IsBitten() )
+			{
+				if ( _deathChance < SPIDER_BITE_DEATH_CHANCE )
+				{
+					_field->GetMushrooms().at ( i ).SetDead ( true );
+				}
+
+				else
+					_field->GetMushrooms().at ( i ).SetBitten ( false );
+			}
+
+			if ( _field->GetMushrooms().at ( i ).IsDead() )
+			{
+				_field->GetMushrooms().erase ( _field->GetMushrooms().begin() + i );
+				i--;
+			}
+		}
+	}
 } // namespace GameEngine

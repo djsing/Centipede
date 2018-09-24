@@ -20,7 +20,7 @@ void BulletLogic::Move(float dt)
     for(unsigned int i = 0; i < _bullets.size(); i++)
 	{
 	    // Check whether bullet is moving to the top  of screen
-	    if(_bullets.at(i).GetTopLeftYPosition() <= 0)
+	    if(_bullets.at(i).GetTopLeftYPosition() <= SCREEN_TOP)
 		{
 		    _bullets.at(i).SetDead(true);
 		}

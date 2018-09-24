@@ -25,6 +25,7 @@ class MushroomLogic : public EntityLogic
   private:
     DataPtr _data;
     FieldPtr _field;
+    int _deathChance;
 };
 } // namespace GameEngine
 

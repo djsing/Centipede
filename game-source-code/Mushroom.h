@@ -14,15 +14,18 @@ class Mushroom : public Entity
     Mushroom(DataPtr data, float xpos, float ypos);
 
     // Mutator functions
+    void SetBitten(bool isBitten);
     void SetPoisoned(bool isPoisoned);
     void DecrementLives();
 
     // Accessor Functions
+    bool IsBitten();
     bool IsPoisoned();
     int GetLivesRemaining();
 
   private:
     DataPtr _data;
+    bool _isBitten;
     bool _isPoisoned;
     int _livesRemaining;
 };

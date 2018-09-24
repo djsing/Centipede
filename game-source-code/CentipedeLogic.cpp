@@ -44,6 +44,11 @@ void CentipedeLogic::Move(float dt)
 		    if(_centipede->GetCentipede().at(i).GetTopLeftYPosition() >= TURRET_SCREEN_FRACTION * SCREEN_HEIGHT)
 			{
 			    _centipede->GetCentipede().at(i).SetPoisoned(false);
+			    if(_centipede->GetCentipede().at(i).GetTrajectory() == Trajectory::UPWARD)
+				{
+				    _centipede->GetCentipede().at(i).SetTrajectory(Trajectory::DOWNWARD);
+				    _centipede->GetCentipede().at(i).SetDirection(Direction::DOWN);
+				}
 			    continue;
 			}
 		    continue;

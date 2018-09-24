@@ -7,6 +7,7 @@ namespace GameEngine
 Mushroom::Mushroom(DataPtr data, float xpos, float ypos)
     : Entity(xpos, ypos)
     , _data(data)
+    , _isBitten(false)
     , _isPoisoned(false)
     , _livesRemaining(4)
 {
@@ -15,9 +16,19 @@ Mushroom::Mushroom(DataPtr data, float xpos, float ypos)
     Entity::SetCenterYPosition(Entity::GetTopLeftYPosition() + MUSHROOM_SPRITE_SIZE / 2);
 }
 
+void Mushroom::SetBitten(bool isBitten)
+{
+    _isBitten = isBitten;
+}
+
 void Mushroom::SetPoisoned(bool isPoisoned)
 {
     _isPoisoned = isPoisoned;
+}
+
+bool Mushroom::IsBitten()
+{
+    return _isBitten;
 }
 
 bool Mushroom::IsPoisoned()

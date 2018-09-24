@@ -115,6 +115,10 @@ void CollisionHandler::CheckSegmentMushroomCollisions()
 
 void CollisionHandler::CheckTurretSegmentCollisions()
 {
+    if(_turret->IsDead())
+	{
+	    return;
+	}
     for(unsigned int i = 0; i < _centipede->GetCentipede().size(); i++)
 	{
 	    if(_centipede->GetCentipede().at(i).GetRegion() == _turret->GetRegion())
@@ -122,11 +126,8 @@ void CollisionHandler::CheckTurretSegmentCollisions()
 		    if(CheckDistanceBetweenEntities(_centipede->GetCentipede().at(i), *_turret) <
 		       (CENTIPEDE_SEGMENT_HIT_RADIUS + TURRET_HIT_RADIUS))
 			{
-			    _turret->DecrementLives();
-			    if(_turret->GetLivesRemaining() == 0)
-				{
-				    _turret->SetDead(true);
-				}
+			    _data->lives.LifeLost();
+			    _turret->SetDead(true);
 			}
 		}
 	}
@@ -134,6 +135,10 @@ void CollisionHandler::CheckTurretSegmentCollisions()
 
 void CollisionHandler::CheckTurretSpiderCollisions()
 {
+    if(_turret->IsDead())
+	{
+	    return;
+	}
     if(!_field->GetSpiders().empty())
 	{
 	    for(unsigned int i = 0; i < _field->GetSpiders().size(); i++)
@@ -141,11 +146,8 @@ void CollisionHandler::CheckTurretSpiderCollisions()
 		    if(CheckDistanceBetweenEntities(_field->GetSpiders().at(i), *_turret) <
 		       (TURRET_HIT_RADIUS + SPIDER_HIT_RADIUS))
 			{
-			    _turret->DecrementLives();
-			    if(_turret->GetLivesRemaining() == 0)
-				{
-				    _turret->SetDead(true);
-				}
+			    _data->lives.LifeLost();
+			    _turret->SetDead(true);
 			}
 		}
 	}
@@ -187,7 +189,7 @@ void CollisionHandler::CheckMushroomSpiderCollisions()
 				                                    _field->GetSpiders().at(j)) <
 				       (MUSHROOM_HIT_RADIUS + SPIDER_HIT_RADIUS))
 					{
-					    _field->GetMushrooms().at(i).SetDead(true);
+					    _field->GetMushrooms().at(i).SetBitten(true);
 					}
 				}
 			}

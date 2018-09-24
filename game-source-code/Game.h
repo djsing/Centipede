@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "KeyboardControlsHandler.h"
+#include "LivesHandler.h"
 #include "ResourceManager.h"
 #include "StateHandler.h"
 #include "StopWatch.h"
@@ -17,6 +18,7 @@ struct GameData
     sf::RenderWindow window;
     ResourceManager resources;
     KeyboardControlsHandler keyboard;
+    LivesHandler lives;
 };
 
 typedef std::shared_ptr<GameData> DataPtr;

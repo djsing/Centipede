@@ -23,7 +23,6 @@ class Turret : public Entity
     // Mutator functions
     void SetTopLeftXPosition(float xpos);
     void SetTopLeftYPosition(float ypos);
-    void DecrementLives();
 
     // Accessor functions specific to Turret
     float GetLastBulletYPosition();
@@ -32,9 +31,8 @@ class Turret : public Entity
   private:
     // Data layer pointer
     DataPtr _data;
-    // Container to store all visible bullets
+    // Container to store all bullets
     std::vector<Bullet> _bullets;
-    int _livesRemaining;
 };
 
 // Shared pointer to a Turret Object

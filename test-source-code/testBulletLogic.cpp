@@ -30,7 +30,7 @@ TEST_CASE("Bullet is positioned below the left half of the upper boundary condit
 	Bullets_.push_back(Bullet_);
 	auto TestBullet = BulletLogic(Bullets_);
 	TestBullet.Move(0.01);	//expecting bullet to move up by 20
-	CHECK(Bullets_.at(0).GetTopLeftYPosition() == ((SCREEN_HEIGHT/2) - 20));
+	CHECK(Bullets_.at(0).GetTopLeftYPosition() == doctest::Approx((SCREEN_HEIGHT/2) - 20).epsilon(0.01));
 	CHECK(Bullets_.at(0).GetRegion() == Region::TOP_LEFT);
 }
 
@@ -43,7 +43,7 @@ TEST_CASE("Bullet is positioned below the right half of the upper boundary condi
 	Bullets_.push_back(Bullet_);
 	auto TestBullet = BulletLogic(Bullets_);
 	TestBullet.Move(0.01);//expecting bullet to move up by 20
-	CHECK(Bullets_.at(0).GetTopLeftYPosition() == ((SCREEN_HEIGHT/2) - 20));
+	CHECK(Bullets_.at(0).GetTopLeftYPosition() == doctest::Approx((SCREEN_HEIGHT/2) - 20).epsilon(0.01));
 	CHECK(Bullets_.at(0).GetRegion() == Region::TOP_RIGHT);
 }
 
@@ -55,7 +55,7 @@ TEST_CASE("Bullet is positioned in the bottom left region and moves as needed")
 	Bullets_.push_back(Bullet_);
 	auto TestBullet = BulletLogic(Bullets_);
 	TestBullet.Move(0.001);	//expecting bullet to move up by 2
-	CHECK(Bullets_.at(0).GetTopLeftYPosition() == ((SCREEN_HEIGHT-BULLET_HEIGHT) - 2));
+	CHECK(Bullets_.at(0).GetTopLeftYPosition() == doctest::Approx((SCREEN_HEIGHT-BULLET_HEIGHT) - 2).epsilon(0.01));
 	CHECK(Bullets_.at(0).GetRegion() == Region::BOTTOM_LEFT);
 }
 
@@ -67,6 +67,6 @@ TEST_CASE("Bullet is positioned in the bottom right region and moves as needed")
 	Bullets_.push_back(Bullet_);
 	auto TestBullet = BulletLogic(Bullets_);
 	TestBullet.Move(0.001);//expecting bullet to move up by 2
-	CHECK(Bullets_.at(0).GetTopLeftYPosition() == ((SCREEN_HEIGHT-BULLET_HEIGHT)-2));
+	CHECK(Bullets_.at(0).GetTopLeftYPosition() == doctest::Approx((SCREEN_HEIGHT-BULLET_HEIGHT)-2).epsilon(0.01));
 	CHECK((Bullets_.at(0).GetRegion() == Region::BOTTOM_RIGHT));
 }

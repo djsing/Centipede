@@ -19,8 +19,8 @@ TEST_CASE("Centipede Segment Initialised with correct values")
 	CHECK(segment.GetDirection() == Direction::RIGHT);
 	CHECK(segment.GetTrajectory() == Trajectory::DOWNWARD);
 	CHECK(segment.GetTopLeftXPosition() == 0);
-	CHECK(segment.GetTopLeftYPosition() == 0);
+	CHECK(segment.GetTopLeftYPosition() == SCREEN_TOP);
 	// since sprite size is 20x20, the center should be (10,10) if initialised at (0,0)
 	CHECK(segment.GetCenterXPosition() == 10);
-	CHECK(segment.GetCenterYPosition() == 10);
+	CHECK(segment.GetCenterYPosition() == SCREEN_TOP + 10);
 }

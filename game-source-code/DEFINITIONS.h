@@ -3,12 +3,13 @@
 
 #include <SFML/Graphics.hpp>
 #include <cmath>
-const double PI = 4 * atan(1);
+const double PI = 4 * atan ( 1 );
 
-#define SCREEN_WIDTH sf::VideoMode::getDesktopMode().width
-#define SCREEN_HEIGHT sf::VideoMode::getDesktopMode().height
+#define SCREEN_WIDTH sf::VideoMode::getDesktopMode().width / 3
+#define SCREEN_HEIGHT sf::VideoMode::getDesktopMode().height * 0.95
 #define SCREEN_LHS 0
-#define SCREEN_TOP 0
+#define SCREEN_TOP 40
+#define WINDOW_TOP 0
 #define SCREEN_HEIGHT_BUFFER_FACTOR 2
 #define TURRET_SCREEN_FRACTION 0.65
 #define SCORPION_STARTING_Y_POSITION_FRACTION 0.25
@@ -16,15 +17,8 @@ const double PI = 4 * atan(1);
 
 #define SPLASH_TIME 3.0
 #define SPLASH_BACKGROUND_FILEPATH "Resources\\splashscreenbackground.jpg"
-
-#define MENU_BACKGROUND_FILEPATH "Resources\\menubackground.jpg"
 #define GAME_TITLE_FILEPATH "Resources\\title.gif"
 #define GAME_SUBTITLE_FILEPATH "Resources\\subtitle.jpg"
-
-#define GAME_BACKGROUND_FILEPATH ""
-
-#define GAME_OVER_BACKGROUND_FILEPATH "Resources\\losebackground.jpg"
-#define GAME_WIN_BACKGROUND_FILEPATH "Resources\\winbackground.jpg"
 #define GAME_WON "Resources\\youwin.png"
 #define PAUSE_FILEPATH "Resources\\gamepaused.png"
 #define PAUSE_SPACE_FILEPATH "Resources\\resume.png"
@@ -33,7 +27,7 @@ const double PI = 4 * atan(1);
 #define GAME_WIN_RESTART_FILEPATH "Resources\\gamerestart.png"
 #define GAME_INSTRUCTIONS "Resources\\instructions.png"
 
-#define SEGMENT_FILEPATH "Resources\\centipedesegment.jpg"
+#define SEGMENT_FILEPATH "Resources\\centipedesegment.png"
 #define BODY_SEGMENT_FILEPATH "Resources\\bodycentipedesegment.png"
 #define TURRET_FILEPATH "Resources\\turret.png"
 #define BULLET_FILEPATH "Resources\\bullet.jpg"
@@ -50,22 +44,24 @@ const double PI = 4 * atan(1);
 #define TURRET_HIT_RADIUS 9
 #define BULLET_WIDTH 8
 #define BULLET_HEIGHT 20
-#define BULLET_SPEED 2000
+#define BULLET_SPEED 1000
 #define BULLET_HIT_RADIUS 9
-#define TURRET_SPEED 500
-#define CENTIPEDE_SPEED 800
+#define TURRET_SPEED 300
+#define CENTIPEDE_SPEED 400
 #define INITIAL_CENTIPEDE_NUMBER 12
-#define MUSHROOMS_SPAWNED 50
+#define MUSHROOMS_SPAWNED 70
 #define MUSHROOM_SPRITE_SIZE 20
 #define MUSHROOM_HIT_RADIUS 9
 #define SPIDER_SPRITE_SIZE 20
 #define SPIDER_HIT_RADIUS 10
-#define SPIDER_SPEED 800
+#define SPIDER_SPEED 400
 #define SPIDER_MOVEMENT_TIME 1
 #define SCORPION_MOVEMENT_TIME 2
 #define SCORPION_SPRITE_SIZE 20
 #define SCORPION_HIT_RADIUS 9
-#define SCORPION_SPEED 800
+#define SCORPION_SPEED 400
 #define HEART_SIZE 20
+#define STARTING_LIVES 3
+#define SPIDER_BITE_DEATH_CHANCE 5
 
 #endif

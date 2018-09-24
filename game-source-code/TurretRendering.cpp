@@ -16,7 +16,7 @@ TurretRendering::TurretRendering(DataPtr data, TurretPtr turret)
     _bullets = std::make_unique<BulletRendering>(_data, _turret->GetBullets());
 
     // create life indicators
-    for(int i = 0; i < _turret->GetLivesRemaining(); i++)
+    for(int i = 0; i < _data->lives.LivesRemaining(); i++)
 	{
 	    auto heart = sf::Sprite();
 	    heart.setTexture(_data->resources.GetTexture("heart sprite"));
@@ -30,7 +30,7 @@ void TurretRendering::Draw()
     _turret->GetObjectSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
     _data->window.draw(_turret->GetObjectSprite());
 
-    while(_lives.size() != static_cast<unsigned int>(_turret->GetLivesRemaining()))
+    while(_lives.size() != static_cast<unsigned int>(_data->lives.LivesRemaining()))
 	{
 	    if(_lives.size() == 0)
 		{
@@ -41,7 +41,7 @@ void TurretRendering::Draw()
 
     for(unsigned int i = 1; i <= _lives.size(); i++)
 	{
-	    _lives.at(i - 1).setPosition(SCREEN_WIDTH - i * HEART_SIZE, SCREEN_TOP);
+	    _lives.at(i - 1).setPosition(SCREEN_WIDTH - i * HEART_SIZE, WINDOW_TOP);
 	    _data->window.draw(_lives.at(i - 1));
 	}
 }
