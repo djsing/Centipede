@@ -13,7 +13,7 @@ namespace GameEngine
 	class CentipedeSegment : public Entity
 	{
 	public:
-		CentipedeSegment ( bool firstSegment );
+		CentipedeSegment ( bool firstSegment = false);
 
 		// Mutator Functions
 		void SetTopLeftXPosition ( float xpos );

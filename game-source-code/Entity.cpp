@@ -2,6 +2,11 @@
 
 namespace GameEngine
 {
+	bool operator== ( const Entity& entity, bool dead )
+	{
+		return entity.IsDead() == dead;
+	}
+
 	Entity::Entity ( float topLeftXPosition, float topLeftYPosition )
 		: top_left_x_position_ ( topLeftXPosition )
 		, top_left_y_position_ ( topLeftYPosition )

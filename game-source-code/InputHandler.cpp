@@ -45,6 +45,7 @@ namespace GameEngine
 				{
 					is_shooting_ = false;
 				}
+
 				else
 					is_shooting_ = true;
 

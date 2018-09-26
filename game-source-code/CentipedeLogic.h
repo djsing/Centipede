@@ -26,7 +26,6 @@ namespace GameEngine
 		DataPtr data_;
 		CentPtr centipede_;
 		float speed_;
-		bool is_first_segment_;
 		float move_distance_;
 		// track initially spawned centipede segments
 		unsigned int number_of_centipede_segments_;

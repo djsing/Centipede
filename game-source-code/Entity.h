@@ -12,6 +12,7 @@ namespace GameEngine
 	class Entity
 	{
 	public:
+		friend bool operator== ( const Entity& entity, bool dead );
 		Entity ( float topLeftXPosition, float topLeftYPosition );
 		// Mutator functions
 		virtual void SetDirection ( Direction direction );
