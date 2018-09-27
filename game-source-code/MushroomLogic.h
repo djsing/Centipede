@@ -2,6 +2,7 @@
 #define MUSHROOMLOGIC_H
 
 #include <vector>
+#include "DEFINITIONS.h"
 #include "EntityLogic.h"
 #include "Game.h"
 #include "GameField.h"

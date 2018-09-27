@@ -199,14 +199,12 @@ void CollisionHandler::CheckBulletMushroomCollisions()
 			{
 			    if(CheckDistanceBetweenEntities(j, i) < MUSHROOM_HIT_RADIUS + BULLET_HIT_RADIUS)
 				{
+				    i.SetDead(true);
+				    j.DecrementLives();
 				    if(j.GetLivesRemaining() == 0)
 					{
 					    j.SetDead(true);
 					}
-				    else
-					j.DecrementLives();
-
-				    i.SetDead(true);
 				}
 			}
 		}
