@@ -3,9 +3,7 @@
 
 namespace GameEngine
 {
-MushroomRendering::MushroomRendering(DataPtr data, FieldPtr field)
-    : _data(data)
-    , _field(field)
+MushroomRendering::MushroomRendering(DataPtr data, FieldPtr field) : _data(data), _field(field)
 {
     _data->resources.LoadTexture("Mushroom Sprite", MUSHROOM_FILEPATH);
     _data->resources.LoadTexture("Mushroom3", MUSHROOM3_FILEPATH);
@@ -14,33 +12,29 @@ MushroomRendering::MushroomRendering(DataPtr data, FieldPtr field)
 
 void MushroomRendering::Draw()
 {
-    for(unsigned int i = 0; i < _field->GetMushrooms().size(); i++)
+    for(auto& i : _field->GetMushrooms())
 	{
-	    if(_field->GetMushrooms().at(i).IsPoisoned())
+	    if(i.IsPoisoned())
 		{
-		    switch(_field->GetMushrooms().at(i).GetLivesRemaining())
+		    switch(i.GetLivesRemaining())
 			{
-			default:
-			    _field->GetMushrooms().at(i).GetObjectSprite().setTexture(
-			        _data->resources.GetTexture("Poisoned Mushroom"));
+			    default:
+				i.GetObjectSprite().setTexture(_data->resources.GetTexture("Poisoned Mushroom"));
 			}
 		}
 	    else
 		{
-		    switch(_field->GetMushrooms().at(i).GetLivesRemaining())
+		    switch(i.GetLivesRemaining())
 			{
-			case 3:
-			    _field->GetMushrooms().at(i).GetObjectSprite().setTexture(
-			        _data->resources.GetTexture("Mushroom3"));
-			    break;
-			default:
-			    _field->GetMushrooms().at(i).GetObjectSprite().setTexture(
-			        _data->resources.GetTexture("Mushroom Sprite"));
+			    case 3:
+				i.GetObjectSprite().setTexture(_data->resources.GetTexture("Mushroom3"));
+				break;
+			    default:
+				i.GetObjectSprite().setTexture(_data->resources.GetTexture("Mushroom Sprite"));
 			}
 		}
-	    _field->GetMushrooms().at(i).GetObjectSprite().setPosition(
-	        _field->GetMushrooms().at(i).GetTopLeftXPosition(), _field->GetMushrooms().at(i).GetTopLeftYPosition());
-	    _data->window.draw(_field->GetMushrooms().at(i).GetObjectSprite());
+	    i.GetObjectSprite().setPosition(i.GetTopLeftXPosition(), i.GetTopLeftYPosition());
+	    _data->window.draw(i.GetObjectSprite());
 	}
 }
-} // namespace GameEngine
+}  // namespace GameEngine

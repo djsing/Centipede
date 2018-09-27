@@ -4,48 +4,40 @@
 
 namespace GameEngine
 {
-	BulletLogic::BulletLogic ( std::vector<Bullet>& bullets )
-		: bullets_ ( bullets )
-		, speed_ ( BULLET_SPEED )
+BulletLogic::BulletLogic(std::vector<Bullet>& bullets) : bullets_(bullets), speed_(BULLET_SPEED)
+{
+}
+
+void BulletLogic::Spawn()
+{
+}
+
+void BulletLogic::Move(float dt)
+{
+    auto moveDistance = speed_ * dt;
+
+    for(auto& i : bullets_)
 	{
-	}
+	    // Check whether bullet is moving to the top  of screen
+	    if(i.GetTopLeftYPosition() <= SCREEN_TOP)
+		{
+		    i.SetDead(true);
+		}
 
-	void BulletLogic::Spawn()
+	    else
+		{
+		    i.SetTopLeftYPosition(i.GetTopLeftYPosition() - moveDistance);
+		}
+	}
+}
+
+void BulletLogic::CollisionHandle()
+{
+    // delete dead bullets
+    if(!bullets_.empty())
 	{
+	    auto deadBegin = std::remove(bullets_.begin(), bullets_.end(), true);
+	    bullets_.erase(deadBegin, bullets_.end());
 	}
-
-	void BulletLogic::Move ( float dt )
-	{
-		auto moveDistance = speed_ * dt;
-
-		for ( unsigned int i = 0; i < bullets_.size(); i++ )
-			{
-				// Check whether bullet is moving to the top  of screen
-				if ( bullets_.at ( i ).GetTopLeftYPosition() <= SCREEN_TOP )
-					{
-						bullets_.at ( i ).SetDead ( true );
-					}
-
-				else
-					{
-						bullets_.at ( i ).SetTopLeftYPosition ( bullets_.at ( i ).GetTopLeftYPosition() - moveDistance );
-					}
-			}
-	}
-
-	void BulletLogic::MoveProjectiles ( float dt )
-	{
-	}
-
-	void BulletLogic::CollisionHandle()
-	{
-		// delete collided bullets
-		auto dead = std::find ( bullets_.begin(), bullets_.end(), true );
-
-		while ( dead != bullets_.end() )
-			{
-				bullets_.erase ( dead );
-				dead = std::find ( dead, bullets_.end(), true );
-			}
-	}
-} // namespace GameEngine
+}
+}  // namespace GameEngine

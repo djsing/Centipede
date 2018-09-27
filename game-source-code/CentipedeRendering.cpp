@@ -3,33 +3,27 @@
 
 namespace GameEngine
 {
-	CentipedeRendering::CentipedeRendering ( DataPtr data, CentPtr centipede )
-		: data_ ( data )
-		, centipede_ ( centipede )
-	{
-		data_->resources.LoadTexture ( "Segment sprite", SEGMENT_FILEPATH );
-		data_->resources.LoadTexture ( "Body Segment sprite", BODY_SEGMENT_FILEPATH );
-	}
+CentipedeRendering::CentipedeRendering(DataPtr data, CentPtr centipede) : data_(data), centipede_(centipede)
+{
+    data_->resources.LoadTexture("Segment sprite", SEGMENT_FILEPATH);
+    data_->resources.LoadTexture("Body Segment sprite", BODY_SEGMENT_FILEPATH);
+}
 
-	void CentipedeRendering::Draw()
+void CentipedeRendering::Draw()
+{
+    for(auto& i : centipede_->GetCentipede())
 	{
-		for ( unsigned int i = 0; i < centipede_->GetCentipede().size(); i++ )
+	    if(i.IsFirstSegment())
 		{
-			if ( centipede_->GetCentipede().at ( i ).IsFirstSegment() )
-			{
-				centipede_->GetCentipede().at ( i ).GetObjectSprite().setTexture (
-				    data_->resources.GetTexture ( "Segment sprite" ) );
-			}
-			else
-			{
-				centipede_->GetCentipede().at ( i ).GetObjectSprite().setTexture (
-				    data_->resources.GetTexture ( "Body Segment sprite" ) );
-			}
-
-			centipede_->GetCentipede().at ( i ).GetObjectSprite().setPosition (
-			    centipede_->GetCentipede().at ( i ).GetTopLeftXPosition(),
-			    centipede_->GetCentipede().at ( i ).GetTopLeftYPosition() );
-			data_->window.draw ( centipede_->GetCentipede().at ( i ).GetObjectSprite() );
+		    i.GetObjectSprite().setTexture(data_->resources.GetTexture("Segment sprite"));
 		}
+	    else
+		{
+		    i.GetObjectSprite().setTexture(data_->resources.GetTexture("Body Segment sprite"));
+		}
+
+	    i.GetObjectSprite().setPosition(i.GetTopLeftXPosition(), i.GetTopLeftYPosition());
+	    data_->window.draw(i.GetObjectSprite());
 	}
-} // namespace GameEngine
+}
+}  // namespace GameEngine

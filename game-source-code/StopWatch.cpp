@@ -1,5 +1,5 @@
-#include "StopWatch.h"
 #include <ctime>
+#include "StopWatch.h"
 using namespace std;
 
 namespace GameEngine
@@ -38,4 +38,4 @@ float StopWatch::getElapsedTime()
     float elapsedTime = _stopTime - _startTime;
     return elapsedTime;
 }
-} // namespace GameEngine
+}  // namespace GameEngine

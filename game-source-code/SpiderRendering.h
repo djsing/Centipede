@@ -14,8 +14,8 @@ class SpiderRendering : public EntityRendering
     void Draw() override;
 
   private:
-    DataPtr _data;
-    FieldPtr _field;
+    DataPtr data_;
+    FieldPtr field_;
 };
 } // namespace GameEngine
 

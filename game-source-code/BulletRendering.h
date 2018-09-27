@@ -18,8 +18,6 @@ namespace GameEngine
 		DataPtr data_;
 		std::vector<Bullet>& bullets_;
 	};
-
-	using BulletRenderPtr = std::unique_ptr<BulletRendering>;
 } // namespace GameEngine
 
 #endif

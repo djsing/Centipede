@@ -3,20 +3,15 @@
 
 namespace GameEngine
 {
-TurretRendering::TurretRendering(DataPtr data, TurretPtr turret)
-    : _data(data)
-    , _turret(turret)
+TurretRendering::TurretRendering(DataPtr data, TurretPtr turret) : _data(data), _turret(turret)
 {
-    // load turret, bullet, heart sprites
+    // load turret and heart sprites
     _data->resources.LoadTexture("heart sprite", HEART_FILEPATH);
     _data->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
-    _data->resources.LoadTexture("Bullet sprite", BULLET_FILEPATH);
     turret->GetObjectSprite().setTexture(_data->resources.GetTexture("Turret Sprite"));
 
-    _bullets = std::make_unique<BulletRendering>(_data, _turret->GetBullets());
-
     // create life indicators
-    for(int i = 0; i < _data->lives.LivesRemaining(); i++)
+    for(auto i = 0; i < _data->lives.LivesRemaining(); i++)
 	{
 	    auto heart = sf::Sprite();
 	    heart.setTexture(_data->resources.GetTexture("heart sprite"));
@@ -26,7 +21,6 @@ TurretRendering::TurretRendering(DataPtr data, TurretPtr turret)
 
 void TurretRendering::Draw()
 {
-    _bullets->Draw();
     _turret->GetObjectSprite().setPosition(_turret->GetTopLeftXPosition(), _turret->GetTopLeftYPosition());
     _data->window.draw(_turret->GetObjectSprite());
 
@@ -45,4 +39,4 @@ void TurretRendering::Draw()
 	    _data->window.draw(_lives.at(i - 1));
 	}
 }
-} // namespace GameEngine
+}  // namespace GameEngine

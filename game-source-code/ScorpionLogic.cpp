@@ -4,88 +4,71 @@
 
 namespace GameEngine
 {
-	ScorpionLogic::ScorpionLogic ( FieldPtr field )
-		: _field ( field )
-		, _totalTimePerMovement ( 0 )
-		, _angle ( 0 )
-		, _speed ( SCORPION_SPEED )
-	{
-		std::srand ( std::time ( nullptr ) );
-	}
+ScorpionLogic::ScorpionLogic(FieldPtr field)
+    : _field(field), _totalTimePerMovement(0), _angle(0), _speed(SCORPION_SPEED)
+{
+    std::srand(std::time(nullptr));
+}
 
-	void ScorpionLogic::Spawn()
+void ScorpionLogic::Spawn()
+{
+    if(_field->GetScorpions().empty())
 	{
-		if ( _field->GetScorpions().empty() )
-		{
-			auto scorpion = Scorpion();
-			_field->GetScorpions().push_back ( scorpion );
-			_angle = ( std::rand() % 180 ) * PI / 180;
-		}
+	    auto scorpion = Scorpion();
+	    _field->GetScorpions().push_back(scorpion);
+	    _angle = (std::rand() % 180) * PI / 180;
 	}
+}
 
-	void ScorpionLogic::Move ( float dt )
+void ScorpionLogic::Move(float dt)
+{
+    if(!_field->GetScorpions().empty())
 	{
-		if ( !_field->GetScorpions().empty() )
+	    for(auto& i : _field->GetScorpions())
 		{
-			for ( unsigned int i = 0; i < _field->GetScorpions().size(); i++ )
+		    if(_totalTimePerMovement > SCORPION_MOVEMENT_TIME)
 			{
-				if ( _totalTimePerMovement > SCORPION_MOVEMENT_TIME )
-				{
-					_angle = ( std::rand() % 360 ) * PI / 180;
-					_totalTimePerMovement = 0;
-				}
-
-				if ( _field->GetScorpions().at ( i ).GetTopLeftYPosition() <= SCREEN_TOP )
-				{
-					// keep sprite from moving off screen
-					_field->GetScorpions().at ( i ).SetTopLeftYPosition ( SCREEN_TOP );
-					// move
-					_field->GetScorpions().at ( i ).SetTopLeftXPosition (
-					    _field->GetScorpions().at ( i ).GetTopLeftXPosition() );
-					_field->GetScorpions().at ( i ).SetTopLeftYPosition (
-					    _field->GetScorpions().at ( i ).GetTopLeftYPosition() + _speed * dt );
-					_angle = ( std::rand() % 180 ) * PI / 180;
-					_totalTimePerMovement += dt;
-					continue;
-				}
-
-				if ( _field->GetScorpions().at ( i ).GetTopLeftYPosition() >=
-				        TURRET_SCREEN_FRACTION * SCREEN_HEIGHT - SCORPION_SPRITE_SIZE )
-				{
-					// keep sprite from moving off screen
-					_field->GetScorpions().at ( i ).SetTopLeftYPosition ( TURRET_SCREEN_FRACTION * SCREEN_HEIGHT -
-					        SCORPION_SPRITE_SIZE );
-					// move
-					_field->GetScorpions().at ( i ).SetTopLeftXPosition (
-					    _field->GetScorpions().at ( i ).GetTopLeftXPosition() );
-					_field->GetScorpions().at ( i ).SetTopLeftYPosition (
-					    _field->GetScorpions().at ( i ).GetTopLeftYPosition() - _speed * dt );
-					_angle = ( std::rand() % 360 ) * PI / 180;
-					_totalTimePerMovement += dt;
-					continue;
-				}
-
-				_field->GetScorpions().at ( i ).SetTopLeftXPosition (
-				    _field->GetScorpions().at ( i ).GetTopLeftXPosition() + _speed * dt * cos ( _angle ) );
-				_field->GetScorpions().at ( i ).SetTopLeftYPosition (
-				    _field->GetScorpions().at ( i ).GetTopLeftYPosition() + _speed * dt * sin ( _angle ) );
-				_totalTimePerMovement += dt;
+			    _angle = (std::rand() % 360) * PI / 180;
+			    _totalTimePerMovement = 0;
 			}
-		}
-	}
 
-	void ScorpionLogic::CollisionHandle()
-	{
-		if ( !_field->GetScorpions().empty() )
-		{
-			for ( unsigned int i = 0; i < _field->GetScorpions().size(); i++ )
+		    if(i.GetTopLeftYPosition() <= SCREEN_TOP)
 			{
-				if ( _field->GetScorpions().at ( i ).IsDead() )
-				{
-					_field->GetScorpions().erase ( _field->GetScorpions().begin() + i );
-					i--;
-				}
+			    // keep sprite from moving off screen
+			    i.SetTopLeftYPosition(SCREEN_TOP);
+			    // move
+			    i.SetTopLeftXPosition(i.GetTopLeftXPosition());
+			    i.SetTopLeftYPosition(i.GetTopLeftYPosition() + _speed * dt);
+			    _angle = (std::rand() % 180) * PI / 180;
+			    _totalTimePerMovement += dt;
+			    continue;
 			}
+
+		    if(i.GetTopLeftYPosition() >= TURRET_SCREEN_FRACTION * SCREEN_HEIGHT - SCORPION_SPRITE_SIZE)
+			{
+			    // keep sprite from moving off screen
+			    i.SetTopLeftYPosition(TURRET_SCREEN_FRACTION * SCREEN_HEIGHT - SCORPION_SPRITE_SIZE);
+			    // move
+			    i.SetTopLeftXPosition(i.GetTopLeftXPosition());
+			    i.SetTopLeftYPosition(i.GetTopLeftYPosition() - _speed * dt);
+			    _angle = (std::rand() % 360) * PI / 180;
+			    _totalTimePerMovement += dt;
+			    continue;
+			}
+
+		    i.SetTopLeftXPosition(i.GetTopLeftXPosition() + _speed * dt * cos(_angle));
+		    i.SetTopLeftYPosition(i.GetTopLeftYPosition() + _speed * dt * sin(_angle));
+		    _totalTimePerMovement += dt;
 		}
 	}
-} // namespace GameEngine
+}
+
+void ScorpionLogic::CollisionHandle()
+{
+    if(!_field->GetScorpions().empty())
+	{
+	    auto deadBegin = std::remove(_field->GetScorpions().begin(), _field->GetScorpions().end(), true);
+	    _field->GetScorpions().erase(deadBegin, _field->GetScorpions().end());
+	}
+}
+}  // namespace GameEngine

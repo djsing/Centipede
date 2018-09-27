@@ -1,32 +1,30 @@
 #ifndef MUSHROOMLOGIC_H
 #define MUSHROOMLOGIC_H
 
+#include <vector>
 #include "EntityLogic.h"
 #include "Game.h"
 #include "GameField.h"
 #include "Mushroom.h"
-#include <vector>
 
 namespace GameEngine
 {
-	class MushroomLogic : public EntityLogic
-	{
-	public:
-		MushroomLogic ( FieldPtr field );
-		void Spawn() override;
-		void Move ( float dt )
-		{
-		}
-		void MoveProjectiles ( float dt )
-		{
-		}
-		void CollisionHandle() override; // yet to implement
+class MushroomLogic : public EntityLogic
+{
+   public:
+    MushroomLogic(FieldPtr field);
+    void Spawn() override;
+    void Move(float dt)
+    {
+    }
+    void CollisionHandle() override;
 
-	private:
-		DataPtr _data;
-		FieldPtr _field;
-		int _deathChance;
-	};
-} // namespace GameEngine
+   private:
+    FieldPtr _field;
+    int _deathChance;
+    const int maxYLevels = SCREEN_HEIGHT / MUSHROOM_SPRITE_SIZE;
+    const int maxXLevels = SCREEN_WIDTH / MUSHROOM_SPRITE_SIZE;
+};
+}  // namespace GameEngine
 
 #endif

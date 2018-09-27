@@ -19,7 +19,6 @@ class TurretRendering : public EntityRendering
   private:
     DataPtr _data;
     TurretPtr _turret;
-    BulletRenderPtr _bullets;
     std::vector<sf::Sprite> _lives;
 };
 } // namespace GameEngine

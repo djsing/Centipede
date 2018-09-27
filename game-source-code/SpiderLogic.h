@@ -13,9 +13,6 @@ namespace GameEngine
 		SpiderLogic ( FieldPtr field );
 		void Spawn() override;
 		void Move ( float dt ) override;
-		void MoveProjectiles ( float dt )
-		{
-		}
 		void CollisionHandle() override;
 
 	private:
