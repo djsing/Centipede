@@ -5,7 +5,7 @@
 #include <cmath>
 
 // game characteristics
-const double PI = 4 * atan ( 1 );
+const double PI = 4 * atan(1);
 const auto SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width / 3;
 const auto SCREEN_HEIGHT = sf::VideoMode::getDesktopMode().height * 0.95;
 const auto SCREEN_LHS = 0;
@@ -66,5 +66,6 @@ const auto SCORPION_SPEED = 400;
 const auto HEART_SIZE = 20;
 const auto STARTING_LIVES = 3;
 const auto SPIDER_BITE_DEATH_CHANCE = 5;
+const auto SPIDER_TIME = 2;
 
 #endif

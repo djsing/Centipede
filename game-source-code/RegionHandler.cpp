@@ -3,9 +3,7 @@
 
 namespace GameEngine
 {
-RegionHandler::RegionHandler(float xpos, float ypos)
-    : _xpos(xpos)
-    , _ypos(ypos)
+RegionHandler::RegionHandler(float xpos, float ypos) : _xpos(xpos), _ypos(ypos)
 {
     // left side of screen
     if(_xpos <= (SCREEN_WIDTH / 2))
@@ -158,4 +156,4 @@ Region RegionHandler::GetSubRegion()
 {
     return _subregion;
 }
-} // namespace GameEngine
+}  // namespace GameEngine

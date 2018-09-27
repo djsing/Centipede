@@ -19,6 +19,7 @@ using GameEngine::Mushroom;
 using GameEngine::MushroomLogic;
 using GameEngine::RegionHandler;
 using GameEngine::ScorpionLogic;
+using GameEngine::Spider;
 using GameEngine::SpiderLogic;
 using GameEngine::Trajectory;
 using GameEngine::Turret;
@@ -236,7 +237,8 @@ TEST_CASE("Check if turret loses a life when it collides with a spider.")
     auto spiderLogic = std::make_unique<SpiderLogic>(field);
     auto collision = std::make_unique<CollisionHandler>(data, turret, centipede, field);
     // spawn spider directly above turret
-    spiderLogic->Spawn();
+    auto spider = Spider();
+    field->GetSpiders().push_back(spider);
     CHECK(field->GetSpiders().size() == 1);
     // move turret onto spider
     turret->SetTopLeftXPosition(field->GetSpiders().at(0).GetTopLeftXPosition());
@@ -299,7 +301,8 @@ TEST_CASE("Check that spider-mushroom collisions are handled correctly.")
 
     CHECK(field->GetMushrooms().empty());
     CHECK(field->GetSpiders().empty());
-    spiderLogic->Spawn();
+    auto spider = Spider();
+    field->GetSpiders().push_back(spider);
     CHECK(field->GetSpiders().size() == 1);
 
     // spawn a mushroom at position of scorpion
@@ -333,7 +336,8 @@ TEST_CASE("Check that bullet-spider collisions are handled correctly.")
     CHECK(field->GetSpiders().empty());
 
     // spawn spider
-    spiderLogic->Spawn();
+    auto spider = Spider();
+    field->GetSpiders().push_back(spider);
     // spawn bullet
     turretLogic->Spawn();
 

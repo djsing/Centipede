@@ -23,7 +23,11 @@ class GamePlay : public GameState
     void Update(float dt) override;
     void Draw() override;
 
-   private:
+	private:
+   void SpawnEntities();
+   void MoveEntities(float dt);
+   void CheckCollisions();
+   void DeleteDeadEntities();
     // Data layer pointer
     DataPtr data_;
     // Centipede object shared pointer

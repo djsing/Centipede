@@ -4,58 +4,57 @@
 
 namespace GameEngine
 {
-	PauseGame::PauseGame ( DataPtr data )
-		: _data ( data )
-	{
-		// create pause background
-		_resumeBackground.create ( _data->window.getSize().x, _data->window.getSize().y );
-		_resumeBackground.update ( _data->window );
-		_BACKGROUND.setTexture ( _resumeBackground );
-		// load pause sprites
-		_data->resources.LoadTexture ( "Game Paused Sprite", PAUSE_FILEPATH );
-		_data->resources.LoadTexture ( "Press Space Resume", PAUSE_SPACE_FILEPATH );
-		// set pause sprites
-		_GAMEPAUSED.setTexture ( _data->resources.GetTexture ( "Game Paused Sprite" ) );
-		_PRESSSPACETORESUME.setTexture ( _data->resources.GetTexture ( "Press Space Resume" ) );
-		// set pause sprite positions
-		_GAMEPAUSED.setPosition ( SCREEN_WIDTH / 2 - _GAMEPAUSED.getGlobalBounds().width / 2,
-		                          SCREEN_HEIGHT / 2 - _GAMEPAUSED.getGlobalBounds().height );
-		_PRESSSPACETORESUME.setPosition ( SCREEN_WIDTH / 2 - _PRESSSPACETORESUME.getGlobalBounds().width / 2,
-		                                  SCREEN_HEIGHT / 2 );
-	}
+PauseGame::PauseGame(DataPtr data) : data_(data)
+{
+    // create pause background
+    resume_background_.create(data_->window.getSize().x, data_->window.getSize().y);
+    resume_background_.update(data_->window);
+    background_.setTexture(resume_background_);
+    // load pause sprites
+    data_->resources.LoadTexture("Game Paused Sprite", PAUSE_FILEPATH);
+    data_->resources.LoadTexture("Press Space Resume", PAUSE_SPACE_FILEPATH);
+    // set pause sprites
+    game_paused_.setTexture(data_->resources.GetTexture("Game Paused Sprite"));
+    press_space_to_resume_.setTexture(data_->resources.GetTexture("Press Space Resume"));
+    // set pause sprite positions
+    game_paused_.setPosition(SCREEN_WIDTH / 2 - game_paused_.getGlobalBounds().width / 2,
+                             SCREEN_HEIGHT / 2 - game_paused_.getGlobalBounds().height);
+    press_space_to_resume_.setPosition(SCREEN_WIDTH / 2 - press_space_to_resume_.getGlobalBounds().width / 2,
+                                       SCREEN_HEIGHT / 2);
+}
 
-	void PauseGame::HandleInput()
-	{
-		sf::Event event;
+void PauseGame::HandleInput()
+{
+    sf::Event event;
 
-		while ( _data->window.pollEvent ( event ) && event.type == sf::Event::KeyPressed )
+    while(data_->window.pollEvent(event) && event.type == sf::Event::KeyPressed)
+	{
+	    if(event.key.code == sf::Keyboard::Escape)
 		{
-			if ( event.key.code == sf::Keyboard::Escape )
-			{
-				// if player presses escape in pause screen, close window
-				_data->window.close();
-			}
+		    // if player presses escape in pause screen, close window
+		    data_->window.close();
+		}
 
-			else if ( event.key.code == sf::Keyboard::Enter )
-			{
-				// if player presses space in pause screen, resume game
-				_data->statehandler.RemoveState();
-			}
+	    else if(event.key.code == sf::Keyboard::Enter)
+		{
+		    // if player presses space in pause screen, resume game
+		    data_->statehandler.RemoveState();
 		}
 	}
+}
 
-	void PauseGame::Update ( float dt )
-	{
-	}
+void PauseGame::Update(float dt)
+{
+}
 
-	void PauseGame::Draw()
-	{
-		_data->window.clear();
-		_data->window.draw ( _BACKGROUND );
-		// draw background sprite with background texture loaded
-		_data->window.draw ( _GAMEPAUSED );
-		_data->window.draw ( _PRESSSPACETORESUME );
-		// display updated data
-		_data->window.display();
-	}
-} // namespace GameEngine
+void PauseGame::Draw()
+{
+    data_->window.clear();
+    data_->window.draw(background_);
+    // draw background sprite with background texture loaded
+    data_->window.draw(game_paused_);
+    data_->window.draw(press_space_to_resume_);
+    // display updated data
+    data_->window.display();
+}
+}  // namespace GameEngine

@@ -1,28 +1,28 @@
 #ifndef PAUSEGAME_H
 #define PAUSEGAME_H
 
+#include <SFML/Graphics.hpp>
 #include "Game.h"
 #include "GameState.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {
-	class PauseGame : public GameState
-	{
-	public:
-		PauseGame ( DataPtr data );
+class PauseGame : public GameState
+{
+   public:
+    PauseGame(DataPtr data);
 
-		void HandleInput() override;
-		void Update ( float dt ) override;
-		void Draw() override;
+    void HandleInput() override;
+    void Update(float dt) override;
+    void Draw() override;
 
-	private:
-		DataPtr _data;
-		sf::Sprite _GAMEPAUSED;
-		sf::Sprite _PRESSSPACETORESUME;
-		sf::Sprite _BACKGROUND;
-		sf::Texture _resumeBackground;
-	};
-} // namespace GameEngine
+   private:
+    DataPtr data_;
+    sf::Sprite game_paused_;
+    sf::Sprite press_space_to_resume_;
+    sf::Sprite background_;
+    sf::Texture resume_background_;
+};
+}  // namespace GameEngine
 
 #endif

@@ -7,20 +7,21 @@
 
 namespace GameEngine
 {
-	class SpiderLogic : public EntityLogic
-	{
-	public:
-		SpiderLogic ( FieldPtr field );
-		void Spawn() override;
-		void Move ( float dt ) override;
-		void CollisionHandle() override;
+class SpiderLogic : public EntityLogic
+{
+   public:
+    SpiderLogic(FieldPtr field);
+    void Spawn() override;
+    void Move(float dt) override;
+    void CollisionHandle() override;
 
-	private:
-		FieldPtr _field;
-		float _totalTimePerMovement;
-		float _speed;
-		int _angle;
-	};
-} // namespace GameEngine
+   private:
+    void ChangeDirection(Spider& index);
+    FieldPtr _field;
+    StopWatch spawn_timer_;
+    StopWatch move_timer_;
+    float _speed;
+};
+}  // namespace GameEngine
 
 #endif
