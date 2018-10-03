@@ -12,6 +12,8 @@ namespace GameEngine
 {
 GamePlay::GamePlay(DataPtr data) : data_(data)
 {
+    // interface pointer
+    input_handler_ = std::make_shared<InputHandler>(data_);
     // Centipede pointers
     centipede_ = std::make_shared<Centipede>();
     centipede_logic_ = std::make_unique<CentipedeLogic>(data_, centipede_);
@@ -28,8 +30,6 @@ GamePlay::GamePlay(DataPtr data) : data_(data)
     spider_logic_ = std::make_unique<SpiderLogic>(field_);
     // scorpion pointers
     scorpion_logic_ = std::make_unique<ScorpionLogic>(field_);
-    // interface pointer
-    input_handler_ = std::make_shared<InputHandler>(data_);
     // collision checking pointer
     collision_handler_ = std::make_shared<CollisionHandler>(data_, turret_, centipede_, field_);
     // Rendering pointer

@@ -36,7 +36,9 @@ class Centipede
     float GetLastSpriteXPosition();
 
    private:
-    // data container to store CentipedeSegments
+    /**
+     * @brief Data container to store CentipedeSegments.
+     */
     std::vector<CentipedeSegment> centipede_segments_;
 };
 using CentPtr = std::shared_ptr<Centipede>;

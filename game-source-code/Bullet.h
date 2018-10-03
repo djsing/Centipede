@@ -20,7 +20,7 @@ class Bullet : public Entity
    public:
     /**
      * @brief Bullet class constructor
-     * @brief xpos bullet x position
+     * @param xpos bullet x position
      * @param ypos bullet y position
      */
     Bullet(float xpos, float ypos);

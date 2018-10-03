@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
+#include <tuple>
 #include "Direction.h"
 #include "Region.h"
 #include "RegionHandler.h"
@@ -22,11 +23,20 @@ class Entity
     /**
      * @brief Operator overloading to allow an Entity to be compared to a boolean,
      * returns true if the Entity object is dead, i.e. when IsDead() returns true.
-     * @param entity The entity being checked whether it is dead or not.
+     * @param entity The entity being checked.
      * @param dead True if checking whether the Entity is dead, False if checking
      * whether the Entity is alive.
      */
     friend bool operator==(const Entity& entity, bool dead);
+    /**
+     * @brief Operator overloading to allow an Entity to be compared to a pair of
+     * of regions (Region, Subregion), returns true if the Entity object is located
+     * in that Region and Subregion.
+     * in that
+     * @param entity The entity being checked.
+     * @param region A pair of type Region and SubRegion.
+     */
+    friend bool operator==(const Entity& entity, std::pair<Region, Region> region);
     /**
      * @brief Entity Constructor.
      * @param topLeftXPosition The desired x position of the Entity's top left corner.
@@ -37,7 +47,7 @@ class Entity
      * @brief Sets Direction of the Entity
      * @param direction The desired direction from those defined in Direction.h
      */
-    virtual void SetDirection(Direction direction);
+    void SetDirection(Direction direction);
     /**
      * @brief Sets the top left x position of the Entity.
      * @param xpos The desired x position.
@@ -52,17 +62,7 @@ class Entity
      * @brief Sets whether the Entity is dead.
      * @param isDead True if the Entity is dead, else False.
      */
-    virtual void SetDead(bool isDead);
-    /**
-     * @brief Sets the center x position of the Entity.
-     * @param xpos The desired x position.
-     */
-    virtual void SetCenterXPosition(float xpos);
-    /**
-     * @brief Sets the center y position of the Entity.
-     * @param ypos The desired y position.
-     */
-    virtual void SetCenterYPosition(float ypos);
+    void SetDead(bool isDead);
     /**
      * @brief Returns the Entity's sprite.
      * @return Address of the sprite sf::Sprite&
@@ -110,18 +110,30 @@ class Entity
      */
     float GetCenterYPosition() const;
 
+   protected:
+    /**
+     * @brief Sets the center x position of the Entity.
+     * @param xpos The desired x position.
+     */
+    void SetCenterXPosition(float xpos);
+    /**
+     * @brief Sets the center y position of the Entity.
+     * @param ypos The desired y position.
+     */
+    void SetCenterYPosition(float ypos);
+
    private:
     /**
      * @brief Sets the region of the screen which the Entity is found
      * @param region The desired region from those defined in Region.h
      */
-    virtual void SetRegion(Region region);
+    void SetRegion(Region region);
     /**
      * @brief Sets the subregion of a particular region which the Entity
      * is found.
      * @param subregion The desired subregion from those defined in Region.h
      */
-    virtual void SetSubRegion(Region subregion);
+    void SetSubRegion(Region subregion);
     sf::Sprite object_;
     // Position/Movement Attributes
     Direction direction_;

@@ -48,20 +48,21 @@ void CollisionHandler::CheckBulletSegmentCollisions()
 	{
 	    for(auto& i : turret_->GetBullets())
 		{
-		    for(auto& j : centipede_->GetCentipede())
+		    auto it = std::find(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end(),
+		                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
+		    while(it != centipede_->GetCentipede().end())
 			{
-			    // if bullets and centipedes are in the same region, subregion, and
-			    // if the are in hit range, register a collision
-			    if(i.GetRegion() == j.GetRegion() && i.GetSubRegion() == j.GetSubRegion() &&
-			       CheckDistanceBetweenEntities(j, i) < CENTIPEDE_SEGMENT_HIT_RADIUS + BULLET_HIT_RADIUS)
+			    if(CheckDistanceBetweenEntities(*it, i) < CENTIPEDE_SEGMENT_HIT_RADIUS + BULLET_HIT_RADIUS)
 				{
 				    i.SetDead(true);
-				    j.SetDead(true);
+				    it->SetDead(true);
 				    // saved the position of bullet/segment collisions to the GameField container.
 				    field_->GetNewMushrooms().push_back(
-				        std::make_tuple(j.GetTopLeftXPosition(), j.GetTopLeftYPosition()));
-				    break;
+				        std::make_tuple(it->GetTopLeftXPosition(), it->GetTopLeftYPosition()));
 				}
+			    it++;
+			    it = std::find(it, centipede_->GetCentipede().end(),
+			                   std::make_pair(i.GetRegion(), i.GetSubRegion()));
 			}
 		}
 	}
@@ -71,26 +72,36 @@ void CollisionHandler::CheckSegmentMushroomCollisions()
 {
     for(auto& i : centipede_->GetCentipede())
 	{
-	    for(auto& j : field_->GetMushrooms())
+	    auto it = std::find(field_->GetMushrooms().begin(), field_->GetMushrooms().end(),
+	                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
+	    while(it != field_->GetMushrooms().end())
 		{
-		    // provide a seperate collision checking for poisoned mushrooms
-		    if(j.IsPoisoned() &&
-		       CheckDistanceBetweenEntities(i, j) < CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
+		    if(it->IsPoisoned() &&
+		       CheckDistanceBetweenEntities(i, *it) < CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
 			{
 			    // set segments
 			    i.SetPoisoned(true);
 			    // set mushrooms normal after collisions with the last segment of a centipede segment
 			    if(i.IsLastSegment())
 				{
-				    j.SetPoisoned(false);
+				    it->SetPoisoned(false);
 				}
+			    it++;
+			    it = std::find(it, field_->GetMushrooms().end(),
+			                   std::make_pair(i.GetRegion(), i.GetSubRegion()));
 			    continue;
 			}
-
 		    // only check collisions when the segment is moving across the screen
 		    if(((i.GetDirection() == Direction::LEFT) || (i.GetDirection() == Direction::RIGHT)) &&
-		       CheckDistanceBetweenEntities(i, j) < CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
+		       CheckDistanceBetweenEntities(i, *it) < CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
 			{
+			    if(i.GetDirection() == Direction::LEFT)
+				{
+				    i.SetTopLeftXPosition(it->GetTopLeftXPosition() + MUSHROOM_SPRITE_SIZE);
+				}
+			    else
+				i.SetTopLeftXPosition(it->GetTopLeftXPosition() - CENTIPEDE_SPRITE_SIDE_SIZE);
+
 			    if(i.GetTrajectory() == Trajectory::DOWNWARD)
 				{
 				    i.SetDirection(Direction::DOWN);
@@ -99,6 +110,8 @@ void CollisionHandler::CheckSegmentMushroomCollisions()
 			    else
 				i.SetDirection(Direction::UP);
 			}
+		    it++;
+		    it = std::find(it, field_->GetMushrooms().end(), std::make_pair(i.GetRegion(), i.GetSubRegion()));
 		}
 	}
 }
@@ -107,16 +120,19 @@ void CollisionHandler::CheckTurretSegmentCollisions()
 {
     if(!turret_->IsDead())
 	{
-	    for(auto& i : centipede_->GetCentipede())
+	    auto it = std::find(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end(),
+	                        std::make_pair(turret_->GetRegion(), turret_->GetSubRegion()));
+	    while(it != centipede_->GetCentipede().end())
 		{
-		    // the turret is in the same region/subregion and are in hit radius of eachother, kill turret
-		    if(i.GetRegion() == turret_->GetRegion() && i.GetSubRegion() == turret_->GetSubRegion() &&
-		       CheckDistanceBetweenEntities(i, *turret_) < CENTIPEDE_SEGMENT_HIT_RADIUS + TURRET_HIT_RADIUS)
+		    if(CheckDistanceBetweenEntities(*it, *turret_) < CENTIPEDE_SEGMENT_HIT_RADIUS + TURRET_HIT_RADIUS)
 			{
 			    data_->lives.LifeLost();
 			    turret_->SetDead(true);
 			    return;
 			}
+		    it++;
+		    it = std::find(it, centipede_->GetCentipede().end(),
+		                   std::make_pair(turret_->GetRegion(), turret_->GetSubRegion()));
 		}
 	}
 }
@@ -125,28 +141,37 @@ void CollisionHandler::CheckTurretSpiderCollisions()
 {
     if(!turret_->IsDead() && !field_->GetSpiders().empty())
 	{
-	    for(auto& i : field_->GetSpiders())
+	    auto it = std::find(field_->GetSpiders().begin(), field_->GetSpiders().end(),
+	                        std::make_pair(turret_->GetRegion(), turret_->GetSubRegion()));
+	    while(it != field_->GetSpiders().end())
 		{
-		    if(CheckDistanceBetweenEntities(i, *turret_) < TURRET_HIT_RADIUS + SPIDER_HIT_RADIUS)
+		    if(CheckDistanceBetweenEntities(*it, *turret_) < TURRET_HIT_RADIUS + SPIDER_HIT_RADIUS)
 			{
 			    data_->lives.LifeLost();
 			    turret_->SetDead(true);
 			    return;
 			}
+		    it++;
+		    it = std::find(it, field_->GetSpiders().end(),
+		                   std::make_pair(turret_->GetRegion(), turret_->GetSubRegion()));
 		}
 	}
 }
 
 void CollisionHandler::CheckMushroomScorpionCollisions()
 {
-    for(auto& i : field_->GetMushrooms())
+    for(auto& i : field_->GetScorpions())
 	{
-	    for(auto& j : field_->GetScorpions())
+	    auto it = std::find(field_->GetMushrooms().begin(), field_->GetMushrooms().end(),
+	                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
+	    while(it != field_->GetMushrooms().end())
 		{
-		    if(CheckDistanceBetweenEntities(i, j) < MUSHROOM_HIT_RADIUS + SCORPION_HIT_RADIUS)
+		    if(CheckDistanceBetweenEntities(*it, i) < MUSHROOM_HIT_RADIUS + SCORPION_HIT_RADIUS)
 			{
-			    i.SetPoisoned(true);
+			    it->SetPoisoned(true);
 			}
+		    it++;
+		    it = std::find(it, field_->GetMushrooms().end(), std::make_pair(i.GetRegion(), i.GetSubRegion()));
 		}
 	}
 }
@@ -155,15 +180,19 @@ void CollisionHandler::CheckMushroomSpiderCollisions()
 {
     if(!field_->GetSpiders().empty())
 	{
-	    for(auto& i : field_->GetMushrooms())
+	    for(auto& j : field_->GetSpiders())
 		{
-		    for(auto& j : field_->GetSpiders())
+		    auto it = std::find(field_->GetMushrooms().begin(), field_->GetMushrooms().end(),
+		                        std::make_pair(j.GetRegion(), j.GetSubRegion()));
+		    while(it != field_->GetMushrooms().end())
 			{
-			    if((i.GetRegion() == Region::BOTTOM_LEFT || i.GetRegion() == Region::BOTTOM_RIGHT) &&
-			       CheckDistanceBetweenEntities(i, j) < MUSHROOM_HIT_RADIUS + SPIDER_HIT_RADIUS)
+			    if(CheckDistanceBetweenEntities(*it, j) < MUSHROOM_HIT_RADIUS + SPIDER_HIT_RADIUS)
 				{
-				    i.SetBitten(true);
+				    it->SetBitten(true);
 				}
+			    it++;
+			    it = std::find(it, field_->GetMushrooms().end(),
+			                   std::make_pair(j.GetRegion(), j.GetSubRegion()));
 			}
 		}
 	}
@@ -173,19 +202,20 @@ void CollisionHandler::CheckBulletSpiderCollisions()
 {
     if(!turret_->GetBullets().empty() && !field_->GetSpiders().empty())
 	{
-	    for(auto& i : turret_->GetBullets())
+	    for(auto& j : field_->GetSpiders())
 		{
-		    // collision checking between bullets and spiders
-		    for(auto& j : field_->GetSpiders())
+		    auto it = std::find(turret_->GetBullets().begin(), turret_->GetBullets().end(),
+		                        std::make_pair(j.GetRegion(), j.GetSubRegion()));
+		    while(it != turret_->GetBullets().end())
 			{
-			    // if bullets are in the same region/subregion and they are
-			    // within hit radius, register a collision
-			    if(i.GetRegion() == j.GetRegion() && i.GetSubRegion() == j.GetSubRegion() &&
-			       CheckDistanceBetweenEntities(j, i) < SPIDER_HIT_RADIUS + BULLET_HIT_RADIUS)
+			    if(CheckDistanceBetweenEntities(j, *it) < SPIDER_HIT_RADIUS + BULLET_HIT_RADIUS)
 				{
-				    i.SetDead(true);
+				    it->SetDead(true);
 				    j.SetDead(true);
 				}
+			    it++;
+			    it = std::find(it, turret_->GetBullets().end(),
+			                   std::make_pair(j.GetRegion(), j.GetSubRegion()));
 			}
 		}
 	}
@@ -197,18 +227,23 @@ void CollisionHandler::CheckBulletMushroomCollisions()
 	{
 	    for(auto& i : turret_->GetBullets())
 		{
+		    auto it = std::find(field_->GetMushrooms().begin(), field_->GetMushrooms().end(),
+		                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
 		    // collision checking between bullets and mushrooms
-		    for(auto& j : field_->GetMushrooms())
+		    while(it != field_->GetMushrooms().end())
 			{
-			    if(CheckDistanceBetweenEntities(j, i) < MUSHROOM_HIT_RADIUS + BULLET_HIT_RADIUS)
+			    if(CheckDistanceBetweenEntities(*it, i) < MUSHROOM_HIT_RADIUS + BULLET_HIT_RADIUS)
 				{
 				    i.SetDead(true);
-				    j.DecrementLives();
-				    if(j.GetLivesRemaining() == 0)
+				    it->DecrementLives();
+				    if(it->GetLivesRemaining() == 0)
 					{
-					    j.SetDead(true);
+					    it->SetDead(true);
 					}
 				}
+			    it++;
+			    it = std::find(it, field_->GetMushrooms().end(),
+			                   std::make_pair(i.GetRegion(), i.GetSubRegion()));
 			}
 		}
 	}

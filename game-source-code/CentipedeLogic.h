@@ -27,6 +27,7 @@ class CentipedeLogic : public EntityLogic
      * @param data Shared Pointer to the Data layer, used to queue the GameWon
      * state when the Centipede is empty, i.e. when the player has successfully
      * killed all CentipedeSegment objects.
+     * @param centipede Shared pointer to the Centipede container.
      */
     CentipedeLogic(DataPtr data, CentPtr centipede);
     /**
@@ -46,11 +47,25 @@ class CentipedeLogic : public EntityLogic
     void CollisionHandle() override;
 
    private:
+    /**
+     * @brief Shared pointer to Data layer.
+     */
     DataPtr data_;
+    /**
+     * @brief Shared pointer to centipede container.
+     */
     CentPtr centipede_;
+    /**
+     * @brief Speed of the centipede.
+     */
     float speed_;
+    /**
+     * @brief Move distance for each centipede segment.
+     */
     float move_distance_;
-    // track initially spawned centipede segments
+    /**
+     * @brief Tracks initial number of centipede segments.
+     */
     unsigned int number_of_centipede_segments_;
     /**
      * @brief Moves CentipedeSegment object downwards.

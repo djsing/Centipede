@@ -7,6 +7,11 @@ bool operator==(const Entity& entity, bool dead)
     return entity.IsDead() == dead;
 }
 
+bool operator==(const Entity& entity, std::pair<Region, Region> region)
+{
+    return (entity.GetRegion() == std::get<0>(region)) && (entity.GetSubRegion() == std::get<1>(region));
+}
+
 Entity::Entity(float topLeftXPosition, float topLeftYPosition)
     : top_left_x_position_(topLeftXPosition), top_left_y_position_(topLeftYPosition), isDead_(false)
 {

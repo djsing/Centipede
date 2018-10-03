@@ -30,11 +30,11 @@ void CentipedeLogic::Spawn()
 		    centipede_->GetCentipede().push_back(segment);
 		}
 
+	    number_of_centipede_segments_++;
 	    if(centipede_->GetCentipede().size() == INITIAL_CENTIPEDE_NUMBER)
 		{
 		    centipede_->GetCentipede().back().SetLastSegment(true);
 		}
-	    number_of_centipede_segments_++;
 	}
 }
 
@@ -118,27 +118,27 @@ void CentipedeLogic::Move(float dt)
 
 void CentipedeLogic::CollisionHandle()
 {
-    // find dead segments
-    auto it = std::find(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end() - 1, true);
-    while(it != centipede_->GetCentipede().end() - 1)
-	{
-	    if(it != centipede_->GetCentipede().begin())
-		{
-		    // Set segment before dead segment to be the last segment of the preceeding new Centipede section
-		    it--;
-		    it->SetLastSegment(true);
-		}
-	    // return to found iterator
-	    it++;
-	    // Set segment after dead segment to be the head segment of the successive new Centipede section
-	    it++;
-	    it->SetFirstSegment(true);
-	    it = std::find(it, centipede_->GetCentipede().end() - 1, true);
-	}
-
-    // delete collided segments
     if(!centipede_->GetCentipede().empty())
 	{
+	    // set head/last segment
+	    auto it = std::find(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end() - 1, true);
+	    while(it != centipede_->GetCentipede().end() - 1)
+		{
+		    if(it != centipede_->GetCentipede().begin())
+			{
+			    // Set segment before dead segment to be the last segment of the preceeding new Centipede
+			    // section
+			    it--;
+			    it->SetLastSegment(true);
+			    it++;
+			}
+		    // Set segment after dead segment to be the head segment of the successive new Centipede section
+		    it++;
+		    it->SetFirstSegment(true);
+		    it = std::find(it, centipede_->GetCentipede().end() - 1, true);
+		}
+
+	    // delete collided segments
 	    auto deadBegin = std::remove(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end(), true);
 	    centipede_->GetCentipede().erase(deadBegin, centipede_->GetCentipede().end());
 	}
@@ -239,7 +239,7 @@ void CentipedeLogic::MoveRight(Trajectory trajectory, CentipedeSegment& index)
 		    index.SetTopLeftYPosition(SCREEN_TOP);
 		}
 
-	    else if((index.GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
+	    else if((index.GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= SCREEN_WIDTH)
 		{
 		    index.SetDirection(Direction::UP);
 		    index.SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
@@ -261,7 +261,7 @@ void CentipedeLogic::MoveRight(Trajectory trajectory, CentipedeSegment& index)
 		    index.SetTrajectory(Trajectory::UPWARD);
 		}  // now check if square is at right side of screen
 
-	    else if((index.GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
+	    else if((index.GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= SCREEN_WIDTH)
 		{
 		    index.SetDirection(Direction::DOWN);
 		    index.SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);

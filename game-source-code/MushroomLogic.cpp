@@ -25,7 +25,7 @@ void MushroomLogic::Spawn()
 		    int maxScreenPosition = SCREEN_WIDTH - MUSHROOM_SPRITE_SIZE;
 
 		    if(randYLevel < 3 || randYLevel > maxYLevels - 0.25 * maxYLevels ||
-		       randXLevel * MUSHROOM_SPRITE_SIZE > maxScreenPosition)
+		       randXLevel * MUSHROOM_SPRITE_SIZE > maxScreenPosition || randXLevel == 0)
 			{
 			    i--;
 			    continue;

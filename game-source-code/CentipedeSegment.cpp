@@ -53,27 +53,27 @@ void CentipedeSegment::SetPoisoned(bool isPoisoned)
     is_poisoned_ = isPoisoned;
 }
 
-Trajectory CentipedeSegment::GetTrajectory()
+Trajectory CentipedeSegment::GetTrajectory() const
 {
     return trajectory_;
 }
 
-bool CentipedeSegment::IsFirstSegment()
+bool CentipedeSegment::IsFirstSegment() const
 {
     return first_segment_;
 }
 
-bool CentipedeSegment::IsLastSegment()
+bool CentipedeSegment::IsLastSegment() const
 {
     return last_segment_;
 }
 
-bool CentipedeSegment::IsTurningLeft()
+bool CentipedeSegment::IsTurningLeft() const
 {
     return turning_left_;
 }
 
-bool CentipedeSegment::IsPoisoned()
+bool CentipedeSegment::IsPoisoned() const
 {
     return is_poisoned_;
 }

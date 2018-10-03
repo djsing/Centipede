@@ -73,30 +73,30 @@ class CentipedeSegment : public Entity
      * bottom of the screen.
      * @return Either UPWARD or DOWNWARD - See Trajectory.h
      */
-    Trajectory GetTrajectory();
+    Trajectory GetTrajectory() const;
     /**
      * @brief Returns whether the segment is a head or body segment.
      * @return True if the segment is a head, else returns False.
      */
-    bool IsFirstSegment();
+    bool IsFirstSegment() const;
     /**
      * @brief Returns whether a segment is the last segment of a
      * Centipede section.
      * @return True if the segment is the last segment of a Centipede
      * Section.
      */
-    bool IsLastSegment();
+    bool IsLastSegment() const;
     /**
      * @brief Returns whether the segment is turning left or right at the
      * next impassable collision.
      * @return True if turning left, False if turning right.
      */
-    bool IsTurningLeft();
+    bool IsTurningLeft() const;
     /**
      * @brief Returns whether the segment is poisoned.
      * @return True if poisoned, else false.
      */
-    bool IsPoisoned();
+    bool IsPoisoned() const;
 
    private:
     // movement information
