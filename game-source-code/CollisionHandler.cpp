@@ -57,8 +57,9 @@ void CollisionHandler::CheckBulletSegmentCollisions()
 				{
 				    i.SetDead(true);
 				    j.SetDead(true);
-				    auto mushroom = Mushroom{j.GetTopLeftXPosition(), j.GetTopLeftYPosition()};
-				    field_->GetMushrooms().push_back(mushroom);
+				    // saved the position of bullet/segment collisions to the GameField container.
+				    field_->GetNewMushrooms().push_back(
+				        std::make_tuple(j.GetTopLeftXPosition(), j.GetTopLeftYPosition()));
 				    break;
 				}
 			}
@@ -78,9 +79,11 @@ void CollisionHandler::CheckSegmentMushroomCollisions()
 			{
 			    // set segments
 			    i.SetPoisoned(true);
-			    i.SetFirstSegment(true);
-			    // set mushrooms
-			    j.SetPoisoned(false);
+			    // set mushrooms normal after collisions with the last segment of a centipede segment
+			    if(i.IsLastSegment())
+				{
+				    j.SetPoisoned(false);
+				}
 			    continue;
 			}
 

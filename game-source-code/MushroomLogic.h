@@ -6,7 +6,6 @@
 #include "EntityLogic.h"
 #include "Game.h"
 #include "GameField.h"
-#include "Mushroom.h"
 
 namespace GameEngine
 {
@@ -21,8 +20,8 @@ class MushroomLogic : public EntityLogic
     void CollisionHandle() override;
 
    private:
-    FieldPtr _field;
-    int _deathChance;
+    FieldPtr field_;
+    int death_chance_;
     const int maxYLevels = SCREEN_HEIGHT / MUSHROOM_SPRITE_SIZE;
     const int maxXLevels = SCREEN_WIDTH / MUSHROOM_SPRITE_SIZE;
 };

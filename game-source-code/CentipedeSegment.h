@@ -37,11 +37,17 @@ class CentipedeSegment : public Entity
      */
     void SetTopLeftYPosition(float ypos);
     /**
-     * @brief Sets whether the CentipedeSegment is a head or body segment.
+     * @brief Sets whether the CentipedeSegment is a head segment.
      * @param isFirstSegment True if a head segment is required, false if
      * a body segment is required.
      */
     void SetFirstSegment(bool isFirstSegment);
+    /**
+     * @brief Sets whether the CentipedeSegment is the last segment of a
+     * centipede section.
+     * @param IsLastSegment
+     */
+    void SetLastSegment(bool IsLastSegment);
     /**
      * @brief Sets whether the segment is moving to the bottom of the screen
      * or the top of the screen
@@ -74,6 +80,13 @@ class CentipedeSegment : public Entity
      */
     bool IsFirstSegment();
     /**
+     * @brief Returns whether a segment is the last segment of a
+     * Centipede section.
+     * @return True if the segment is the last segment of a Centipede
+     * Section.
+     */
+    bool IsLastSegment();
+    /**
      * @brief Returns whether the segment is turning left or right at the
      * next impassable collision.
      * @return True if turning left, False if turning right.
@@ -91,6 +104,7 @@ class CentipedeSegment : public Entity
     Trajectory trajectory_;
     // segment characteristics
     bool first_segment_;
+    bool last_segment_;
     bool is_poisoned_;
 };
 }  // namespace GameEngine

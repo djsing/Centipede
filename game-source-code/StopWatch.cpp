@@ -13,13 +13,13 @@ StopWatch::StopWatch()
 void StopWatch::StartTimer()
 {
     clock_t time = clock();
-    _startTime = static_cast<float>(time) / CLOCKS_PER_SEC;
+    start_time_ = static_cast<float>(time) / CLOCKS_PER_SEC;
 }
 
 void StopWatch::EndTimer()
 {
     clock_t time = clock();
-    _stopTime = static_cast<float>(time) / CLOCKS_PER_SEC;
+    stop_time_ = static_cast<float>(time) / CLOCKS_PER_SEC;
 }
 
 // return elapsedTime as well as restart the timer
@@ -35,7 +35,7 @@ float StopWatch::restart()
 float StopWatch::getElapsedTime()
 {
     EndTimer();
-    float elapsedTime = _stopTime - _startTime;
+    float elapsedTime = stop_time_ - start_time_;
     return elapsedTime;
 }
 }  // namespace GameEngine

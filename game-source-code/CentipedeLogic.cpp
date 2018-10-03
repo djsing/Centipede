@@ -30,6 +30,10 @@ void CentipedeLogic::Spawn()
 		    centipede_->GetCentipede().push_back(segment);
 		}
 
+	    if(centipede_->GetCentipede().size() == INITIAL_CENTIPEDE_NUMBER)
+		{
+		    centipede_->GetCentipede().back().SetLastSegment(true);
+		}
 	    number_of_centipede_segments_++;
 	}
 }
@@ -66,70 +70,70 @@ void CentipedeLogic::Move(float dt)
 	    // Check whether centipede is moving to the bottom/top  of screen
 	    switch(i.GetTrajectory())
 		{
-		    // check direction of centipede movement
-		    case Trajectory::DOWNWARD:
-			switch(i.GetDirection())
-			    {
-				case Direction::RIGHT:
-				    MoveRight(Trajectory::DOWNWARD, i);
-				    break;
+		// check direction of centipede movement
+		case Trajectory::DOWNWARD:
+		    switch(i.GetDirection())
+			{
+			case Direction::RIGHT:
+			    MoveRight(Trajectory::DOWNWARD, i);
+			    break;
 
-				case Direction::DOWN:
-				    MoveDown(i);
-				    break;
+			case Direction::DOWN:
+			    MoveDown(i);
+			    break;
 
-				case Direction::LEFT:
-				    MoveLeft(Trajectory::DOWNWARD, i);
-				    break;
+			case Direction::LEFT:
+			    MoveLeft(Trajectory::DOWNWARD, i);
+			    break;
 
-				default:
-				    break;
-			    }
+			default:
+			    break;
+			}
 
-			break;
+		    break;
 
-		    case Trajectory::UPWARD:
-			switch(i.GetDirection())
-			    {
-				case Direction::RIGHT:
-				    MoveRight(Trajectory::UPWARD, i);
-				    break;
+		case Trajectory::UPWARD:
+		    switch(i.GetDirection())
+			{
+			case Direction::RIGHT:
+			    MoveRight(Trajectory::UPWARD, i);
+			    break;
 
-				case Direction::UP:
-				    MoveUp(i);
-				    break;
+			case Direction::UP:
+			    MoveUp(i);
+			    break;
 
-				case Direction::LEFT:
-				    MoveLeft(Trajectory::UPWARD, i);
-				    break;
+			case Direction::LEFT:
+			    MoveLeft(Trajectory::UPWARD, i);
+			    break;
 
-				default:
-				    break;
-			    }
+			default:
+			    break;
+			}
 
-			break;
+		    break;
 		}
 	}
 }
 
 void CentipedeLogic::CollisionHandle()
 {
-    // find dead segments, and set the next segment in the centipede to be a head
+    // find dead segments
     auto it = std::find(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end() - 1, true);
     while(it != centipede_->GetCentipede().end() - 1)
 	{
+	    if(it != centipede_->GetCentipede().begin())
+		{
+		    // Set segment before dead segment to be the last segment of the preceeding new Centipede section
+		    it--;
+		    it->SetLastSegment(true);
+		}
+	    // return to found iterator
+	    it++;
+	    // Set segment after dead segment to be the head segment of the successive new Centipede section
 	    it++;
 	    it->SetFirstSegment(true);
 	    it = std::find(it, centipede_->GetCentipede().end() - 1, true);
-	}
-
-    // for poisoned segments, set the next segment to a head
-    for(unsigned int i = 0; i < centipede_->GetCentipede().size(); i++)
-	{
-	    if(centipede_->GetCentipede().size() != i + 1 && centipede_->GetCentipede().at(i).IsPoisoned())
-		{
-		    centipede_->GetCentipede().at(i + 1).SetFirstSegment(true);
-		}
 	}
 
     // delete collided segments
@@ -180,47 +184,47 @@ void CentipedeLogic::MoveLeft(Trajectory trajectory, CentipedeSegment& index)
 {
     switch(trajectory)
 	{
-	    case Trajectory::UPWARD:
+	case Trajectory::UPWARD:
 
-		// x value of top left position
-		if(index.GetTopLeftYPosition() <= SCREEN_TOP)
-		    {
-			index.SetTrajectory(Trajectory::DOWNWARD);
-			index.SetTopLeftYPosition(SCREEN_TOP);
-		    }
+	    // x value of top left position
+	    if(index.GetTopLeftYPosition() <= SCREEN_TOP)
+		{
+		    index.SetTrajectory(Trajectory::DOWNWARD);
+		    index.SetTopLeftYPosition(SCREEN_TOP);
+		}
 
-		else if(index.GetTopLeftXPosition() <= SCREEN_LHS)
-		    {
-			index.SetDirection(Direction::UP);
-			index.SetTopLeftXPosition(SCREEN_LHS);
-		    }
+	    else if(index.GetTopLeftXPosition() <= SCREEN_LHS)
+		{
+		    index.SetDirection(Direction::UP);
+		    index.SetTopLeftXPosition(SCREEN_LHS);
+		}
 
-		else
-		    {
-			index.SetTopLeftXPosition(index.GetTopLeftXPosition() - move_distance_);
-		    }
+	    else
+		{
+		    index.SetTopLeftXPosition(index.GetTopLeftXPosition() - move_distance_);
+		}
 
-		break;
+	    break;
 
-	    case Trajectory::DOWNWARD:
-		if((index.GetTopLeftYPosition() + SCREEN_HEIGHT_BUFFER_FACTOR * CENTIPEDE_SPRITE_SIDE_SIZE) >=
-		   (SCREEN_HEIGHT))
-		    {
-			index.SetTrajectory(Trajectory::UPWARD);
-		    }
+	case Trajectory::DOWNWARD:
+	    if((index.GetTopLeftYPosition() + SCREEN_HEIGHT_BUFFER_FACTOR * CENTIPEDE_SPRITE_SIDE_SIZE) >=
+	       (SCREEN_HEIGHT))
+		{
+		    index.SetTrajectory(Trajectory::UPWARD);
+		}
 
-		else if(index.GetTopLeftXPosition() <= SCREEN_LHS)
-		    {
-			index.SetDirection(Direction::DOWN);
-			index.SetTopLeftXPosition(SCREEN_LHS);
-		    }
+	    else if(index.GetTopLeftXPosition() <= SCREEN_LHS)
+		{
+		    index.SetDirection(Direction::DOWN);
+		    index.SetTopLeftXPosition(SCREEN_LHS);
+		}
 
-		else
-		    {
-			index.SetTopLeftXPosition(index.GetTopLeftXPosition() - move_distance_);
-		    }
+	    else
+		{
+		    index.SetTopLeftXPosition(index.GetTopLeftXPosition() - move_distance_);
+		}
 
-		break;
+	    break;
 	}
 }
 
@@ -228,47 +232,47 @@ void CentipedeLogic::MoveRight(Trajectory trajectory, CentipedeSegment& index)
 {
     switch(trajectory)
 	{
-	    case Trajectory::UPWARD:
-		if(index.GetTopLeftYPosition() <= SCREEN_TOP)
-		    {
-			index.SetTrajectory(Trajectory::DOWNWARD);
-			index.SetTopLeftYPosition(SCREEN_TOP);
-		    }
+	case Trajectory::UPWARD:
+	    if(index.GetTopLeftYPosition() <= SCREEN_TOP)
+		{
+		    index.SetTrajectory(Trajectory::DOWNWARD);
+		    index.SetTopLeftYPosition(SCREEN_TOP);
+		}
 
-		else if((index.GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
-		    {
-			index.SetDirection(Direction::UP);
-			index.SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
-		    }
+	    else if((index.GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
+		{
+		    index.SetDirection(Direction::UP);
+		    index.SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
+		}
 
-		else
-		    {
-			index.SetTopLeftXPosition(index.GetTopLeftXPosition() + move_distance_);
-		    }
+	    else
+		{
+		    index.SetTopLeftXPosition(index.GetTopLeftXPosition() + move_distance_);
+		}
 
-		break;
+	    break;
 
-	    case Trajectory::DOWNWARD:
+	case Trajectory::DOWNWARD:
 
-		// check if square is at bottom of the screen
-		if((index.GetTopLeftYPosition() + SCREEN_HEIGHT_BUFFER_FACTOR * CENTIPEDE_SPRITE_SIDE_SIZE) >=
-		   (SCREEN_HEIGHT))
-		    {
-			index.SetTrajectory(Trajectory::UPWARD);
-		    }  // now check if square is at right side of screen
+	    // check if square is at bottom of the screen
+	    if((index.GetTopLeftYPosition() + SCREEN_HEIGHT_BUFFER_FACTOR * CENTIPEDE_SPRITE_SIDE_SIZE) >=
+	       (SCREEN_HEIGHT))
+		{
+		    index.SetTrajectory(Trajectory::UPWARD);
+		}  // now check if square is at right side of screen
 
-		else if((index.GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
-		    {
-			index.SetDirection(Direction::DOWN);
-			index.SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
-		    }
+	    else if((index.GetTopLeftXPosition() + CENTIPEDE_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
+		{
+		    index.SetDirection(Direction::DOWN);
+		    index.SetTopLeftXPosition(SCREEN_WIDTH - CENTIPEDE_SPRITE_SIDE_SIZE);
+		}
 
-		else
-		    {
-			index.SetTopLeftXPosition(index.GetTopLeftXPosition() + move_distance_);
-		    }
+	    else
+		{
+		    index.SetTopLeftXPosition(index.GetTopLeftXPosition() + move_distance_);
+		}
 
-		break;
+	    break;
 	}
 }
 }  // namespace GameEngine

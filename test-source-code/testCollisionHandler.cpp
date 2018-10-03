@@ -166,13 +166,17 @@ TEST_CASE("Check that segment/poisoned-mushroom collisions are handled correctly
     auto field = std::make_shared<GameField>();
     auto mushLogic = std::make_unique<MushroomLogic>(field);
     auto collisionhandler = std::make_shared<CollisionHandler>(data, turret, centipede, field);
-
+    // check that newly created containers are empty
     CHECK(field->GetMushrooms().empty());
     CHECK(centipede->GetCentipede().empty());
 
+    // spawn a centipede segment
     centipedeLogic->Spawn();
     CHECK(centipede->GetCentipede().at(0).GetTrajectory() == Trajectory::DOWNWARD);
-
+    // a standalone segment is both the first and last segment of its section
+    centipede->GetCentipede().at(0).SetLastSegment(true);
+    auto alone = centipede->GetCentipede().at(0).IsFirstSegment() == centipede->GetCentipede().at(0).IsLastSegment();
+    CHECK(alone);
     // spawn a mushroom 2 centipede segment distances away
     auto mushroom = Mushroom(2 * CENTIPEDE_SPRITE_SIDE_SIZE, 2 * CENTIPEDE_SPRITE_SIDE_SIZE);
     mushroom.SetPoisoned(true);

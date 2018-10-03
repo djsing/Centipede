@@ -1,39 +1,58 @@
 #ifndef TURRET_H
 #define TURRET_H
 
+#include <SFML/Graphics.hpp>
+#include <memory>
+#include <vector>
 #include "Bullet.h"
 #include "Direction.h"
 #include "Entity.h"
 #include "Game.h"
 #include "Region.h"
-#include <SFML/Graphics.hpp>
-#include <memory>
-#include <vector>
 
 namespace GameEngine
 {
-	class Turret : public Entity
-	{
-	public:
-		Turret ();
+/**
+ * @class Turret
+ * @author Darrion Singh and Sachin Govender
+ * @date 29/09/2018
+ * @file Turret.h
+ * @brief Turret object.
+ */
+class Turret : public Entity
+{
+   public:
+    /**
+     * @brief Turret Constructor. Spawns Turret.
+     */
+    Turret();
+    /**
+     * @brief Accesses the Bullet object container.
+     * @return Reference to Bullet object container.
+     */
+    std::vector<Bullet>& GetBullets();
+    /**
+     * @brief Sets x position of top left corner of turret.
+     * @param xpos Desired x position.
+     */
+    void SetTopLeftXPosition(float xpos);
+    /**
+     * @brief Sets y position of top left corner of turret.
+     * @param ypos Desired y position.
+     */
+    void SetTopLeftYPosition(float ypos);
+    /**
+     * @brief Returns the y position of the top left corner of the
+     * most recently fired bullet.
+     * @return Returns y position.
+     */
+    float GetLastBulletYPosition();
 
-		// Address Accessor functions
-		std::vector<Bullet>& GetBullets();
-
-		// Mutator functions
-		void SetTopLeftXPosition ( float xpos );
-		void SetTopLeftYPosition ( float ypos );
-
-		// Accessor functions specific to Turret
-		float GetLastBulletYPosition();
-		int GetLivesRemaining();
-
-	private:
-		// Container to store all bullets
-		std::vector<Bullet> bullets_;
-	};
-
-	using TurretPtr = std::shared_ptr<Turret>;
-} // namespace GameEngine
+   private:
+    // Container to store all bullets
+    std::vector<Bullet> bullets_;
+};
+using TurretPtr = std::shared_ptr<Turret>;
+}  // namespace GameEngine
 
 #endif

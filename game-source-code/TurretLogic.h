@@ -9,15 +9,36 @@
 
 namespace GameEngine
 {
+/**
+ * @class TurretLogic
+ * @author Darrion Singh and Sachin Govender
+ * @date 29/09/2018
+ * @file TurretLogic.h
+ * @brief Controls all turret Logic-related operations.
+ */
 class TurretLogic : public EntityLogic
 {
    public:
+    /**
+     * @brief TurretLogic Constructor.
+     * @param data Shared pointer to Data layer.
+     * @param turret Shared pointer to Turret object.
+     */
     TurretLogic(DataPtr data, TurretPtr turret);
-    // for turret class, spawn() refers to spawning bullets
+    /**
+     * @brief Spawn Bullet objects.
+     */
     void Spawn() override;
-    // for turret class, move() refers to turret movement
+    /**
+     * @brief Moves Turret object.
+     * @param dt Timestep given by game loop.
+     */
     void Move(float dt) override;
-    // deletes dead bullets, ends game if turret collides with deadly entity
+    /**
+     * @brief Adds a new instance of the game when
+     * the Turret is dead, ends the game when there
+     * are no lives remaining.
+     */
     void CollisionHandle() override;
 
    private:

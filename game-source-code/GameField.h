@@ -2,6 +2,7 @@
 #define GAMEFIELD_H
 
 #include <memory>
+#include <tuple>
 #include <vector>
 #include "Mushroom.h"
 #include "Scorpion.h"
@@ -42,8 +43,16 @@ class GameField
      * containing all Scorpions on the screen.
      */
     std::vector<Scorpion>& GetScorpions();
+    /**
+     * @brief Accresses the NewMushrooms container.
+     * @return Returns the address of the vector
+     * containing the coordinates of all new mushrooms
+     * on the screen.
+     */
+    std::vector<std::tuple<float, float>>& GetNewMushrooms();
 
    private:
+    std::vector<std::tuple<float, float>> new_mushrooms_;
     std::vector<Mushroom> mushrooms_;
     std::vector<Spider> spiders_;
     std::vector<Scorpion> scorpions_;
