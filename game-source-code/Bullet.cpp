@@ -12,9 +12,9 @@ namespace GameEngine
 		Entity::SetDirection ( Direction::UP );
 	}
 
-	void Bullet::SetTopLeftXPosition ( float ypos )
+	void Bullet::SetTopLeftXPosition ( float xpos )
 	{
-		Entity::SetTopLeftXPosition ( ypos );
+		Entity::SetTopLeftXPosition ( xpos );
 		Entity::SetCenterXPosition ( Entity::GetTopLeftXPosition() + BULLET_WIDTH / 2 );
 	}
 

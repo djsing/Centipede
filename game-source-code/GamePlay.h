@@ -13,57 +13,83 @@
 
 namespace GameEngine
 {
+/**
+ * @class GamePlay
+ * @author Darrion Singh and Sachin Govender
+ * @date 28/09/2018
+ * @file GamePlay.h
+ * @brief The game screen, i.e. the state of
+ * the game where the player still has one life
+ * remaining and the game is neither won, nor lost.
+ */
 class GamePlay : public GameState
 {
    public:
+    /**
+     * @brief GamePlay Constructor.
+     * @param data Shared pointer to Data layer.
+     */
     GamePlay(DataPtr data);
-    ~GamePlay();
-
+    /**
+     * @brief Processes the keyboard input given to
+     * game by the player.
+     */
     void HandleInput() override;
+    /**
+     * @brief Updates all Entity objects in that
+     * instance of the game. Spawns/Moves/Checks/Deletes
+     * all Entity objects currently in the game.
+     * @param dt Timestep given by the game loop.
+     * Given to the Move() functions of the particular
+     * Entity objects.
+     */
     void Update(float dt) override;
+    /**
+     * @brief Draws all Entity objects to the screen.
+     */
     void Draw() override;
 
-	private:
-   void SpawnEntities();
-   void MoveEntities(float dt);
-   void CheckCollisions();
-   void DeleteDeadEntities();
+   private:
+    /**
+     * @brief Calls all spawn functions from EntityLogic
+     * for all Entity types. Each type spawns conditionally,
+     * explicitly defined in their respective Spawn() functions.
+     */
+    void SpawnEntities();
+    /**
+     * @brief Moves all Entity objects currently in the game.
+     * @param dt Timestep given by game loop.
+     */
+    void MoveEntities(float dt);
+    /**
+     * @brief Checks collisions between all Entity objects,
+     * sets all relevant flags associated with collisions.
+     */
+    void CheckCollisions();
+    /**
+     * @brief Handles all operations caused by collisions,
+     * including deletion and other logical operations.
+     */
+    void HandleCollisions();
     // Data layer pointer
     DataPtr data_;
-    // Centipede object shared pointer
+    // Object pointers
     CentPtr centipede_;
-    // Centipede logic unique pointer
-    LogicPtr centipede_logic_;
-    // Centipede Renderer pointer
-    RenderPtr centipede_renderer_;
-    // Turret object pointer
+    FieldPtr field_;
     TurretPtr turret_;
-    // Turret Logic pointer
+    // Logic pointers
+    LogicPtr bullet_logic_;
+    LogicPtr centipede_logic_;
     LogicPtr turret_logic_;
-    // Turret Renderer pointer
-    RenderPtr turret_renderer_;
-    // Mushroom Logic Pointer
     LogicPtr mush_logic_;
-    // Mushroom Renderer pointer
-    RenderPtr mush_renderer_;
-    // Spider Logic pointer
     LogicPtr spider_logic_;
-    // Spider Render pointer
-    RenderPtr spider_renderer_;
-    // Spider Logic pointer
     LogicPtr scorpion_logic_;
-    // Spider Render pointer
-    RenderPtr scorpion_renderer_;
     // Input Handler Pointer
     InputHandlerPtr input_handler_;
     // CollisionHandler pointer
     CollisionHandlerPtr collision_handler_;
-    // Game field pointer
-    FieldPtr field_;
-    // bullet logic pointer
-    LogicPtr bullet_logic_;
-    // bullet renderer pointer
-    RenderPtr bullet_renderer_;
+    // Rendering class pointer
+    RenderPtr renderer_;
 };
 }  // namespace GameEngine
 

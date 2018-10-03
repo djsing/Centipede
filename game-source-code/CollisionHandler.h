@@ -8,29 +8,78 @@
 
 namespace GameEngine
 {
-	class CollisionHandler
-	{
-	public:
-		CollisionHandler ( DataPtr data, TurretPtr turret, CentPtr centipede, FieldPtr field );
-		void CheckCollisions();
+/**
+ * @class CollisionHandler
+ * @author Darrion Singh and Sachin Govender
+ * @date 27/09/2018
+ * @file CollisionHandler.h
+ * @brief Checks for collisions between Entity objects, sets flags resulting from collisions.
+ */
+class CollisionHandler
+{
+   public:
+    /**
+     * @brief CollisionHandler Constructor
+     * @param data Shared pointer to Data layer, which contains the number of lives the player (Turret)
+     * has remaining.
+     * @param turret Shared pointer to the Turret object.
+     * @param centipede Shared pointer to the Centipede container.
+     * @param field Shared pointer to the Field container, which contains all instances of Mushroom,
+     * Scorpion, and Spider.
+     */
+    CollisionHandler(DataPtr data, TurretPtr turret, CentPtr centipede, FieldPtr field);
+    /**
+     * @brief Only calls all collision checking functions that are neccessary, based on the
+     * current state of the Turret or the Centipede.
+     */
+    void CheckCollisions();
 
-	private:
-		DataPtr data_;
-		TurretPtr turret_;
-		CentPtr centipede_;
-		FieldPtr field_;
-		void CheckBulletSegmentCollisions();
-		void CheckSegmentMushroomCollisions();
-		void CheckTurretSegmentCollisions();
-		void CheckTurretSpiderCollisions();
-		void CheckMushroomScorpionCollisions();
-		void CheckMushroomSpiderCollisions();
-		void CheckBulletSpiderCollisions();
-		void CheckBulletMushroomCollisions();
-		float CheckDistanceBetweenEntities ( Entity& entity1, Entity& entity2 );
-	};
-
-	using CollisionHandlerPtr = std::shared_ptr<CollisionHandler>;
-} // namespace GameEngine
+   private:
+    DataPtr data_;
+    TurretPtr turret_;
+    CentPtr centipede_;
+    FieldPtr field_;
+    /**
+     * @brief Checks collisions between Bullet objects and CentipedeSegment objects.
+     */
+    void CheckBulletSegmentCollisions();
+    /**
+     * @brief Checks collisions between CentipedeSegment objects and Mushroom objects.
+     */
+    void CheckSegmentMushroomCollisions();
+    /**
+     * @brief Checks collisions between the Turret and CentipedeSegment objects.
+     */
+    void CheckTurretSegmentCollisions();
+    /**
+     * @brief Checks collisions between the Turret and Spider objects.
+     */
+    void CheckTurretSpiderCollisions();
+    /**
+     * @brief Checks collisions between Mushroom objects and Scorpion objects.
+     */
+    void CheckMushroomScorpionCollisions();
+    /**
+     * @brief Checks collisions between Mushroom objects and Spider objects.
+     */
+    void CheckMushroomSpiderCollisions();
+    /**
+     * @brief Checks collisions between Bullet objects and Spider objects.
+     */
+    void CheckBulletSpiderCollisions();
+    /**
+     * @brief Checks collisions between Bullet objects and Spider objects.
+     */
+    void CheckBulletMushroomCollisions();
+    /**
+     * @brief Checks the distance between two game Entity objects
+     * @param entity1 Object of type Entity
+     * @param entity2 Object of type Entity
+     * @return Distance between entity1 and entity2 using the Cartesian distance formula.
+     */
+    float CheckDistanceBetweenEntities(Entity& entity1, Entity& entity2);
+};
+using CollisionHandlerPtr = std::shared_ptr<CollisionHandler>;
+}  // namespace GameEngine
 
 #endif
