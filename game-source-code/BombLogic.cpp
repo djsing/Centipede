@@ -23,10 +23,14 @@ void BombLogic::Spawn()
 
 void BombLogic::Move(float dt)
 {
-    if(time_elapsed_ > 4)
+    if(time_elapsed_ > BOMB_MOVE_TIME)
 	{
 	    for(auto& i : field_->GetBombs())
 		{
+		    if(i.IsTriggered())
+			{
+			    continue;
+			}
 		    auto randPos = GetRandomPositions();
 		    i.SetTopLeftXPosition(std::get<0>(randPos));
 		    i.SetTopLeftYPosition(std::get<1>(randPos));

@@ -77,5 +77,6 @@ const auto BOMB_HIT_RADIUS = 9.f;
 const auto EXPLOSION_SPRITE_SIZE = 100.f;
 const auto EXPLOSION_HIT_RADIUS = 50.f;
 const auto EXPLOSION_TIME = 2;
+const auto BOMB_MOVE_TIME = 4;
 
 #endif

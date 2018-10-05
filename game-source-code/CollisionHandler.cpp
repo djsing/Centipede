@@ -17,8 +17,8 @@ CollisionHandler::CollisionHandler(DataPtr data, TurretPtr turret, CentPtr centi
 void CollisionHandler::CheckCollisions()
 {
     // check for game losing collisions first
-    CheckTurretSpiderCollisions();
-    CheckTurretSegmentCollisions();
+    // CheckTurretSpiderCollisions();
+    // CheckTurretSegmentCollisions();
 
     // if the game is not lost, check the remaining collisions
     if(!turret_->IsDead())
@@ -61,6 +61,7 @@ void CollisionHandler::CheckBulletSegmentCollisions()
 				    // saved the position of bullet/segment collisions to the GameField container.
 				    field_->GetNewMushrooms().push_back(
 				        std::make_pair(it->GetTopLeftXPosition(), it->GetTopLeftYPosition()));
+				    break;
 				}
 			    it++;
 			    it = std::find(it, centipede_->GetCentipede().end(),
@@ -282,58 +283,41 @@ void CollisionHandler::CheckExplosionCollisions()
 	    if(i.IsTriggered())
 		{
 		    // Check scorpion deaths
-		    auto scorpion_it = std::find(field_->GetScorpions().begin(), field_->GetScorpions().end(),
-		                                 std::make_pair(i.GetRegion(), i.GetSubRegion()));
-		    while(scorpion_it != field_->GetScorpions().end())
+		    for(auto& j : field_->GetScorpions())
 			{
-			    if(CheckDistanceBetweenEntities(i, *scorpion_it) <
-			       SCORPION_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
+			    if(CheckDistanceBetweenEntities(i, j) < SCORPION_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
-				    scorpion_it->SetDead(true);
+				    i.SetDead(true);
+				    j.SetDead(true);
 				}
-			    scorpion_it++;
-			    scorpion_it = std::find(scorpion_it, field_->GetScorpions().end(),
-			                            std::make_pair(i.GetRegion(), i.GetSubRegion()));
 			}
 		    // Check spider deaths
-		    auto spider_it = std::find(field_->GetSpiders().begin(), field_->GetSpiders().end(),
-		                               std::make_pair(i.GetRegion(), i.GetSubRegion()));
-		    while(spider_it != field_->GetSpiders().end())
+		    for(auto& j : field_->GetSpiders())
 			{
-			    if(CheckDistanceBetweenEntities(i, *spider_it) < SPIDER_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
+			    if(CheckDistanceBetweenEntities(i, j) < SPIDER_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
-				    spider_it->SetDead(true);
+				    i.SetDead(true);
+				    j.SetDead(true);
 				}
-			    spider_it++;
-			    spider_it = std::find(spider_it, field_->GetSpiders().end(),
-			                          std::make_pair(i.GetRegion(), i.GetSubRegion()));
 			}
+
 		    // Check mushroom deaths
-		    auto mush_it = std::find(field_->GetMushrooms().begin(), field_->GetMushrooms().end(),
-		                             std::make_pair(i.GetRegion(), i.GetSubRegion()));
-		    while(mush_it != field_->GetMushrooms().end())
+		    for(auto& j : field_->GetMushrooms())
 			{
-			    if(CheckDistanceBetweenEntities(i, *mush_it) < MUSHROOM_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
+			    if(CheckDistanceBetweenEntities(i, j) < CENTIPEDE_SEGMENT_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
-				    mush_it->SetDead(true);
+				    i.SetDead(true);
+				    j.SetDead(true);
 				}
-			    mush_it++;
-			    mush_it = std::find(mush_it, field_->GetMushrooms().end(),
-			                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
 			}
 		    // Check segment deaths
-		    auto seg_it = std::find(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end(),
-		                            std::make_pair(i.GetRegion(), i.GetSubRegion()));
-		    while(seg_it != centipede_->GetCentipede().end())
+		    for(auto& j : centipede_->GetCentipede())
 			{
-			    if(CheckDistanceBetweenEntities(i, *seg_it) <
-			       CENTIPEDE_SEGMENT_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
+			    if(CheckDistanceBetweenEntities(i, j) < CENTIPEDE_SEGMENT_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
-				    seg_it->SetDead(true);
+				    i.SetDead(true);
+				    j.SetDead(true);
 				}
-			    seg_it++;
-			    seg_it = std::find(seg_it, centipede_->GetCentipede().end(),
-			                       std::make_pair(i.GetRegion(), i.GetSubRegion()));
 			}
 		}
 	}
