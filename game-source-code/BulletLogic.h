@@ -38,13 +38,7 @@ class BulletLogic : public EntityLogic
     void CollisionHandle() override;
 
    private:
-    /**
-     * @brief Alias to Bullet object container.
-     */
     std::vector<Bullet>& bullets_;
-    /**
-     * @brief Bullet speed.
-     */
     float speed_;
 };
 }  // namespace GameEngine

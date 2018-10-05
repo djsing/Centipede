@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include <string>
 #include "DEFINITIONS.h"
 #include "EntityRendering.h"
@@ -166,7 +165,6 @@ void EntityRendering::DrawBombs()
 void EntityRendering::DisplayScore()
 {
     auto score = std::to_string(data_->score_manager.GetScore());
-    std::cout << score << std::endl;
     for(unsigned int i = 0; i < score.size(); i++)
 	{
 	    switch(score.at(i))

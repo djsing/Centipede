@@ -55,31 +55,23 @@ class EntityRendering
      * @brief Draws all Bomb objects.
      */
     void DrawBombs();
-	
-	void DisplayScore();
     /**
-     * @brief Shared pointer to Data layer.
+     * @brief Draws live game score to the screen.
      */
+    void DisplayScore();
+    // Shared pointer to Data layer.
     DataPtr data_;
-    /**
-     * @brief Shared pointer to Turret object.
-     */
+    // Shared pointer to Turret object.
     TurretPtr turret_;
-    /**
-     * @brief Shared pointer to Centipede container.
-     */
+    // Shared pointer to Centipede container.
     CentPtr centipede_;
-    /**
-     * @brief Shared pointer to GameField container.
-     */
+    // Shared pointer to GameField container.
     FieldPtr field_;
-    /**
-     * @brief Container of sprites to display the number of lives
-     * the player has remaining.
-     */
+    // sprites to display the number of lives
+    // the player has remaining.
     sf::Sprite life_;
     sf::Sprite explosion_;
-	sf::Sprite score_digit_;
+    sf::Sprite score_digit_;
 };
 using RenderPtr = std::unique_ptr<EntityRendering>;
 }  // namespace GameEngine

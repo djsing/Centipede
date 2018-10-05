@@ -3,26 +3,45 @@
 
 #include "Game.h"
 #include "GameState.h"
-#include <SFML/Graphics.hpp>
+#include "StateRenderer.h"
 
 namespace GameEngine
 {
-	class MainMenu : public GameState
-	{
-	public:
-		MainMenu ( DataPtr data );
+/**
+ * @class MainMenu
+ * @author Darrion Singh and Sachin Govender
+ * @date 05/10/2018
+ * @file MainMenu.h
+ * @brief The version of the game loop which
+ * runs before the game has begun, letting the user
+ * decide when to begin the game.
+ */
+class MainMenu : public GameState
+{
+   public:
+    /**
+     * @brief MainMenu Constructor
+     */
+    MainMenu(DataPtr data);
+    /**
+     * @brief Processes the keyboard input given to
+     * game by the player.
+     */
+    void HandleInput() override;
+    /**
+     * @brief Reads the High Score before displaying.
+     * @param dt Unused in this version of Update.
+     */
+    void Update(float dt) override;
+    /**
+     * @brief Draws the main menu screen.
+     */
+    void Draw() override;
 
-		void HandleInput() override;
-		void Update ( float dt ) override;
-		void Draw() override;
+   private:
+    DataPtr data_;
+    StateRenderPtr renderer_;
+};
 
-	private:
-		DataPtr data_;
-		sf::Sprite background_;
-		sf::Sprite title_;
-		sf::Sprite subtitle_;
-		sf::Sprite instructions_;
-	};
-
-} // namespace GameEngine
+}  // namespace GameEngine
 #endif

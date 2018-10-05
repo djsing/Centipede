@@ -1,7 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <SFML/Graphics.hpp>
 #include <memory>
 #include <string>
 #include "HighScoreManager.h"
@@ -76,23 +75,15 @@ class Game
     Game(int width, int height, std::string windowTitle);
 
    private:
-    /**
-     * @brief Frame rate
-     * */
+    // Frame rate
     const float dt_ = 1.0f / 120.0f;
-    /**
-     * @brief Timer which provides the timestep between iterations of
-     * the game loop.
-     * */
+    // Timer which provides the timestep between iterations of
+    // the game loop.
     StopWatch watch_;
-    /**
-     * @brief Creates an instance of the game Data layer, to which all
-     * persisting data elements and globally acessible resources are saved.
-     * */
+    // Creates an instance of the game Data layer, to which all
+    // persisting data elements and globally acessible resources are saved.
     DataPtr data_ = std::make_shared<GameData>();
-    /**
-     * @brief Calls the game loop.
-     * */
+    // Calls the game loop.
     void Run();
 };
 }  // namespace GameEngine

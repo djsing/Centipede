@@ -4,41 +4,38 @@
 
 namespace GameEngine
 {
-	SplashScreen::SplashScreen ( DataPtr data )
-		: _data ( data )
-	{
-		_data->resources.LoadTexture ( "Splash Screen Background", SPLASH_BACKGROUND_FILEPATH );
-		_background.setTexture ( _data->resources.GetTexture ( "Splash Screen Background" ) );
-	}
+SplashScreen::SplashScreen(DataPtr data) : data_(data)
+{
+    renderer_ = std::make_shared<StateRenderer>(data_);
+}
 
-	void SplashScreen::HandleInput()
-	{
-		sf::Event event;
+void SplashScreen::HandleInput()
+{
+    sf::Event event;
 
-		while ( _data->window.pollEvent ( event ) && event.type == sf::Event::KeyPressed )
+    while(data_->window.pollEvent(event) && event.type == sf::Event::KeyPressed)
+	{
+	    if(event.key.code == sf::Keyboard::Escape)
 		{
-			if ( event.key.code == sf::Keyboard::Escape )
-			{
-				_data->window.close();
-			}
+		    data_->window.close();
 		}
 	}
+}
 
-	void SplashScreen::Update ( float dt )
+void SplashScreen::Update(float dt)
+{
+    if(_watch.getElapsedTime() > SPLASH_TIME)
 	{
-		if ( _watch.getElapsedTime() > SPLASH_TIME )
-		{
-			_data->statehandler.AddState ( StatePtr ( new MainMenu ( _data ) ) );
-		}
+	    data_->statehandler.AddState(StatePtr(new MainMenu(data_)));
 	}
+}
 
-	void SplashScreen::Draw()
-	{
-		// clear screen to update data
-		_data->window.clear();
-		// draw background sprite with background texture loaded
-		_data->window.draw ( _background );
-		// display updated data
-		_data->window.display();
-	}
-} // namespace GameEngine
+void SplashScreen::Draw()
+{
+    // clear screen to update data
+    data_->window.clear();
+    renderer_->DisplaySplashScreen();
+    // display updated data
+    data_->window.display();
+}
+}  // namespace GameEngine

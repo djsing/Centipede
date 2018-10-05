@@ -6,17 +6,7 @@ namespace GameEngine
 {
 GameWon::GameWon(DataPtr data) : data_(data)
 {
-    data_->resources.LoadTexture("Game Win Sprite", GAME_WON);
-    data_->resources.LoadTexture("Press F12 Restart", GAME_WIN_RESTART_FILEPATH);
-
-    game_won_.setTexture(data_->resources.GetTexture("Game Win Sprite"));
-    press_f12_to_restart_.setTexture(data_->resources.GetTexture("Press F12 Restart"));
-
-    game_won_.setPosition(SCREEN_WIDTH / 2 - game_won_.getGlobalBounds().width / 2,
-                          SCREEN_HEIGHT / 2 - game_won_.getGlobalBounds().height);
-
-    press_f12_to_restart_.setPosition(SCREEN_WIDTH / 2 - press_f12_to_restart_.getGlobalBounds().width / 2,
-                                      SCREEN_HEIGHT / 2);
+    renderer_ = std::make_shared<StateRenderer>(data_);
 }
 
 void GameWon::HandleInput()
@@ -49,8 +39,7 @@ void GameWon::Draw()
 {
     // clear screen to update data
     data_->window.clear();
-    data_->window.draw(game_won_);
-    data_->window.draw(press_f12_to_restart_);
+    renderer_->DisplayWin();
     // display updated data
     data_->window.display();
 }

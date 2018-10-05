@@ -47,25 +47,16 @@ class CentipedeLogic : public EntityLogic
     void CollisionHandle() override;
 
    private:
-    /**
-     * @brief Shared pointer to Data layer.
-     */
+    // Shared pointer to Data layer.
+
     DataPtr data_;
-    /**
-     * @brief Shared pointer to centipede container.
-     */
+    // Shared pointer to centipede container.
     CentPtr centipede_;
-    /**
-     * @brief Speed of the centipede.
-     */
+    // Speed of the centipede.
     float speed_;
-    /**
-     * @brief Move distance for each centipede segment.
-     */
+    // Move distance for each centipede segment.
     float move_distance_;
-    /**
-     * @brief Tracks initial number of centipede segments.
-     */
+    // Tracks initial number of centipede segments.
     unsigned int number_of_centipede_segments_;
     /**
      * @brief Moves CentipedeSegment object downwards.
