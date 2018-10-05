@@ -1,3 +1,4 @@
+#include "BombLogic.h"
 #include "CentipedeLogic.h"
 #include "DEFINITIONS.h"
 #include "GamePlay.h"
@@ -30,6 +31,8 @@ GamePlay::GamePlay(DataPtr data) : data_(data)
     spider_logic_ = std::make_unique<SpiderLogic>(field_);
     // scorpion pointers
     scorpion_logic_ = std::make_unique<ScorpionLogic>(field_);
+    // bombs pointers
+    bombs_logic_ = std::make_unique<BombLogic>(field_);
     // collision checking pointer
     collision_handler_ = std::make_shared<CollisionHandler>(data_, turret_, centipede_, field_);
     // Rendering pointer
@@ -81,6 +84,7 @@ void GamePlay::Draw()
 void GamePlay::SpawnEntities()
 {
     mush_logic_->Spawn();
+    bombs_logic_->Spawn();
     scorpion_logic_->Spawn();
     spider_logic_->Spawn();
     centipede_logic_->Spawn();
@@ -89,6 +93,7 @@ void GamePlay::SpawnEntities()
 
 void GamePlay::MoveEntities(float dt)
 {
+    bombs_logic_->Move(dt);
     centipede_logic_->Move(dt);
     spider_logic_->Move(dt);
     scorpion_logic_->Move(dt);
@@ -111,5 +116,6 @@ void GamePlay::HandleCollisions()
     bullet_logic_->CollisionHandle();
     spider_logic_->CollisionHandle();
     mush_logic_->CollisionHandle();
+    bombs_logic_->CollisionHandle();
 }
 }  // namespace GameEngine

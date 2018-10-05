@@ -52,6 +52,10 @@ class EntityRendering
      */
     void DrawTurret();
     /**
+     * @brief Draws all Bomb objects.
+     */
+    void DrawBombs();
+    /**
      * @brief Shared pointer to Data layer.
      */
     DataPtr data_;
@@ -71,7 +75,8 @@ class EntityRendering
      * @brief Container of sprites to display the number of lives
      * the player has remaining.
      */
-    std::vector<sf::Sprite> lives_;
+    sf::Sprite life_;
+    sf::Sprite explosion_;
 };
 using RenderPtr = std::unique_ptr<EntityRendering>;
 }  // namespace GameEngine

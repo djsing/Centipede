@@ -53,11 +53,11 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CentipedeSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CentipedeSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a61e141b63635ba012c3d060a8f748c5f"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="GetTrajectory"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aafcdb025cf65447959b907eeb94de9ed"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="IsFirstSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a9b8821e7e8456e5d046b8594a76d3d22"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="IsLastSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aa6832e3976aa9c6d69128f893879ec6e"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="IsPoisoned"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a54d071039b0076e78d5c2b5c6c93892c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="IsTurningLeft"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a77a6c3845e081eeae3e9359464183d38"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GetTrajectory"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a83737fcadf52ed047edf9b3b3223ee02"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="IsFirstSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#ae1bf883e8545bf5f374c29d969356701"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="IsLastSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a8fb25eb81e1f215aa8e3938b225fb9f0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="IsPoisoned"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0e843f4343e9eb86f3e37d52e56e5f63"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="IsTurningLeft"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0724d584ac422fdb1817598eaf93ed3d"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetFirstSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#ad47034bdabe53a08b2700f468e21a0f7"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetLastSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aa347e759d32b277688d3d73adbd45e68"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetPoisoned"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#adf78df6f8f86ea1ee7327f75a4a4fbcc"><param name="ImageNumber" value="11"></OBJECT>
@@ -90,6 +90,7 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetTopLeftXPosition"><param name="Local" value="class_game_engine_1_1_entity.html#a7642342deee11c9d76a9045f54b6bf0d"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetTopLeftYPosition"><param name="Local" value="class_game_engine_1_1_entity.html#a98d4de664b689f3f633a4a29c85de308"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="operator=="><param name="Local" value="class_game_engine_1_1_entity.html#a9520b05d34e9601db18d8c46effc6a64"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator=="><param name="Local" value="class_game_engine_1_1_entity.html#a05e3485a63a86f7225d4e3fed27d3ce7"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EntityLogic"><param name="Local" value="class_game_engine_1_1_entity_logic.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -397,11 +398,11 @@
             <LI><OBJECT type="text/sitemap"><param name="Name" value="CentipedeSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html"><param name="ImageNumber" value="1"></OBJECT>
               <UL>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="CentipedeSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a61e141b63635ba012c3d060a8f748c5f"><param name="ImageNumber" value="11"></OBJECT>
-              <LI><OBJECT type="text/sitemap"><param name="Name" value="GetTrajectory"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aafcdb025cf65447959b907eeb94de9ed"><param name="ImageNumber" value="11"></OBJECT>
-              <LI><OBJECT type="text/sitemap"><param name="Name" value="IsFirstSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a9b8821e7e8456e5d046b8594a76d3d22"><param name="ImageNumber" value="11"></OBJECT>
-              <LI><OBJECT type="text/sitemap"><param name="Name" value="IsLastSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aa6832e3976aa9c6d69128f893879ec6e"><param name="ImageNumber" value="11"></OBJECT>
-              <LI><OBJECT type="text/sitemap"><param name="Name" value="IsPoisoned"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a54d071039b0076e78d5c2b5c6c93892c"><param name="ImageNumber" value="11"></OBJECT>
-              <LI><OBJECT type="text/sitemap"><param name="Name" value="IsTurningLeft"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a77a6c3845e081eeae3e9359464183d38"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="GetTrajectory"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a83737fcadf52ed047edf9b3b3223ee02"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="IsFirstSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#ae1bf883e8545bf5f374c29d969356701"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="IsLastSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a8fb25eb81e1f215aa8e3938b225fb9f0"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="IsPoisoned"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0e843f4343e9eb86f3e37d52e56e5f63"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="IsTurningLeft"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0724d584ac422fdb1817598eaf93ed3d"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="SetFirstSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#ad47034bdabe53a08b2700f468e21a0f7"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="SetLastSegment"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aa347e759d32b277688d3d73adbd45e68"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="SetPoisoned"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#adf78df6f8f86ea1ee7327f75a4a4fbcc"><param name="ImageNumber" value="11"></OBJECT>
@@ -495,6 +496,7 @@
           <LI><OBJECT type="text/sitemap"><param name="Name" value="Entity.cpp"><param name="Local" value="_entity_8cpp.html"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
             <LI><OBJECT type="text/sitemap"><param name="Name" value="operator=="><param name="Local" value="_entity_8cpp.html#a6018eaaa6823608e7ecccb0cd40febc9"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="operator=="><param name="Local" value="_entity_8cpp.html#a6b7445fbc4d941d7f57cd13615e9a2eb"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="Entity.h"><param name="Local" value="_entity_8h.html"><param name="ImageNumber" value="11"></OBJECT>
             <UL>
@@ -517,6 +519,7 @@
               <LI><OBJECT type="text/sitemap"><param name="Name" value="SetTopLeftXPosition"><param name="Local" value="class_game_engine_1_1_entity.html#a7642342deee11c9d76a9045f54b6bf0d"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="SetTopLeftYPosition"><param name="Local" value="class_game_engine_1_1_entity.html#a98d4de664b689f3f633a4a29c85de308"><param name="ImageNumber" value="11"></OBJECT>
               <LI><OBJECT type="text/sitemap"><param name="Name" value="operator=="><param name="Local" value="class_game_engine_1_1_entity.html#a9520b05d34e9601db18d8c46effc6a64"><param name="ImageNumber" value="11"></OBJECT>
+              <LI><OBJECT type="text/sitemap"><param name="Name" value="operator=="><param name="Local" value="class_game_engine_1_1_entity.html#a05e3485a63a86f7225d4e3fed27d3ce7"><param name="ImageNumber" value="11"></OBJECT>
               </UL>
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="EntityLogic.h"><param name="Local" value="_entity_logic_8h.html"><param name="ImageNumber" value="1"></OBJECT>

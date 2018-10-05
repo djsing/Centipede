@@ -20,19 +20,37 @@ void MushroomLogic::Spawn()
 	{
 	    for(auto i = 0; i < MUSHROOMS_SPAWNED; i++)
 		{
-		    int randYLevel = std::rand() % maxYLevels;
-		    int randXLevel = std::rand() % maxXLevels;
+		    int randYLevel = std::rand() % max_y_levels_;
+		    int randXLevel = std::rand() % max_x_levels_;
 		    int maxScreenPosition = SCREEN_WIDTH - MUSHROOM_SPRITE_SIZE;
 
-		    if(randYLevel < 3 || randYLevel > maxYLevels - 0.25 * maxYLevels ||
+		    if(randYLevel < 3 || randYLevel > max_y_levels_ - 0.25 * max_y_levels_ ||
 		       randXLevel * MUSHROOM_SPRITE_SIZE > maxScreenPosition || randXLevel == 0)
 			{
 			    i--;
 			    continue;
 			}
 
-		    auto mushroom = Mushroom{static_cast<float>(randXLevel * MUSHROOM_SPRITE_SIZE),
-		                             static_cast<float>(randYLevel * MUSHROOM_SPRITE_SIZE)};
+		    if((randXLevel * MUSHROOM_SPRITE_SIZE < SCREEN_WIDTH / 4) &&
+		       (randXLevel * MUSHROOM_SPRITE_SIZE + MUSHROOM_SPRITE_SIZE > SCREEN_WIDTH / 4))
+			{
+			    i--;
+			    continue;
+			}
+		    else if((randXLevel * MUSHROOM_SPRITE_SIZE < SCREEN_WIDTH / 2) &&
+		            (randXLevel * MUSHROOM_SPRITE_SIZE + MUSHROOM_SPRITE_SIZE > SCREEN_WIDTH / 2))
+			{
+			    i--;
+			    continue;
+			}
+		    else if((randXLevel * MUSHROOM_SPRITE_SIZE < SCREEN_WIDTH * 3 / 4) &&
+		            (randXLevel * MUSHROOM_SPRITE_SIZE + MUSHROOM_SPRITE_SIZE > SCREEN_WIDTH * 3 / 4))
+			{
+			    i--;
+			    continue;
+			}
+
+		    auto mushroom = Mushroom{randXLevel * MUSHROOM_SPRITE_SIZE, randYLevel * MUSHROOM_SPRITE_SIZE};
 		    field_->GetMushrooms().push_back(mushroom);
 		}
 	}

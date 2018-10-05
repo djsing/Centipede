@@ -4,6 +4,7 @@
 #include <memory>
 #include <tuple>
 #include <vector>
+#include "Bomb.h"
 #include "Mushroom.h"
 #include "Scorpion.h"
 #include "Spider.h"
@@ -22,25 +23,22 @@ namespace GameEngine
 class GameField
 {
    public:
-    GameField()
-    {
-    }
     /**
      * @brief Accesses the Mushroom container.
      * @return Returns the address of the vector
-     * containing all Mushrooms on the screen.
+     * containing all Mushroom objects on the screen.
      */
     std::vector<Mushroom>& GetMushrooms();
     /**
      * @brief Accesses the Spider container.
      * @return Returns the address of the vector
-     * containing all Spiders on the screen.
+     * containing all Spider objects on the screen.
      */
     std::vector<Spider>& GetSpiders();
     /**
      * @brief Accesses the Scorpions container.
      * @return Returns the address of the vector
-     * containing all Scorpions on the screen.
+     * containing all Scorpion objects on the screen.
      */
     std::vector<Scorpion>& GetScorpions();
     /**
@@ -49,10 +47,17 @@ class GameField
      * containing the coordinates of all new mushrooms
      * on the screen.
      */
-    std::vector<std::tuple<float, float>>& GetNewMushrooms();
+    std::vector<std::pair<float, float>>& GetNewMushrooms();
+    /**
+     * @brief Accesses the Bombs container.
+     * @return Returns the address of the vector
+     * containing all Bomb objects on the screen.
+     */
+    std::vector<Bomb>& GetBombs();
 
    private:
-    std::vector<std::tuple<float, float>> new_mushrooms_;
+    std::vector<Bomb> bombs_;
+    std::vector<std::pair<float, float>> new_mushrooms_;
     std::vector<Mushroom> mushrooms_;
     std::vector<Spider> spiders_;
     std::vector<Scorpion> scorpions_;

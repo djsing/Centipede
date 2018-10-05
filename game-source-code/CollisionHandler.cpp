@@ -24,6 +24,8 @@ void CollisionHandler::CheckCollisions()
     if(!turret_->IsDead())
 	{
 	    // check for game winning collisions
+	    CheckBulletBombCollisions();
+	    CheckExplosionCollisions();
 	    CheckBulletSegmentCollisions();
 	    // check for point scoring collisions
 	    CheckBulletSpiderCollisions();
@@ -58,7 +60,7 @@ void CollisionHandler::CheckBulletSegmentCollisions()
 				    it->SetDead(true);
 				    // saved the position of bullet/segment collisions to the GameField container.
 				    field_->GetNewMushrooms().push_back(
-				        std::make_tuple(it->GetTopLeftXPosition(), it->GetTopLeftYPosition()));
+				        std::make_pair(it->GetTopLeftXPosition(), it->GetTopLeftYPosition()));
 				}
 			    it++;
 			    it = std::find(it, centipede_->GetCentipede().end(),
@@ -244,6 +246,94 @@ void CollisionHandler::CheckBulletMushroomCollisions()
 			    it++;
 			    it = std::find(it, field_->GetMushrooms().end(),
 			                   std::make_pair(i.GetRegion(), i.GetSubRegion()));
+			}
+		}
+	}
+}
+
+void CollisionHandler::CheckBulletBombCollisions()
+{
+    if(!turret_->GetBullets().empty())
+	{
+	    for(auto& i : field_->GetBombs())
+		{
+		    auto it = std::find(turret_->GetBullets().begin(), turret_->GetBullets().end(),
+		                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
+		    while(it != turret_->GetBullets().end())
+			{
+			    if(CheckDistanceBetweenEntities(i, *it) < BULLET_HIT_RADIUS + BOMB_HIT_RADIUS)
+				{
+				    it->SetDead(true);
+				    i.Explode();
+				    break;
+				}
+			    it++;
+			    it = std::find(it, turret_->GetBullets().end(),
+			                   std::make_pair(i.GetRegion(), i.GetSubRegion()));
+			}
+		}
+	}
+}
+
+void CollisionHandler::CheckExplosionCollisions()
+{
+    for(auto& i : field_->GetBombs())
+	{
+	    if(i.IsTriggered())
+		{
+		    // Check scorpion deaths
+		    auto scorpion_it = std::find(field_->GetScorpions().begin(), field_->GetScorpions().end(),
+		                                 std::make_pair(i.GetRegion(), i.GetSubRegion()));
+		    while(scorpion_it != field_->GetScorpions().end())
+			{
+			    if(CheckDistanceBetweenEntities(i, *scorpion_it) <
+			       SCORPION_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
+				{
+				    scorpion_it->SetDead(true);
+				}
+			    scorpion_it++;
+			    scorpion_it = std::find(scorpion_it, field_->GetScorpions().end(),
+			                            std::make_pair(i.GetRegion(), i.GetSubRegion()));
+			}
+		    // Check spider deaths
+		    auto spider_it = std::find(field_->GetSpiders().begin(), field_->GetSpiders().end(),
+		                               std::make_pair(i.GetRegion(), i.GetSubRegion()));
+		    while(spider_it != field_->GetSpiders().end())
+			{
+			    if(CheckDistanceBetweenEntities(i, *spider_it) < SPIDER_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
+				{
+				    spider_it->SetDead(true);
+				}
+			    spider_it++;
+			    spider_it = std::find(spider_it, field_->GetSpiders().end(),
+			                          std::make_pair(i.GetRegion(), i.GetSubRegion()));
+			}
+		    // Check mushroom deaths
+		    auto mush_it = std::find(field_->GetMushrooms().begin(), field_->GetMushrooms().end(),
+		                             std::make_pair(i.GetRegion(), i.GetSubRegion()));
+		    while(mush_it != field_->GetMushrooms().end())
+			{
+			    if(CheckDistanceBetweenEntities(i, *mush_it) < MUSHROOM_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
+				{
+				    mush_it->SetDead(true);
+				}
+			    mush_it++;
+			    mush_it = std::find(mush_it, field_->GetMushrooms().end(),
+			                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
+			}
+		    // Check segment deaths
+		    auto seg_it = std::find(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end(),
+		                            std::make_pair(i.GetRegion(), i.GetSubRegion()));
+		    while(seg_it != centipede_->GetCentipede().end())
+			{
+			    if(CheckDistanceBetweenEntities(i, *seg_it) <
+			       CENTIPEDE_SEGMENT_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
+				{
+				    seg_it->SetDead(true);
+				}
+			    seg_it++;
+			    seg_it = std::find(seg_it, centipede_->GetCentipede().end(),
+			                       std::make_pair(i.GetRegion(), i.GetSubRegion()));
 			}
 		}
 	}

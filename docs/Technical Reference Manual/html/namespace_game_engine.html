@@ -20,7 +20,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
+   <div id="projectbrief">El Don Dagga Dragga</div>
   </td>
  </tr>
  </tbody>
@@ -172,6 +172,8 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a6018eaaa6823608e7ecccb0cd40febc9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_game_engine.html#a6018eaaa6823608e7ecccb0cd40febc9">operator==</a> (const <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> &amp;entity, bool dead)</td></tr>
 <tr class="separator:a6018eaaa6823608e7ecccb0cd40febc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b7445fbc4d941d7f57cd13615e9a2eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_game_engine.html#a6b7445fbc4d941d7f57cd13615e9a2eb">operator==</a> (const <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> &amp;entity, std::pair&lt; <a class="el" href="namespace_game_engine.html#a07d654af51e7eabfb8f07be1e94fafcb">Region</a>, <a class="el" href="namespace_game_engine.html#a07d654af51e7eabfb8f07be1e94fafcb">Region</a> &gt; region)</td></tr>
+<tr class="separator:a6b7445fbc4d941d7f57cd13615e9a2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="af1544f1bbe197ab1d593c6146868ec8a"></a>
@@ -410,7 +412,7 @@ Functions</h2></td></tr>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a6018eaaa6823608e7ecccb0cd40febc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6018eaaa6823608e7ecccb0cd40febc9">&#9670;&nbsp;</a></span>operator==()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6018eaaa6823608e7ecccb0cd40febc9">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -436,7 +438,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">entity</td><td>The entity being checked whether it is dead or not. </td></tr>
+    <tr><td class="paramname">entity</td><td>The entity being checked. </td></tr>
     <tr><td class="paramname">dead</td><td>True if checking whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead, False if checking whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is alive. </td></tr>
   </table>
   </dd>
@@ -448,6 +450,50 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespace_game_engine_a6018eaaa6823608e7ecccb0cd40febc9_cgraph.png" border="0" usemap="#namespace_game_engine_a6018eaaa6823608e7ecccb0cd40febc9_cgraph" alt=""/></div>
 <map name="namespace_game_engine_a6018eaaa6823608e7ecccb0cd40febc9_cgraph" id="namespace_game_engine_a6018eaaa6823608e7ecccb0cd40febc9_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6b7445fbc4d941d7f57cd13615e9a2eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b7445fbc4d941d7f57cd13615e9a2eb">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameEngine::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> &amp;&#160;</td>
+          <td class="paramname"><em>entity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; <a class="el" href="namespace_game_engine.html#a07d654af51e7eabfb8f07be1e94fafcb">Region</a>, <a class="el" href="namespace_game_engine.html#a07d654af51e7eabfb8f07be1e94fafcb">Region</a> &gt;&#160;</td>
+          <td class="paramname"><em>region</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>The entity being checked. </td></tr>
+    <tr><td class="paramname">region</td><td>A pair of type Region and SubRegion. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00010">10</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_game_engine_a6b7445fbc4d941d7f57cd13615e9a2eb_cgraph.png" border="0" usemap="#namespace_game_engine_a6b7445fbc4d941d7f57cd13615e9a2eb_cgraph" alt=""/></div>
+<map name="namespace_game_engine_a6b7445fbc4d941d7f57cd13615e9a2eb_cgraph" id="namespace_game_engine_a6b7445fbc4d941d7f57cd13615e9a2eb_cgraph">
 </map>
 </div>
 

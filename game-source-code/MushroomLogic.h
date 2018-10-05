@@ -22,8 +22,8 @@ class MushroomLogic : public EntityLogic
    private:
     FieldPtr field_;
     int death_chance_;
-    const int maxYLevels = SCREEN_HEIGHT / MUSHROOM_SPRITE_SIZE;
-    const int maxXLevels = SCREEN_WIDTH / MUSHROOM_SPRITE_SIZE;
+    const int max_y_levels_ = SCREEN_HEIGHT / MUSHROOM_SPRITE_SIZE;
+    const int max_x_levels_ = SCREEN_WIDTH / MUSHROOM_SPRITE_SIZE;
 };
 }  // namespace GameEngine
 

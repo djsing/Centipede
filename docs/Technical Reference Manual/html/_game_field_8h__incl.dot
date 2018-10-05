@@ -16,6 +16,7 @@ digraph "Desktop/project-repo/game-source-code/GameField.h"
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="SFML/Graphics.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node5 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="Direction.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_direction_8h.html"];
   Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

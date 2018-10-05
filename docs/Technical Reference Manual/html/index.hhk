@@ -173,11 +173,11 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html"><param name="Name" value="GameEngine::CentipedeSegment"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a61e141b63635ba012c3d060a8f748c5f"><param name="Name" value="CentipedeSegment"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aafcdb025cf65447959b907eeb94de9ed"><param name="Name" value="GetTrajectory"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a9b8821e7e8456e5d046b8594a76d3d22"><param name="Name" value="IsFirstSegment"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aa6832e3976aa9c6d69128f893879ec6e"><param name="Name" value="IsLastSegment"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a54d071039b0076e78d5c2b5c6c93892c"><param name="Name" value="IsPoisoned"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a77a6c3845e081eeae3e9359464183d38"><param name="Name" value="IsTurningLeft"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a83737fcadf52ed047edf9b3b3223ee02"><param name="Name" value="GetTrajectory"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#ae1bf883e8545bf5f374c29d969356701"><param name="Name" value="IsFirstSegment"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a8fb25eb81e1f215aa8e3938b225fb9f0"><param name="Name" value="IsLastSegment"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0e843f4343e9eb86f3e37d52e56e5f63"><param name="Name" value="IsPoisoned"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0724d584ac422fdb1817598eaf93ed3d"><param name="Name" value="IsTurningLeft"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#ad47034bdabe53a08b2700f468e21a0f7"><param name="Name" value="SetFirstSegment"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aa347e759d32b277688d3d73adbd45e68"><param name="Name" value="SetLastSegment"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#adf78df6f8f86ea1ee7327f75a4a4fbcc"><param name="Name" value="SetPoisoned"></OBJECT>
@@ -465,7 +465,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_resource_manager.html#a9e0d03eaef2a3cb654a152532eb43712"><param name="Name" value="GetTexture"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_entity.html#a82f2acbfad7755f685bccfcb4c8758ae"><param name="Name" value="GetTopLeftXPosition"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_entity.html#a98847fc7c0a9f5cdd78ef252f3680c7b"><param name="Name" value="GetTopLeftYPosition"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aafcdb025cf65447959b907eeb94de9ed"><param name="Name" value="GetTrajectory"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a83737fcadf52ed047edf9b3b3223ee02"><param name="Name" value="GetTrajectory"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_game_over.html#a796bac0a9fb30cf7cfbd76aa214d4366"><param name="Name" value="HandleInput"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_game_over.html#a796bac0a9fb30cf7cfbd76aa214d4366"><param name="Name" value="GameEngine::GameOver"></OBJECT>
@@ -489,15 +489,15 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_mushroom.html#ad682f29d6f3df05c8486aaa27fc04b30"><param name="Name" value="IsBitten"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_entity.html#a8fba4a625c37072b4a4c6516a58e1dc5"><param name="Name" value="IsDead"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a9b8821e7e8456e5d046b8594a76d3d22"><param name="Name" value="IsFirstSegment"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#aa6832e3976aa9c6d69128f893879ec6e"><param name="Name" value="IsLastSegment"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a54d071039b0076e78d5c2b5c6c93892c"><param name="Name" value="IsPoisoned"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#ae1bf883e8545bf5f374c29d969356701"><param name="Name" value="IsFirstSegment"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a8fb25eb81e1f215aa8e3938b225fb9f0"><param name="Name" value="IsLastSegment"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0e843f4343e9eb86f3e37d52e56e5f63"><param name="Name" value="IsPoisoned"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a54d071039b0076e78d5c2b5c6c93892c"><param name="Name" value="GameEngine::CentipedeSegment"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0e843f4343e9eb86f3e37d52e56e5f63"><param name="Name" value="GameEngine::CentipedeSegment"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_mushroom.html#aa4a6f90acbab39aac1d6069d64edaa9d"><param name="Name" value="GameEngine::Mushroom"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_keyboard_controls_handler.html#a91b944086ebbfa1dfc02ef8d4d4d58b9"><param name="Name" value="IsShooting"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a77a6c3845e081eeae3e9359464183d38"><param name="Name" value="IsTurningLeft"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_centipede_segment.html#a0724d584ac422fdb1817598eaf93ed3d"><param name="Name" value="IsTurningLeft"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_game_engine_1_1_game_data.html#aeddf3785226b8ce785bef94e1ffdcb8a"><param name="Name" value="keyboard"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_game_engine_1_1_keyboard_controls_handler.html#aa548b70127fdd0475b8a4134bfea0d83"><param name="Name" value="KeyboardControlsHandler"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168ba684d325a7303f52e64011467ff5c5758"><param name="Name" value="LEFT"></OBJECT>

@@ -72,6 +72,15 @@ class CollisionHandler
      */
     void CheckBulletMushroomCollisions();
     /**
+     * @brief Checks collisions between Bullet objects and Bomb objects.
+     */
+    void CheckBulletBombCollisions();
+    /**
+     * @brief Checks collisions between the exploded bomb and other
+     * enemy Entity objects.
+     */
+    void CheckExplosionCollisions();
+    /**
      * @brief Checks the distance between two game Entity objects
      * @param entity1 Object of type Entity
      * @param entity2 Object of type Entity

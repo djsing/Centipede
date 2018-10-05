@@ -5,9 +5,9 @@
 #include <cmath>
 
 // game characteristics
-const double PI = 4 * atan(1);
-const auto SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width / 3;
-const auto SCREEN_HEIGHT = sf::VideoMode::getDesktopMode().height * 0.95;
+const float PI = 4 * atan(1);
+const float SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width / 3;
+const float SCREEN_HEIGHT = sf::VideoMode::getDesktopMode().height * 0.95;
 const auto SCREEN_LHS = 0;
 const auto SCREEN_TOP = 40;
 const auto WINDOW_TOP = 0;
@@ -39,33 +39,43 @@ const auto POISONED_MUSHROOM_FILEPATH = "Resources\\mushroompoisoned.png";
 const auto SPIDER_FILEPATH = "Resources\\spider.png";
 const auto SCORPION_FILEPATH = "Resources\\scorpion.png";
 const auto HEART_FILEPATH = "Resources\\lives.png";
+const auto BOMB_FILEPATH = "Resources\\bomb.png";
+const auto EXPLOSION_FILEPATH = "Resources\\explosion.png";
+// Other filepaths
+const auto HIGHSCORE_FILEPATH = "Resources\\HighScore.txt";
 
 // entity-specific characteristics
-const auto CENTIPEDE_SPRITE_SIDE_SIZE = 20;
-const auto CENTIPEDE_SEGMENT_HIT_RADIUS = 9;
-const auto TURRET_SPRITE_SIDE_SIZE = 20;
-const auto TURRET_HIT_RADIUS = 9;
-const auto BULLET_WIDTH = 8;
-const auto BULLET_HEIGHT = 20;
-const auto BULLET_SPEED = 1000;
-const auto BULLET_HIT_RADIUS = 9;
-const auto TURRET_SPEED = 300;
-const auto CENTIPEDE_SPEED = 400;
+const auto BOMB_SPRITE_SIZE = 20.f;
+const auto CENTIPEDE_SPRITE_SIDE_SIZE = 20.f;
+const auto CENTIPEDE_SEGMENT_HIT_RADIUS = 9.f;
+const auto TURRET_SPRITE_SIDE_SIZE = 20.f;
+const auto TURRET_HIT_RADIUS = 9.f;
+const auto BULLET_WIDTH = 8.f;
+const auto BULLET_HEIGHT = 20.f;
+const auto BULLET_SPEED = 1000.f;
+const auto BULLET_HIT_RADIUS = 9.f;
+const auto TURRET_SPEED = 300.f;
+const auto CENTIPEDE_SPEED = 400.f;
 const auto INITIAL_CENTIPEDE_NUMBER = 12;
 const auto MUSHROOMS_SPAWNED = 40;
-const auto MUSHROOM_SPRITE_SIZE = 20;
-const auto MUSHROOM_HIT_RADIUS = 9;
-const auto SPIDER_SPRITE_SIZE = 20;
-const auto SPIDER_HIT_RADIUS = 9;
-const auto SPIDER_SPEED = 400;
+const auto BOMBS_SPAWNED = 4;
+const auto MUSHROOM_SPRITE_SIZE = 20.f;
+const auto MUSHROOM_HIT_RADIUS = 9.f;
+const auto SPIDER_SPRITE_SIZE = 20.f;
+const auto SPIDER_HIT_RADIUS = 9.f;
+const auto SPIDER_SPEED = 400.f;
 const auto SPIDER_MOVEMENT_TIME = 1;
 const auto SCORPION_MOVEMENT_TIME = 2;
-const auto SCORPION_SPRITE_SIZE = 20;
-const auto SCORPION_HIT_RADIUS = 9;
-const auto SCORPION_SPEED = 400;
-const auto HEART_SIZE = 20;
+const auto SCORPION_SPRITE_SIZE = 20.f;
+const auto SCORPION_HIT_RADIUS = 9.f;
+const auto SCORPION_SPEED = 400.f;
+const auto HEART_SIZE = 20.f;
 const auto STARTING_LIVES = 3;
 const auto SPIDER_BITE_DEATH_CHANCE = 5;
 const auto SPIDER_TIME = 2;
+const auto BOMB_HIT_RADIUS = 9.f;
+const auto EXPLOSION_SPRITE_SIZE = 100.f;
+const auto EXPLOSION_HIT_RADIUS = 50.f;
+const auto EXPLOSION_TIME = 2;
 
 #endif

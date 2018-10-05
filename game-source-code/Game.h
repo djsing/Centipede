@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 #include <string>
+#include "HighScoreManager.h"
 #include "KeyboardControlsHandler.h"
 #include "LivesHandler.h"
 #include "ResourceManager.h"
@@ -58,6 +59,11 @@ struct GameData
      * number of lives the user has remaining before the game is lost.
      */
     LivesHandler lives;
+    /**
+     * @brief Creates an instance of the HighScoreManager class. It is through this
+     * instance that the score and highscore of the game is updated.
+     */
+    HighScoreManager score_manager;
 };
 using DataPtr = std::shared_ptr<GameData>;
 

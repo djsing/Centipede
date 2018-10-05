@@ -84,6 +84,7 @@ class GamePlay : public GameState
     LogicPtr mush_logic_;
     LogicPtr spider_logic_;
     LogicPtr scorpion_logic_;
+	LogicPtr bombs_logic_;
     // Input Handler Pointer
     InputHandlerPtr input_handler_;
     // CollisionHandler pointer

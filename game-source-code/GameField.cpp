@@ -17,9 +17,13 @@ std::vector<Scorpion>& GameField::GetScorpions()
     return scorpions_;
 }
 
-std::vector<std::tuple<float, float>>& GameField::GetNewMushrooms()
+std::vector<std::pair<float, float>>& GameField::GetNewMushrooms()
 {
     return new_mushrooms_;
 }
 
+std::vector<Bomb>& GameField::GetBombs()
+{
+    return bombs_;
+}
 }  // namespace GameEngine

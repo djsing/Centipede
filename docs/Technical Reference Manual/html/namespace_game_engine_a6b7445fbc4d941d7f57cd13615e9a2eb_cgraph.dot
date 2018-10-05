@@ -1,0 +1,11 @@
+digraph "GameEngine::operator=="
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node3 [label="GameEngine::operator==",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="GameEngine::Entity\l::GetRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_engine_1_1_entity.html#ad9dee840663cbdd3e8845cef69e3c0ad",tooltip="Returns the Region in which the Entity exists. "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="GameEngine::Entity\l::GetSubRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_engine_1_1_entity.html#ab6999adad7a0be54cb53896ef44ecaee",tooltip="Returns the subregion of the Region in which the entity exists. "];
+}

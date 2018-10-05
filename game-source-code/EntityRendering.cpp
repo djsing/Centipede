@@ -16,20 +16,17 @@ EntityRendering::EntityRendering(DataPtr data, TurretPtr turret, CentPtr centipe
     data_->resources.LoadTexture("Scorpion sprite", SCORPION_FILEPATH);
     data_->resources.LoadTexture("Spider sprite", SPIDER_FILEPATH);
     data_->resources.LoadTexture("heart sprite", HEART_FILEPATH);
+    life_.setTexture(data_->resources.GetTexture("heart sprite"));
     data_->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH);
+    data_->resources.LoadTexture("Bomb sprite", BOMB_FILEPATH);
+    data_->resources.LoadTexture("Explosion sprite", EXPLOSION_FILEPATH);
+    explosion_.setTexture(data_->resources.GetTexture("Explosion sprite"));
     turret->GetObjectSprite().setTexture(data_->resources.GetTexture("Turret Sprite"));
-
-    // create life indicators
-    for(auto i = 0; i < data_->lives.LivesRemaining(); i++)
-	{
-	    auto heart = sf::Sprite();
-	    heart.setTexture(data_->resources.GetTexture("heart sprite"));
-	    lives_.push_back(heart);
-	}
 }
 
 void EntityRendering::Draw()
 {
+    DrawBombs();
     DrawMushrooms();
     DrawCentipede();
     DrawScorpions();
@@ -125,19 +122,31 @@ void EntityRendering::DrawTurret()
     turret_->GetObjectSprite().setPosition(turret_->GetTopLeftXPosition(), turret_->GetTopLeftYPosition());
     data_->window.draw(turret_->GetObjectSprite());
 
-    while(lives_.size() != static_cast<unsigned int>(data_->lives.LivesRemaining()))
+    for(unsigned int i = 1; i <= static_cast<unsigned int>(data_->lives.LivesRemaining()); i++)
 	{
-	    if(lives_.size() == 0)
-		{
-		    break;
-		}
-	    lives_.pop_back();
+	    life_.setPosition(SCREEN_WIDTH - i * HEART_SIZE, WINDOW_TOP);
+	    data_->window.draw(life_);
 	}
+}
 
-    for(unsigned int i = 1; i <= lives_.size(); i++)
+void EntityRendering::DrawBombs()
+{
+    // draw bombs
+    for(auto& i : field_->GetBombs())
 	{
-	    lives_.at(i - 1).setPosition(SCREEN_WIDTH - i * HEART_SIZE, WINDOW_TOP);
-	    data_->window.draw(lives_.at(i - 1));
+	    if(i.IsTriggered())
+		{
+		    i.GetObjectSprite().setTexture(data_->resources.GetTexture("Explosion sprite"));
+		    explosion_.setPosition(i.GetCenterXPosition() - EXPLOSION_SPRITE_SIZE / 2,
+		                           i.GetCenterYPosition() - EXPLOSION_SPRITE_SIZE / 2);
+		    data_->window.draw(explosion_);
+		}
+	    else
+		{
+		    i.GetObjectSprite().setTexture(data_->resources.GetTexture("Bomb sprite"));
+		    i.GetObjectSprite().setPosition(i.GetTopLeftXPosition(), i.GetTopLeftYPosition());
+		    data_->window.draw(i.GetObjectSprite());
+		}
 	}
 }
 }  // namespace GameEngine
