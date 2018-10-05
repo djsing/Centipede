@@ -86,7 +86,7 @@ void GamePlay::SpawnEntities()
     mush_logic_->Spawn();
     bombs_logic_->Spawn();
     scorpion_logic_->Spawn();
-    // spider_logic_->Spawn();
+    spider_logic_->Spawn();
     centipede_logic_->Spawn();
     turret_logic_->Spawn();  // spawn bullets
 }

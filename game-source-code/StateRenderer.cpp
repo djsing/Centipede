@@ -7,6 +7,51 @@ StateRenderer::StateRenderer(DataPtr data) : data_(data)
 {
 }
 
+void StateRenderer::DisplayHighScore()
+{
+    auto score = data_->score_manager.GetHighScore();
+    for(unsigned int i = 0; i < score.size(); i++)
+	{
+	    switch(score.at(i))
+		{
+		case '0':
+		    score_digit_.setTexture(data_->resources.GetTexture("0"));
+		    break;
+		case '1':
+		    score_digit_.setTexture(data_->resources.GetTexture("1"));
+		    break;
+		case '2':
+		    score_digit_.setTexture(data_->resources.GetTexture("2"));
+		    break;
+		case '3':
+		    score_digit_.setTexture(data_->resources.GetTexture("3"));
+		    break;
+		case '4':
+		    score_digit_.setTexture(data_->resources.GetTexture("4"));
+		    break;
+		case '5':
+		    score_digit_.setTexture(data_->resources.GetTexture("5"));
+		    break;
+		case '6':
+		    score_digit_.setTexture(data_->resources.GetTexture("6"));
+		    break;
+		case '7':
+		    score_digit_.setTexture(data_->resources.GetTexture("7"));
+		    break;
+		case '8':
+		    score_digit_.setTexture(data_->resources.GetTexture("8"));
+		    break;
+		case '9':
+		    score_digit_.setTexture(data_->resources.GetTexture("9"));
+		default:
+		    break;
+		}
+	    score_digit_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+	                             WINDOW_TOP + 2 * NUMBER_SIZE);
+	    data_->window.draw(score_digit_);
+	}
+}
+
 void StateRenderer::DisplayLoss()
 {
     data_->resources.LoadTexture("Game Over Sprite", GAME_OVER_FILEPATH);

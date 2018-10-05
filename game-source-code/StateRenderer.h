@@ -51,6 +51,7 @@ class StateRenderer
     sf::Sprite subtitle_;
     sf::Sprite instructions_;
     sf::Sprite background_;
+	sf::Sprite score_digit_;
 };
 using StateRenderPtr = std::shared_ptr<StateRenderer>;
 }  // namespace GameEngine

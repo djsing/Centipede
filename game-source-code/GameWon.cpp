@@ -33,6 +33,7 @@ void GameWon::HandleInput()
 
 void GameWon::Update(float dt)
 {
+    data_->score_manager.UpdateHighScore();
 }
 
 void GameWon::Draw()
@@ -40,6 +41,7 @@ void GameWon::Draw()
     // clear screen to update data
     data_->window.clear();
     renderer_->DisplayWin();
+    renderer_->DisplayHighScore();
     // display updated data
     data_->window.display();
 }

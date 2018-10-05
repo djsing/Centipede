@@ -33,6 +33,7 @@ void GameOver::HandleInput()
 
 void GameOver::Update(float dt)
 {
+    data_->score_manager.UpdateHighScore();
 }
 
 void GameOver::Draw()
@@ -40,6 +41,7 @@ void GameOver::Draw()
     // clear screen to update data
     data_->window.clear();
     renderer_->DisplayLoss();
+    renderer_->DisplayHighScore();
     // display updated data
     data_->window.display();
 }
