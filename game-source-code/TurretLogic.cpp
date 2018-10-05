@@ -6,95 +6,96 @@
 
 namespace GameEngine
 {
-TurretLogic::TurretLogic(DataPtr data, TurretPtr turret) : _data(data), _turret(turret), _speed(TURRET_SPEED)
+TurretLogic::TurretLogic(DataPtr data, TurretPtr turret) : data_(data), turret_(turret), speed_(TURRET_SPEED)
 {
 }
 
 void TurretLogic::Spawn()
 {
-    if(_data->keyboard.IsShooting() &&
-       _turret->GetTopLeftYPosition() >= _turret->GetLastBulletYPosition() + BULLET_HEIGHT)
+    if(data_->keyboard.IsShooting() &&
+       turret_->GetTopLeftYPosition() >= turret_->GetLastBulletYPosition() + BULLET_HEIGHT)
 	{
-	    auto bullet = Bullet(_turret->GetCenterXPosition() - BULLET_WIDTH / 2, _turret->GetTopLeftYPosition());
-	    _turret->GetBullets().push_back(bullet);
-	    _data->keyboard.SetShooting(false);
+	    auto bullet = Bullet(turret_->GetCenterXPosition() - BULLET_WIDTH / 2, turret_->GetTopLeftYPosition());
+	    turret_->GetBullets().push_back(bullet);
+	    data_->keyboard.SetShooting(false);
 	}
 }
 
 void TurretLogic::Move(float dt)
 {
     // move turret
-    auto moveDistance = _speed * dt;
+    auto moveDistance = speed_ * dt;
 
-    switch(_data->keyboard.GetDirection())
+    switch(data_->keyboard.GetDirection())
 	{
-	    case Direction::RIGHT:
+	case Direction::RIGHT:
 
-		// now check if square is at right side of screen
-		if((_turret->GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
-		    {
-			_turret->SetTopLeftXPosition(SCREEN_WIDTH - TURRET_SPRITE_SIDE_SIZE);
-		    }
-		else
-		    {
-			_turret->SetTopLeftXPosition(_turret->GetTopLeftXPosition() + moveDistance);
-		    }
+	    // now check if square is at right side of screen
+	    if((turret_->GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
+		{
+		    turret_->SetTopLeftXPosition(SCREEN_WIDTH - TURRET_SPRITE_SIDE_SIZE);
+		}
+	    else
+		{
+		    turret_->SetTopLeftXPosition(turret_->GetTopLeftXPosition() + moveDistance);
+		}
 
-		break;
+	    break;
 
-	    case Direction::DOWN:
+	case Direction::DOWN:
 
-		// check if square is at bottom of the screen
-		if((_turret->GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_HEIGHT))
-		    {
-			_turret->SetTopLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
-		    }
-		else
-		    {
-			_turret->SetTopLeftYPosition(_turret->GetTopLeftYPosition() + moveDistance);
-		    }
+	    // check if square is at bottom of the screen
+	    if((turret_->GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_HEIGHT))
+		{
+		    turret_->SetTopLeftYPosition(SCREEN_HEIGHT - TURRET_SPRITE_SIDE_SIZE);
+		}
+	    else
+		{
+		    turret_->SetTopLeftYPosition(turret_->GetTopLeftYPosition() + moveDistance);
+		}
 
-		break;
+	    break;
 
-	    case Direction::LEFT:
-		if(_turret->GetTopLeftXPosition() <= SCREEN_LHS)
-		    {
-			_turret->SetTopLeftXPosition(SCREEN_LHS);
-		    }
-		else
-		    {
-			_turret->SetTopLeftXPosition(_turret->GetTopLeftXPosition() - moveDistance);
-		    }
+	case Direction::LEFT:
+	    if(turret_->GetTopLeftXPosition() <= SCREEN_LHS)
+		{
+		    turret_->SetTopLeftXPosition(SCREEN_LHS);
+		}
+	    else
+		{
+		    turret_->SetTopLeftXPosition(turret_->GetTopLeftXPosition() - moveDistance);
+		}
 
-		break;
+	    break;
 
-	    case Direction::UP:
+	case Direction::UP:
 
-		// check if square is at top of player box
-		if(_turret->GetTopLeftYPosition() <= TURRET_SCREEN_FRACTION * SCREEN_HEIGHT)
-		    {
-			_turret->SetTopLeftYPosition(TURRET_SCREEN_FRACTION * SCREEN_HEIGHT);
-		    }
-		else
-		    {
-			_turret->SetTopLeftYPosition(_turret->GetTopLeftYPosition() - moveDistance);
-		    }
+	    // check if square is at top of player box
+	    if(turret_->GetTopLeftYPosition() <= TURRET_SCREEN_FRACTION * SCREEN_HEIGHT)
+		{
+		    turret_->SetTopLeftYPosition(TURRET_SCREEN_FRACTION * SCREEN_HEIGHT);
+		}
+	    else
+		{
+		    turret_->SetTopLeftYPosition(turret_->GetTopLeftYPosition() - moveDistance);
+		}
 
-	    case Direction::HOVER:
-	    default:
-		break;
+	case Direction::HOVER:
+	default:
+	    break;
 	}
 }
 
 void TurretLogic::CollisionHandle()
 {
-    if(_data->lives.LivesRemaining() == 0)
+    if(data_->lives.LivesRemaining() == 0)
 	{
-	    _data->statehandler.AddState(StatePtr(new GameOver(_data)));
+	    data_->statehandler.AddState(StatePtr(new GameOver(data_)));
 	}
-    else if(_turret->IsDead())
+    else if(turret_->IsDead())
 	{
-	    _data->statehandler.AddState(StatePtr(new GamePlay(_data)));
+	    data_->score_manager.DecrementScore(PLAYER_DEATH_SCORE_LOSS);
+	    data_->statehandler.AddState(StatePtr(new GamePlay(data_)));
 	}
 }
 }  // namespace GameEngine

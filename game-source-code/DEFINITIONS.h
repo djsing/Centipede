@@ -28,6 +28,16 @@ const auto GAME_OVER_FILEPATH = "Resources\\gameover.png";
 const auto GAME_OVER_RESTART_FILEPATH = "Resources\\gamerestart.png";
 const auto GAME_WIN_RESTART_FILEPATH = "Resources\\gamerestart.png";
 const auto GAME_INSTRUCTIONS = "Resources\\instructions.png";
+const auto NUMBER_0 = "Resources\\0.png";
+const auto NUMBER_1 = "Resources\\1.png";
+const auto NUMBER_2 = "Resources\\2.png";
+const auto NUMBER_3 = "Resources\\3.png";
+const auto NUMBER_4 = "Resources\\4.png";
+const auto NUMBER_5 = "Resources\\5.png";
+const auto NUMBER_6 = "Resources\\6.png";
+const auto NUMBER_7 = "Resources\\7.png";
+const auto NUMBER_8 = "Resources\\8.png";
+const auto NUMBER_9 = "Resources\\9.png";
 // entity sprite filepaths
 const auto SEGMENT_FILEPATH = "Resources\\centipedesegment.png";
 const auto BODY_SEGMENT_FILEPATH = "Resources\\bodycentipedesegment.png";
@@ -78,5 +88,12 @@ const auto EXPLOSION_SPRITE_SIZE = 100.f;
 const auto EXPLOSION_HIT_RADIUS = 50.f;
 const auto EXPLOSION_TIME = 2;
 const auto BOMB_MOVE_TIME = 4;
+const auto NUMBER_SIZE = 20;
+
+const auto SEGMENT_SCORE = 10;
+const auto SPIDER_SCORE = 20;
+const auto SCORPION_SCORE = 50;
+const auto MUSHROOM_SCORE = 5;
+const auto PLAYER_DEATH_SCORE_LOSS = 100;
 
 #endif

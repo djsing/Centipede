@@ -16,13 +16,14 @@ class HighScoreManager
     void DecrementScore(int decrement);
 
     int GetScore();
-    int GetHighScore();
+    std::string GetHighScore();
 
     void UpdateHighScore();
+    void ResetScore();
 
    private:
     int score_;
-    int high_score_;
+    std::string high_score_;
     std::fstream high_score_file_;
 };
 }  // namespace GameEngine

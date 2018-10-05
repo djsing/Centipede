@@ -1,9 +1,10 @@
+#include <string>
 #include "DEFINITIONS.h"
 #include "HighScoreManager.h"
 
 namespace GameEngine
 {
-HighScoreManager::HighScoreManager() : score_(0), high_score_(0)
+HighScoreManager::HighScoreManager() : score_(0), high_score_("")
 {
     high_score_file_.open(HIGHSCORE_FILEPATH, std::ios::in);
 
@@ -22,7 +23,12 @@ void HighScoreManager::IncrementScore(int increment)
 
 void HighScoreManager::DecrementScore(int decrement)
 {
-    score_ -= decrement;
+    if(score_ > decrement)
+	{
+	    score_ -= decrement;
+	}
+    else
+	score_ = 0;
 }
 
 int HighScoreManager::GetScore()
@@ -30,19 +36,24 @@ int HighScoreManager::GetScore()
     return score_;
 }
 
-int HighScoreManager::GetHighScore()
+std::string HighScoreManager::GetHighScore()
 {
     return high_score_;
 }
 
 void HighScoreManager::UpdateHighScore()
 {
-    if(score_ > high_score_)
+    if(score_ > std::stoi(high_score_))
 	{
-	    high_score_ = score_;
+	    high_score_ = std::to_string(score_);
 	    high_score_file_.open(HIGHSCORE_FILEPATH, std::ios::out);
 	    high_score_file_ << high_score_;
 	    high_score_file_.close();
 	}
+}
+
+void HighScoreManager::ResetScore()
+{
+    score_ = 0;
 }
 }  // namespace GameEngine

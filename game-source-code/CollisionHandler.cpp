@@ -17,8 +17,8 @@ CollisionHandler::CollisionHandler(DataPtr data, TurretPtr turret, CentPtr centi
 void CollisionHandler::CheckCollisions()
 {
     // check for game losing collisions first
-    // CheckTurretSpiderCollisions();
-    // CheckTurretSegmentCollisions();
+    CheckTurretSpiderCollisions();
+    CheckTurretSegmentCollisions();
 
     // if the game is not lost, check the remaining collisions
     if(!turret_->IsDead())
@@ -50,6 +50,11 @@ void CollisionHandler::CheckBulletSegmentCollisions()
 	{
 	    for(auto& i : turret_->GetBullets())
 		{
+		    if(i.IsDead())
+			{
+			    continue;
+			}
+
 		    auto it = std::find(centipede_->GetCentipede().begin(), centipede_->GetCentipede().end(),
 		                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
 		    while(it != centipede_->GetCentipede().end())
@@ -58,6 +63,7 @@ void CollisionHandler::CheckBulletSegmentCollisions()
 				{
 				    i.SetDead(true);
 				    it->SetDead(true);
+				    data_->score_manager.IncrementScore(SEGMENT_SCORE);
 				    // saved the position of bullet/segment collisions to the GameField container.
 				    field_->GetNewMushrooms().push_back(
 				        std::make_pair(it->GetTopLeftXPosition(), it->GetTopLeftYPosition()));
@@ -73,48 +79,64 @@ void CollisionHandler::CheckBulletSegmentCollisions()
 
 void CollisionHandler::CheckSegmentMushroomCollisions()
 {
-    for(auto& i : centipede_->GetCentipede())
+    for(unsigned int i = 0; i < centipede_->GetCentipede().size(); i++)
 	{
+	    // if segment is poisoned, or moving up/down, don't check for collisions, since the behaviour for poisoned
+	    // segments is predefined in the Move() function
+	    if(centipede_->GetCentipede().at(i).IsPoisoned() ||
+	       centipede_->GetCentipede().at(i).GetDirection() == Direction::UP ||
+	       centipede_->GetCentipede().at(i).GetDirection() == Direction::DOWN ||
+	       centipede_->GetCentipede().at(i).IsDead())
+		{
+		    continue;
+		}
+
 	    auto it = std::find(field_->GetMushrooms().begin(), field_->GetMushrooms().end(),
-	                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
+	                        std::make_pair(centipede_->GetCentipede().at(i).GetRegion(),
+	                                       centipede_->GetCentipede().at(i).GetSubRegion()));
 	    while(it != field_->GetMushrooms().end())
 		{
-		    if(it->IsPoisoned() &&
-		       CheckDistanceBetweenEntities(i, *it) < CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
+		    if(it->IsPoisoned() && CheckDistanceBetweenEntities(centipede_->GetCentipede().at(i), *it) <
+		                               CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
 			{
 			    // set segments
-			    i.SetPoisoned(true);
+			    centipede_->GetCentipede().at(i).SetPoisoned(true);
 			    // set mushrooms normal after collisions with the last segment of a centipede segment
-			    if(i.IsLastSegment())
+			    if(centipede_->GetCentipede().at(i).IsLastSegment())
 				{
 				    it->SetPoisoned(false);
 				}
 			    it++;
 			    it = std::find(it, field_->GetMushrooms().end(),
-			                   std::make_pair(i.GetRegion(), i.GetSubRegion()));
+			                   std::make_pair(centipede_->GetCentipede().at(i).GetRegion(),
+			                                  centipede_->GetCentipede().at(i).GetSubRegion()));
 			    continue;
 			}
-		    // only check collisions when the segment is moving across the screen
-		    if(((i.GetDirection() == Direction::LEFT) || (i.GetDirection() == Direction::RIGHT)) &&
-		       CheckDistanceBetweenEntities(i, *it) < CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
+
+		    if(CheckDistanceBetweenEntities(centipede_->GetCentipede().at(i), *it) <
+		       CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
 			{
-			    if(i.GetDirection() == Direction::LEFT)
+			    if(centipede_->GetCentipede().at(i).GetDirection() == Direction::LEFT)
 				{
-				    i.SetTopLeftXPosition(it->GetTopLeftXPosition() + MUSHROOM_SPRITE_SIZE);
+				    centipede_->GetCentipede().at(i).SetTopLeftXPosition(it->GetTopLeftXPosition() +
+				                                                         MUSHROOM_SPRITE_SIZE);
 				}
 			    else
-				i.SetTopLeftXPosition(it->GetTopLeftXPosition() - CENTIPEDE_SPRITE_SIDE_SIZE);
+				centipede_->GetCentipede().at(i).SetTopLeftXPosition(it->GetTopLeftXPosition() -
+				                                                     CENTIPEDE_SPRITE_SIDE_SIZE);
 
-			    if(i.GetTrajectory() == Trajectory::DOWNWARD)
+			    if(centipede_->GetCentipede().at(i).GetTrajectory() == Trajectory::DOWNWARD)
 				{
-				    i.SetDirection(Direction::DOWN);
+				    centipede_->GetCentipede().at(i).SetDirection(Direction::DOWN);
 				}
 
 			    else
-				i.SetDirection(Direction::UP);
+				centipede_->GetCentipede().at(i).SetDirection(Direction::UP);
 			}
 		    it++;
-		    it = std::find(it, field_->GetMushrooms().end(), std::make_pair(i.GetRegion(), i.GetSubRegion()));
+		    it = std::find(it, field_->GetMushrooms().end(),
+		                   std::make_pair(centipede_->GetCentipede().at(i).GetRegion(),
+		                                  centipede_->GetCentipede().at(i).GetSubRegion()));
 		}
 	}
 }
@@ -215,6 +237,7 @@ void CollisionHandler::CheckBulletSpiderCollisions()
 				{
 				    it->SetDead(true);
 				    j.SetDead(true);
+				    data_->score_manager.IncrementScore(SPIDER_SCORE);
 				}
 			    it++;
 			    it = std::find(it, turret_->GetBullets().end(),
@@ -230,6 +253,10 @@ void CollisionHandler::CheckBulletMushroomCollisions()
 	{
 	    for(auto& i : turret_->GetBullets())
 		{
+		    if(i.IsDead())
+			{
+			    continue;
+			}
 		    auto it = std::find(field_->GetMushrooms().begin(), field_->GetMushrooms().end(),
 		                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
 		    // collision checking between bullets and mushrooms
@@ -242,6 +269,7 @@ void CollisionHandler::CheckBulletMushroomCollisions()
 				    if(it->GetLivesRemaining() == 0)
 					{
 					    it->SetDead(true);
+					    data_->score_manager.IncrementScore(MUSHROOM_SCORE);
 					}
 				}
 			    it++;
@@ -258,6 +286,10 @@ void CollisionHandler::CheckBulletBombCollisions()
 	{
 	    for(auto& i : field_->GetBombs())
 		{
+		    if(i.IsDead())
+			{
+			    continue;
+			}
 		    auto it = std::find(turret_->GetBullets().begin(), turret_->GetBullets().end(),
 		                        std::make_pair(i.GetRegion(), i.GetSubRegion()));
 		    while(it != turret_->GetBullets().end())
@@ -285,38 +317,57 @@ void CollisionHandler::CheckExplosionCollisions()
 		    // Check scorpion deaths
 		    for(auto& j : field_->GetScorpions())
 			{
+			    if(j.IsDead())
+				{
+				    continue;
+				}
 			    if(CheckDistanceBetweenEntities(i, j) < SCORPION_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
 				    i.SetDead(true);
 				    j.SetDead(true);
+				    data_->score_manager.IncrementScore(SCORPION_SCORE);
 				}
 			}
 		    // Check spider deaths
 		    for(auto& j : field_->GetSpiders())
 			{
+			    if(j.IsDead())
+				{
+				    continue;
+				}
 			    if(CheckDistanceBetweenEntities(i, j) < SPIDER_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
 				    i.SetDead(true);
 				    j.SetDead(true);
+				    data_->score_manager.IncrementScore(SPIDER_SCORE);
 				}
 			}
-
 		    // Check mushroom deaths
 		    for(auto& j : field_->GetMushrooms())
 			{
+			    if(j.IsDead())
+				{
+				    continue;
+				}
 			    if(CheckDistanceBetweenEntities(i, j) < CENTIPEDE_SEGMENT_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
 				    i.SetDead(true);
 				    j.SetDead(true);
+				    data_->score_manager.IncrementScore(MUSHROOM_SCORE);
 				}
 			}
 		    // Check segment deaths
 		    for(auto& j : centipede_->GetCentipede())
 			{
+			    if(j.IsDead())
+				{
+				    continue;
+				}
 			    if(CheckDistanceBetweenEntities(i, j) < CENTIPEDE_SEGMENT_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
 				    i.SetDead(true);
 				    j.SetDead(true);
+				    data_->score_manager.IncrementScore(SEGMENT_SCORE);
 				}
 			}
 		}

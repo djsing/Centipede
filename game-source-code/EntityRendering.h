@@ -55,6 +55,8 @@ class EntityRendering
      * @brief Draws all Bomb objects.
      */
     void DrawBombs();
+	
+	void DisplayScore();
     /**
      * @brief Shared pointer to Data layer.
      */
@@ -77,6 +79,7 @@ class EntityRendering
      */
     sf::Sprite life_;
     sf::Sprite explosion_;
+	sf::Sprite score_digit_;
 };
 using RenderPtr = std::unique_ptr<EntityRendering>;
 }  // namespace GameEngine

@@ -1,4 +1,6 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include <string>
 #include "DEFINITIONS.h"
 #include "EntityRendering.h"
 
@@ -22,6 +24,16 @@ EntityRendering::EntityRendering(DataPtr data, TurretPtr turret, CentPtr centipe
     data_->resources.LoadTexture("Explosion sprite", EXPLOSION_FILEPATH);
     explosion_.setTexture(data_->resources.GetTexture("Explosion sprite"));
     turret->GetObjectSprite().setTexture(data_->resources.GetTexture("Turret Sprite"));
+    data_->resources.LoadTexture("0", NUMBER_0);
+    data_->resources.LoadTexture("1", NUMBER_1);
+    data_->resources.LoadTexture("2", NUMBER_2);
+    data_->resources.LoadTexture("3", NUMBER_3);
+    data_->resources.LoadTexture("4", NUMBER_4);
+    data_->resources.LoadTexture("5", NUMBER_5);
+    data_->resources.LoadTexture("6", NUMBER_6);
+    data_->resources.LoadTexture("7", NUMBER_7);
+    data_->resources.LoadTexture("8", NUMBER_8);
+    data_->resources.LoadTexture("9", NUMBER_9);
 }
 
 void EntityRendering::Draw()
@@ -33,6 +45,7 @@ void EntityRendering::Draw()
     DrawBullets();
     DrawTurret();
     DrawSpiders();
+    DisplayScore();
 }
 
 void EntityRendering::DrawBullets()
@@ -147,6 +160,51 @@ void EntityRendering::DrawBombs()
 		    i.GetObjectSprite().setPosition(i.GetTopLeftXPosition(), i.GetTopLeftYPosition());
 		    data_->window.draw(i.GetObjectSprite());
 		}
+	}
+}
+
+void EntityRendering::DisplayScore()
+{
+    auto score = std::to_string(data_->score_manager.GetScore());
+    std::cout << score << std::endl;
+    for(unsigned int i = 0; i < score.size(); i++)
+	{
+	    switch(score.at(i))
+		{
+		case '0':
+		    score_digit_.setTexture(data_->resources.GetTexture("0"));
+		    break;
+		case '1':
+		    score_digit_.setTexture(data_->resources.GetTexture("1"));
+		    break;
+		case '2':
+		    score_digit_.setTexture(data_->resources.GetTexture("2"));
+		    break;
+		case '3':
+		    score_digit_.setTexture(data_->resources.GetTexture("3"));
+		    break;
+		case '4':
+		    score_digit_.setTexture(data_->resources.GetTexture("4"));
+		    break;
+		case '5':
+		    score_digit_.setTexture(data_->resources.GetTexture("5"));
+		    break;
+		case '6':
+		    score_digit_.setTexture(data_->resources.GetTexture("6"));
+		    break;
+		case '7':
+		    score_digit_.setTexture(data_->resources.GetTexture("7"));
+		    break;
+		case '8':
+		    score_digit_.setTexture(data_->resources.GetTexture("8"));
+		    break;
+		case '9':
+		    score_digit_.setTexture(data_->resources.GetTexture("9"));
+		default:
+		    break;
+		}
+	    score_digit_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+	    data_->window.draw(score_digit_);
 	}
 }
 }  // namespace GameEngine

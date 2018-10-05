@@ -42,9 +42,9 @@ class TurretLogic : public EntityLogic
     void CollisionHandle() override;
 
    private:
-    DataPtr _data;
-    TurretPtr _turret;
-    float _speed;
+    DataPtr data_;
+    TurretPtr turret_;
+    float speed_;
 };
 }  // namespace GameEngine
 
