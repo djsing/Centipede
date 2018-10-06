@@ -1,6 +1,5 @@
 #include "Bullet.h"
 #include "DEFINITIONS.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {

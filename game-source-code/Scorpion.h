@@ -3,7 +3,6 @@
 
 #include "Entity.h"
 #include "Game.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {

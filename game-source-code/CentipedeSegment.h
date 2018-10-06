@@ -1,7 +1,6 @@
 #ifndef CENTIPEDESEGMENT_H
 #define CENTIPEDESEGMENT_H
 
-#include <SFML/Graphics.hpp>
 #include "Direction.h"
 #include "Entity.h"
 #include "Game.h"

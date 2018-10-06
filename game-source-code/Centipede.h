@@ -1,7 +1,6 @@
 #ifndef CENTIPEDE_H
 #define CENTIPEDE_H
 
-#include <SFML/Graphics.hpp>
 #include <memory>
 #include "CentipedeSegment.h"
 #include "Game.h"

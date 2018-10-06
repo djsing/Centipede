@@ -18,16 +18,6 @@ const auto WINDOW_TITLE = "Centipede";
 const auto SPLASH_TIME = 3.0;
 
 // general sprite filepaths
-const auto SPLASH_BACKGROUND_FILEPATH = "Resources\\splashscreenbackground.jpg";
-const auto GAME_TITLE_FILEPATH = "Resources\\title.gif";
-const auto GAME_SUBTITLE_FILEPATH = "Resources\\subtitle.jpg";
-const auto GAME_WON = "Resources\\youwin.png";
-const auto PAUSE_FILEPATH = "Resources\\gamepaused.png";
-const auto PAUSE_SPACE_FILEPATH = "Resources\\resume.png";
-const auto GAME_OVER_FILEPATH = "Resources\\gameover.png";
-const auto GAME_OVER_RESTART_FILEPATH = "Resources\\gamerestart.png";
-const auto GAME_WIN_RESTART_FILEPATH = "Resources\\gamerestart.png";
-const auto GAME_INSTRUCTIONS = "Resources\\instructions.png";
 const auto NUMBER_0 = "Resources\\0.png";
 const auto NUMBER_1 = "Resources\\1.png";
 const auto NUMBER_2 = "Resources\\2.png";
@@ -38,19 +28,7 @@ const auto NUMBER_6 = "Resources\\6.png";
 const auto NUMBER_7 = "Resources\\7.png";
 const auto NUMBER_8 = "Resources\\8.png";
 const auto NUMBER_9 = "Resources\\9.png";
-// entity sprite filepaths
-const auto SEGMENT_FILEPATH = "Resources\\centipedesegment.png";
-const auto BODY_SEGMENT_FILEPATH = "Resources\\bodycentipedesegment.png";
-const auto TURRET_FILEPATH = "Resources\\turret.png";
-const auto BULLET_FILEPATH = "Resources\\bullet.jpg";
-const auto MUSHROOM_FILEPATH = "Resources\\mushroom.png";
-const auto MUSHROOM3_FILEPATH = "Resources\\mushroom3lives.png";
-const auto POISONED_MUSHROOM_FILEPATH = "Resources\\mushroompoisoned.png";
-const auto SPIDER_FILEPATH = "Resources\\spider.png";
-const auto SCORPION_FILEPATH = "Resources\\scorpion.png";
-const auto HEART_FILEPATH = "Resources\\lives.png";
-const auto BOMB_FILEPATH = "Resources\\bomb.png";
-const auto EXPLOSION_FILEPATH = "Resources\\explosion.png";
+
 // Other filepaths
 const auto HIGHSCORE_FILEPATH = "Resources\\HighScore.txt";
 
@@ -86,14 +64,15 @@ const auto SPIDER_TIME = 2;
 const auto BOMB_HIT_RADIUS = 9.f;
 const auto EXPLOSION_SPRITE_SIZE = 100.f;
 const auto EXPLOSION_HIT_RADIUS = 50.f;
-const auto EXPLOSION_TIME = 2;
-const auto BOMB_MOVE_TIME = 4;
+const auto EXPLOSION_TIME = 1;
+const auto BOMB_MOVE_TIME = 2;
 const auto NUMBER_SIZE = 20;
 
+// game characteristic
 const auto SEGMENT_SCORE = 10;
 const auto SPIDER_SCORE = 20;
 const auto SCORPION_SCORE = 50;
 const auto MUSHROOM_SCORE = 5;
-const auto PLAYER_DEATH_SCORE_LOSS = 100;
+const auto PLAYER_DEATH_SCORE_LOSS = 50;
 
 #endif

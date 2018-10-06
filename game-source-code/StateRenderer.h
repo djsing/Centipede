@@ -33,6 +33,10 @@ class StateRenderer
      */
     void DisplayLoss();
     /**
+     * @brief Displays pause screen.
+     */
+    void DisplayPause();
+    /**
      * @brief Displays main menu.
      */
     void DisplayMenu();
@@ -51,7 +55,22 @@ class StateRenderer
     sf::Sprite subtitle_;
     sf::Sprite instructions_;
     sf::Sprite background_;
-	sf::Sprite score_digit_;
+    sf::Sprite score_digit_;
+    sf::Sprite game_paused_;
+    sf::Sprite press_enter_to_resume_;
+    sf::Sprite resume_background_sprite_;
+    sf::Texture resume_background_;
+    // file paths
+    const std::string SPLASH_BACKGROUND_FILEPATH_ = "Resources\\splashscreenbackground.jpg";
+    const std::string GAME_TITLE_FILEPATH_ = "Resources\\title.gif";
+    const std::string GAME_SUBTITLE_FILEPATH_ = "Resources\\subtitle.jpg";
+    const std::string GAME_WON_ = "Resources\\youwin.png";
+    const std::string PAUSE_FILEPATH_ = "Resources\\gamepaused.png";
+    const std::string PAUSE_SPACE_FILEPATH_ = "Resources\\resume.png";
+    const std::string GAME_OVER_FILEPATH_ = "Resources\\gameover.png";
+    const std::string GAME_OVER_RESTART_FILEPATH_ = "Resources\\gamerestart.png";
+    const std::string GAME_WIN_RESTART_FILEPATH_ = "Resources\\gamerestart.png";
+    const std::string GAME_INSTRUCTIONS_ = "Resources\\instructions.png";
 };
 using StateRenderPtr = std::shared_ptr<StateRenderer>;
 }  // namespace GameEngine

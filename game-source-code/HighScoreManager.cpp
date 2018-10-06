@@ -7,11 +7,19 @@ namespace GameEngine
 HighScoreManager::HighScoreManager() : score_(0), high_score_("")
 {
     high_score_file_.open(HIGHSCORE_FILEPATH, std::ios::in);
-
-    if(!high_score_file_.is_open())
+    try
 	{
-	    throw HighScoreFileNotFound();
+	    if(!high_score_file_.is_open())
+		{
+		    throw HighScoreFileNotFound();
+		}
 	}
+    catch(HighScoreFileNotFound)
+	{
+	    std::ofstream high_score_file_(HIGHSCORE_FILEPATH);
+	    high_score_file_ << 100;
+	}
+
     high_score_file_ >> high_score_;
     high_score_file_.close();
 }

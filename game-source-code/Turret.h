@@ -1,7 +1,6 @@
 #ifndef TURRET_H
 #define TURRET_H
 
-#include <SFML/Graphics.hpp>
 #include <memory>
 #include <vector>
 #include "Bullet.h"

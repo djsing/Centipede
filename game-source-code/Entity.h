@@ -1,7 +1,6 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include <SFML/Graphics.hpp>
 #include <memory>
 #include <tuple>
 #include "Direction.h"
@@ -67,11 +66,6 @@ class Entity
      * @brief Returns the Entity's sprite.
      * @return Address of the sprite sf::Sprite&
      */
-    sf::Sprite& GetObjectSprite();
-    /**
-     * @brief Returns whether the Entity is dead.
-     * @return True if the entity is dead, else false.
-     */
     bool IsDead() const;
     /**
      * @brief Returns the Direction that the Entity is moving.
@@ -134,7 +128,6 @@ class Entity
      * @param subregion The desired subregion from those defined in Region.h
      */
     void SetSubRegion(Region subregion);
-    sf::Sprite object_;
     // Position/Movement Attributes
     Direction direction_;
     float top_left_x_position_;

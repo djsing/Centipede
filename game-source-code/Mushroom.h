@@ -4,7 +4,6 @@
 #include "Entity.h"
 #include "Game.h"
 #include "Region.h"
-#include <SFML/Graphics.hpp>
 
 namespace GameEngine
 {

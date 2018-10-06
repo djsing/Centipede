@@ -20,7 +20,7 @@ class MainMenu : public GameState
 {
    public:
     /**
-     * @brief MainMenu Constructor
+     * @brief MainMenu Constructor.
      */
     MainMenu(DataPtr data);
     /**

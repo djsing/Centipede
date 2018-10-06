@@ -6,21 +6,7 @@ namespace GameEngine
 {
 PauseGame::PauseGame(DataPtr data) : data_(data)
 {
-    // create pause background
-    resume_background_.create(data_->window.getSize().x, data_->window.getSize().y);
-    resume_background_.update(data_->window);
-    background_.setTexture(resume_background_);
-    // load pause sprites
-    data_->resources.LoadTexture("Game Paused Sprite", PAUSE_FILEPATH);
-    data_->resources.LoadTexture("Press Space Resume", PAUSE_SPACE_FILEPATH);
-    // set pause sprites
-    game_paused_.setTexture(data_->resources.GetTexture("Game Paused Sprite"));
-    press_space_to_resume_.setTexture(data_->resources.GetTexture("Press Space Resume"));
-    // set pause sprite positions
-    game_paused_.setPosition(SCREEN_WIDTH / 2 - game_paused_.getGlobalBounds().width / 2,
-                             SCREEN_HEIGHT / 2 - game_paused_.getGlobalBounds().height);
-    press_space_to_resume_.setPosition(SCREEN_WIDTH / 2 - press_space_to_resume_.getGlobalBounds().width / 2,
-                                       SCREEN_HEIGHT / 2);
+    renderer_ = std::make_shared<StateRenderer>(data_);
 }
 
 void PauseGame::HandleInput()
@@ -49,11 +35,7 @@ void PauseGame::Update(float dt)
 
 void PauseGame::Draw()
 {
-    data_->window.clear();
-    data_->window.draw(background_);
-    // draw background sprite with background texture loaded
-    data_->window.draw(game_paused_);
-    data_->window.draw(press_space_to_resume_);
+    renderer_->DisplayPause();
     // display updated data
     data_->window.display();
 }

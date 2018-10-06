@@ -65,11 +65,6 @@ void Entity::SetCenterYPosition(float ypos)
     SetSubRegion(region_handler_.GetSubRegion());
 }
 
-sf::Sprite& Entity::GetObjectSprite()
-{
-    return object_;
-}
-
 bool Entity::IsDead() const
 {
     return isDead_;

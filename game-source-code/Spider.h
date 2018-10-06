@@ -1,7 +1,6 @@
 #ifndef SPIDER_H
 #define SPIDER_H
 
-#include <SFML/Graphics.hpp>
 #include "Entity.h"
 #include "Game.h"
 
