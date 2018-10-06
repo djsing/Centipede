@@ -4,7 +4,7 @@
 
 namespace GameEngine
 {
-HighScoreManager::HighScoreManager() : score_(0), high_score_("")
+HighScoreManager::HighScoreManager() : high_score_surpassed_(false), score_(0), high_score_("")
 {
     high_score_file_.open(HIGHSCORE_FILEPATH, std::ios::in);
     try
@@ -51,17 +51,24 @@ std::string HighScoreManager::GetHighScore()
 
 void HighScoreManager::UpdateHighScore()
 {
-    if(score_ > std::stoi(high_score_))
+    high_score_surpassed_ = false;
+    if(score_ >= std::stoi(high_score_))
 	{
 	    high_score_ = std::to_string(score_);
 	    high_score_file_.open(HIGHSCORE_FILEPATH, std::ios::out);
 	    high_score_file_ << high_score_;
 	    high_score_file_.close();
+	    high_score_surpassed_ = true;
 	}
 }
 
 void HighScoreManager::ResetScore()
 {
     score_ = 0;
+}
+
+bool HighScoreManager::HighScoreSurpassed()
+{
+    return high_score_surpassed_;
 }
 }  // namespace GameEngine

@@ -61,8 +61,16 @@ class HighScoreManager
      * @brief Resets the player score to zero.
      */
     void ResetScore();
+    /**
+     * @brief Returns whether the high score has been surpassed
+     * by the current score.
+     * @return True if the current score is higher than the High Score,
+     * else False.
+     */
+    bool HighScoreSurpassed();
 
    private:
+    bool high_score_surpassed_;
     int score_;
     std::string high_score_;
     std::fstream high_score_file_;

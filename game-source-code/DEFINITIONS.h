@@ -66,7 +66,7 @@ const auto EXPLOSION_SPRITE_SIZE = 100.f;
 const auto EXPLOSION_HIT_RADIUS = 50.f;
 const auto EXPLOSION_TIME = 1;
 const auto BOMB_MOVE_TIME = 2;
-const auto NUMBER_SIZE = 20;
+const auto NUMBER_SIZE = 40;
 
 // game characteristics
 const auto SEGMENT_SCORE = 10;

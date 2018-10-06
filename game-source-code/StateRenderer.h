@@ -60,17 +60,23 @@ class StateRenderer
     sf::Sprite press_enter_to_resume_;
     sf::Sprite resume_background_sprite_;
     sf::Texture resume_background_;
+	sf::Sprite press_enter_to_pause_;
+	sf::Sprite high_score_;
+	sf::Sprite new_high_score_;
     // file paths
     const std::string SPLASH_BACKGROUND_FILEPATH_ = "Resources\\splashscreenbackground.jpg";
     const std::string GAME_TITLE_FILEPATH_ = "Resources\\title.gif";
     const std::string GAME_SUBTITLE_FILEPATH_ = "Resources\\subtitle.jpg";
     const std::string GAME_WON_ = "Resources\\youwin.png";
     const std::string PAUSE_FILEPATH_ = "Resources\\gamepaused.png";
-    const std::string PAUSE_SPACE_FILEPATH_ = "Resources\\resume.png";
+    const std::string PAUSE_ENTER_FILEPATH_ = "Resources\\resume.png";
     const std::string GAME_OVER_FILEPATH_ = "Resources\\gameover.png";
     const std::string GAME_OVER_RESTART_FILEPATH_ = "Resources\\gamerestart.png";
     const std::string GAME_WIN_RESTART_FILEPATH_ = "Resources\\gamerestart.png";
     const std::string GAME_INSTRUCTIONS_ = "Resources\\instructions.png";
+    const std::string PRESS_ENTER_TO_PAUSE_FILEPATH_ = "Resources\\pause.png";
+    const std::string HIGHSCORE_FILEPATH_ = "Resources\\highscore.png";
+    const std::string NEW_HIGHSCORE_FILEPATH_ = "Resources\\newhighscore.png";
 };
 using StateRenderPtr = std::shared_ptr<StateRenderer>;
 }  // namespace GameEngine
