@@ -68,7 +68,7 @@ const auto EXPLOSION_TIME = 1;
 const auto BOMB_MOVE_TIME = 2;
 const auto NUMBER_SIZE = 20;
 
-// game characteristic
+// game characteristics
 const auto SEGMENT_SCORE = 10;
 const auto SPIDER_SCORE = 20;
 const auto SCORPION_SCORE = 50;

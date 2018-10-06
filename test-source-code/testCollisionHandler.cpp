@@ -401,18 +401,33 @@ TEST_CASE("Check that bullet-mushroom collisions are handled correctly.")
     CHECK(field->GetMushrooms().at(0).GetTopLeftXPosition() == turret->GetBullets().at(0).GetTopLeftXPosition());
     CHECK(field->GetMushrooms().at(0).GetTopLeftYPosition() == turret->GetBullets().at(0).GetTopLeftYPosition());
 
+    // lives drop from 4 to 3
     CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 4);
-
     collisionhandler->CheckCollisions();
-
     CHECK(turret->GetBullets().at(0).IsDead());
     CHECK_FALSE(field->GetMushrooms().at(0).IsDead());
-
     CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 3);
-    collisionhandler->CheckCollisions();
-    CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 2);
-    collisionhandler->CheckCollisions();
+    bulletLogic->CollisionHandle();
+    CHECK(turret->GetBullets().empty());
+
+    // spawn a new bullet and collide with mushroom
+    data->keyboard.SetShooting(true);
+    turretLogic->Spawn();
+    CHECK(turret->GetBullets().size() == 1);
+    CHECK(field->GetMushrooms().size() == 1);
+    CHECK_FALSE(turret->GetBullets().at(0).IsDead());
+    CHECK_FALSE(field->GetMushrooms().at(0).IsDead());
+
+    // move the bullet onto the mushroom
+    turret->GetBullets().at(0).SetTopLeftXPosition(field->GetMushrooms().at(0).GetTopLeftXPosition());
+    turret->GetBullets().at(0).SetTopLeftYPosition(field->GetMushrooms().at(0).GetTopLeftYPosition());
+    CHECK(field->GetMushrooms().at(0).GetTopLeftXPosition() == turret->GetBullets().at(0).GetTopLeftXPosition());
+    CHECK(field->GetMushrooms().at(0).GetTopLeftYPosition() == turret->GetBullets().at(0).GetTopLeftYPosition());
+    // decrease mushroom lives to 1
+    field->GetMushrooms().at(0).DecrementLives();
+    field->GetMushrooms().at(0).DecrementLives();
     CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 1);
+    // check if the mushroom is dead
     collisionhandler->CheckCollisions();
     CHECK(field->GetMushrooms().at(0).GetLivesRemaining() == 0);
 
