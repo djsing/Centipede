@@ -1,0 +1,18 @@
+<map id="Desktop/project&#45;repo/game&#45;source&#45;code/Centipede.cpp" name="Desktop/project&#45;repo/game&#45;source&#45;code/Centipede.cpp">
+<area shape="rect" id="node3" href="$_centipede_8h.html" title="Contains a vector of CentipedeSegment objects. " alt="" coords="441,95,531,121"/>
+<area shape="rect" id="node27" href="$_d_e_f_i_n_i_t_i_o_n_s_8h.html" title="DEFINITIONS.h" alt="" coords="594,95,706,121"/>
+<area shape="rect" id="node5" href="$_centipede_segment_8h.html" title="CentipedeSegment object that is stored in the Centipede container. Inherits from Entity. Affects other Entity objects in different manners upon contact, as defined in CollisionHandler. " alt="" coords="259,169,401,196"/>
+<area shape="rect" id="node11" href="$_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc..." alt="" coords="924,244,992,271"/>
+<area shape="rect" id="node6" href="$_direction_8h.html" title="Scoped Enumeration to define states of movement. " alt="" coords="347,393,431,420"/>
+<area shape="rect" id="node7" href="$_entity_8h.html" title="Parent class from which all Entity objects inherit. " alt="" coords="275,244,342,271"/>
+<area shape="rect" id="node9" href="$_region_8h.html" title="Region.h" alt="" coords="5,393,79,420"/>
+<area shape="rect" id="node26" href="$_trajectory_8h.html" title="Scoped enumeration that defines whether a CentipedeSegment object is moving toward the top or the bot..." alt="" coords="161,244,251,271"/>
+<area shape="rect" id="node10" href="$_region_handler_8h.html" title="Takes in the center x and y position of an Entity object and determines which region and subregion th..." alt="" coords="79,319,197,345"/>
+<area shape="rect" id="node14" href="$_high_score_manager_8h.html" title="Empty class used as an exception for when the highscore file cannot be opened. " alt="" coords="887,319,1029,345"/>
+<area shape="rect" id="node16" href="$_keyboard_controls_handler_8h.html" title="Stores the Direction of Turret object&#39;s movement and current shooting state (whether the user is atte..." alt="" coords="499,319,679,345"/>
+<area shape="rect" id="node17" href="$_lives_handler_8h.html" title="Manages the number of lives that the player has remaining. Part of Data layer, so that the number of ..." alt="" coords="1550,319,1657,345"/>
+<area shape="rect" id="node18" href="$_resource_manager_8h.html" title="Empty class used to throw an exception when a texture file is not found. " alt="" coords="1387,319,1526,345"/>
+<area shape="rect" id="node21" href="$_state_handler_8h.html" title="Handles different GameState instances, or states of the game. Has ability to track the addition..." alt="" coords="755,319,863,345"/>
+<area shape="rect" id="node24" href="$_stop_watch_8h.html" title="Timer object. Provides alternative to sf::Clock object. " alt="" coords="1681,319,1779,345"/>
+<area shape="rect" id="node23" href="$_game_state_8h.html" title="Interface class for all Game Engine layer related operations. Polymorphic in nature. Describes the state that the game is in. Game loop given in Game::Run() calls the following functions from the active GameState, i.e. All GameState derived classes form different versions of the game loop. " alt="" coords="713,393,811,420"/>
+</map>

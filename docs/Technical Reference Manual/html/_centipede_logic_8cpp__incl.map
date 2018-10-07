@@ -1,0 +1,22 @@
+<map id="Desktop/project&#45;repo/game&#45;source&#45;code/CentipedeLogic.cpp" name="Desktop/project&#45;repo/game&#45;source&#45;code/CentipedeLogic.cpp">
+<area shape="rect" id="node2" href="$_centipede_logic_8h.html" title="Responsible for all modifications to CentipedeSegment objects. Derived from EntityLogic, polymorphic in nature. " alt="" coords="168,109,291,136"/>
+<area shape="rect" id="node5" href="$_centipede_segment_8h.html" title="CentipedeSegment object that is stored in the Centipede container. Inherits from Entity. Affects other Entity objects in different manners upon contact, as defined in CollisionHandler. " alt="" coords="1659,259,1802,285"/>
+<area shape="rect" id="node6" href="$_direction_8h.html" title="Scoped Enumeration to define states of movement. " alt="" coords="1605,483,1689,509"/>
+<area shape="rect" id="node26" href="$_trajectory_8h.html" title="Scoped enumeration that defines whether a CentipedeSegment object is moving toward the top or the bot..." alt="" coords="2128,333,2219,360"/>
+<area shape="rect" id="node28" href="$_d_e_f_i_n_i_t_i_o_n_s_8h.html" title="DEFINITIONS.h" alt="" coords="1923,109,2035,136"/>
+<area shape="rect" id="node31" href="$_game_won_8h.html" title="The version of the game loop which runs when the game is won. " alt="" coords="1182,184,1277,211"/>
+<area shape="rect" id="node4" href="$_centipede_8h.html" title="Contains a vector of CentipedeSegment objects. " alt="" coords="267,184,357,211"/>
+<area shape="rect" id="node11" href="$_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc..." alt="" coords="942,333,1010,360"/>
+<area shape="rect" id="node27" href="$_entity_logic_8h.html" title="Interface class for all Logic&#45;related operations. Polymorphic in nature, see EntityLogic derived clas..." alt="" coords="43,259,141,285"/>
+<area shape="rect" id="node7" href="$_entity_8h.html" title="Parent class from which all Entity objects inherit. " alt="" coords="1783,333,1849,360"/>
+<area shape="rect" id="node9" href="$_region_8h.html" title="Region.h" alt="" coords="1958,483,2031,509"/>
+<area shape="rect" id="node10" href="$_region_handler_8h.html" title="Takes in the center x and y position of an Entity object and determines which region and subregion th..." alt="" coords="1936,408,2053,435"/>
+<area shape="rect" id="node14" href="$_high_score_manager_8h.html" title="Empty class used as an exception for when the highscore file cannot be opened. " alt="" coords="515,408,658,435"/>
+<area shape="rect" id="node16" href="$_keyboard_controls_handler_8h.html" title="Stores the Direction of Turret object&#39;s movement and current shooting state (whether the user is atte..." alt="" coords="1353,408,1533,435"/>
+<area shape="rect" id="node17" href="$_lives_handler_8h.html" title="Manages the number of lives that the player has remaining. Part of Data layer, so that the number of ..." alt="" coords="384,408,491,435"/>
+<area shape="rect" id="node18" href="$_resource_manager_8h.html" title="Empty class used to throw an exception when a texture file is not found. " alt="" coords="1189,408,1328,435"/>
+<area shape="rect" id="node21" href="$_state_handler_8h.html" title="Handles different GameState instances, or states of the game. Has ability to track the addition..." alt="" coords="201,408,309,435"/>
+<area shape="rect" id="node24" href="$_stop_watch_8h.html" title="Timer object. Provides alternative to sf::Clock object. " alt="" coords="683,408,781,435"/>
+<area shape="rect" id="node23" href="$_game_state_8h.html" title="Interface class for all Game Engine layer related operations. Polymorphic in nature. Describes the state that the game is in. Game loop given in Game::Run() calls the following functions from the active GameState, i.e. All GameState derived classes form different versions of the game loop. " alt="" coords="331,483,429,509"/>
+<area shape="rect" id="node32" href="$_state_renderer_8h.html" title="Handles all rendering not related to Entity objects. " alt="" coords="1201,259,1317,285"/>
+</map>

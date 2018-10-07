@@ -1,0 +1,22 @@
+<map id="Desktop/project&#45;repo/game&#45;source&#45;code/BombLogic.cpp" name="Desktop/project&#45;repo/game&#45;source&#45;code/BombLogic.cpp">
+<area shape="rect" id="node5" href="$_bomb_logic_8h.html" title="Responsible for all modifications to Bomb objects. Derived from EntityLogic, polymorphic in nature..." alt="" coords="1671,95,1769,121"/>
+<area shape="rect" id="node6" href="$_d_e_f_i_n_i_t_i_o_n_s_8h.html" title="DEFINITIONS.h" alt="" coords="1948,169,2060,196"/>
+<area shape="rect" id="node9" href="$_entity_logic_8h.html" title="Interface class for all Logic&#45;related operations. Polymorphic in nature, see EntityLogic derived clas..." alt="" coords="1852,319,1951,345"/>
+<area shape="rect" id="node11" href="$_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc..." alt="" coords="947,319,1015,345"/>
+<area shape="rect" id="node26" href="$_game_field_8h.html" title="Object which creates the data containers that contain all objects of the playing field that is neithe..." alt="" coords="1577,169,1673,196"/>
+<area shape="rect" id="node14" href="$_high_score_manager_8h.html" title="Empty class used as an exception for when the highscore file cannot be opened. " alt="" coords="411,393,554,420"/>
+<area shape="rect" id="node16" href="$_keyboard_controls_handler_8h.html" title="Stores the Direction of Turret object&#39;s movement and current shooting state (whether the user is atte..." alt="" coords="1206,393,1386,420"/>
+<area shape="rect" id="node18" href="$_lives_handler_8h.html" title="Manages the number of lives that the player has remaining. Part of Data layer, so that the number of ..." alt="" coords="1075,393,1181,420"/>
+<area shape="rect" id="node19" href="$_resource_manager_8h.html" title="Empty class used to throw an exception when a texture file is not found. " alt="" coords="912,393,1051,420"/>
+<area shape="rect" id="node22" href="$_state_handler_8h.html" title="Handles different GameState instances, or states of the game. Has ability to track the addition..." alt="" coords="54,393,162,420"/>
+<area shape="rect" id="node25" href="$_stop_watch_8h.html" title="Timer object. Provides alternative to sf::Clock object. " alt="" coords="237,393,336,420"/>
+<area shape="rect" id="node17" href="$_direction_8h.html" title="Scoped Enumeration to define states of movement. " alt="" coords="1303,468,1387,495"/>
+<area shape="rect" id="node24" href="$_game_state_8h.html" title="Interface class for all Game Engine layer related operations. Polymorphic in nature. Describes the state that the game is in. Game loop given in Game::Run() calls the following functions from the active GameState, i.e. All GameState derived classes form different versions of the game loop. " alt="" coords="5,468,104,495"/>
+<area shape="rect" id="node28" href="$_bomb_8h.html" title="Bomb objects, inherits from Entity. Bombs explode when shot by a bullet and destroy all non&#45;Turret En..." alt="" coords="1540,244,1607,271"/>
+<area shape="rect" id="node32" href="$_mushroom_8h.html" title="Mushroom objects, inherits from Entity. Mushrooms have four lives, decreasing whenever a Bullet objec..." alt="" coords="1631,244,1726,271"/>
+<area shape="rect" id="node33" href="$_scorpion_8h.html" title="Scorpion objects, inherits from Entity. Scorpions poison mushrooms upon collision, as defined in CollisionHandler. " alt="" coords="1431,244,1515,271"/>
+<area shape="rect" id="node34" href="$_spider_8h.html" title="Spider objects, inherits from Entity. Spiders bite mushrooms upon collision, causing a chance of deat..." alt="" coords="1337,244,1407,271"/>
+<area shape="rect" id="node29" href="$_entity_8h.html" title="Parent class from which all Entity objects inherit. " alt="" coords="1537,319,1604,345"/>
+<area shape="rect" id="node30" href="$_region_8h.html" title="Region.h" alt="" coords="1630,468,1703,495"/>
+<area shape="rect" id="node31" href="$_region_handler_8h.html" title="Takes in the center x and y position of an Entity object and determines which region and subregion th..." alt="" coords="1512,393,1629,420"/>
+</map>

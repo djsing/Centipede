@@ -1,0 +1,6 @@
+<map id="GameEngine::StopWatch::getElapsedTime" name="GameEngine::StopWatch::getElapsedTime">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_bomb_logic.html#a7679e71f6681c3889f9142c8537688bf" title="Deletes all dead Bomb objects after a period of time defined by EXPLOSION_TIME in DEFINITIONS..." alt="" coords="232,5,403,47"/>
+<area shape="rect" id="node3" href="$class_game_engine_1_1_spider_logic.html#a6034c288153c72948718c6ef55b9e25e" title="Spawns Spider objects periodically as defined by SPIDER_TIME in DEFINITIONS.h. " alt="" coords="231,71,404,112"/>
+<area shape="rect" id="node4" href="$class_game_engine_1_1_spider_logic.html#a91bd60165fd2a5cb2d408cda76dfdbc8" title="Moves all Spider objects in random new directions after a period of time defined by SPIDER_MOVEMENT_T..." alt="" coords="231,136,404,177"/>
+<area shape="rect" id="node5" href="$class_game_engine_1_1_splash_screen.html#ae0ac95748c17529b284e181791b5fdcb" title="Ensures that the splashscreen is shown for three seconds. " alt="" coords="224,201,411,243"/>
+</map>

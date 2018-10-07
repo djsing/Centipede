@@ -1,0 +1,7 @@
+<map id="GameEngine::GameData" name="GameEngine::GameData">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_keyboard_controls_handler.html" title="{GameEngine::KeyboardControls\lHandler\n||+ KeyboardControlsHandler()\l+ IsShooting()\l+ SetShooting()\l+ GetDirection()\l+ SetDirection()\l}" alt="" coords="5,20,213,171"/>
+<area shape="rect" id="node3" href="$class_game_engine_1_1_high_score_manager.html" title="{GameEngine::HighScoreManager\n||+ HighScoreManager()\l+ IncrementScore()\l+ DecrementScore()\l+ GetScore()\l+ GetHighScore()\l+ UpdateHighScore()\l+ ResetScore()\l+ HighScoreSurpassed()\l}" alt="" coords="238,5,453,185"/>
+<area shape="rect" id="node4" href="$class_game_engine_1_1_state_handler.html" title="{GameEngine::StateHandler\n||+ AddState()\l+ RemoveState()\l+ ProcessStateChanges()\l+ GetActiveGameState()\l}" alt="" coords="477,35,657,156"/>
+<area shape="rect" id="node5" href="$class_game_engine_1_1_lives_handler.html" title="{GameEngine::LivesHandler\n||+ LivesHandler()\l+ LivesRemaining()\l+ LifeLost()\l+ LifeGained()\l+ ResetLives()\l}" alt="" coords="681,27,860,163"/>
+<area shape="rect" id="node6" href="$class_game_engine_1_1_resource_manager.html" title="{GameEngine::ResourceManager\n||+ LoadTexture()\l+ GetTexture()\l}" alt="" coords="884,49,1095,141"/>
+</map>

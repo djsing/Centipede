@@ -1,0 +1,3 @@
+<map id="GameEngine::Spider" name="GameEngine::Spider">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_entity.html" title="{GameEngine::Entity\n||+ Entity()\l+ SetDirection()\l+ SetTopLeftXPosition()\l+ SetTopLeftYPosition()\l+ SetDead()\l+ IsDead()\l+ GetDirection()\l+ GetRegion()\l+ GetSubRegion()\l+ GetTopLeftXPosition()\l+ GetTopLeftYPosition()\l+ GetCenterXPosition()\l+ GetCenterYPosition()\l# SetCenterXPosition()\l# SetCenterYPosition()\l}" alt="" coords="5,5,167,288"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="GameEngine::SpiderLogic::SpiderLogic" name="GameEngine::SpiderLogic::SpiderLogic">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_stop_watch.html#a6a438413b94e51885772e17b6c2525ae" title="Returns time elapsed between the last time StartTimer() was called. Restarts timer. " alt="" coords="227,5,397,47"/>
+</map>

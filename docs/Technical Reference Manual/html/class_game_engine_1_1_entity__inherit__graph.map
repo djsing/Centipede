@@ -1,0 +1,9 @@
+<map id="GameEngine::Entity" name="GameEngine::Entity">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_bomb.html" title="{GameEngine::Bomb\n||+ Bomb()\l+ SetTopLeftXPosition()\l+ SetTopLeftYPosition()\l}" alt="" coords="5,409,165,516"/>
+<area shape="rect" id="node3" href="$class_game_engine_1_1_bullet.html" title="{GameEngine::Bullet\n||+ Bullet()\l+ SetTopLeftXPosition()\l+ SetTopLeftYPosition()\l}" alt="" coords="189,409,349,516"/>
+<area shape="rect" id="node4" href="$class_game_engine_1_1_centipede_segment.html" title="{GameEngine::CentipedeSegment\n||+ CentipedeSegment()\l+ SetTopLeftXPosition()\l+ SetTopLeftYPosition()\l+ SetFirstSegment()\l+ SetLastSegment()\l+ SetTrajectory()\l+ SetTurningLeft()\l+ SetPoisoned()\l+ GetTrajectory()\l+ IsFirstSegment()\l+ IsLastSegment()\l+ IsTurningLeft()\l+ IsPoisoned()\l}" alt="" coords="374,336,589,589"/>
+<area shape="rect" id="node5" href="$class_game_engine_1_1_mushroom.html" title="{GameEngine::Mushroom\n||+ Mushroom()\l+ SetBitten()\l+ SetPoisoned()\l+ DecrementLives()\l+ IsBitten()\l+ IsPoisoned()\l+ GetLivesRemaining()\l}" alt="" coords="613,380,779,545"/>
+<area shape="rect" id="node6" href="$class_game_engine_1_1_scorpion.html" title="{GameEngine::Scorpion\n||+ Scorpion()\l+ SetTopLeftXPosition()\l+ SetTopLeftYPosition()\l}" alt="" coords="804,409,964,516"/>
+<area shape="rect" id="node7" href="$class_game_engine_1_1_spider.html" title="{GameEngine::Spider\n||+ Spider()\l+ SetTopLeftXPosition()\l+ SetTopLeftYPosition()\l+ SetAngle()\l+ GetAngle()\l}" alt="" coords="988,395,1148,531"/>
+<area shape="rect" id="node8" href="$class_game_engine_1_1_turret.html" title="{GameEngine::Turret\n||+ Turret()\l+ GetBullets()\l+ SetTopLeftXPosition()\l+ SetTopLeftYPosition()\l+ GetLastBulletYPosition()\l}" alt="" coords="1173,395,1350,531"/>
+</map>

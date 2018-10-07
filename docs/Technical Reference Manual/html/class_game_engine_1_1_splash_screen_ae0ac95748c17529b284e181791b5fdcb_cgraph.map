@@ -1,0 +1,3 @@
+<map id="GameEngine::SplashScreen::Update" name="GameEngine::SplashScreen::Update">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_stop_watch.html#aeebc58387dfa7f1bc43781c23e90fe37" title="Returns time elapsed between the current time and the last time StartTimer() was called. " alt="" coords="240,5,411,47"/>
+</map>

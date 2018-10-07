@@ -1,0 +1,3 @@
+<map id="Desktop/project&#45;repo/game&#45;source&#45;code/StateHandler.h" name="Desktop/project&#45;repo/game&#45;source&#45;code/StateHandler.h">
+<area shape="rect" id="node4" href="$_game_state_8h.html" title="Interface class for all Game Engine layer related operations. Polymorphic in nature. Describes the state that the game is in. Game loop given in Game::Run() calls the following functions from the active GameState, i.e. All GameState derived classes form different versions of the game loop. " alt="" coords="169,95,267,121"/>
+</map>

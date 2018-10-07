@@ -1,0 +1,4 @@
+<map id="GameEngine::operator==" name="GameEngine::operator==">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_entity.html#ad9dee840663cbdd3e8845cef69e3c0ad" title="Returns the Region in which the Entity exists. " alt="" coords="221,5,360,47"/>
+<area shape="rect" id="node3" href="$class_game_engine_1_1_entity.html#ab6999adad7a0be54cb53896ef44ecaee" title="Returns the subregion of the Region in which the entity exists. " alt="" coords="221,71,360,112"/>
+</map>

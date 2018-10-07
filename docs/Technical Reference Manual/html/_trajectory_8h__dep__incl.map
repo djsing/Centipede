@@ -1,0 +1,19 @@
+<map id="Desktop/project&#45;repo/game&#45;source&#45;code/Trajectory.h" name="Desktop/project&#45;repo/game&#45;source&#45;code/Trajectory.h">
+<area shape="rect" id="node2" href="$_centipede_segment_8h.html" title="CentipedeSegment object that is stored in the Centipede container. Inherits from Entity. Affects other Entity objects in different manners upon contact, as defined in CollisionHandler. " alt="" coords="162,95,356,151"/>
+<area shape="rect" id="node6" href="$_centipede_logic_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/Centipede\lLogic.cpp" alt="" coords="162,407,356,463"/>
+<area shape="rect" id="node9" href="$_collision_handler_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/Collision\lHandler.cpp" alt="" coords="1206,407,1392,463"/>
+<area shape="rect" id="node3" href="$_centipede_8h.html" title="Contains a vector of CentipedeSegment objects. " alt="" coords="656,206,862,247"/>
+<area shape="rect" id="node18" href="$_centipede_segment_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/Centipede\lSegment.cpp" alt="" coords="27,199,222,255"/>
+<area shape="rect" id="node4" href="$_centipede_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/Centipede.cpp" alt="" coords="297,310,517,351"/>
+<area shape="rect" id="node5" href="$_centipede_logic_8h.html" title="Responsible for all modifications to CentipedeSegment objects. Derived from EntityLogic, polymorphic in nature. " alt="" coords="542,303,736,359"/>
+<area shape="rect" id="node8" href="$_collision_handler_8h.html" title="Checks for collisions between Entity objects. Sets flags and saves co&#45;ordinates, depending on which o..." alt="" coords="1075,303,1262,359"/>
+<area shape="rect" id="node10" href="$_game_play_8h.html" title="The version of the game loop which runs when the game is in play. " alt="" coords="972,414,1181,455"/>
+<area shape="rect" id="node16" href="$_entity_rendering_8h.html" title="Performs drawing&#45;related operations for all Entity objects. " alt="" coords="760,310,1000,351"/>
+<area shape="rect" id="node7" href="$_game_play_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/GamePlay.cpp" alt="" coords="465,511,688,552"/>
+<area shape="rect" id="node11" href="$_game_over_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/GameOver.cpp" alt="" coords="1469,511,1692,552"/>
+<area shape="rect" id="node12" href="$_game_won_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/GameWon.cpp" alt="" coords="1716,511,1940,552"/>
+<area shape="rect" id="node13" href="$_main_menu_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/MainMenu.cpp" alt="" coords="712,511,934,552"/>
+<area shape="rect" id="node14" href="$_pause_game_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/PauseGame.cpp" alt="" coords="959,511,1194,552"/>
+<area shape="rect" id="node15" href="$_turret_logic_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/TurretLogic.cpp" alt="" coords="1218,511,1444,552"/>
+<area shape="rect" id="node17" href="$_entity_rendering_8cpp.html" title="Desktop/project&#45;repo\l/game&#45;source&#45;code/EntityRendering.cpp" alt="" coords="693,414,948,455"/>
+</map>

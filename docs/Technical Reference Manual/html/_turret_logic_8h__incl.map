@@ -1,0 +1,18 @@
+<map id="Desktop/project&#45;repo/game&#45;source&#45;code/TurretLogic.h" name="Desktop/project&#45;repo/game&#45;source&#45;code/TurretLogic.h">
+<area shape="rect" id="node3" href="$_bullet_logic_8h.html" title="Controls the movement/deletion of Bullets currently in the game. " alt="" coords="137,95,234,121"/>
+<area shape="rect" id="node10" href="$_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc..." alt="" coords="725,244,793,271"/>
+<area shape="rect" id="node25" href="$_entity_logic_8h.html" title="Interface class for all Logic&#45;related operations. Polymorphic in nature, see EntityLogic derived clas..." alt="" coords="43,169,141,196"/>
+<area shape="rect" id="node26" href="$_turret_8h.html" title="Turret object, inherits from Entity. Shoots Bullet objects. The player controls this object..." alt="" coords="1473,95,1540,121"/>
+<area shape="rect" id="node4" href="$_bullet_8h.html" title="Bullet object that is shot from the Turret object. Inherits from Entity. Affects other Entity objects..." alt="" coords="1377,169,1444,196"/>
+<area shape="rect" id="node5" href="$_entity_8h.html" title="Parent class from which all Entity objects inherit. " alt="" coords="1663,244,1729,271"/>
+<area shape="rect" id="node8" href="$_region_8h.html" title="Region.h" alt="" coords="1815,393,1889,420"/>
+<area shape="rect" id="node7" href="$_direction_8h.html" title="Scoped Enumeration to define states of movement. " alt="" coords="1490,393,1574,420"/>
+<area shape="rect" id="node9" href="$_region_handler_8h.html" title="Takes in the center x and y position of an Entity object and determines which region and subregion th..." alt="" coords="1745,319,1863,345"/>
+<area shape="rect" id="node13" href="$_high_score_manager_8h.html" title="Empty class used as an exception for when the highscore file cannot be opened. " alt="" coords="162,319,305,345"/>
+<area shape="rect" id="node15" href="$_keyboard_controls_handler_8h.html" title="Stores the Direction of Turret object&#39;s movement and current shooting state (whether the user is atte..." alt="" coords="1314,319,1494,345"/>
+<area shape="rect" id="node16" href="$_lives_handler_8h.html" title="Manages the number of lives that the player has remaining. Part of Data layer, so that the number of ..." alt="" coords="492,319,599,345"/>
+<area shape="rect" id="node17" href="$_resource_manager_8h.html" title="Empty class used to throw an exception when a texture file is not found. " alt="" coords="329,319,468,345"/>
+<area shape="rect" id="node20" href="$_state_handler_8h.html" title="Handles different GameState instances, or states of the game. Has ability to track the addition..." alt="" coords="797,319,905,345"/>
+<area shape="rect" id="node23" href="$_stop_watch_8h.html" title="Timer object. Provides alternative to sf::Clock object. " alt="" coords="623,319,721,345"/>
+<area shape="rect" id="node22" href="$_game_state_8h.html" title="Interface class for all Game Engine layer related operations. Polymorphic in nature. Describes the state that the game is in. Game loop given in Game::Run() calls the following functions from the active GameState, i.e. All GameState derived classes form different versions of the game loop. " alt="" coords="876,393,975,420"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="GameEngine::BombLogic::CollisionHandle" name="GameEngine::BombLogic::CollisionHandle">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_stop_watch.html#aeebc58387dfa7f1bc43781c23e90fe37" title="Returns time elapsed between the current time and the last time StartTimer() was called. " alt="" coords="224,5,395,47"/>
+<area shape="rect" id="node3" href="$class_game_engine_1_1_stop_watch.html#a6a438413b94e51885772e17b6c2525ae" title="Returns time elapsed between the last time StartTimer() was called. Restarts timer. " alt="" coords="224,71,395,112"/>
+</map>

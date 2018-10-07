@@ -1,0 +1,12 @@
+<map id="Desktop/project&#45;repo/game&#45;source&#45;code/PauseGame.h" name="Desktop/project&#45;repo/game&#45;source&#45;code/PauseGame.h">
+<area shape="rect" id="node2" href="$_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc..." alt="" coords="710,169,778,196"/>
+<area shape="rect" id="node16" href="$_game_state_8h.html" title="Interface class for all Game Engine layer related operations. Polymorphic in nature. Describes the state that the game is in. Game loop given in Game::Run() calls the following functions from the active GameState, i.e. All GameState derived classes form different versions of the game loop. " alt="" coords="89,319,188,345"/>
+<area shape="rect" id="node19" href="$_state_renderer_8h.html" title="Handles all rendering not related to Entity objects. " alt="" coords="1086,95,1202,121"/>
+<area shape="rect" id="node6" href="$_high_score_manager_8h.html" title="Empty class used as an exception for when the highscore file cannot be opened. " alt="" coords="849,244,991,271"/>
+<area shape="rect" id="node8" href="$_keyboard_controls_handler_8h.html" title="Stores the Direction of Turret object&#39;s movement and current shooting state (whether the user is atte..." alt="" coords="1015,244,1195,271"/>
+<area shape="rect" id="node10" href="$_lives_handler_8h.html" title="Manages the number of lives that the player has remaining. Part of Data layer, so that the number of ..." alt="" coords="253,244,360,271"/>
+<area shape="rect" id="node11" href="$_resource_manager_8h.html" title="Empty class used to throw an exception when a texture file is not found. " alt="" coords="1220,244,1359,271"/>
+<area shape="rect" id="node14" href="$_state_handler_8h.html" title="Handles different GameState instances, or states of the game. Has ability to track the addition..." alt="" coords="638,244,746,271"/>
+<area shape="rect" id="node17" href="$_stop_watch_8h.html" title="Timer object. Provides alternative to sf::Clock object. " alt="" coords="5,244,104,271"/>
+<area shape="rect" id="node9" href="$_direction_8h.html" title="Scoped Enumeration to define states of movement. " alt="" coords="1063,319,1147,345"/>
+</map>

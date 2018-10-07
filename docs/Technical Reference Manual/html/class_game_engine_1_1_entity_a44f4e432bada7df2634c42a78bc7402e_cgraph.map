@@ -1,0 +1,4 @@
+<map id="GameEngine::Entity::SetCenterXPosition" name="GameEngine::Entity::SetCenterXPosition">
+<area shape="rect" id="node2" href="$class_game_engine_1_1_region_handler.html#a688c80970910da1e02f05b3569c7721d" title="Returns the major quadrant of the screen. " alt="" coords="196,5,385,47"/>
+<area shape="rect" id="node3" href="$class_game_engine_1_1_region_handler.html#a8ea377d23f4be355302cc6b5e3feedf3" title="Returns a minor quadrant of the screen within the major quadrant. " alt="" coords="196,71,385,112"/>
+</map>

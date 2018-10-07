@@ -1,0 +1,21 @@
+<map id="Desktop/project&#45;repo/game&#45;source&#45;code/MushroomLogic.h" name="Desktop/project&#45;repo/game&#45;source&#45;code/MushroomLogic.h">
+<area shape="rect" id="node3" href="$_d_e_f_i_n_i_t_i_o_n_s_8h.html" title="DEFINITIONS.h" alt="" coords="953,95,1065,121"/>
+<area shape="rect" id="node6" href="$_entity_logic_8h.html" title="Interface class for all Logic&#45;related operations. Polymorphic in nature, see EntityLogic derived clas..." alt="" coords="1427,244,1525,271"/>
+<area shape="rect" id="node8" href="$_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc..." alt="" coords="938,244,1006,271"/>
+<area shape="rect" id="node24" href="$_game_field_8h.html" title="Object which creates the data containers that contain all objects of the playing field that is neithe..." alt="" coords="423,95,519,121"/>
+<area shape="rect" id="node11" href="$_high_score_manager_8h.html" title="Empty class used as an exception for when the highscore file cannot be opened. " alt="" coords="1046,319,1189,345"/>
+<area shape="rect" id="node13" href="$_keyboard_controls_handler_8h.html" title="Stores the Direction of Turret object&#39;s movement and current shooting state (whether the user is atte..." alt="" coords="555,319,735,345"/>
+<area shape="rect" id="node15" href="$_lives_handler_8h.html" title="Manages the number of lives that the player has remaining. Part of Data layer, so that the number of ..." alt="" coords="1396,319,1503,345"/>
+<area shape="rect" id="node16" href="$_resource_manager_8h.html" title="Empty class used to throw an exception when a texture file is not found. " alt="" coords="760,319,899,345"/>
+<area shape="rect" id="node19" href="$_state_handler_8h.html" title="Handles different GameState instances, or states of the game. Has ability to track the addition..." alt="" coords="1213,319,1321,345"/>
+<area shape="rect" id="node22" href="$_stop_watch_8h.html" title="Timer object. Provides alternative to sf::Clock object. " alt="" coords="923,319,1021,345"/>
+<area shape="rect" id="node14" href="$_direction_8h.html" title="Scoped Enumeration to define states of movement. " alt="" coords="494,393,578,420"/>
+<area shape="rect" id="node21" href="$_game_state_8h.html" title="Interface class for all Game Engine layer related operations. Polymorphic in nature. Describes the state that the game is in. Game loop given in Game::Run() calls the following functions from the active GameState, i.e. All GameState derived classes form different versions of the game loop. " alt="" coords="1233,393,1332,420"/>
+<area shape="rect" id="node26" href="$_bomb_8h.html" title="Bomb objects, inherits from Entity. Bombs explode when shot by a bullet and destroy all non&#45;Turret En..." alt="" coords="401,169,468,196"/>
+<area shape="rect" id="node30" href="$_mushroom_8h.html" title="Mushroom objects, inherits from Entity. Mushrooms have four lives, decreasing whenever a Bullet objec..." alt="" coords="282,169,377,196"/>
+<area shape="rect" id="node31" href="$_scorpion_8h.html" title="Scorpion objects, inherits from Entity. Scorpions poison mushrooms upon collision, as defined in CollisionHandler. " alt="" coords="543,169,627,196"/>
+<area shape="rect" id="node32" href="$_spider_8h.html" title="Spider objects, inherits from Entity. Spiders bite mushrooms upon collision, causing a chance of deat..." alt="" coords="651,169,722,196"/>
+<area shape="rect" id="node27" href="$_entity_8h.html" title="Parent class from which all Entity objects inherit. " alt="" coords="401,244,468,271"/>
+<area shape="rect" id="node28" href="$_region_8h.html" title="Region.h" alt="" coords="209,393,282,420"/>
+<area shape="rect" id="node29" href="$_region_handler_8h.html" title="Takes in the center x and y position of an Entity object and determines which region and subregion th..." alt="" coords="187,319,304,345"/>
+</map>
