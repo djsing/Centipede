@@ -9,25 +9,24 @@ namespace GameEngine
  * @author Darrion Singh and Sachin Govender
  * @date 29/09/2018
  * @file StopWatch.h
- * @brief Timer object. Provides alternative to sf::Clock objects.
+ * @brief Timer object. Provides alternative to sf::Clock object.
  */
 class StopWatch
 {
    public:
     /**
-     * @brief Stopwatch Constructor. Begins timer for each instance of Stopwatch.
+     * @brief Stopwatch Constructor. Begins timer.
      */
     StopWatch();
     /**
-     * @brief Returns time elapsed between the last time restart()
-     * was called for that instance or upon instance creation.
+     * @brief Returns time elapsed between the current time and
+     * the last time StartTimer() was called.
      * @return Elapsed time as a floating point number.
      */
     float getElapsedTime();
     /**
      * @brief Returns time elapsed between the last time
-     * restart() was called for that instance or upon instance
-     * creation. Restarts timer.
+     * StartTimer() was called. Restarts timer.
      * @return Elapsed time as a floating point number.
      */
     float restart();

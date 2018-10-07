@@ -18,7 +18,8 @@ class GameWon : public GameState
 {
    public:
     /**
-     * @brief GameWon Constructor
+     * @brief GameWon Constructor. Creates an instance of the StateRenderer
+     * class for drawing capability.
      */
     GameWon(DataPtr data);
     /**
@@ -27,7 +28,7 @@ class GameWon : public GameState
      */
     void HandleInput() override;
     /**
-     * @brief Updates the High Score before displaying.
+     * @brief Updates the High Score.
      * @param dt Unused in this version of Update.
      */
     void Update(float dt) override;

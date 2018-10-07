@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -58,32 +59,35 @@ Inheritance diagram for GameEngine::ScorpionLogic:</div>
 <div class="center"><img src="class_game_engine_1_1_scorpion_logic__inherit__graph.png" border="0" usemap="#_game_engine_1_1_scorpion_logic_inherit__map" alt="Inheritance graph"/></div>
 <map name="_game_engine_1_1_scorpion_logic_inherit__map" id="_game_engine_1_1_scorpion_logic_inherit__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for GameEngine::ScorpionLogic:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_engine_1_1_scorpion_logic__coll__graph.png" border="0" usemap="#_game_engine_1_1_scorpion_logic_coll__map" alt="Collaboration graph"/></div>
 <map name="_game_engine_1_1_scorpion_logic_coll__map" id="_game_engine_1_1_scorpion_logic_coll__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae03b021e3ee00d43a41a1a0aa4692d16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_scorpion_logic.html#ae03b021e3ee00d43a41a1a0aa4692d16">ScorpionLogic</a> (<a class="el" href="namespace_game_engine.html#a47e7f51fe5ae058aa36314ed161d072b">FieldPtr</a> field)</td></tr>
+<tr class="memdesc:ae03b021e3ee00d43a41a1a0aa4692d16"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_scorpion_logic.html">ScorpionLogic</a> Constructor. Seeds STL rand() function. Starts movement timer. Sets movement characteristics to default values.  <a href="#ae03b021e3ee00d43a41a1a0aa4692d16">More...</a><br /></td></tr>
 <tr class="separator:ae03b021e3ee00d43a41a1a0aa4692d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af379f550185808ef43c1bba3f4cec842"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_scorpion_logic.html#af379f550185808ef43c1bba3f4cec842">Spawn</a> () override</td></tr>
-<tr class="memdesc:af379f550185808ef43c1bba3f4cec842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> objects;.  <a href="#af379f550185808ef43c1bba3f4cec842">More...</a><br /></td></tr>
+<tr class="memdesc:af379f550185808ef43c1bba3f4cec842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> objects when the <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> container is empty.  <a href="#af379f550185808ef43c1bba3f4cec842">More...</a><br /></td></tr>
 <tr class="separator:af379f550185808ef43c1bba3f4cec842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27567fdae5a943487144094711965e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_scorpion_logic.html#a27567fdae5a943487144094711965e8f">Move</a> (float dt) override</td></tr>
-<tr class="memdesc:a27567fdae5a943487144094711965e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> objects;.  <a href="#a27567fdae5a943487144094711965e8f">More...</a><br /></td></tr>
+<tr class="memdesc:a27567fdae5a943487144094711965e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves all <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> objects in random new directions after a period of time defined by SCORPION_MOVEMENT_TIME in <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html">DEFINITIONS.h</a>.  <a href="#a27567fdae5a943487144094711965e8f">More...</a><br /></td></tr>
 <tr class="separator:a27567fdae5a943487144094711965e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a217a6ab937a3bac6c63f23d656d5fd03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_scorpion_logic.html#a217a6ab937a3bac6c63f23d656d5fd03">CollisionHandle</a> () override</td></tr>
-<tr class="memdesc:a217a6ab937a3bac6c63f23d656d5fd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs all post-collision <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> handling; this includes both object deletion, object creation, and various flag-checking or flag-setting operations.  <a href="#a217a6ab937a3bac6c63f23d656d5fd03">More...</a><br /></td></tr>
+<tr class="memdesc:a217a6ab937a3bac6c63f23d656d5fd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all dead <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> objects.  <a href="#a217a6ab937a3bac6c63f23d656d5fd03">More...</a><br /></td></tr>
 <tr class="separator:a217a6ab937a3bac6c63f23d656d5fd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_scorpion_logic_8h_source.html#l00010">10</a> of file <a class="el" href="_scorpion_logic_8h_source.html">ScorpionLogic.h</a>.</p>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>07/10/2018 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_scorpion_logic_8h_source.html#l00018">18</a> of file <a class="el" href="_scorpion_logic_8h_source.html">ScorpionLogic.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae03b021e3ee00d43a41a1a0aa4692d16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae03b021e3ee00d43a41a1a0aa4692d16">&#9670;&nbsp;</a></span>ScorpionLogic()</h2>
@@ -100,6 +104,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_game_engine_1_1_scorpion_logic.html">ScorpionLogic</a> Constructor. Seeds STL rand() function. Starts movement timer. Sets movement characteristics to default values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td>Shared pointer to the <a class="el" href="class_game_engine_1_1_game_field.html">GameField</a> container, which contains all <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> objects. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="_scorpion_logic_8cpp_source.html#l00007">7</a> of file <a class="el" href="_scorpion_logic_8cpp_source.html">ScorpionLogic.cpp</a>.</p>
 
@@ -129,7 +141,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Performs all post-collision <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> handling; this includes both object deletion, object creation, and various flag-checking or flag-setting operations. </p>
+<p>Deletes all dead <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> objects. </p>
 
 <p>Implements <a class="el" href="class_game_engine_1_1_entity_logic.html#a518fbfdda3adc264da22892374d086f1">GameEngine::EntityLogic</a>.</p>
 
@@ -161,10 +173,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Moves <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> objects;. </p>
+<p>Moves all <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> objects in random new directions after a period of time defined by SCORPION_MOVEMENT_TIME in <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html">DEFINITIONS.h</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dt</td><td>Timestep given by the <a class="el" href="class_game_engine_1_1_game.html">Game</a> loop. </td></tr>
+    <tr><td class="paramname">dt</td><td>Time step of game loop iteration, provided by Run() in <a class="el" href="_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc...">Game.h</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -198,7 +210,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Spawns <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> objects;. </p>
+<p>Spawns <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> objects when the <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> container is empty. </p>
 
 <p>Implements <a class="el" href="class_game_engine_1_1_entity_logic.html#a3986478210f6c9e3c18989670a04ac80">GameEngine::EntityLogic</a>.</p>
 

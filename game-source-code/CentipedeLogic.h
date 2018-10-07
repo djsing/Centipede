@@ -13,30 +13,28 @@ namespace GameEngine
  * @author Darrion Singh and Sachin Govender
  * @date 27/09/2018
  * @file CentipedeLogic.h
- * @brief Controls the spawning of CentipedeSegment objects into a particular
- * Centipede, the movements of all CentipedeSegment objects of a particualr
- * Centipede, the deletion of all dead CentipedeSegment objects, all well as
- * setting flags of surrounding CentipedeSegment objects that are triggered
- * by collisions.
+ * @brief Responsible for all modifications to CentipedeSegment objects.
+ * Derived from EntityLogic, polymorphic in nature.
  */
 class CentipedeLogic : public EntityLogic
 {
    public:
     /**
-     * @brief CentipedeLogic Constructor.
+     * @brief CentipedeLogic Constructor. Saves a shared pointer to the Data layer,
+     * as well as sets default movement characteristics.
      * @param data Shared Pointer to the Data layer, used to queue the GameWon
-     * state when the Centipede is empty, i.e. when the player has successfully
-     * killed all CentipedeSegment objects.
+     * state when the player has successfully killed all CentipedeSegment objects.
      * @param centipede Shared pointer to the Centipede container.
      */
     CentipedeLogic(DataPtr data, CentPtr centipede);
     /**
-     * @brief Spawns CentipedeSegment objects into a particular Centipede.
+     * @brief Spawns CentipedeSegment objects into the Centipede container.
+     * CentipedeSegments spawn in the beginning of the game.
      */
     void Spawn() override;
     /**
-     * @brief Moves all CentipedeSegment objects contained in the Centipede.
-     * @param dt Timestep given by the Game loop.
+     * @brief Moves all CentipedeSegment objects contained in the Centipede container.
+     * @param dt Time step of game loop iteration, provided by Run() in Game.h
      */
     void Move(float dt) override;
 
@@ -48,7 +46,6 @@ class CentipedeLogic : public EntityLogic
 
    private:
     // Shared pointer to Data layer.
-
     DataPtr data_;
     // Shared pointer to centipede container.
     CentPtr centipede_;
@@ -70,11 +67,15 @@ class CentipedeLogic : public EntityLogic
     void MoveUp(CentipedeSegment& index);
     /**
      * @brief Moves CentipedeSegment object to the left.
+     * @param Current trajectory of the CentipedeSegment,
+     * as defined in Trajectory.h
      * @param index Reference to a CentipedeSegment object.
      */
     void MoveLeft(Trajectory trajectory, CentipedeSegment& index);
     /**
      * @brief Moves CentipedeSegment object to the right.
+     * @param Current trajectory of the CentipedeSegment,
+     * as defined in Trajectory.h
      * @param index Reference to a CentipedeSegment object.
      */
     void MoveRight(Trajectory trajectory, CentipedeSegment& index);

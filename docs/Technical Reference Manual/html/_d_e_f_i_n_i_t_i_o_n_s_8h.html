@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -49,7 +50,7 @@ $(function() {
 <div class="title">DEFINITIONS.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;SFML/Graphics.hpp&gt;</code><br />
+<div class="textblock"><code>#include &lt;SFML/Window/VideoMode.hpp&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DEFINITIONS.h:</div>
@@ -70,12 +71,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a952eac791b596a61bba0a133a3bb439f"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a952eac791b596a61bba0a133a3bb439f">PI</a> = 4 * atan(1)</td></tr>
-<tr class="separator:a952eac791b596a61bba0a133a3bb439f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15f4f1a7e211425fea63ba0106de941d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a15f4f1a7e211425fea63ba0106de941d">SCREEN_WIDTH</a> = sf::VideoMode::getDesktopMode().width / 3</td></tr>
-<tr class="separator:a15f4f1a7e211425fea63ba0106de941d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf0a4cbb75c6f3bfe1d3b8e761a6fd4a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#abf0a4cbb75c6f3bfe1d3b8e761a6fd4a">SCREEN_HEIGHT</a> = sf::VideoMode::getDesktopMode().height * 0.95</td></tr>
-<tr class="separator:abf0a4cbb75c6f3bfe1d3b8e761a6fd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08a577393243b86dfd2a97e61443673"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#aa08a577393243b86dfd2a97e61443673">PI</a> = 4 * atan(1)</td></tr>
+<tr class="separator:aa08a577393243b86dfd2a97e61443673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24712aa44b06aa8dfd6515a0ba4b0133"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a24712aa44b06aa8dfd6515a0ba4b0133">SCREEN_WIDTH</a> = sf::VideoMode::getDesktopMode().width / 3</td></tr>
+<tr class="separator:a24712aa44b06aa8dfd6515a0ba4b0133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b55119d65c4180955d91f4f9d56414"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a73b55119d65c4180955d91f4f9d56414">SCREEN_HEIGHT</a> = sf::VideoMode::getDesktopMode().height * 0.95</td></tr>
+<tr class="separator:a73b55119d65c4180955d91f4f9d56414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf498149071159f47c1d38cd9280467e"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#adf498149071159f47c1d38cd9280467e">SCREEN_LHS</a> = 0</td></tr>
 <tr class="separator:adf498149071159f47c1d38cd9280467e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42f554596179c0efc89cc7d62472d3d2"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a42f554596179c0efc89cc7d62472d3d2">SCREEN_TOP</a> = 40</td></tr>
@@ -92,91 +93,79 @@ Variables</h2></td></tr>
 <tr class="separator:a3fcf8dc8bc801e9f47650f9de88ddf2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dd2b6e4420c6aab3c6a75bfce03e1e4"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a9dd2b6e4420c6aab3c6a75bfce03e1e4">SPLASH_TIME</a> = 3.0</td></tr>
 <tr class="separator:a9dd2b6e4420c6aab3c6a75bfce03e1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a991bfc8f5190c75f14e2e9032ed6fe3d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a991bfc8f5190c75f14e2e9032ed6fe3d">SPLASH_BACKGROUND_FILEPATH</a> = &quot;Resources\\splashscreenbackground.jpg&quot;</td></tr>
-<tr class="separator:a991bfc8f5190c75f14e2e9032ed6fe3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f3ae0c08555e7ce1f76896304cc1f60"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a0f3ae0c08555e7ce1f76896304cc1f60">GAME_TITLE_FILEPATH</a> = &quot;Resources\\title.gif&quot;</td></tr>
-<tr class="separator:a0f3ae0c08555e7ce1f76896304cc1f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b833e2a0c7258a7462c6caf95265c04"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a5b833e2a0c7258a7462c6caf95265c04">GAME_SUBTITLE_FILEPATH</a> = &quot;Resources\\subtitle.jpg&quot;</td></tr>
-<tr class="separator:a5b833e2a0c7258a7462c6caf95265c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae99858b1af4d990c22c5cef50feb9412"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ae99858b1af4d990c22c5cef50feb9412">GAME_WON</a> = &quot;Resources\\youwin.png&quot;</td></tr>
-<tr class="separator:ae99858b1af4d990c22c5cef50feb9412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb5a0f9297dd10be88a886694737a7e1"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#acb5a0f9297dd10be88a886694737a7e1">PAUSE_FILEPATH</a> = &quot;Resources\\gamepaused.png&quot;</td></tr>
-<tr class="separator:acb5a0f9297dd10be88a886694737a7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0051eafe778a1b12abfd2ed95215dfc1"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a0051eafe778a1b12abfd2ed95215dfc1">PAUSE_SPACE_FILEPATH</a> = &quot;Resources\\resume.png&quot;</td></tr>
-<tr class="separator:a0051eafe778a1b12abfd2ed95215dfc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82b423254c7649c9b7429ba1967beb3a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a82b423254c7649c9b7429ba1967beb3a">GAME_OVER_FILEPATH</a> = &quot;Resources\\gameover.png&quot;</td></tr>
-<tr class="separator:a82b423254c7649c9b7429ba1967beb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a300f863266f2fa61846083cf260a729c"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a300f863266f2fa61846083cf260a729c">GAME_OVER_RESTART_FILEPATH</a> = &quot;Resources\\gamerestart.png&quot;</td></tr>
-<tr class="separator:a300f863266f2fa61846083cf260a729c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa214a661fb4948c0faa187f09d79ed53"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#aa214a661fb4948c0faa187f09d79ed53">GAME_WIN_RESTART_FILEPATH</a> = &quot;Resources\\gamerestart.png&quot;</td></tr>
-<tr class="separator:aa214a661fb4948c0faa187f09d79ed53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d0dfc28afefe53ee3987f036f1760b8"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a4d0dfc28afefe53ee3987f036f1760b8">GAME_INSTRUCTIONS</a> = &quot;Resources\\instructions.png&quot;</td></tr>
-<tr class="separator:a4d0dfc28afefe53ee3987f036f1760b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad33443a8520f849036b82b9993748260"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ad33443a8520f849036b82b9993748260">SEGMENT_FILEPATH</a> = &quot;Resources\\centipedesegment.png&quot;</td></tr>
-<tr class="separator:ad33443a8520f849036b82b9993748260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1ba4d20b8603d7e3ee73a0ae378c87b"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ab1ba4d20b8603d7e3ee73a0ae378c87b">BODY_SEGMENT_FILEPATH</a> = &quot;Resources\\bodycentipedesegment.png&quot;</td></tr>
-<tr class="separator:ab1ba4d20b8603d7e3ee73a0ae378c87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c4c76efddbabef4122c82db5c470138"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a0c4c76efddbabef4122c82db5c470138">TURRET_FILEPATH</a> = &quot;Resources\\turret.png&quot;</td></tr>
-<tr class="separator:a0c4c76efddbabef4122c82db5c470138"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64d0bb74b350f3550b9fba1e9c2b1f2a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a64d0bb74b350f3550b9fba1e9c2b1f2a">BULLET_FILEPATH</a> = &quot;Resources\\bullet.jpg&quot;</td></tr>
-<tr class="separator:a64d0bb74b350f3550b9fba1e9c2b1f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae80364a28422b041b58177951169186e"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ae80364a28422b041b58177951169186e">MUSHROOM_FILEPATH</a> = &quot;Resources\\mushroom.png&quot;</td></tr>
-<tr class="separator:ae80364a28422b041b58177951169186e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17747ff7288d42e99f0c9366c2bff838"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a17747ff7288d42e99f0c9366c2bff838">MUSHROOM3_FILEPATH</a> = &quot;Resources\\mushroom3lives.png&quot;</td></tr>
-<tr class="separator:a17747ff7288d42e99f0c9366c2bff838"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97830bff0c930b1b1577f137fe3f0045"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a97830bff0c930b1b1577f137fe3f0045">POISONED_MUSHROOM_FILEPATH</a> = &quot;Resources\\mushroompoisoned.png&quot;</td></tr>
-<tr class="separator:a97830bff0c930b1b1577f137fe3f0045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4af967370c3eed9ba3f779bbfefcceb4"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a4af967370c3eed9ba3f779bbfefcceb4">SPIDER_FILEPATH</a> = &quot;Resources\\spider.png&quot;</td></tr>
-<tr class="separator:a4af967370c3eed9ba3f779bbfefcceb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ababb381af51f6df7f029649f5f07a459"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ababb381af51f6df7f029649f5f07a459">SCORPION_FILEPATH</a> = &quot;Resources\\scorpion.png&quot;</td></tr>
-<tr class="separator:ababb381af51f6df7f029649f5f07a459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad50ee928111eb35bef36724e3b05b93e"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ad50ee928111eb35bef36724e3b05b93e">HEART_FILEPATH</a> = &quot;Resources\\lives.png&quot;</td></tr>
-<tr class="separator:ad50ee928111eb35bef36724e3b05b93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e97a181f72e56599d0097ffff7a66be"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a1e97a181f72e56599d0097ffff7a66be">CENTIPEDE_SPRITE_SIDE_SIZE</a> = 20</td></tr>
+<tr class="memitem:ab597ba6f29bedc7872043b54d62c025a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ab597ba6f29bedc7872043b54d62c025a">NUMBER_0</a> = &quot;Resources\\0.png&quot;</td></tr>
+<tr class="separator:ab597ba6f29bedc7872043b54d62c025a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30637a7041f3dc03f29a23160f48d6b7"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a30637a7041f3dc03f29a23160f48d6b7">NUMBER_1</a> = &quot;Resources\\1.png&quot;</td></tr>
+<tr class="separator:a30637a7041f3dc03f29a23160f48d6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade701fb9549b853e22480dc663868f78"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ade701fb9549b853e22480dc663868f78">NUMBER_2</a> = &quot;Resources\\2.png&quot;</td></tr>
+<tr class="separator:ade701fb9549b853e22480dc663868f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adabebe8fbcbc99b0bf86667125cd60ed"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#adabebe8fbcbc99b0bf86667125cd60ed">NUMBER_3</a> = &quot;Resources\\3.png&quot;</td></tr>
+<tr class="separator:adabebe8fbcbc99b0bf86667125cd60ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0610a9d4db3a476dd9cab601c3fdfcd"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ac0610a9d4db3a476dd9cab601c3fdfcd">NUMBER_4</a> = &quot;Resources\\4.png&quot;</td></tr>
+<tr class="separator:ac0610a9d4db3a476dd9cab601c3fdfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc942cc0676de6aa9d0a54d63b76a74"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a8fc942cc0676de6aa9d0a54d63b76a74">NUMBER_5</a> = &quot;Resources\\5.png&quot;</td></tr>
+<tr class="separator:a8fc942cc0676de6aa9d0a54d63b76a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa72d14ba8ba67e897e4fe17476f114c"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#afa72d14ba8ba67e897e4fe17476f114c">NUMBER_6</a> = &quot;Resources\\6.png&quot;</td></tr>
+<tr class="separator:afa72d14ba8ba67e897e4fe17476f114c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc1cbaff6164f22c8dc3911cea24b91"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a7bc1cbaff6164f22c8dc3911cea24b91">NUMBER_7</a> = &quot;Resources\\7.png&quot;</td></tr>
+<tr class="separator:a7bc1cbaff6164f22c8dc3911cea24b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade67a8ede0530d08ab0b55b20fb4d8bd"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ade67a8ede0530d08ab0b55b20fb4d8bd">NUMBER_8</a> = &quot;Resources\\8.png&quot;</td></tr>
+<tr class="separator:ade67a8ede0530d08ab0b55b20fb4d8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871da69eed6cb3dc0a6b408afa707f04"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a871da69eed6cb3dc0a6b408afa707f04">NUMBER_9</a> = &quot;Resources\\9.png&quot;</td></tr>
+<tr class="separator:a871da69eed6cb3dc0a6b408afa707f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab543dbf2e661d788227e1086787f735a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ab543dbf2e661d788227e1086787f735a">HIGHSCORE_FILEPATH</a> = &quot;Resources\\HighScore.txt&quot;</td></tr>
+<tr class="separator:ab543dbf2e661d788227e1086787f735a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c606c27935e6ef14fa385790af1ab4f"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a8c606c27935e6ef14fa385790af1ab4f">BOMB_SPRITE_SIZE</a> = 20.f</td></tr>
+<tr class="separator:a8c606c27935e6ef14fa385790af1ab4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e97a181f72e56599d0097ffff7a66be"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a1e97a181f72e56599d0097ffff7a66be">CENTIPEDE_SPRITE_SIDE_SIZE</a> = 20.f</td></tr>
 <tr class="separator:a1e97a181f72e56599d0097ffff7a66be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a845dfdf33d13d889162c96b712c66047"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a845dfdf33d13d889162c96b712c66047">CENTIPEDE_SEGMENT_HIT_RADIUS</a> = 9</td></tr>
+<tr class="memitem:a845dfdf33d13d889162c96b712c66047"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a845dfdf33d13d889162c96b712c66047">CENTIPEDE_SEGMENT_HIT_RADIUS</a> = 9.f</td></tr>
 <tr class="separator:a845dfdf33d13d889162c96b712c66047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1caf04523c3edfd736edd1b75100c460"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a1caf04523c3edfd736edd1b75100c460">TURRET_SPRITE_SIDE_SIZE</a> = 20</td></tr>
+<tr class="memitem:a1caf04523c3edfd736edd1b75100c460"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a1caf04523c3edfd736edd1b75100c460">TURRET_SPRITE_SIDE_SIZE</a> = 20.f</td></tr>
 <tr class="separator:a1caf04523c3edfd736edd1b75100c460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbc809b713205127ee5d4a0e693f7622"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#acbc809b713205127ee5d4a0e693f7622">TURRET_HIT_RADIUS</a> = 9</td></tr>
+<tr class="memitem:acbc809b713205127ee5d4a0e693f7622"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#acbc809b713205127ee5d4a0e693f7622">TURRET_HIT_RADIUS</a> = 9.f</td></tr>
 <tr class="separator:acbc809b713205127ee5d4a0e693f7622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a612ab3b737898c83e521e2909e2c47ce"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a612ab3b737898c83e521e2909e2c47ce">BULLET_WIDTH</a> = 8</td></tr>
+<tr class="memitem:a612ab3b737898c83e521e2909e2c47ce"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a612ab3b737898c83e521e2909e2c47ce">BULLET_WIDTH</a> = 8.f</td></tr>
 <tr class="separator:a612ab3b737898c83e521e2909e2c47ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08f4b1bedcef26d9c3a972660a1bdf95"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a08f4b1bedcef26d9c3a972660a1bdf95">BULLET_HEIGHT</a> = 20</td></tr>
+<tr class="memitem:a08f4b1bedcef26d9c3a972660a1bdf95"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a08f4b1bedcef26d9c3a972660a1bdf95">BULLET_HEIGHT</a> = 20.f</td></tr>
 <tr class="separator:a08f4b1bedcef26d9c3a972660a1bdf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e30ad13f2f872198996ec9fcf1155e9"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a9e30ad13f2f872198996ec9fcf1155e9">BULLET_SPEED</a> = 1000</td></tr>
+<tr class="memitem:a9e30ad13f2f872198996ec9fcf1155e9"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a9e30ad13f2f872198996ec9fcf1155e9">BULLET_SPEED</a> = 1000.f</td></tr>
 <tr class="separator:a9e30ad13f2f872198996ec9fcf1155e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a53c42bf03c90160f72a958152d0ae9"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a0a53c42bf03c90160f72a958152d0ae9">BULLET_HIT_RADIUS</a> = 9</td></tr>
+<tr class="memitem:a0a53c42bf03c90160f72a958152d0ae9"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a0a53c42bf03c90160f72a958152d0ae9">BULLET_HIT_RADIUS</a> = 9.f</td></tr>
 <tr class="separator:a0a53c42bf03c90160f72a958152d0ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a983992698ceef18efd960ae0625aa4"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a8a983992698ceef18efd960ae0625aa4">TURRET_SPEED</a> = 300</td></tr>
+<tr class="memitem:a8a983992698ceef18efd960ae0625aa4"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a8a983992698ceef18efd960ae0625aa4">TURRET_SPEED</a> = 300.f</td></tr>
 <tr class="separator:a8a983992698ceef18efd960ae0625aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09ea476b9ac63aa7cd654a01fecf937b"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a09ea476b9ac63aa7cd654a01fecf937b">CENTIPEDE_SPEED</a> = 400</td></tr>
+<tr class="memitem:a09ea476b9ac63aa7cd654a01fecf937b"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a09ea476b9ac63aa7cd654a01fecf937b">CENTIPEDE_SPEED</a> = 400.f</td></tr>
 <tr class="separator:a09ea476b9ac63aa7cd654a01fecf937b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19d23da495ae4ffc23b9261f702af5a3"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a19d23da495ae4ffc23b9261f702af5a3">INITIAL_CENTIPEDE_NUMBER</a> = 12</td></tr>
 <tr class="separator:a19d23da495ae4ffc23b9261f702af5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f326deca81624667e210a20c623897"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a27f326deca81624667e210a20c623897">MUSHROOMS_SPAWNED</a> = 40</td></tr>
 <tr class="separator:a27f326deca81624667e210a20c623897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39a559939d2b09421ba7d29011b8635a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a39a559939d2b09421ba7d29011b8635a">MUSHROOM_SPRITE_SIZE</a> = 20</td></tr>
+<tr class="memitem:a2de78ba6e5fc99abb9000d481ac8a522"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a2de78ba6e5fc99abb9000d481ac8a522">BOMBS_SPAWNED</a> = 4</td></tr>
+<tr class="separator:a2de78ba6e5fc99abb9000d481ac8a522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a559939d2b09421ba7d29011b8635a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a39a559939d2b09421ba7d29011b8635a">MUSHROOM_SPRITE_SIZE</a> = 20.f</td></tr>
 <tr class="separator:a39a559939d2b09421ba7d29011b8635a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fecd36979e5f2fe68c65ae55bb399df"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a6fecd36979e5f2fe68c65ae55bb399df">MUSHROOM_HIT_RADIUS</a> = 9</td></tr>
+<tr class="memitem:a6fecd36979e5f2fe68c65ae55bb399df"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a6fecd36979e5f2fe68c65ae55bb399df">MUSHROOM_HIT_RADIUS</a> = 9.f</td></tr>
 <tr class="separator:a6fecd36979e5f2fe68c65ae55bb399df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f128e30218ba3ac620c68ee274269fa"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a8f128e30218ba3ac620c68ee274269fa">SPIDER_SPRITE_SIZE</a> = 20</td></tr>
+<tr class="memitem:a773b4f1b42fe84f16e122fdf9bb61eee"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a773b4f1b42fe84f16e122fdf9bb61eee">MUSHROOM_LIVES</a> = 4</td></tr>
+<tr class="separator:a773b4f1b42fe84f16e122fdf9bb61eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f128e30218ba3ac620c68ee274269fa"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a8f128e30218ba3ac620c68ee274269fa">SPIDER_SPRITE_SIZE</a> = 20.f</td></tr>
 <tr class="separator:a8f128e30218ba3ac620c68ee274269fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8e48376deab58929e13ac519ce2a15d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ac8e48376deab58929e13ac519ce2a15d">SPIDER_HIT_RADIUS</a> = 9</td></tr>
+<tr class="memitem:ac8e48376deab58929e13ac519ce2a15d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ac8e48376deab58929e13ac519ce2a15d">SPIDER_HIT_RADIUS</a> = 9.f</td></tr>
 <tr class="separator:ac8e48376deab58929e13ac519ce2a15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53049b1a87689357c8736d33bc3bf3c7"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a53049b1a87689357c8736d33bc3bf3c7">SPIDER_SPEED</a> = 400</td></tr>
+<tr class="memitem:a53049b1a87689357c8736d33bc3bf3c7"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a53049b1a87689357c8736d33bc3bf3c7">SPIDER_SPEED</a> = 400.f</td></tr>
 <tr class="separator:a53049b1a87689357c8736d33bc3bf3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04b62731aa3ff430a718aad9e041e064"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a04b62731aa3ff430a718aad9e041e064">SPIDER_MOVEMENT_TIME</a> = 1</td></tr>
 <tr class="separator:a04b62731aa3ff430a718aad9e041e064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53e1b326b564d0a6bdad857894f974c8"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a53e1b326b564d0a6bdad857894f974c8">SCORPION_MOVEMENT_TIME</a> = 2</td></tr>
 <tr class="separator:a53e1b326b564d0a6bdad857894f974c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f002e1ece04a15a58523b6423148451"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a1f002e1ece04a15a58523b6423148451">SCORPION_SPRITE_SIZE</a> = 20</td></tr>
+<tr class="memitem:a1f002e1ece04a15a58523b6423148451"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a1f002e1ece04a15a58523b6423148451">SCORPION_SPRITE_SIZE</a> = 20.f</td></tr>
 <tr class="separator:a1f002e1ece04a15a58523b6423148451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a85e5f156a7a11f90400470f18b7e21"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a0a85e5f156a7a11f90400470f18b7e21">SCORPION_HIT_RADIUS</a> = 9</td></tr>
+<tr class="memitem:a0a85e5f156a7a11f90400470f18b7e21"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a0a85e5f156a7a11f90400470f18b7e21">SCORPION_HIT_RADIUS</a> = 9.f</td></tr>
 <tr class="separator:a0a85e5f156a7a11f90400470f18b7e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78c731713ab3f34a39eacfbd1a42b012"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a78c731713ab3f34a39eacfbd1a42b012">SCORPION_SPEED</a> = 400</td></tr>
+<tr class="memitem:a78c731713ab3f34a39eacfbd1a42b012"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a78c731713ab3f34a39eacfbd1a42b012">SCORPION_SPEED</a> = 400.f</td></tr>
 <tr class="separator:a78c731713ab3f34a39eacfbd1a42b012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4017a209aeed63d4c9af9011ea6a366f"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a4017a209aeed63d4c9af9011ea6a366f">HEART_SIZE</a> = 20</td></tr>
+<tr class="memitem:a4017a209aeed63d4c9af9011ea6a366f"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a4017a209aeed63d4c9af9011ea6a366f">HEART_SIZE</a> = 20.f</td></tr>
 <tr class="separator:a4017a209aeed63d4c9af9011ea6a366f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c93144cc3fbee9712d91ad2018cae84"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a2c93144cc3fbee9712d91ad2018cae84">STARTING_LIVES</a> = 3</td></tr>
 <tr class="separator:a2c93144cc3fbee9712d91ad2018cae84"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,37 +173,91 @@ Variables</h2></td></tr>
 <tr class="separator:aa92b4ad132796a7ef523f16466e61925"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfd1c455a3348d3e0ec3a738bfb4e398"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#adfd1c455a3348d3e0ec3a738bfb4e398">SPIDER_TIME</a> = 2</td></tr>
 <tr class="separator:adfd1c455a3348d3e0ec3a738bfb4e398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb7a2abf47ce0a6a7909d7d4289d849"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#addb7a2abf47ce0a6a7909d7d4289d849">BOMB_HIT_RADIUS</a> = 9.f</td></tr>
+<tr class="separator:addb7a2abf47ce0a6a7909d7d4289d849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4b1a93b0a5da959210312155d2a8fd"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a1d4b1a93b0a5da959210312155d2a8fd">EXPLOSION_SPRITE_SIZE</a> = 100.f</td></tr>
+<tr class="separator:a1d4b1a93b0a5da959210312155d2a8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa33ef42cb4085c7ab7382a36a83187"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a2fa33ef42cb4085c7ab7382a36a83187">EXPLOSION_HIT_RADIUS</a> = 50.f</td></tr>
+<tr class="separator:a2fa33ef42cb4085c7ab7382a36a83187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2908fb411849689c3f62e0bfc87d68ae"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a2908fb411849689c3f62e0bfc87d68ae">EXPLOSION_TIME</a> = 1</td></tr>
+<tr class="separator:a2908fb411849689c3f62e0bfc87d68ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae68d0f1f0b6320c883b0ee7bb8860fb9"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ae68d0f1f0b6320c883b0ee7bb8860fb9">BOMB_MOVE_TIME</a> = 2</td></tr>
+<tr class="separator:ae68d0f1f0b6320c883b0ee7bb8860fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dd5c4ccda8e8ce46fb5d8d669bc75ce"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a8dd5c4ccda8e8ce46fb5d8d669bc75ce">NUMBER_SIZE</a> = 40</td></tr>
+<tr class="separator:a8dd5c4ccda8e8ce46fb5d8d669bc75ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53ef2d489561c9496198a2c249107e8"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ae53ef2d489561c9496198a2c249107e8">SEGMENT_SCORE</a> = 10</td></tr>
+<tr class="separator:ae53ef2d489561c9496198a2c249107e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f99602ae429148060fc1d94a25caf3"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#ab8f99602ae429148060fc1d94a25caf3">SPIDER_SCORE</a> = 20</td></tr>
+<tr class="separator:ab8f99602ae429148060fc1d94a25caf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac6b6082d7b3462a653aca1516bcca9c"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#aac6b6082d7b3462a653aca1516bcca9c">SCORPION_SCORE</a> = 50</td></tr>
+<tr class="separator:aac6b6082d7b3462a653aca1516bcca9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0fb4060c60d8a3f7db8002c5cbf3ff8"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#af0fb4060c60d8a3f7db8002c5cbf3ff8">MUSHROOM_SCORE</a> = 5</td></tr>
+<tr class="separator:af0fb4060c60d8a3f7db8002c5cbf3ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a089ec7469142654615fde8e2413d120d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html#a089ec7469142654615fde8e2413d120d">PLAYER_DEATH_SCORE_LOSS</a> = 50</td></tr>
+<tr class="separator:a089ec7469142654615fde8e2413d120d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ab1ba4d20b8603d7e3ee73a0ae378c87b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1ba4d20b8603d7e3ee73a0ae378c87b">&#9670;&nbsp;</a></span>BODY_SEGMENT_FILEPATH</h2>
+<a id="addb7a2abf47ce0a6a7909d7d4289d849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb7a2abf47ce0a6a7909d7d4289d849">&#9670;&nbsp;</a></span>BOMB_HIT_RADIUS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto BODY_SEGMENT_FILEPATH = &quot;Resources\\bodycentipedesegment.png&quot;</td>
+          <td class="memname">const auto BOMB_HIT_RADIUS = 9.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00033">33</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00065">65</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
-<a id="a64d0bb74b350f3550b9fba1e9c2b1f2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64d0bb74b350f3550b9fba1e9c2b1f2a">&#9670;&nbsp;</a></span>BULLET_FILEPATH</h2>
+<a id="ae68d0f1f0b6320c883b0ee7bb8860fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae68d0f1f0b6320c883b0ee7bb8860fb9">&#9670;&nbsp;</a></span>BOMB_MOVE_TIME</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto BULLET_FILEPATH = &quot;Resources\\bullet.jpg&quot;</td>
+          <td class="memname">const auto BOMB_MOVE_TIME = 2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00035">35</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00069">69</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="a8c606c27935e6ef14fa385790af1ab4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c606c27935e6ef14fa385790af1ab4f">&#9670;&nbsp;</a></span>BOMB_SPRITE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto BOMB_SPRITE_SIZE = 20.f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00036">36</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="a2de78ba6e5fc99abb9000d481ac8a522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de78ba6e5fc99abb9000d481ac8a522">&#9670;&nbsp;</a></span>BOMBS_SPAWNED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto BOMBS_SPAWNED = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00049">49</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -225,12 +268,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto BULLET_HEIGHT = 20</td>
+          <td class="memname">const auto BULLET_HEIGHT = 20.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00049">49</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00042">42</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -241,12 +284,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto BULLET_HIT_RADIUS = 9</td>
+          <td class="memname">const auto BULLET_HIT_RADIUS = 9.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00051">51</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00044">44</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -257,12 +300,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto BULLET_SPEED = 1000</td>
+          <td class="memname">const auto BULLET_SPEED = 1000.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00050">50</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00043">43</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -273,12 +316,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto BULLET_WIDTH = 8</td>
+          <td class="memname">const auto BULLET_WIDTH = 8.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00048">48</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00041">41</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -289,12 +332,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto CENTIPEDE_SEGMENT_HIT_RADIUS = 9</td>
+          <td class="memname">const auto CENTIPEDE_SEGMENT_HIT_RADIUS = 9.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00045">45</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00038">38</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -305,12 +348,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto CENTIPEDE_SPEED = 400</td>
+          <td class="memname">const auto CENTIPEDE_SPEED = 400.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00053">53</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00046">46</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -321,140 +364,60 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto CENTIPEDE_SPRITE_SIDE_SIZE = 20</td>
+          <td class="memname">const auto CENTIPEDE_SPRITE_SIDE_SIZE = 20.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00044">44</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00037">37</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
-<a id="a4d0dfc28afefe53ee3987f036f1760b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d0dfc28afefe53ee3987f036f1760b8">&#9670;&nbsp;</a></span>GAME_INSTRUCTIONS</h2>
+<a id="a2fa33ef42cb4085c7ab7382a36a83187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa33ef42cb4085c7ab7382a36a83187">&#9670;&nbsp;</a></span>EXPLOSION_HIT_RADIUS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto GAME_INSTRUCTIONS = &quot;Resources\\instructions.png&quot;</td>
+          <td class="memname">const auto EXPLOSION_HIT_RADIUS = 50.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00030">30</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00067">67</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
-<a id="a82b423254c7649c9b7429ba1967beb3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82b423254c7649c9b7429ba1967beb3a">&#9670;&nbsp;</a></span>GAME_OVER_FILEPATH</h2>
+<a id="a1d4b1a93b0a5da959210312155d2a8fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4b1a93b0a5da959210312155d2a8fd">&#9670;&nbsp;</a></span>EXPLOSION_SPRITE_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto GAME_OVER_FILEPATH = &quot;Resources\\gameover.png&quot;</td>
+          <td class="memname">const auto EXPLOSION_SPRITE_SIZE = 100.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00027">27</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00066">66</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
-<a id="a300f863266f2fa61846083cf260a729c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a300f863266f2fa61846083cf260a729c">&#9670;&nbsp;</a></span>GAME_OVER_RESTART_FILEPATH</h2>
+<a id="a2908fb411849689c3f62e0bfc87d68ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2908fb411849689c3f62e0bfc87d68ae">&#9670;&nbsp;</a></span>EXPLOSION_TIME</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto GAME_OVER_RESTART_FILEPATH = &quot;Resources\\gamerestart.png&quot;</td>
+          <td class="memname">const auto EXPLOSION_TIME = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00028">28</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="a5b833e2a0c7258a7462c6caf95265c04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b833e2a0c7258a7462c6caf95265c04">&#9670;&nbsp;</a></span>GAME_SUBTITLE_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto GAME_SUBTITLE_FILEPATH = &quot;Resources\\subtitle.jpg&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00023">23</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="a0f3ae0c08555e7ce1f76896304cc1f60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f3ae0c08555e7ce1f76896304cc1f60">&#9670;&nbsp;</a></span>GAME_TITLE_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto GAME_TITLE_FILEPATH = &quot;Resources\\title.gif&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00022">22</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="aa214a661fb4948c0faa187f09d79ed53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa214a661fb4948c0faa187f09d79ed53">&#9670;&nbsp;</a></span>GAME_WIN_RESTART_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto GAME_WIN_RESTART_FILEPATH = &quot;Resources\\gamerestart.png&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00029">29</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="ae99858b1af4d990c22c5cef50feb9412"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae99858b1af4d990c22c5cef50feb9412">&#9670;&nbsp;</a></span>GAME_WON</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto GAME_WON = &quot;Resources\\youwin.png&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00024">24</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="ad50ee928111eb35bef36724e3b05b93e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad50ee928111eb35bef36724e3b05b93e">&#9670;&nbsp;</a></span>HEART_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto HEART_FILEPATH = &quot;Resources\\lives.png&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00041">41</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00068">68</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -465,12 +428,28 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto HEART_SIZE = 20</td>
+          <td class="memname">const auto HEART_SIZE = 20.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00066">66</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00061">61</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="ab543dbf2e661d788227e1086787f735a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab543dbf2e661d788227e1086787f735a">&#9670;&nbsp;</a></span>HIGHSCORE_FILEPATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto HIGHSCORE_FILEPATH = &quot;Resources\\HighScore.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00033">33</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -486,39 +465,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00054">54</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="a17747ff7288d42e99f0c9366c2bff838"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17747ff7288d42e99f0c9366c2bff838">&#9670;&nbsp;</a></span>MUSHROOM3_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto MUSHROOM3_FILEPATH = &quot;Resources\\mushroom3lives.png&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00037">37</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="ae80364a28422b041b58177951169186e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae80364a28422b041b58177951169186e">&#9670;&nbsp;</a></span>MUSHROOM_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto MUSHROOM_FILEPATH = &quot;Resources\\mushroom.png&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00036">36</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00047">47</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -529,12 +476,44 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto MUSHROOM_HIT_RADIUS = 9</td>
+          <td class="memname">const auto MUSHROOM_HIT_RADIUS = 9.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00057">57</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00051">51</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="a773b4f1b42fe84f16e122fdf9bb61eee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773b4f1b42fe84f16e122fdf9bb61eee">&#9670;&nbsp;</a></span>MUSHROOM_LIVES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto MUSHROOM_LIVES = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00052">52</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="af0fb4060c60d8a3f7db8002c5cbf3ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0fb4060c60d8a3f7db8002c5cbf3ff8">&#9670;&nbsp;</a></span>MUSHROOM_SCORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto MUSHROOM_SCORE = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00076">76</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -545,12 +524,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto MUSHROOM_SPRITE_SIZE = 20</td>
+          <td class="memname">const auto MUSHROOM_SPRITE_SIZE = 20.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00056">56</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00050">50</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -566,18 +545,82 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00055">55</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00048">48</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
-<a id="acb5a0f9297dd10be88a886694737a7e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb5a0f9297dd10be88a886694737a7e1">&#9670;&nbsp;</a></span>PAUSE_FILEPATH</h2>
+<a id="ab597ba6f29bedc7872043b54d62c025a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab597ba6f29bedc7872043b54d62c025a">&#9670;&nbsp;</a></span>NUMBER_0</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto PAUSE_FILEPATH = &quot;Resources\\gamepaused.png&quot;</td>
+          <td class="memname">const auto NUMBER_0 = &quot;Resources\\0.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00021">21</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="a30637a7041f3dc03f29a23160f48d6b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30637a7041f3dc03f29a23160f48d6b7">&#9670;&nbsp;</a></span>NUMBER_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto NUMBER_1 = &quot;Resources\\1.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00022">22</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="ade701fb9549b853e22480dc663868f78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade701fb9549b853e22480dc663868f78">&#9670;&nbsp;</a></span>NUMBER_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto NUMBER_2 = &quot;Resources\\2.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00023">23</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="adabebe8fbcbc99b0bf86667125cd60ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adabebe8fbcbc99b0bf86667125cd60ed">&#9670;&nbsp;</a></span>NUMBER_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto NUMBER_3 = &quot;Resources\\3.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00024">24</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="ac0610a9d4db3a476dd9cab601c3fdfcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0610a9d4db3a476dd9cab601c3fdfcd">&#9670;&nbsp;</a></span>NUMBER_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto NUMBER_4 = &quot;Resources\\4.png&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -586,14 +629,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0051eafe778a1b12abfd2ed95215dfc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0051eafe778a1b12abfd2ed95215dfc1">&#9670;&nbsp;</a></span>PAUSE_SPACE_FILEPATH</h2>
+<a id="a8fc942cc0676de6aa9d0a54d63b76a74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc942cc0676de6aa9d0a54d63b76a74">&#9670;&nbsp;</a></span>NUMBER_5</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto PAUSE_SPACE_FILEPATH = &quot;Resources\\resume.png&quot;</td>
+          <td class="memname">const auto NUMBER_5 = &quot;Resources\\5.png&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -602,14 +645,94 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a952eac791b596a61bba0a133a3bb439f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a952eac791b596a61bba0a133a3bb439f">&#9670;&nbsp;</a></span>PI</h2>
+<a id="afa72d14ba8ba67e897e4fe17476f114c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa72d14ba8ba67e897e4fe17476f114c">&#9670;&nbsp;</a></span>NUMBER_6</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const double PI = 4 * atan(1)</td>
+          <td class="memname">const auto NUMBER_6 = &quot;Resources\\6.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00027">27</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="a7bc1cbaff6164f22c8dc3911cea24b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc1cbaff6164f22c8dc3911cea24b91">&#9670;&nbsp;</a></span>NUMBER_7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto NUMBER_7 = &quot;Resources\\7.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00028">28</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="ade67a8ede0530d08ab0b55b20fb4d8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade67a8ede0530d08ab0b55b20fb4d8bd">&#9670;&nbsp;</a></span>NUMBER_8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto NUMBER_8 = &quot;Resources\\8.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00029">29</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="a871da69eed6cb3dc0a6b408afa707f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a871da69eed6cb3dc0a6b408afa707f04">&#9670;&nbsp;</a></span>NUMBER_9</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto NUMBER_9 = &quot;Resources\\9.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00030">30</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="a8dd5c4ccda8e8ce46fb5d8d669bc75ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dd5c4ccda8e8ce46fb5d8d669bc75ce">&#9670;&nbsp;</a></span>NUMBER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto NUMBER_SIZE = 40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00070">70</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="aa08a577393243b86dfd2a97e61443673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08a577393243b86dfd2a97e61443673">&#9670;&nbsp;</a></span>PI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float PI = 4 * atan(1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -618,35 +741,19 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a97830bff0c930b1b1577f137fe3f0045"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97830bff0c930b1b1577f137fe3f0045">&#9670;&nbsp;</a></span>POISONED_MUSHROOM_FILEPATH</h2>
+<a id="a089ec7469142654615fde8e2413d120d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a089ec7469142654615fde8e2413d120d">&#9670;&nbsp;</a></span>PLAYER_DEATH_SCORE_LOSS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto POISONED_MUSHROOM_FILEPATH = &quot;Resources\\mushroompoisoned.png&quot;</td>
+          <td class="memname">const auto PLAYER_DEATH_SCORE_LOSS = 50</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00038">38</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="ababb381af51f6df7f029649f5f07a459"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ababb381af51f6df7f029649f5f07a459">&#9670;&nbsp;</a></span>SCORPION_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto SCORPION_FILEPATH = &quot;Resources\\scorpion.png&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00040">40</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00077">77</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -657,12 +764,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SCORPION_HIT_RADIUS = 9</td>
+          <td class="memname">const auto SCORPION_HIT_RADIUS = 9.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00064">64</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00059">59</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -678,7 +785,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00062">62</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00057">57</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="aac6b6082d7b3462a653aca1516bcca9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac6b6082d7b3462a653aca1516bcca9c">&#9670;&nbsp;</a></span>SCORPION_SCORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto SCORPION_SCORE = 50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00075">75</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -689,12 +812,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SCORPION_SPEED = 400</td>
+          <td class="memname">const auto SCORPION_SPEED = 400.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00065">65</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00060">60</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -705,12 +828,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SCORPION_SPRITE_SIZE = 20</td>
+          <td class="memname">const auto SCORPION_SPRITE_SIZE = 20.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00063">63</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00058">58</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -730,14 +853,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="abf0a4cbb75c6f3bfe1d3b8e761a6fd4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf0a4cbb75c6f3bfe1d3b8e761a6fd4a">&#9670;&nbsp;</a></span>SCREEN_HEIGHT</h2>
+<a id="a73b55119d65c4180955d91f4f9d56414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b55119d65c4180955d91f4f9d56414">&#9670;&nbsp;</a></span>SCREEN_HEIGHT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SCREEN_HEIGHT = sf::VideoMode::getDesktopMode().height * 0.95</td>
+          <td class="memname">const float SCREEN_HEIGHT = sf::VideoMode::getDesktopMode().height * 0.95</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -794,14 +917,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a15f4f1a7e211425fea63ba0106de941d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15f4f1a7e211425fea63ba0106de941d">&#9670;&nbsp;</a></span>SCREEN_WIDTH</h2>
+<a id="a24712aa44b06aa8dfd6515a0ba4b0133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24712aa44b06aa8dfd6515a0ba4b0133">&#9670;&nbsp;</a></span>SCREEN_WIDTH</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width / 3</td>
+          <td class="memname">const float SCREEN_WIDTH = sf::VideoMode::getDesktopMode().width / 3</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -810,19 +933,19 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad33443a8520f849036b82b9993748260"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad33443a8520f849036b82b9993748260">&#9670;&nbsp;</a></span>SEGMENT_FILEPATH</h2>
+<a id="ae53ef2d489561c9496198a2c249107e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae53ef2d489561c9496198a2c249107e8">&#9670;&nbsp;</a></span>SEGMENT_SCORE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SEGMENT_FILEPATH = &quot;Resources\\centipedesegment.png&quot;</td>
+          <td class="memname">const auto SEGMENT_SCORE = 10</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00032">32</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00073">73</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -838,23 +961,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00068">68</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="a4af967370c3eed9ba3f779bbfefcceb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4af967370c3eed9ba3f779bbfefcceb4">&#9670;&nbsp;</a></span>SPIDER_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto SPIDER_FILEPATH = &quot;Resources\\spider.png&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00039">39</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00063">63</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -865,12 +972,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SPIDER_HIT_RADIUS = 9</td>
+          <td class="memname">const auto SPIDER_HIT_RADIUS = 9.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00059">59</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00054">54</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -886,7 +993,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00061">61</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00056">56</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8f99602ae429148060fc1d94a25caf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8f99602ae429148060fc1d94a25caf3">&#9670;&nbsp;</a></span>SPIDER_SCORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto SPIDER_SCORE = 20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00074">74</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -897,12 +1020,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SPIDER_SPEED = 400</td>
+          <td class="memname">const auto SPIDER_SPEED = 400.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00060">60</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00055">55</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -913,12 +1036,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto SPIDER_SPRITE_SIZE = 20</td>
+          <td class="memname">const auto SPIDER_SPRITE_SIZE = 20.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00058">58</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00053">53</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -934,23 +1057,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00069">69</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="a991bfc8f5190c75f14e2e9032ed6fe3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a991bfc8f5190c75f14e2e9032ed6fe3d">&#9670;&nbsp;</a></span>SPLASH_BACKGROUND_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto SPLASH_BACKGROUND_FILEPATH = &quot;Resources\\splashscreenbackground.jpg&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00021">21</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00064">64</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -982,23 +1089,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00067">67</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
-
-</div>
-</div>
-<a id="a0c4c76efddbabef4122c82db5c470138"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c4c76efddbabef4122c82db5c470138">&#9670;&nbsp;</a></span>TURRET_FILEPATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto TURRET_FILEPATH = &quot;Resources\\turret.png&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00034">34</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00062">62</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -1009,12 +1100,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto TURRET_HIT_RADIUS = 9</td>
+          <td class="memname">const auto TURRET_HIT_RADIUS = 9.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00047">47</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00040">40</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -1041,12 +1132,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto TURRET_SPEED = 300</td>
+          <td class="memname">const auto TURRET_SPEED = 300.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00052">52</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00045">45</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>
@@ -1057,12 +1148,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto TURRET_SPRITE_SIDE_SIZE = 20</td>
+          <td class="memname">const auto TURRET_SPRITE_SIDE_SIZE = 20.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00046">46</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html#l00039">39</a> of file <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h_source.html">DEFINITIONS.h</a>.</p>
 
 </div>
 </div>

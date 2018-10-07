@@ -25,33 +25,34 @@ class GameField
    public:
     /**
      * @brief Accesses the Mushroom container.
-     * @return Returns the address of the vector
-     * containing all Mushroom objects on the screen.
+     * @return Returns a reference to std::vector<Mushroom>, i.e. the address
+     * of the vector containing all Mushroom objects on the screen.
      */
     std::vector<Mushroom>& GetMushrooms();
     /**
      * @brief Accesses the Spider container.
-     * @return Returns the address of the vector
-     * containing all Spider objects on the screen.
+     * @return Returns a reference to std::vector<Spider>, i.e. the address
+     * of the vector containing all Spider objects on the screen.
      */
     std::vector<Spider>& GetSpiders();
     /**
      * @brief Accesses the Scorpions container.
-     * @return Returns the address of the vector
-     * containing all Scorpion objects on the screen.
+     * @return Returns a reference to std::vector<Scorpion>, i.e. the address
+     * of the vector containing all Scorpion objects on the screen.
      */
     std::vector<Scorpion>& GetScorpions();
     /**
      * @brief Accresses the NewMushrooms container.
-     * @return Returns the address of the vector
-     * containing the coordinates of all new mushrooms
-     * on the screen.
+     * @return Returns a reference to std::vector<std::pair<float, float>>,
+     * i.e. the address of the vector containing the coordinates of all new
+     * mushrooms to be spawned on the screen in the next iteration of the
+     * game loop.
      */
     std::vector<std::pair<float, float>>& GetNewMushrooms();
     /**
      * @brief Accesses the Bombs container.
-     * @return Returns the address of the vector
-     * containing all Bomb objects on the screen.
+     * @return Returns a reference to std::vector<Bomb>, i.e the address
+     * of the vector containing all Bomb objects on the screen.
      */
     std::vector<Bomb>& GetBombs();
 

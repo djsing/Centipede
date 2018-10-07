@@ -37,6 +37,7 @@ GamePlay::GamePlay(DataPtr data) : data_(data)
     collision_handler_ = std::make_shared<CollisionHandler>(data_, turret_, centipede_, field_);
     // Rendering pointer
     renderer_ = std::make_unique<EntityRendering>(data_, turret_, centipede_, field_);
+    state_renderer_ = std::make_unique<StateRenderer>(data_);
 }
 
 void GamePlay::HandleInput()
@@ -75,6 +76,8 @@ void GamePlay::Draw()
 {
     // clear screen to draw sprites
     data_->window.clear();
+    // draws non-entity related sprites
+    state_renderer_->DisplayScore(false, true);
     // draw all entities
     renderer_->Draw();
     // displays all drawn entities

@@ -1,7 +1,8 @@
 #ifndef STATERENDERER_H
 #define STATERENDERER_H
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Texture.hpp>
 #include "Game.h"
 
 namespace GameEngine
@@ -17,13 +18,23 @@ class StateRenderer
 {
    public:
     /**
-     * @brief StateRenderer Constructor
+     * @brief StateRenderer Constructor. Loads all textures, binds all
+     * textures to their respective sprites, and sets the position of
+     * all sprites on the screen before sf::RenderWindow::draw() is called
+     * in the remaining member functions.
      */
     StateRenderer(DataPtr data);
     /**
-     * @brief Draws HighScore to the Screen.
+     * @brief Draws the player score to the screen.
+     * @param highscore True if the highscore is desired,
+     * else False to display the player's game score.
+     * @param play True if the score is to be displayed
+     * when the game is play, i.e. displayed in the top
+     * left corner of the screen; False if the score is to
+     * be displayed in the Game won/lost screen, i.e. in
+     * the top center of the screen.
      */
-    void DisplayHighScore();
+    void DisplayScore(bool highscore, bool play);
     /**
      * @brief Displays game-winning screen.
      */
@@ -60,9 +71,21 @@ class StateRenderer
     sf::Sprite press_enter_to_resume_;
     sf::Sprite resume_background_sprite_;
     sf::Texture resume_background_;
-	sf::Sprite press_enter_to_pause_;
-	sf::Sprite high_score_;
-	sf::Sprite new_high_score_;
+    sf::Sprite press_enter_to_pause_;
+    sf::Sprite high_score_;
+    sf::Sprite new_high_score_;
+    sf::Sprite score_;
+    // number sprites
+    sf::Sprite zero_;
+    sf::Sprite one_;
+    sf::Sprite two_;
+    sf::Sprite three_;
+    sf::Sprite four_;
+    sf::Sprite five_;
+    sf::Sprite six_;
+    sf::Sprite seven_;
+    sf::Sprite eight_;
+    sf::Sprite nine_;
     // file paths
     const std::string SPLASH_BACKGROUND_FILEPATH_ = "Resources\\splashscreenbackground.jpg";
     const std::string GAME_TITLE_FILEPATH_ = "Resources\\title.gif";
@@ -77,8 +100,9 @@ class StateRenderer
     const std::string PRESS_ENTER_TO_PAUSE_FILEPATH_ = "Resources\\pause.png";
     const std::string HIGHSCORE_FILEPATH_ = "Resources\\highscore.png";
     const std::string NEW_HIGHSCORE_FILEPATH_ = "Resources\\newhighscore.png";
+    const std::string SCORE_FILEPATH_ = "Resources\\score.png";
 };
-using StateRenderPtr = std::shared_ptr<StateRenderer>;
+using StateRenderPtr = std::unique_ptr<StateRenderer>;
 }  // namespace GameEngine
 
 #endif

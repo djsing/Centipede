@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -52,23 +53,37 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_lives_handler_8h_source.html">LivesHandler.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for GameEngine::LivesHandler:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_engine_1_1_lives_handler__coll__graph.png" border="0" usemap="#_game_engine_1_1_lives_handler_coll__map" alt="Collaboration graph"/></div>
+<map name="_game_engine_1_1_lives_handler_coll__map" id="_game_engine_1_1_lives_handler_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b4bed1c1abced4ea4b22fc4bfc74e28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_lives_handler.html#a9b4bed1c1abced4ea4b22fc4bfc74e28">LivesHandler</a> ()</td></tr>
+<tr class="memdesc:a9b4bed1c1abced4ea4b22fc4bfc74e28"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_lives_handler.html">LivesHandler</a> Constructor. Sets starting lives to the number defined STARTING_LIVES in <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html">DEFINITIONS.h</a>.  <a href="#a9b4bed1c1abced4ea4b22fc4bfc74e28">More...</a><br /></td></tr>
 <tr class="separator:a9b4bed1c1abced4ea4b22fc4bfc74e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c9d990a373b2ae8e26552c2bec0adcc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_lives_handler.html#a8c9d990a373b2ae8e26552c2bec0adcc">LivesRemaining</a> ()</td></tr>
-<tr class="separator:a8c9d990a373b2ae8e26552c2bec0adcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a97f441dcd62b5341d5aa045feda47"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_lives_handler.html#af1a97f441dcd62b5341d5aa045feda47">LivesRemaining</a> ()</td></tr>
+<tr class="memdesc:af1a97f441dcd62b5341d5aa045feda47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of lives the player has remaining.  <a href="#af1a97f441dcd62b5341d5aa045feda47">More...</a><br /></td></tr>
+<tr class="separator:af1a97f441dcd62b5341d5aa045feda47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65f927f0998cba6b2bc516f039b00b36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_lives_handler.html#a65f927f0998cba6b2bc516f039b00b36">LifeLost</a> ()</td></tr>
+<tr class="memdesc:a65f927f0998cba6b2bc516f039b00b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements number of lives by 1.  <a href="#a65f927f0998cba6b2bc516f039b00b36">More...</a><br /></td></tr>
 <tr class="separator:a65f927f0998cba6b2bc516f039b00b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43e9749311b75339bf1736b2db9ee2dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_lives_handler.html#a43e9749311b75339bf1736b2db9ee2dd">LifeGained</a> ()</td></tr>
+<tr class="memdesc:a43e9749311b75339bf1736b2db9ee2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments number of lives by 1. Does not increment lives when the number of lives remaining is equal to STARTING_LIVES as defined in <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html">DEFINITIONS.h</a>.  <a href="#a43e9749311b75339bf1736b2db9ee2dd">More...</a><br /></td></tr>
 <tr class="separator:a43e9749311b75339bf1736b2db9ee2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5bfbe6beaaa2cee44a1d8fad023b4dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_lives_handler.html#ae5bfbe6beaaa2cee44a1d8fad023b4dd">ResetLives</a> ()</td></tr>
+<tr class="memdesc:ae5bfbe6beaaa2cee44a1d8fad023b4dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets number of lives remaining to STARTING_LIVES as defined in <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html">DEFINITIONS.h</a>.  <a href="#ae5bfbe6beaaa2cee44a1d8fad023b4dd">More...</a><br /></td></tr>
 <tr class="separator:ae5bfbe6beaaa2cee44a1d8fad023b4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_lives_handler_8h_source.html#l00006">6</a> of file <a class="el" href="_lives_handler_8h_source.html">LivesHandler.h</a>.</p>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>07/10/2018 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_lives_handler_8h_source.html#l00015">15</a> of file <a class="el" href="_lives_handler_8h_source.html">LivesHandler.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9b4bed1c1abced4ea4b22fc4bfc74e28"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b4bed1c1abced4ea4b22fc4bfc74e28">&#9670;&nbsp;</a></span>LivesHandler()</h2>
@@ -84,6 +99,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_game_engine_1_1_lives_handler.html">LivesHandler</a> Constructor. Sets starting lives to the number defined STARTING_LIVES in <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html">DEFINITIONS.h</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00006">6</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
 
@@ -105,7 +122,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00021">21</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
+<p>Increments number of lives by 1. Does not increment lives when the number of lives remaining is equal to STARTING_LIVES as defined in <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html">DEFINITIONS.h</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00020">20</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -124,18 +143,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00016">16</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
+<p>Decrements number of lives by 1. </p>
+
+<p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00015">15</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a8c9d990a373b2ae8e26552c2bec0adcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c9d990a373b2ae8e26552c2bec0adcc">&#9670;&nbsp;</a></span>LivesRemaining()</h2>
+<a id="af1a97f441dcd62b5341d5aa045feda47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a97f441dcd62b5341d5aa045feda47">&#9670;&nbsp;</a></span>LivesRemaining()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int GameEngine::LivesHandler::LivesRemaining </td>
+          <td class="memname">unsigned int GameEngine::LivesHandler::LivesRemaining </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -143,7 +164,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00011">11</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
+<p>Returns the number of lives the player has remaining. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns integer that is the number of lives remaining. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00010">10</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -162,7 +186,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00029">29</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
+<p>Resets number of lives remaining to STARTING_LIVES as defined in <a class="el" href="_d_e_f_i_n_i_t_i_o_n_s_8h.html">DEFINITIONS.h</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_lives_handler_8cpp_source.html#l00028">28</a> of file <a class="el" href="_lives_handler_8cpp_source.html">LivesHandler.cpp</a>.</p>
 
 </div>
 </div>

@@ -27,7 +27,7 @@ void BombLogic::Move(float dt)
 	{
 	    for(auto& i : field_->GetBombs())
 		{
-		    if(i.IsTriggered())
+		    if(i.IsDead())
 			{
 			    continue;
 			}

@@ -3,6 +3,9 @@
 
 namespace GameEngine
 {
+/**
+ * @brief Divides screen into four regions as described.
+ */
 enum class Region
 {
     TOP_LEFT,
@@ -10,6 +13,6 @@ enum class Region
     BOTTOM_LEFT,
     BOTTOM_RIGHT
 };
-}
+}  // namespace GameEngine
 
 #endif

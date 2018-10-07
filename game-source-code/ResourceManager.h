@@ -1,38 +1,38 @@
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Texture.hpp>
 #include <map>
 
 namespace GameEngine
 {
+/**
+ * @class TextureFileNotFound
+ * @author Darrion Singh and Sachin Govender
+ * @date 07/10/2018
+ * @file ResourceManager.h
+ * @brief Empty class used to throw an exception when a texture file is not found.
+ */
 class TextureFileNotFound
 {
 };
-class FontFileNotFound
-{
-};
-
+/**
+ * @class ResourceManager
+ * @author Darrion Singh and Sachin Govender
+ * @date 07/10/2018
+ * @file ResourceManager.h
+ * @brief Handles the loading and retrieving of Texture files.
+ */
 class ResourceManager
 {
-  public:
-    ResourceManager()
-    {
-    }
-    ~ResourceManager()
-    {
-    }
+   public:
     // load textures
     void LoadTexture(std::string name, std::string fileName);
     sf::Texture& GetTexture(std::string name);
-    // load fonts
-    void LoadFont(std::string name, std::string fileName);
-    sf::Font& GetFont(std::string name);
 
-  private:
+   private:
     std::map<std::string, sf::Texture> _textures;
-    std::map<std::string, sf::Font> _fonts;
 };
-} // namespace GameEngine
+}  // namespace GameEngine
 
 #endif

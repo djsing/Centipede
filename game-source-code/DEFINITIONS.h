@@ -1,7 +1,7 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Window/VideoMode.hpp>
 #include <cmath>
 
 // game characteristics
@@ -49,6 +49,7 @@ const auto MUSHROOMS_SPAWNED = 40;
 const auto BOMBS_SPAWNED = 4;
 const auto MUSHROOM_SPRITE_SIZE = 20.f;
 const auto MUSHROOM_HIT_RADIUS = 9.f;
+const auto MUSHROOM_LIVES = 4;
 const auto SPIDER_SPRITE_SIZE = 20.f;
 const auto SPIDER_HIT_RADIUS = 9.f;
 const auto SPIDER_SPEED = 400.f;

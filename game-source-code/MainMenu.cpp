@@ -9,7 +9,7 @@ MainMenu::MainMenu(DataPtr data) : data_(data)
     data_->window.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), WINDOW_TITLE, sf::Style::None);
     data_->window.setVerticalSyncEnabled(true);
     data_->window.setPosition(sf::Vector2i(sf::VideoMode().getDesktopMode().width / 3, 0));
-    renderer_ = std::make_shared<StateRenderer>(data_);
+    renderer_ = std::make_unique<StateRenderer>(data_);
 }
 
 void MainMenu::HandleInput()

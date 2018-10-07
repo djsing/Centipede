@@ -1,6 +1,5 @@
 #include <cstdlib>
 #include <ctime>
-#include <experimental/random>
 #include "DEFINITIONS.h"
 #include "Mushroom.h"
 #include "MushroomLogic.h"
@@ -66,6 +65,10 @@ void MushroomLogic::Spawn()
     field_->GetNewMushrooms().clear();
 }
 
+void MushroomLogic::Move(float dt)
+{
+}
+
 void MushroomLogic::CollisionHandle()
 {
     death_chance_ = std::rand() % 100;
@@ -76,7 +79,7 @@ void MushroomLogic::CollisionHandle()
 		{
 		    if(death_chance_ < SPIDER_BITE_DEATH_CHANCE)
 			{
-			    i.SetDead(true);
+			    i.SetDead();
 			}
 
 		    else

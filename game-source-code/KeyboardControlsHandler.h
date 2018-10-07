@@ -10,20 +10,23 @@ namespace GameEngine
  * @author Darrion Singh and Sachin Govender
  * @date 29/09/2018
  * @file KeyboardControlsHandler.h
- * @brief Handles the Direction of Turret object's movement
- * and current shooting state.
+ * @brief Stores the Direction of Turret object's movement
+ * and current shooting state (whether the user is attempting
+ * to shoot).
  */
 class KeyboardControlsHandler
 {
    public:
     /**
-     * @brief KeyboardControlsHandler Constructor.
+     * @brief KeyboardControlsHandler Constructor. By default,
+     * sets shooting state to False, and Turret direction to
+     * Direction::HOVER.
      */
     KeyboardControlsHandler();
     /**
      * @brief Returns whether or not the player has sent the
      * Turret a shoot command.
-     * @return True if the player wants to shoot, else False.
+     * @return True if the player has sent a shoot command, else False.
      */
     bool IsShooting();
     /**

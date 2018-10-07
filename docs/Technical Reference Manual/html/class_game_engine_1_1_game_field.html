@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -52,11 +53,16 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_game_field_8h_source.html">GameField.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for GameEngine::GameField:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_engine_1_1_game_field__coll__graph.png" border="0" usemap="#_game_engine_1_1_game_field_coll__map" alt="Collaboration graph"/></div>
+<map name="_game_engine_1_1_game_field_coll__map" id="_game_engine_1_1_game_field_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab0d88106868c7292b7babfc49bd0735e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_field.html#ab0d88106868c7292b7babfc49bd0735e">GameField</a> ()</td></tr>
-<tr class="separator:ab0d88106868c7292b7babfc49bd0735e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8a89f1d3cc02649efe1fa82dde458d8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_game_engine_1_1_mushroom.html">Mushroom</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_field.html#ab8a89f1d3cc02649efe1fa82dde458d8">GetMushrooms</a> ()</td></tr>
 <tr class="memdesc:ab8a89f1d3cc02649efe1fa82dde458d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the <a class="el" href="class_game_engine_1_1_mushroom.html">Mushroom</a> container.  <a href="#ab8a89f1d3cc02649efe1fa82dde458d8">More...</a><br /></td></tr>
 <tr class="separator:ab8a89f1d3cc02649efe1fa82dde458d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -66,44 +72,41 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a695029dfb56761ab4cf945847e83ee53"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_field.html#a695029dfb56761ab4cf945847e83ee53">GetScorpions</a> ()</td></tr>
 <tr class="memdesc:a695029dfb56761ab4cf945847e83ee53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the Scorpions container.  <a href="#a695029dfb56761ab4cf945847e83ee53">More...</a><br /></td></tr>
 <tr class="separator:a695029dfb56761ab4cf945847e83ee53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0da912ba891826fbc8589d4742331455"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::tuple&lt; float, float &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_field.html#a0da912ba891826fbc8589d4742331455">GetNewMushrooms</a> ()</td></tr>
-<tr class="memdesc:a0da912ba891826fbc8589d4742331455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accresses the NewMushrooms container.  <a href="#a0da912ba891826fbc8589d4742331455">More...</a><br /></td></tr>
-<tr class="separator:a0da912ba891826fbc8589d4742331455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bfa7f2c263b8112bd486ab6db9ef8b3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; float, float &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_field.html#a0bfa7f2c263b8112bd486ab6db9ef8b3">GetNewMushrooms</a> ()</td></tr>
+<tr class="memdesc:a0bfa7f2c263b8112bd486ab6db9ef8b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accresses the NewMushrooms container.  <a href="#a0bfa7f2c263b8112bd486ab6db9ef8b3">More...</a><br /></td></tr>
+<tr class="separator:a0bfa7f2c263b8112bd486ab6db9ef8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cb2ea0a2df20d1def61fda730271555"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_game_engine_1_1_bomb.html">Bomb</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_field.html#a7cb2ea0a2df20d1def61fda730271555">GetBombs</a> ()</td></tr>
+<tr class="memdesc:a7cb2ea0a2df20d1def61fda730271555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the Bombs container.  <a href="#a7cb2ea0a2df20d1def61fda730271555">More...</a><br /></td></tr>
+<tr class="separator:a7cb2ea0a2df20d1def61fda730271555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender. </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>28/09/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_game_field_8h_source.html#l00022">22</a> of file <a class="el" href="_game_field_8h_source.html">GameField.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab0d88106868c7292b7babfc49bd0735e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0d88106868c7292b7babfc49bd0735e">&#9670;&nbsp;</a></span>GameField()</h2>
+<p class="definition">Definition at line <a class="el" href="_game_field_8h_source.html#l00023">23</a> of file <a class="el" href="_game_field_8h_source.html">GameField.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7cb2ea0a2df20d1def61fda730271555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cb2ea0a2df20d1def61fda730271555">&#9670;&nbsp;</a></span>GetBombs()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GameEngine::GameField::GameField </td>
+          <td class="memname">std::vector&lt; <a class="el" href="class_game_engine_1_1_bomb.html">Bomb</a> &gt; &amp; GameEngine::GameField::GetBombs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_game_field_8h_source.html#l00025">25</a> of file <a class="el" href="_game_field_8h_source.html">GameField.h</a>.</p>
+<p>Accesses the Bombs container. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to std::vector&lt;Bomb&gt;, i.e the address of the vector containing all <a class="el" href="class_game_engine_1_1_bomb.html">Bomb</a> objects on the screen. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_game_field_8cpp_source.html#l00025">25</a> of file <a class="el" href="_game_field_8cpp_source.html">GameField.cpp</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab8a89f1d3cc02649efe1fa82dde458d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab8a89f1d3cc02649efe1fa82dde458d8">&#9670;&nbsp;</a></span>GetMushrooms()</h2>
 
@@ -120,20 +123,20 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesses the <a class="el" href="class_game_engine_1_1_mushroom.html">Mushroom</a> container. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the address of the vector containing all Mushrooms on the screen. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to std::vector&lt;Mushroom&gt;, i.e. the address of the vector containing all <a class="el" href="class_game_engine_1_1_mushroom.html">Mushroom</a> objects on the screen. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_game_field_8cpp_source.html#l00005">5</a> of file <a class="el" href="_game_field_8cpp_source.html">GameField.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0da912ba891826fbc8589d4742331455"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0da912ba891826fbc8589d4742331455">&#9670;&nbsp;</a></span>GetNewMushrooms()</h2>
+<a id="a0bfa7f2c263b8112bd486ab6db9ef8b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bfa7f2c263b8112bd486ab6db9ef8b3">&#9670;&nbsp;</a></span>GetNewMushrooms()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::tuple&lt; float, float &gt; &gt; &amp; GameEngine::GameField::GetNewMushrooms </td>
+          <td class="memname">std::vector&lt; std::pair&lt; float, float &gt; &gt; &amp; GameEngine::GameField::GetNewMushrooms </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -142,7 +145,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accresses the NewMushrooms container. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the address of the vector containing the coordinates of all new mushrooms on the screen. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to std::vector&lt;std::pair&lt;float, float&gt;&gt;, i.e. the address of the vector containing the coordinates of all new mushrooms to be spawned on the screen in the next iteration of the game loop. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_game_field_8cpp_source.html#l00020">20</a> of file <a class="el" href="_game_field_8cpp_source.html">GameField.cpp</a>.</p>
 
@@ -164,7 +167,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesses the Scorpions container. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the address of the vector containing all Scorpions on the screen. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to std::vector&lt;Scorpion&gt;, i.e. the address of the vector containing all <a class="el" href="class_game_engine_1_1_scorpion.html">Scorpion</a> objects on the screen. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_game_field_8cpp_source.html#l00015">15</a> of file <a class="el" href="_game_field_8cpp_source.html">GameField.cpp</a>.</p>
 
@@ -186,7 +189,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Accesses the <a class="el" href="class_game_engine_1_1_spider.html">Spider</a> container. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the address of the vector containing all Spiders on the screen. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to std::vector&lt;Spider&gt;, i.e. the address of the vector containing all <a class="el" href="class_game_engine_1_1_spider.html">Spider</a> objects on the screen. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_game_field_8cpp_source.html#l00010">10</a> of file <a class="el" href="_game_field_8cpp_source.html">GameField.cpp</a>.</p>
 

@@ -8,6 +8,6 @@ digraph "Desktop/project-repo/game-source-code/StateHandler.h"
   Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="stack",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="GameState.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_state_8h.html"];
+  Node3 [label="GameState.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_state_8h.html",tooltip="Interface class for all Game Engine layer related operations. Polymorphic in nature. Describes the state that the game is in. Game loop given in Game::Run() calls the following functions from the active GameState, i.e. All GameState derived classes form different versions of the game loop. "];
   Node3 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

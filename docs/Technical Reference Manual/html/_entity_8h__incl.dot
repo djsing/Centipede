@@ -4,16 +4,14 @@ digraph "Desktop/project-repo/game-source-code/Entity.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node0 [label="Desktop/project-repo\l/game-source-code/Entity.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="SFML/Graphics.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 [label="memory",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="memory",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 [label="tuple",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="tuple",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3 [label="Direction.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_direction_8h.html",tooltip="Scoped Enumeration to define states of movement. "];
   Node0 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="Direction.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_direction_8h.html"];
+  Node4 [label="Region.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_8h.html"];
   Node0 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="Region.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_8h.html"];
-  Node0 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="RegionHandler.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_handler_8h.html"];
-  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="RegionHandler.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_handler_8h.html",tooltip="Takes in the center x and y position of an Entity object and determines which region and subregion th..."];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

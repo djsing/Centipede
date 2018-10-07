@@ -1,3 +1,4 @@
+#include <string>
 #include "DEFINITIONS.h"
 #include "StateRenderer.h"
 
@@ -18,6 +19,18 @@ StateRenderer::StateRenderer(DataPtr data) : data_(data)
     data_->resources.LoadTexture("Press Enter Pause", PRESS_ENTER_TO_PAUSE_FILEPATH_);
     data_->resources.LoadTexture("Highscore", HIGHSCORE_FILEPATH_);
     data_->resources.LoadTexture("New Highscore", NEW_HIGHSCORE_FILEPATH_);
+    data_->resources.LoadTexture("score", SCORE_FILEPATH_);
+    // load score related textures
+    data_->resources.LoadTexture("0", NUMBER_0);
+    data_->resources.LoadTexture("1", NUMBER_1);
+    data_->resources.LoadTexture("2", NUMBER_2);
+    data_->resources.LoadTexture("3", NUMBER_3);
+    data_->resources.LoadTexture("4", NUMBER_4);
+    data_->resources.LoadTexture("5", NUMBER_5);
+    data_->resources.LoadTexture("6", NUMBER_6);
+    data_->resources.LoadTexture("7", NUMBER_7);
+    data_->resources.LoadTexture("8", NUMBER_8);
+    data_->resources.LoadTexture("9", NUMBER_9);
 
     // bind textures to sprites
     press_f12_to_restart_.setTexture(data_->resources.GetTexture("Press F12 Restart"));
@@ -32,6 +45,18 @@ StateRenderer::StateRenderer(DataPtr data) : data_(data)
     press_enter_to_pause_.setTexture(data_->resources.GetTexture("Press Enter Pause"));
     high_score_.setTexture(data_->resources.GetTexture("Highscore"));
     new_high_score_.setTexture(data_->resources.GetTexture("New Highscore"));
+    score_.setTexture(data_->resources.GetTexture("score"));
+    // bind texture related to scores
+    zero_.setTexture(data_->resources.GetTexture("0"));
+    one_.setTexture(data_->resources.GetTexture("1"));
+    two_.setTexture(data_->resources.GetTexture("2"));
+    three_.setTexture(data_->resources.GetTexture("3"));
+    four_.setTexture(data_->resources.GetTexture("4"));
+    five_.setTexture(data_->resources.GetTexture("5"));
+    six_.setTexture(data_->resources.GetTexture("6"));
+    seven_.setTexture(data_->resources.GetTexture("7"));
+    eight_.setTexture(data_->resources.GetTexture("8"));
+    nine_.setTexture(data_->resources.GetTexture("9"));
 
     // create pause background
     resume_background_.create(data_->window.getSize().x, data_->window.getSize().y);
@@ -42,7 +67,8 @@ StateRenderer::StateRenderer(DataPtr data) : data_(data)
                              SCREEN_HEIGHT / 2 - game_paused_.getGlobalBounds().height);
     press_enter_to_resume_.setPosition(SCREEN_WIDTH / 2 - press_enter_to_resume_.getGlobalBounds().width / 2,
                                        SCREEN_HEIGHT / 2);
-    // set up HIGHSCORE/NEW HIGHSCORE
+    // set up SCORE/HIGHSCORE/NEW HIGHSCORE
+    score_.setPosition(SCREEN_WIDTH / 2 - score_.getGlobalBounds().width / 2, WINDOW_TOP);
     high_score_.setPosition(SCREEN_WIDTH / 2 - high_score_.getGlobalBounds().width / 2, WINDOW_TOP);
     new_high_score_.setPosition(SCREEN_WIDTH / 2 - high_score_.getGlobalBounds().width / 2, WINDOW_TOP);
     // set up loss screen
@@ -57,50 +83,124 @@ StateRenderer::StateRenderer(DataPtr data) : data_(data)
     subtitle_.setPosition((SCREEN_WIDTH / 2) - (subtitle_.getGlobalBounds().width / 2), SCREEN_HEIGHT / 2);
     instructions_.setPosition((SCREEN_WIDTH / 2) - (instructions_.getGlobalBounds().width / 2),
                               SCREEN_HEIGHT / 2 + subtitle_.getGlobalBounds().height);
+    press_enter_to_pause_.setPosition((SCREEN_WIDTH / 2) - (press_enter_to_pause_.getGlobalBounds().width / 2),
+                                      SCREEN_HEIGHT - press_enter_to_pause_.getGlobalBounds().height);
 }
 
-void StateRenderer::DisplayHighScore()
+void StateRenderer::DisplayScore(bool highscore, bool play)
 {
-    auto score = data_->score_manager.GetHighScore();
+    auto score = std::to_string(data_->score_manager.GetScore());
+    if(highscore)
+	{
+	    score = data_->score_manager.GetHighScore();
+	}
+
     for(unsigned int i = 0; i < score.size(); i++)
 	{
-	    switch(score.at(i))
+	    if(play)
 		{
-		case '0':
-		    score_digit_.setTexture(data_->resources.GetTexture("0"));
-		    break;
-		case '1':
-		    score_digit_.setTexture(data_->resources.GetTexture("1"));
-		    break;
-		case '2':
-		    score_digit_.setTexture(data_->resources.GetTexture("2"));
-		    break;
-		case '3':
-		    score_digit_.setTexture(data_->resources.GetTexture("3"));
-		    break;
-		case '4':
-		    score_digit_.setTexture(data_->resources.GetTexture("4"));
-		    break;
-		case '5':
-		    score_digit_.setTexture(data_->resources.GetTexture("5"));
-		    break;
-		case '6':
-		    score_digit_.setTexture(data_->resources.GetTexture("6"));
-		    break;
-		case '7':
-		    score_digit_.setTexture(data_->resources.GetTexture("7"));
-		    break;
-		case '8':
-		    score_digit_.setTexture(data_->resources.GetTexture("8"));
-		    break;
-		case '9':
-		    score_digit_.setTexture(data_->resources.GetTexture("9"));
-		default:
-		    break;
+		    switch(score.at(i))
+			{
+			case '0':
+			    zero_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(zero_);
+			    break;
+			case '1':
+			    one_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(one_);
+			    break;
+			case '2':
+			    two_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(two_);
+			    break;
+			case '3':
+			    three_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(three_);
+			    break;
+			case '4':
+			    four_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(four_);
+			    break;
+			case '5':
+			    five_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(five_);
+			    break;
+			case '6':
+			    six_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(six_);
+			    break;
+			case '7':
+			    seven_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(seven_);
+			    break;
+			case '8':
+			    eight_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(eight_);
+			    break;
+			case '9':
+			    nine_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
+			    data_->window.draw(nine_);
+			default:
+			    break;
+			}
 		}
-	    score_digit_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
-	                             WINDOW_TOP + 2 * NUMBER_SIZE);
-	    data_->window.draw(score_digit_);
+	    else
+		{
+		    switch(score.at(i))
+			{
+			case '0':
+			    zero_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                      WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(zero_);
+			    break;
+			case '1':
+			    one_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                     WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(one_);
+			    break;
+			case '2':
+			    two_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                     WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(two_);
+			    break;
+			case '3':
+			    three_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                       WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(three_);
+			    break;
+			case '4':
+			    four_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                      WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(four_);
+			    break;
+			case '5':
+			    five_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                      WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(five_);
+			    break;
+			case '6':
+			    six_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                     WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(six_);
+			    break;
+			case '7':
+			    seven_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                       WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(seven_);
+			    break;
+			case '8':
+			    eight_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                       WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(eight_);
+			    break;
+			case '9':
+			    nine_.setPosition(SCREEN_WIDTH / 2 - NUMBER_SIZE * score.size() / 2 + i * NUMBER_SIZE,
+			                      WINDOW_TOP + 2 * NUMBER_SIZE);
+			    data_->window.draw(nine_);
+			default:
+			    break;
+			}
+		}
 	}
 }
 
@@ -115,7 +215,7 @@ void StateRenderer::DisplayLoss()
 	}
     else
 	{
-	    data_->window.draw(high_score_);
+	    data_->window.draw(score_);
 	}
 
     data_->window.draw(game_over_);
@@ -133,7 +233,7 @@ void StateRenderer::DisplayWin()
 	}
     else
 	{
-	    data_->window.draw(high_score_);
+	    data_->window.draw(score_);
 	}
 
     data_->window.draw(game_won_);
@@ -150,9 +250,12 @@ void StateRenderer::DisplayPause()
 void StateRenderer::DisplayMenu()
 {
     // draw menu sprites to screen
+    data_->window.draw(high_score_);
+    DisplayScore(true, false);
     data_->window.draw(title_);
     data_->window.draw(subtitle_);
     data_->window.draw(instructions_);
+    data_->window.draw(press_enter_to_pause_);
 }
 
 void StateRenderer::DisplaySplashScreen()

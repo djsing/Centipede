@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -58,47 +59,47 @@ Inheritance diagram for GameEngine::Spider:</div>
 <div class="center"><img src="class_game_engine_1_1_spider__inherit__graph.png" border="0" usemap="#_game_engine_1_1_spider_inherit__map" alt="Inheritance graph"/></div>
 <map name="_game_engine_1_1_spider_inherit__map" id="_game_engine_1_1_spider_inherit__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for GameEngine::Spider:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_engine_1_1_spider__coll__graph.png" border="0" usemap="#_game_engine_1_1_spider_coll__map" alt="Collaboration graph"/></div>
 <map name="_game_engine_1_1_spider_coll__map" id="_game_engine_1_1_spider_coll__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2de933e4240bef92416b864f7ce6b00d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_spider.html#a2de933e4240bef92416b864f7ce6b00d">Spider</a> ()</td></tr>
+<tr class="memdesc:a2de933e4240bef92416b864f7ce6b00d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_spider.html">Spider</a> Constructor. Sets top left x and y position, and center x and y positions to default values.  <a href="#a2de933e4240bef92416b864f7ce6b00d">More...</a><br /></td></tr>
 <tr class="separator:a2de933e4240bef92416b864f7ce6b00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9161e9b0cf2eed2118750f7e97d9d3a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_spider.html#a9161e9b0cf2eed2118750f7e97d9d3a2">SetTopLeftXPosition</a> (float xpos)</td></tr>
-<tr class="memdesc:a9161e9b0cf2eed2118750f7e97d9d3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the top left x position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>.  <a href="#a9161e9b0cf2eed2118750f7e97d9d3a2">More...</a><br /></td></tr>
-<tr class="separator:a9161e9b0cf2eed2118750f7e97d9d3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a096cb39e61e0b671ebe338e03559a36e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_spider.html#a096cb39e61e0b671ebe338e03559a36e">SetTopLeftYPosition</a> (float ypos)</td></tr>
-<tr class="memdesc:a096cb39e61e0b671ebe338e03559a36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the top left y position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>.  <a href="#a096cb39e61e0b671ebe338e03559a36e">More...</a><br /></td></tr>
-<tr class="separator:a096cb39e61e0b671ebe338e03559a36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaaaedbe98096a2b8eda098da094b005"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_spider.html#aaaaaedbe98096a2b8eda098da094b005">SetTopLeftXPosition</a> (float xpos) override</td></tr>
+<tr class="memdesc:aaaaaedbe98096a2b8eda098da094b005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the top left x position of the object. Sets the center x position of the object based on the size of the object sprite, with reference to the object's top left x position. Wraps position around screen in the x direction.  <a href="#aaaaaedbe98096a2b8eda098da094b005">More...</a><br /></td></tr>
+<tr class="separator:aaaaaedbe98096a2b8eda098da094b005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4095a08be68680e9c94038e8083619ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_spider.html#a4095a08be68680e9c94038e8083619ca">SetTopLeftYPosition</a> (float ypos) override</td></tr>
+<tr class="memdesc:a4095a08be68680e9c94038e8083619ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the top left y position of the object. Sets the center y position of the object based on the size of the object sprite, with reference to the object's top left y position.  <a href="#a4095a08be68680e9c94038e8083619ca">More...</a><br /></td></tr>
+<tr class="separator:a4095a08be68680e9c94038e8083619ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f7e37472cdf931ce851ff0dfc8b1a01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_spider.html#a3f7e37472cdf931ce851ff0dfc8b1a01">SetAngle</a> (int angle)</td></tr>
+<tr class="memdesc:a3f7e37472cdf931ce851ff0dfc8b1a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the angle of movement of the <a class="el" href="class_game_engine_1_1_spider.html">Spider</a>.  <a href="#a3f7e37472cdf931ce851ff0dfc8b1a01">More...</a><br /></td></tr>
 <tr class="separator:a3f7e37472cdf931ce851ff0dfc8b1a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae9eeee54d262265946e0cfff69cb26d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_spider.html#aae9eeee54d262265946e0cfff69cb26d">GetAngle</a> ()</td></tr>
+<tr class="memdesc:aae9eeee54d262265946e0cfff69cb26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angle of movement of the <a class="el" href="class_game_engine_1_1_spider.html">Spider</a>.  <a href="#aae9eeee54d262265946e0cfff69cb26d">More...</a><br /></td></tr>
 <tr class="separator:aae9eeee54d262265946e0cfff69cb26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_engine_1_1_entity"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_engine_1_1_entity')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_game_engine_1_1_entity.html">GameEngine::Entity</a></td></tr>
 <tr class="memitem:abdb49fc04681730c644afb4fe5e85b4a inherit pub_methods_class_game_engine_1_1_entity"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#abdb49fc04681730c644afb4fe5e85b4a">Entity</a> (float topLeftXPosition, float topLeftYPosition)</td></tr>
-<tr class="memdesc:abdb49fc04681730c644afb4fe5e85b4a inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_entity.html">Entity</a> Constructor.  <a href="class_game_engine_1_1_entity.html#abdb49fc04681730c644afb4fe5e85b4a">More...</a><br /></td></tr>
+<tr class="memdesc:abdb49fc04681730c644afb4fe5e85b4a inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_entity.html">Entity</a> Constructor. Sets object's top left x and y postion. Sets object's default state to alive (dead = False).  <a href="class_game_engine_1_1_entity.html#abdb49fc04681730c644afb4fe5e85b4a">More...</a><br /></td></tr>
 <tr class="separator:abdb49fc04681730c644afb4fe5e85b4a inherit pub_methods_class_game_engine_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a725f30976de61729cd0ce3838a260410 inherit pub_methods_class_game_engine_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a725f30976de61729cd0ce3838a260410">SetDirection</a> (<a class="el" href="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168b">Direction</a> direction)</td></tr>
-<tr class="memdesc:a725f30976de61729cd0ce3838a260410 inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Direction of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>.  <a href="class_game_engine_1_1_entity.html#a725f30976de61729cd0ce3838a260410">More...</a><br /></td></tr>
+<tr class="memdesc:a725f30976de61729cd0ce3838a260410 inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <a class="el" href="class_direction.html">Direction</a> of <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> movement.  <a href="class_game_engine_1_1_entity.html#a725f30976de61729cd0ce3838a260410">More...</a><br /></td></tr>
 <tr class="separator:a725f30976de61729cd0ce3838a260410 inherit pub_methods_class_game_engine_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1628e7e8a9fcd53bb69a41a15da4d1f inherit pub_methods_class_game_engine_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#af1628e7e8a9fcd53bb69a41a15da4d1f">SetDead</a> (bool isDead)</td></tr>
-<tr class="memdesc:af1628e7e8a9fcd53bb69a41a15da4d1f inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead.  <a href="class_game_engine_1_1_entity.html#af1628e7e8a9fcd53bb69a41a15da4d1f">More...</a><br /></td></tr>
-<tr class="separator:af1628e7e8a9fcd53bb69a41a15da4d1f inherit pub_methods_class_game_engine_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e2809cbd92513d61feaca22702f54f6 inherit pub_methods_class_game_engine_1_1_entity"><td class="memItemLeft" align="right" valign="top">sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a8e2809cbd92513d61feaca22702f54f6">GetObjectSprite</a> ()</td></tr>
-<tr class="memdesc:a8e2809cbd92513d61feaca22702f54f6 inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>'s sprite.  <a href="class_game_engine_1_1_entity.html#a8e2809cbd92513d61feaca22702f54f6">More...</a><br /></td></tr>
-<tr class="separator:a8e2809cbd92513d61feaca22702f54f6 inherit pub_methods_class_game_engine_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e4d6be367ff89ace3b70c96edf3294 inherit pub_methods_class_game_engine_1_1_entity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a14e4d6be367ff89ace3b70c96edf3294">SetDead</a> (bool isDead=true)</td></tr>
+<tr class="memdesc:a14e4d6be367ff89ace3b70c96edf3294 inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead.  <a href="class_game_engine_1_1_entity.html#a14e4d6be367ff89ace3b70c96edf3294">More...</a><br /></td></tr>
+<tr class="separator:a14e4d6be367ff89ace3b70c96edf3294 inherit pub_methods_class_game_engine_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fba4a625c37072b4a4c6516a58e1dc5 inherit pub_methods_class_game_engine_1_1_entity"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a8fba4a625c37072b4a4c6516a58e1dc5">IsDead</a> () const</td></tr>
-<tr class="memdesc:a8fba4a625c37072b4a4c6516a58e1dc5 inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead.  <a href="class_game_engine_1_1_entity.html#a8fba4a625c37072b4a4c6516a58e1dc5">More...</a><br /></td></tr>
+<tr class="memdesc:a8fba4a625c37072b4a4c6516a58e1dc5 inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is dead.  <a href="class_game_engine_1_1_entity.html#a8fba4a625c37072b4a4c6516a58e1dc5">More...</a><br /></td></tr>
 <tr class="separator:a8fba4a625c37072b4a4c6516a58e1dc5 inherit pub_methods_class_game_engine_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4187fbddc5f8667f2db007278c1910bc inherit pub_methods_class_game_engine_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168b">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a4187fbddc5f8667f2db007278c1910bc">GetDirection</a> () const</td></tr>
-<tr class="memdesc:a4187fbddc5f8667f2db007278c1910bc inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Direction that the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is moving.  <a href="class_game_engine_1_1_entity.html#a4187fbddc5f8667f2db007278c1910bc">More...</a><br /></td></tr>
+<tr class="memdesc:a4187fbddc5f8667f2db007278c1910bc inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_direction.html">Direction</a> that the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is moving.  <a href="class_game_engine_1_1_entity.html#a4187fbddc5f8667f2db007278c1910bc">More...</a><br /></td></tr>
 <tr class="separator:a4187fbddc5f8667f2db007278c1910bc inherit pub_methods_class_game_engine_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9dee840663cbdd3e8845cef69e3c0ad inherit pub_methods_class_game_engine_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_game_engine.html#a07d654af51e7eabfb8f07be1e94fafcb">Region</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#ad9dee840663cbdd3e8845cef69e3c0ad">GetRegion</a> () const</td></tr>
 <tr class="memdesc:ad9dee840663cbdd3e8845cef69e3c0ad inherit pub_methods_class_game_engine_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Region in which the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> exists.  <a href="class_game_engine_1_1_entity.html#ad9dee840663cbdd3e8845cef69e3c0ad">More...</a><br /></td></tr>
@@ -130,8 +131,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a38a62b7d1e2d33c12fdd2017444954ca inherit pro_methods_class_game_engine_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_spider_8h_source.html#l00010">10</a> of file <a class="el" href="_spider_8h_source.html">Spider.h</a>.</p>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>07/10/2018 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_spider_8h_source.html#l00018">18</a> of file <a class="el" href="_spider_8h_source.html">Spider.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2de933e4240bef92416b864f7ce6b00d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2de933e4240bef92416b864f7ce6b00d">&#9670;&nbsp;</a></span>Spider()</h2>
@@ -147,6 +150,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_game_engine_1_1_spider.html">Spider</a> Constructor. Sets top left x and y position, and center x and y positions to default values. </p>
 
 <p class="definition">Definition at line <a class="el" href="_spider_8cpp_source.html#l00006">6</a> of file <a class="el" href="_spider_8cpp_source.html">Spider.cpp</a>.</p>
 <div class="dynheader">
@@ -175,6 +180,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the angle of movement of the <a class="el" href="class_game_engine_1_1_spider.html">Spider</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Integer value in degrees (i.e. 0 &lt;= angle &lt;= 360). </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="_spider_8cpp_source.html#l00038">38</a> of file <a class="el" href="_spider_8cpp_source.html">Spider.cpp</a>.</p>
 
 </div>
@@ -195,12 +203,20 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the angle of movement of the <a class="el" href="class_game_engine_1_1_spider.html">Spider</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>Integer value in degrees (i.e. 0 &lt;= angle &lt;= 360). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="_spider_8cpp_source.html#l00033">33</a> of file <a class="el" href="_spider_8cpp_source.html">Spider.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a9161e9b0cf2eed2118750f7e97d9d3a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9161e9b0cf2eed2118750f7e97d9d3a2">&#9670;&nbsp;</a></span>SetTopLeftXPosition()</h2>
+<a id="aaaaaedbe98096a2b8eda098da094b005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaaaedbe98096a2b8eda098da094b005">&#9670;&nbsp;</a></span>SetTopLeftXPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,12 +234,12 @@ Here is the call graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets the top left x position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>. </p>
+<p>Sets the top left x position of the object. Sets the center x position of the object based on the size of the object sprite, with reference to the object's top left x position. Wraps position around screen in the x direction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xpos</td><td>The desired x position. </td></tr>
@@ -237,15 +253,15 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_game_engine_1_1_spider_a9161e9b0cf2eed2118750f7e97d9d3a2_cgraph.png" border="0" usemap="#class_game_engine_1_1_spider_a9161e9b0cf2eed2118750f7e97d9d3a2_cgraph" alt=""/></div>
-<map name="class_game_engine_1_1_spider_a9161e9b0cf2eed2118750f7e97d9d3a2_cgraph" id="class_game_engine_1_1_spider_a9161e9b0cf2eed2118750f7e97d9d3a2_cgraph">
+<div class="center"><img src="class_game_engine_1_1_spider_aaaaaedbe98096a2b8eda098da094b005_cgraph.png" border="0" usemap="#class_game_engine_1_1_spider_aaaaaedbe98096a2b8eda098da094b005_cgraph" alt=""/></div>
+<map name="class_game_engine_1_1_spider_aaaaaedbe98096a2b8eda098da094b005_cgraph" id="class_game_engine_1_1_spider_aaaaaedbe98096a2b8eda098da094b005_cgraph">
 </map>
 </div>
 
 </div>
 </div>
-<a id="a096cb39e61e0b671ebe338e03559a36e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a096cb39e61e0b671ebe338e03559a36e">&#9670;&nbsp;</a></span>SetTopLeftYPosition()</h2>
+<a id="a4095a08be68680e9c94038e8083619ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4095a08be68680e9c94038e8083619ca">&#9670;&nbsp;</a></span>SetTopLeftYPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -263,15 +279,15 @@ Here is the call graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets the top left y position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>. </p>
+<p>Sets the top left y position of the object. Sets the center y position of the object based on the size of the object sprite, with reference to the object's top left y position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ypos</td><td>the desired y position. </td></tr>
+    <tr><td class="paramname">ypos</td><td>The desired y position. </td></tr>
   </table>
   </dd>
 </dl>
@@ -282,8 +298,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_game_engine_1_1_spider_a096cb39e61e0b671ebe338e03559a36e_cgraph.png" border="0" usemap="#class_game_engine_1_1_spider_a096cb39e61e0b671ebe338e03559a36e_cgraph" alt=""/></div>
-<map name="class_game_engine_1_1_spider_a096cb39e61e0b671ebe338e03559a36e_cgraph" id="class_game_engine_1_1_spider_a096cb39e61e0b671ebe338e03559a36e_cgraph">
+<div class="center"><img src="class_game_engine_1_1_spider_a4095a08be68680e9c94038e8083619ca_cgraph.png" border="0" usemap="#class_game_engine_1_1_spider_a4095a08be68680e9c94038e8083619ca_cgraph" alt=""/></div>
+<map name="class_game_engine_1_1_spider_a4095a08be68680e9c94038e8083619ca_cgraph" id="class_game_engine_1_1_spider_a4095a08be68680e9c94038e8083619ca_cgraph">
 </map>
 </div>
 

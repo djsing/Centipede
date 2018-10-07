@@ -6,7 +6,7 @@ namespace GameEngine
 {
 GameOver::GameOver(DataPtr data) : data_(data)
 {
-    renderer_ = std::make_shared<StateRenderer>(data_);
+    renderer_ = std::make_unique<StateRenderer>(data_);
 }
 
 void GameOver::HandleInput()
@@ -41,7 +41,7 @@ void GameOver::Draw()
     // clear screen to update data
     data_->window.clear();
     renderer_->DisplayLoss();
-    renderer_->DisplayHighScore();
+    renderer_->DisplayScore(false, false);
     // display updated data
     data_->window.display();
 }

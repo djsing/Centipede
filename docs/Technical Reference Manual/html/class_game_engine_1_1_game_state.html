@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -58,20 +59,32 @@ Inheritance diagram for GameEngine::GameState:</div>
 <div class="center"><img src="class_game_engine_1_1_game_state__inherit__graph.png" border="0" usemap="#_game_engine_1_1_game_state_inherit__map" alt="Inheritance graph"/></div>
 <map name="_game_engine_1_1_game_state_inherit__map" id="_game_engine_1_1_game_state_inherit__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for GameEngine::GameState:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_engine_1_1_game_state__coll__graph.png" border="0" usemap="#_game_engine_1_1_game_state_coll__map" alt="Collaboration graph"/></div>
+<map name="_game_engine_1_1_game_state_coll__map" id="_game_engine_1_1_game_state_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ef3d68eb2ad7060f82508ba9edc288a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_state.html#a0ef3d68eb2ad7060f82508ba9edc288a">HandleInput</a> ()=0</td></tr>
+<tr class="memdesc:a0ef3d68eb2ad7060f82508ba9edc288a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the keyboard input given to game by the player.  <a href="#a0ef3d68eb2ad7060f82508ba9edc288a">More...</a><br /></td></tr>
 <tr class="separator:a0ef3d68eb2ad7060f82508ba9edc288a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a969f0a89f7d08673ad89b9cf9cbe2486"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_state.html#a969f0a89f7d08673ad89b9cf9cbe2486">Update</a> (float dt)=0</td></tr>
+<tr class="memdesc:a969f0a89f7d08673ad89b9cf9cbe2486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all relevant <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> objects and processes in a particular state of the game.  <a href="#a969f0a89f7d08673ad89b9cf9cbe2486">More...</a><br /></td></tr>
 <tr class="separator:a969f0a89f7d08673ad89b9cf9cbe2486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba498191d43d958875ab70ffdab95189"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_game_state.html#aba498191d43d958875ab70ffdab95189">Draw</a> ()=0</td></tr>
+<tr class="memdesc:aba498191d43d958875ab70ffdab95189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws all sprites pertaining to that particular state of the game.  <a href="#aba498191d43d958875ab70ffdab95189">More...</a><br /></td></tr>
 <tr class="separator:aba498191d43d958875ab70ffdab95189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_game_state_8h_source.html#l00008">8</a> of file <a class="el" href="_game_state_8h_source.html">GameState.h</a>.</p>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>06/10/2018 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_game_state_8h_source.html#l00019">19</a> of file <a class="el" href="_game_state_8h_source.html">GameState.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aba498191d43d958875ab70ffdab95189"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba498191d43d958875ab70ffdab95189">&#9670;&nbsp;</a></span>Draw()</h2>
@@ -96,7 +109,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_game_engine_1_1_game_play.html#a12d4e46dd4ab363db671b38544de25e5">GameEngine::GamePlay</a>, <a class="el" href="class_game_engine_1_1_splash_screen.html#adafa3408ae63929ff0a3f484c3fe4b86">GameEngine::SplashScreen</a>, <a class="el" href="class_game_engine_1_1_game_over.html#af23ab80ad707210539a5b4e2c54c34f7">GameEngine::GameOver</a>, <a class="el" href="class_game_engine_1_1_game_won.html#aed05ebd28056f416a95a3ea813a49982">GameEngine::GameWon</a>, <a class="el" href="class_game_engine_1_1_main_menu.html#aa2114ab0b5e63c495dccc0483acda442">GameEngine::MainMenu</a>, and <a class="el" href="class_game_engine_1_1_pause_game.html#a5cf1539ff42646ea046b50ac0434ac86">GameEngine::PauseGame</a>.</p>
+<p>Draws all sprites pertaining to that particular state of the game. </p>
+
+<p>Implemented in <a class="el" href="class_game_engine_1_1_game_play.html#a12d4e46dd4ab363db671b38544de25e5">GameEngine::GamePlay</a>, <a class="el" href="class_game_engine_1_1_main_menu.html#aa2114ab0b5e63c495dccc0483acda442">GameEngine::MainMenu</a>, <a class="el" href="class_game_engine_1_1_splash_screen.html#adafa3408ae63929ff0a3f484c3fe4b86">GameEngine::SplashScreen</a>, <a class="el" href="class_game_engine_1_1_game_over.html#af23ab80ad707210539a5b4e2c54c34f7">GameEngine::GameOver</a>, <a class="el" href="class_game_engine_1_1_pause_game.html#a5cf1539ff42646ea046b50ac0434ac86">GameEngine::PauseGame</a>, and <a class="el" href="class_game_engine_1_1_game_won.html#aed05ebd28056f416a95a3ea813a49982">GameEngine::GameWon</a>.</p>
 
 </div>
 </div>
@@ -123,7 +138,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_game_engine_1_1_game_play.html#a37292b394dce3cc75cf63db2b4ded46f">GameEngine::GamePlay</a>, <a class="el" href="class_game_engine_1_1_splash_screen.html#ad2ef0970c9a43a983b5d89dd27686bf9">GameEngine::SplashScreen</a>, <a class="el" href="class_game_engine_1_1_game_over.html#a796bac0a9fb30cf7cfbd76aa214d4366">GameEngine::GameOver</a>, <a class="el" href="class_game_engine_1_1_game_won.html#a4d6e9d1cf95471055a0effacd62009c4">GameEngine::GameWon</a>, <a class="el" href="class_game_engine_1_1_main_menu.html#a82aa2fd645256b073de36746f6fe67f5">GameEngine::MainMenu</a>, and <a class="el" href="class_game_engine_1_1_pause_game.html#acabe4b86f6a7bf972c84d84eacdbfd69">GameEngine::PauseGame</a>.</p>
+<p>Processes the keyboard input given to game by the player. </p>
+
+<p>Implemented in <a class="el" href="class_game_engine_1_1_game_play.html#a37292b394dce3cc75cf63db2b4ded46f">GameEngine::GamePlay</a>, <a class="el" href="class_game_engine_1_1_main_menu.html#a82aa2fd645256b073de36746f6fe67f5">GameEngine::MainMenu</a>, <a class="el" href="class_game_engine_1_1_splash_screen.html#ad2ef0970c9a43a983b5d89dd27686bf9">GameEngine::SplashScreen</a>, <a class="el" href="class_game_engine_1_1_game_over.html#a796bac0a9fb30cf7cfbd76aa214d4366">GameEngine::GameOver</a>, <a class="el" href="class_game_engine_1_1_pause_game.html#acabe4b86f6a7bf972c84d84eacdbfd69">GameEngine::PauseGame</a>, and <a class="el" href="class_game_engine_1_1_game_won.html#a4d6e9d1cf95471055a0effacd62009c4">GameEngine::GameWon</a>.</p>
 
 </div>
 </div>
@@ -151,7 +168,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_game_engine_1_1_game_play.html#a7ea318855e46fb4c361765c82691a319">GameEngine::GamePlay</a>, <a class="el" href="class_game_engine_1_1_splash_screen.html#ae0ac95748c17529b284e181791b5fdcb">GameEngine::SplashScreen</a>, <a class="el" href="class_game_engine_1_1_game_over.html#a85c7841e457de862e23a41d4dee0d19e">GameEngine::GameOver</a>, <a class="el" href="class_game_engine_1_1_game_won.html#ad2083163f0c56607c197c604072446b2">GameEngine::GameWon</a>, <a class="el" href="class_game_engine_1_1_main_menu.html#a657f135967f5e047911429f2f7836036">GameEngine::MainMenu</a>, and <a class="el" href="class_game_engine_1_1_pause_game.html#a8c51594be32438e4d73fc1ddcb531f38">GameEngine::PauseGame</a>.</p>
+<p>Updates all relevant <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> objects and processes in a particular state of the game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Time step of game loop iteration, provided by Run() in <a class="el" href="_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc...">Game.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_game_engine_1_1_game_play.html#a7ea318855e46fb4c361765c82691a319">GameEngine::GamePlay</a>, <a class="el" href="class_game_engine_1_1_main_menu.html#a657f135967f5e047911429f2f7836036">GameEngine::MainMenu</a>, <a class="el" href="class_game_engine_1_1_splash_screen.html#ae0ac95748c17529b284e181791b5fdcb">GameEngine::SplashScreen</a>, <a class="el" href="class_game_engine_1_1_game_over.html#a85c7841e457de862e23a41d4dee0d19e">GameEngine::GameOver</a>, <a class="el" href="class_game_engine_1_1_pause_game.html#a8c51594be32438e4d73fc1ddcb531f38">GameEngine::PauseGame</a>, and <a class="el" href="class_game_engine_1_1_game_won.html#ad2083163f0c56607c197c604072446b2">GameEngine::GameWon</a>.</p>
 
 </div>
 </div>

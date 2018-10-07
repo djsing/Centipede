@@ -6,7 +6,7 @@ namespace GameEngine
 {
 PauseGame::PauseGame(DataPtr data) : data_(data)
 {
-    renderer_ = std::make_shared<StateRenderer>(data_);
+    renderer_ = std::make_unique<StateRenderer>(data_);
 }
 
 void PauseGame::HandleInput()

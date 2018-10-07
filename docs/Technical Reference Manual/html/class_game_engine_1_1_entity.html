@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -60,15 +61,22 @@ Inheritance diagram for GameEngine::Entity:</div>
 <div class="center"><img src="class_game_engine_1_1_entity__inherit__graph.png" border="0" usemap="#_game_engine_1_1_entity_inherit__map" alt="Inheritance graph"/></div>
 <map name="_game_engine_1_1_entity_inherit__map" id="_game_engine_1_1_entity_inherit__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for GameEngine::Entity:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_engine_1_1_entity__coll__graph.png" border="0" usemap="#_game_engine_1_1_entity_coll__map" alt="Collaboration graph"/></div>
+<map name="_game_engine_1_1_entity_coll__map" id="_game_engine_1_1_entity_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abdb49fc04681730c644afb4fe5e85b4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#abdb49fc04681730c644afb4fe5e85b4a">Entity</a> (float topLeftXPosition, float topLeftYPosition)</td></tr>
-<tr class="memdesc:abdb49fc04681730c644afb4fe5e85b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_entity.html">Entity</a> Constructor.  <a href="#abdb49fc04681730c644afb4fe5e85b4a">More...</a><br /></td></tr>
+<tr class="memdesc:abdb49fc04681730c644afb4fe5e85b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_entity.html">Entity</a> Constructor. Sets object's top left x and y postion. Sets object's default state to alive (dead = False).  <a href="#abdb49fc04681730c644afb4fe5e85b4a">More...</a><br /></td></tr>
 <tr class="separator:abdb49fc04681730c644afb4fe5e85b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a725f30976de61729cd0ce3838a260410"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a725f30976de61729cd0ce3838a260410">SetDirection</a> (<a class="el" href="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168b">Direction</a> direction)</td></tr>
-<tr class="memdesc:a725f30976de61729cd0ce3838a260410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Direction of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>.  <a href="#a725f30976de61729cd0ce3838a260410">More...</a><br /></td></tr>
+<tr class="memdesc:a725f30976de61729cd0ce3838a260410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <a class="el" href="class_direction.html">Direction</a> of <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> movement.  <a href="#a725f30976de61729cd0ce3838a260410">More...</a><br /></td></tr>
 <tr class="separator:a725f30976de61729cd0ce3838a260410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7642342deee11c9d76a9045f54b6bf0d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a7642342deee11c9d76a9045f54b6bf0d">SetTopLeftXPosition</a> (float xpos)</td></tr>
 <tr class="memdesc:a7642342deee11c9d76a9045f54b6bf0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the top left x position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>.  <a href="#a7642342deee11c9d76a9045f54b6bf0d">More...</a><br /></td></tr>
@@ -76,17 +84,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a98d4de664b689f3f633a4a29c85de308"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a98d4de664b689f3f633a4a29c85de308">SetTopLeftYPosition</a> (float ypos)</td></tr>
 <tr class="memdesc:a98d4de664b689f3f633a4a29c85de308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the top left y position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>.  <a href="#a98d4de664b689f3f633a4a29c85de308">More...</a><br /></td></tr>
 <tr class="separator:a98d4de664b689f3f633a4a29c85de308"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1628e7e8a9fcd53bb69a41a15da4d1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#af1628e7e8a9fcd53bb69a41a15da4d1f">SetDead</a> (bool isDead)</td></tr>
-<tr class="memdesc:af1628e7e8a9fcd53bb69a41a15da4d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead.  <a href="#af1628e7e8a9fcd53bb69a41a15da4d1f">More...</a><br /></td></tr>
-<tr class="separator:af1628e7e8a9fcd53bb69a41a15da4d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e2809cbd92513d61feaca22702f54f6"><td class="memItemLeft" align="right" valign="top">sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a8e2809cbd92513d61feaca22702f54f6">GetObjectSprite</a> ()</td></tr>
-<tr class="memdesc:a8e2809cbd92513d61feaca22702f54f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>'s sprite.  <a href="#a8e2809cbd92513d61feaca22702f54f6">More...</a><br /></td></tr>
-<tr class="separator:a8e2809cbd92513d61feaca22702f54f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e4d6be367ff89ace3b70c96edf3294"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a14e4d6be367ff89ace3b70c96edf3294">SetDead</a> (bool isDead=true)</td></tr>
+<tr class="memdesc:a14e4d6be367ff89ace3b70c96edf3294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead.  <a href="#a14e4d6be367ff89ace3b70c96edf3294">More...</a><br /></td></tr>
+<tr class="separator:a14e4d6be367ff89ace3b70c96edf3294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fba4a625c37072b4a4c6516a58e1dc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a8fba4a625c37072b4a4c6516a58e1dc5">IsDead</a> () const</td></tr>
-<tr class="memdesc:a8fba4a625c37072b4a4c6516a58e1dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead.  <a href="#a8fba4a625c37072b4a4c6516a58e1dc5">More...</a><br /></td></tr>
+<tr class="memdesc:a8fba4a625c37072b4a4c6516a58e1dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is dead.  <a href="#a8fba4a625c37072b4a4c6516a58e1dc5">More...</a><br /></td></tr>
 <tr class="separator:a8fba4a625c37072b4a4c6516a58e1dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4187fbddc5f8667f2db007278c1910bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168b">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a4187fbddc5f8667f2db007278c1910bc">GetDirection</a> () const</td></tr>
-<tr class="memdesc:a4187fbddc5f8667f2db007278c1910bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Direction that the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is moving.  <a href="#a4187fbddc5f8667f2db007278c1910bc">More...</a><br /></td></tr>
+<tr class="memdesc:a4187fbddc5f8667f2db007278c1910bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_direction.html">Direction</a> that the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is moving.  <a href="#a4187fbddc5f8667f2db007278c1910bc">More...</a><br /></td></tr>
 <tr class="separator:a4187fbddc5f8667f2db007278c1910bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9dee840663cbdd3e8845cef69e3c0ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_game_engine.html#a07d654af51e7eabfb8f07be1e94fafcb">Region</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#ad9dee840663cbdd3e8845cef69e3c0ad">GetRegion</a> () const</td></tr>
 <tr class="memdesc:ad9dee840663cbdd3e8845cef69e3c0ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Region in which the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> exists.  <a href="#ad9dee840663cbdd3e8845cef69e3c0ad">More...</a><br /></td></tr>
@@ -119,17 +124,17 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a9520b05d34e9601db18d8c46effc6a64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a9520b05d34e9601db18d8c46effc6a64">operator==</a> (const <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> &amp;entity, bool dead)</td></tr>
-<tr class="memdesc:a9520b05d34e9601db18d8c46effc6a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator overloading to allow an <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> to be compared to a boolean, returns true if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is dead, i.e. when <a class="el" href="class_game_engine_1_1_entity.html#a8fba4a625c37072b4a4c6516a58e1dc5" title="Returns whether the Entity is dead. ">IsDead()</a> returns true.  <a href="#a9520b05d34e9601db18d8c46effc6a64">More...</a><br /></td></tr>
+<tr class="memdesc:a9520b05d34e9601db18d8c46effc6a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator overloading to allow an <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> to be compared to a boolean.  <a href="#a9520b05d34e9601db18d8c46effc6a64">More...</a><br /></td></tr>
 <tr class="separator:a9520b05d34e9601db18d8c46effc6a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05e3485a63a86f7225d4e3fed27d3ce7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_entity.html#a05e3485a63a86f7225d4e3fed27d3ce7">operator==</a> (const <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> &amp;entity, std::pair&lt; <a class="el" href="namespace_game_engine.html#a07d654af51e7eabfb8f07be1e94fafcb">Region</a>, <a class="el" href="namespace_game_engine.html#a07d654af51e7eabfb8f07be1e94fafcb">Region</a> &gt; region)</td></tr>
-<tr class="memdesc:a05e3485a63a86f7225d4e3fed27d3ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator overloading to allow an <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> to be compared to a pair of of regions (Region, Subregion), returns true if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is located in that Region and Subregion. in that.  <a href="#a05e3485a63a86f7225d4e3fed27d3ce7">More...</a><br /></td></tr>
+<tr class="memdesc:a05e3485a63a86f7225d4e3fed27d3ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator overloading to allow an <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> to be compared to a pair of of regions (Region, Subregion). in that.  <a href="#a05e3485a63a86f7225d4e3fed27d3ce7">More...</a><br /></td></tr>
 <tr class="separator:a05e3485a63a86f7225d4e3fed27d3ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>27/09/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8h_source.html#l00020">20</a> of file <a class="el" href="_entity_8h_source.html">Entity.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8h_source.html#l00019">19</a> of file <a class="el" href="_entity_8h_source.html">Entity.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abdb49fc04681730c644afb4fe5e85b4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdb49fc04681730c644afb4fe5e85b4a">&#9670;&nbsp;</a></span>Entity()</h2>
@@ -157,7 +162,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_game_engine_1_1_entity.html">Entity</a> Constructor. </p>
+<p><a class="el" href="class_game_engine_1_1_entity.html">Entity</a> Constructor. Sets object's top left x and y postion. Sets object's default state to alive (dead = False). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">topLeftXPosition</td><td>The desired x position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>'s top left corner. </td></tr>
@@ -187,9 +192,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the center x position. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns x position. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns float containing x position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00103">103</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00098">98</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -209,9 +214,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the center y position. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns y position. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns y float containing position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00108">108</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00103">103</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -230,32 +235,10 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the Direction that the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is moving. </p>
-<dl class="section return"><dt>Returns</dt><dd>Return type Direction, as defined in <a class="el" href="_direction_8h.html">Direction.h</a> </dd></dl>
+<p>Returns the <a class="el" href="class_direction.html">Direction</a> that the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is moving. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return current direction, as defined in <a class="el" href="_direction_8h.html" title="Scoped Enumeration to define states of movement. ">Direction.h</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00078">78</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a8e2809cbd92513d61feaca22702f54f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e2809cbd92513d61feaca22702f54f6">&#9670;&nbsp;</a></span>GetObjectSprite()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">sf::Sprite &amp; GameEngine::Entity::GetObjectSprite </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>'s sprite. </p>
-<dl class="section return"><dt>Returns</dt><dd>Address of the sprite sf::Sprite&amp; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00068">68</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00073">73</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -275,9 +258,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the Region in which the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> exists. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns type Region, as defined in <a class="el" href="_region_8h.html">Region.h</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns current region, as defined in <a class="el" href="_region_8h.html">Region.h</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00083">83</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00078">78</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -304,9 +287,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Returns the subregion of the Region in which the entity exists. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns type Region as defined in <a class="el" href="_region_8h.html">Region.h</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns current subregion as defined in <a class="el" href="_region_8h.html">Region.h</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00088">88</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00083">83</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -333,9 +316,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Returns the top left x position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns x position. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns float containing x position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00093">93</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00088">88</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -362,9 +345,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Returns the top left y position of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns y position. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns float containing y position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00098">98</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00093">93</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -390,10 +373,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the entity is dead, else false. </dd></dl>
+<p>Returns whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is dead. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is dead, else False. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00073">73</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00068">68</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -504,8 +487,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af1628e7e8a9fcd53bb69a41a15da4d1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1628e7e8a9fcd53bb69a41a15da4d1f">&#9670;&nbsp;</a></span>SetDead()</h2>
+<a id="a14e4d6be367ff89ace3b70c96edf3294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e4d6be367ff89ace3b70c96edf3294">&#9670;&nbsp;</a></span>SetDead()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,7 +497,7 @@ Here is the caller graph for this function:</div>
           <td class="memname">void GameEngine::Entity::SetDead </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isDead</em></td><td>)</td>
+          <td class="paramname"><em>isDead</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -523,7 +506,7 @@ Here is the caller graph for this function:</div>
 <p>Sets whether the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">isDead</td><td>True if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is dead, else False. </td></tr>
+    <tr><td class="paramname">isDead</td><td>True to set the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> as dead, else False. </td></tr>
   </table>
   </dd>
 </dl>
@@ -548,10 +531,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Sets Direction of the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a>. </p>
+<p>Sets <a class="el" href="class_direction.html">Direction</a> of <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> movement. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">direction</td><td>The desired direction from those defined in <a class="el" href="_direction_8h.html">Direction.h</a> </td></tr>
+    <tr><td class="paramname">direction</td><td>The desired direction, as defined in <a class="el" href="_direction_8h.html" title="Scoped Enumeration to define states of movement. ">Direction.h</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -599,7 +582,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_game_engine_1_1_turret.html#ae2c3ca5b535a7ca8d01dcf0801c29342">GameEngine::Turret</a>, <a class="el" href="class_game_engine_1_1_centipede_segment.html#a14294f27472b18ee9d92ada63a774c53">GameEngine::CentipedeSegment</a>, <a class="el" href="class_game_engine_1_1_bullet.html#a235a5dcac96274794cb26edfcf40b97e">GameEngine::Bullet</a>, <a class="el" href="class_game_engine_1_1_scorpion.html#a89073b200574a5a36bfdbfee54fe8221">GameEngine::Scorpion</a>, and <a class="el" href="class_game_engine_1_1_spider.html#a9161e9b0cf2eed2118750f7e97d9d3a2">GameEngine::Spider</a>.</p>
+<p>Reimplemented in <a class="el" href="class_game_engine_1_1_turret.html#ade05ddf7cf078f0c3e31990957824e8f">GameEngine::Turret</a>, <a class="el" href="class_game_engine_1_1_centipede_segment.html#a336b6acc9ccd239a416db1a32a242b89">GameEngine::CentipedeSegment</a>, <a class="el" href="class_game_engine_1_1_bullet.html#a52db03f9897a1ab8fc5c652c2a8e1498">GameEngine::Bullet</a>, <a class="el" href="class_game_engine_1_1_bomb.html#aaa9ac98b60193edaabfc77a22ea4b4ac">GameEngine::Bomb</a>, <a class="el" href="class_game_engine_1_1_spider.html#aaaaaedbe98096a2b8eda098da094b005">GameEngine::Spider</a>, and <a class="el" href="class_game_engine_1_1_scorpion.html#a89d413d56244a4c97204a2e440a0d34b">GameEngine::Scorpion</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00025">25</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 <div class="dynheader">
@@ -644,7 +627,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_game_engine_1_1_turret.html#aa3a9dcedad7f999265b8eda8ca34e733">GameEngine::Turret</a>, <a class="el" href="class_game_engine_1_1_centipede_segment.html#a08b6ea319eda99bcc7c9815f7dcf9695">GameEngine::CentipedeSegment</a>, <a class="el" href="class_game_engine_1_1_bullet.html#aeae0bb67f260f3ce8d0088daca22fc48">GameEngine::Bullet</a>, <a class="el" href="class_game_engine_1_1_scorpion.html#a8f8c3ac0f26fff1acc7adc8f5e967f26">GameEngine::Scorpion</a>, and <a class="el" href="class_game_engine_1_1_spider.html#a096cb39e61e0b671ebe338e03559a36e">GameEngine::Spider</a>.</p>
+<p>Reimplemented in <a class="el" href="class_game_engine_1_1_turret.html#af85b2bf0ab6916794f10f7a34ab0bdc3">GameEngine::Turret</a>, <a class="el" href="class_game_engine_1_1_centipede_segment.html#ad9b26e204f5f017565cebf5abf4b7fc4">GameEngine::CentipedeSegment</a>, <a class="el" href="class_game_engine_1_1_bullet.html#a612cb3cfe69f44a48148230ac6b389ce">GameEngine::Bullet</a>, <a class="el" href="class_game_engine_1_1_bomb.html#ac760c90eac9b69fe4e7898093927545b">GameEngine::Bomb</a>, <a class="el" href="class_game_engine_1_1_spider.html#a4095a08be68680e9c94038e8083619ca">GameEngine::Spider</a>, and <a class="el" href="class_game_engine_1_1_scorpion.html#a851dee1c7439c4f91629caa38bcf4304">GameEngine::Scorpion</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00030">30</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 <div class="dynheader">
@@ -692,7 +675,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Operator overloading to allow an <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> to be compared to a boolean, returns true if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is dead, i.e. when <a class="el" href="class_game_engine_1_1_entity.html#a8fba4a625c37072b4a4c6516a58e1dc5" title="Returns whether the Entity is dead. ">IsDead()</a> returns true. </p>
+<p>Operator overloading to allow an <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> to be compared to a boolean. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">entity</td><td>The entity being checked. </td></tr>
@@ -700,6 +683,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns dead == entity.IsDead() i.e. If the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is being checked to see if it is dead (dead = True): returns True if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is dead, else False. If the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> is being checked to see if it is alive (dead = False): returns True if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is alive, else False. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00005">5</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
@@ -739,14 +723,15 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Operator overloading to allow an <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> to be compared to a pair of of regions (Region, Subregion), returns true if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is located in that Region and Subregion. in that. </p>
+<p>Operator overloading to allow an <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> to be compared to a pair of of regions (Region, Subregion). in that. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">entity</td><td>The entity being checked. </td></tr>
-    <tr><td class="paramname">region</td><td>A pair of type Region and SubRegion. </td></tr>
+    <tr><td class="paramname">region</td><td>std::pair&lt;Region, Region&gt; representing (Region, SubRegion). </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns True if the <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> object is located in that Region and Subregion. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_entity_8cpp_source.html#l00010">10</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 

@@ -2,13 +2,13 @@ digraph "Desktop/project-repo/game-source-code/BulletLogic.h"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node21 [label="Desktop/project-repo\l/game-source-code/BulletLogic.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node21 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node22 [label="Desktop/project-repo\l/game-source-code/BulletLogic.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_bullet_logic_8cpp.html"];
-  Node21 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node23 [label="Desktop/project-repo\l/game-source-code/TurretLogic.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_turret_logic_8h.html",tooltip="Controls all turret Logic-related operations. "];
-  Node23 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node24 [label="Desktop/project-repo\l/game-source-code/GamePlay.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_play_8cpp.html"];
-  Node23 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 [label="Desktop/project-repo\l/game-source-code/TurretLogic.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_turret_logic_8cpp.html"];
+  Node24 [label="Desktop/project-repo\l/game-source-code/BulletLogic.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node24 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="Desktop/project-repo\l/game-source-code/BulletLogic.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_bullet_logic_8cpp.html"];
+  Node24 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="Desktop/project-repo\l/game-source-code/TurretLogic.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_turret_logic_8h.html",tooltip="Responsible for all modifications to Turret object. Derived from EntityLogic, polymorphic in nature..."];
+  Node26 -> Node27 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="Desktop/project-repo\l/game-source-code/GamePlay.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_play_8cpp.html"];
+  Node26 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="Desktop/project-repo\l/game-source-code/TurretLogic.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_turret_logic_8cpp.html"];
 }

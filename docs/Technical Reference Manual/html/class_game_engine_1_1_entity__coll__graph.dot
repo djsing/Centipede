@@ -1,0 +1,6 @@
+digraph "GameEngine::Entity"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node8 [label="{GameEngine::Entity\n||+ Entity()\l+ SetDirection()\l+ SetTopLeftXPosition()\l+ SetTopLeftYPosition()\l+ SetDead()\l+ IsDead()\l+ GetDirection()\l+ GetRegion()\l+ GetSubRegion()\l+ GetTopLeftXPosition()\l+ GetTopLeftYPosition()\l+ GetCenterXPosition()\l+ GetCenterYPosition()\l# SetCenterXPosition()\l# SetCenterYPosition()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

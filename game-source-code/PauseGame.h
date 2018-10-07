@@ -19,7 +19,8 @@ class PauseGame : public GameState
 {
    public:
     /**
-     * @brief PauseGame Constructor.
+     * @brief PauseGame Constructor. Shared pointer to Data layer. Creates
+     * instance of the StateRenderer class for drawing purposes.
      */
     PauseGame(DataPtr data);
     /**
@@ -28,7 +29,7 @@ class PauseGame : public GameState
      */
     void HandleInput() override;
     /**
-     * @brief Unused in this version of the game loop.
+     * @brief Unused in this version of the game loop. Open for future feature improvements.
      * @param dt Unused in this version of Update.
      */
     void Update(float dt) override;

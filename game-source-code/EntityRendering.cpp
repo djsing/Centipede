@@ -25,17 +25,6 @@ EntityRendering::EntityRendering(DataPtr data, TurretPtr turret, CentPtr centipe
     data_->resources.LoadTexture("Turret Sprite", TURRET_FILEPATH_);
     data_->resources.LoadTexture("Bomb sprite", BOMB_FILEPATH_);
     data_->resources.LoadTexture("Explosion sprite", EXPLOSION_FILEPATH_);
-    // load score related sprites
-    data_->resources.LoadTexture("0", NUMBER_0);
-    data_->resources.LoadTexture("1", NUMBER_1);
-    data_->resources.LoadTexture("2", NUMBER_2);
-    data_->resources.LoadTexture("3", NUMBER_3);
-    data_->resources.LoadTexture("4", NUMBER_4);
-    data_->resources.LoadTexture("5", NUMBER_5);
-    data_->resources.LoadTexture("6", NUMBER_6);
-    data_->resources.LoadTexture("7", NUMBER_7);
-    data_->resources.LoadTexture("8", NUMBER_8);
-    data_->resources.LoadTexture("9", NUMBER_9);
     // bind textures to sprites
     life_.setTexture(data_->resources.GetTexture("heart sprite"));
     explosion_.setTexture(data_->resources.GetTexture("Explosion sprite"));
@@ -54,17 +43,6 @@ EntityRendering::EntityRendering(DataPtr data, TurretPtr turret, CentPtr centipe
     poisoned_mushroom1_.setTexture(data_->resources.GetTexture("Poisoned Mushroom1"));
     poisoned_mushroom2_.setTexture(data_->resources.GetTexture("Poisoned Mushroom2"));
     poisoned_mushroom3_.setTexture(data_->resources.GetTexture("Poisoned Mushroom3"));
-    // bind texture related to scores
-    zero_.setTexture(data_->resources.GetTexture("0"));
-    one_.setTexture(data_->resources.GetTexture("1"));
-    two_.setTexture(data_->resources.GetTexture("2"));
-    three_.setTexture(data_->resources.GetTexture("3"));
-    four_.setTexture(data_->resources.GetTexture("4"));
-    five_.setTexture(data_->resources.GetTexture("5"));
-    six_.setTexture(data_->resources.GetTexture("6"));
-    seven_.setTexture(data_->resources.GetTexture("7"));
-    eight_.setTexture(data_->resources.GetTexture("8"));
-    nine_.setTexture(data_->resources.GetTexture("9"));
 }
 
 void EntityRendering::Draw()
@@ -76,7 +54,6 @@ void EntityRendering::Draw()
     DrawBullets();
     DrawTurret();
     DrawSpiders();
-    DisplayScore();
 }
 
 void EntityRendering::DrawBullets()
@@ -196,7 +173,7 @@ void EntityRendering::DrawBombs()
     // draw bombs
     for(auto& i : field_->GetBombs())
 	{
-	    if(i.IsTriggered())
+	    if(i.IsDead())
 		{
 		    explosion_.setPosition(i.GetCenterXPosition() - EXPLOSION_SPRITE_SIZE / 2,
 		                           i.GetCenterYPosition() - EXPLOSION_SPRITE_SIZE / 2);
@@ -206,58 +183,6 @@ void EntityRendering::DrawBombs()
 		{
 		    bomb_.setPosition(i.GetTopLeftXPosition(), i.GetTopLeftYPosition());
 		    data_->window.draw(bomb_);
-		}
-	}
-}
-
-void EntityRendering::DisplayScore()
-{
-    auto score = std::to_string(data_->score_manager.GetScore());
-    for(unsigned int i = 0; i < score.size(); i++)
-	{
-	    switch(score.at(i))
-		{
-		case '0':
-		    zero_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(zero_);
-		    break;
-		case '1':
-		    one_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(one_);
-		    break;
-		case '2':
-		    two_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(two_);
-		    break;
-		case '3':
-		    three_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(three_);
-		    break;
-		case '4':
-		    four_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(four_);
-		    break;
-		case '5':
-		    five_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(five_);
-		    break;
-		case '6':
-		    six_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(six_);
-		    break;
-		case '7':
-		    seven_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(seven_);
-		    break;
-		case '8':
-		    eight_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(eight_);
-		    break;
-		case '9':
-		    nine_.setPosition(i * NUMBER_SIZE, WINDOW_TOP);
-		    data_->window.draw(nine_);
-		default:
-		    break;
 		}
 	}
 }

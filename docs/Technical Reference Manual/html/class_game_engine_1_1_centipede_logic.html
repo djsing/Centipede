@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -58,25 +59,25 @@ Inheritance diagram for GameEngine::CentipedeLogic:</div>
 <div class="center"><img src="class_game_engine_1_1_centipede_logic__inherit__graph.png" border="0" usemap="#_game_engine_1_1_centipede_logic_inherit__map" alt="Inheritance graph"/></div>
 <map name="_game_engine_1_1_centipede_logic_inherit__map" id="_game_engine_1_1_centipede_logic_inherit__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for GameEngine::CentipedeLogic:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_engine_1_1_centipede_logic__coll__graph.png" border="0" usemap="#_game_engine_1_1_centipede_logic_coll__map" alt="Collaboration graph"/></div>
 <map name="_game_engine_1_1_centipede_logic_coll__map" id="_game_engine_1_1_centipede_logic_coll__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d040bcbdbbc8437cc3f7e28823fca66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_centipede_logic.html#a0d040bcbdbbc8437cc3f7e28823fca66">CentipedeLogic</a> (<a class="el" href="namespace_game_engine.html#a3d0a7de6fcf37c02fc5e46da1a7a42af">DataPtr</a> data, <a class="el" href="namespace_game_engine.html#af1544f1bbe197ab1d593c6146868ec8a">CentPtr</a> centipede)</td></tr>
-<tr class="memdesc:a0d040bcbdbbc8437cc3f7e28823fca66"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_centipede_logic.html">CentipedeLogic</a> Constructor.  <a href="#a0d040bcbdbbc8437cc3f7e28823fca66">More...</a><br /></td></tr>
+<tr class="memdesc:a0d040bcbdbbc8437cc3f7e28823fca66"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_centipede_logic.html">CentipedeLogic</a> Constructor. Saves a shared pointer to the Data layer, as well as sets default movement characteristics.  <a href="#a0d040bcbdbbc8437cc3f7e28823fca66">More...</a><br /></td></tr>
 <tr class="separator:a0d040bcbdbbc8437cc3f7e28823fca66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad593e585fd508bde68c405e23e67442c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_centipede_logic.html#ad593e585fd508bde68c405e23e67442c">Spawn</a> () override</td></tr>
-<tr class="memdesc:ad593e585fd508bde68c405e23e67442c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects into a particular <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a>.  <a href="#ad593e585fd508bde68c405e23e67442c">More...</a><br /></td></tr>
+<tr class="memdesc:ad593e585fd508bde68c405e23e67442c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects into the <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a> container. CentipedeSegments spawn in the beginning of the game.  <a href="#ad593e585fd508bde68c405e23e67442c">More...</a><br /></td></tr>
 <tr class="separator:ad593e585fd508bde68c405e23e67442c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab659197f1ea7d7bff7b04541f63e6a7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_centipede_logic.html#ab659197f1ea7d7bff7b04541f63e6a7e">Move</a> (float dt) override</td></tr>
-<tr class="memdesc:ab659197f1ea7d7bff7b04541f63e6a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves all <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects contained in the <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a>.  <a href="#ab659197f1ea7d7bff7b04541f63e6a7e">More...</a><br /></td></tr>
+<tr class="memdesc:ab659197f1ea7d7bff7b04541f63e6a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves all <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects contained in the <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a> container.  <a href="#ab659197f1ea7d7bff7b04541f63e6a7e">More...</a><br /></td></tr>
 <tr class="separator:ab659197f1ea7d7bff7b04541f63e6a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf166e358790f0c5ee2d4d6b4e3cba95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_centipede_logic.html#aaf166e358790f0c5ee2d4d6b4e3cba95">CollisionHandle</a> () override</td></tr>
 <tr class="memdesc:aaf166e358790f0c5ee2d4d6b4e3cba95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all dead <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects, sets <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects successive to dead <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects to be a head.  <a href="#aaf166e358790f0c5ee2d4d6b4e3cba95">More...</a><br /></td></tr>
@@ -86,7 +87,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>27/09/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_centipede_logic_8h_source.html#l00022">22</a> of file <a class="el" href="_centipede_logic_8h_source.html">CentipedeLogic.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_centipede_logic_8h_source.html#l00019">19</a> of file <a class="el" href="_centipede_logic_8h_source.html">CentipedeLogic.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0d040bcbdbbc8437cc3f7e28823fca66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d040bcbdbbc8437cc3f7e28823fca66">&#9670;&nbsp;</a></span>CentipedeLogic()</h2>
@@ -114,10 +115,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_game_engine_1_1_centipede_logic.html">CentipedeLogic</a> Constructor. </p>
+<p><a class="el" href="class_game_engine_1_1_centipede_logic.html">CentipedeLogic</a> Constructor. Saves a shared pointer to the Data layer, as well as sets default movement characteristics. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Shared Pointer to the Data layer, used to queue the <a class="el" href="class_game_engine_1_1_game_won.html">GameWon</a> state when the <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a> is empty, i.e. when the player has successfully killed all <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects. </td></tr>
+    <tr><td class="paramname">data</td><td>Shared Pointer to the Data layer, used to queue the <a class="el" href="class_game_engine_1_1_game_won.html">GameWon</a> state when the player has successfully killed all <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects. </td></tr>
     <tr><td class="paramname">centipede</td><td>Shared pointer to the <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a> container. </td></tr>
   </table>
   </dd>
@@ -183,10 +184,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Moves all <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects contained in the <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a>. </p>
+<p>Moves all <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects contained in the <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a> container. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dt</td><td>Timestep given by the <a class="el" href="class_game_engine_1_1_game.html">Game</a> loop. </td></tr>
+    <tr><td class="paramname">dt</td><td>Time step of game loop iteration, provided by Run() in <a class="el" href="_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc...">Game.h</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -220,7 +221,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Spawns <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects into a particular <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a>. </p>
+<p>Spawns <a class="el" href="class_game_engine_1_1_centipede_segment.html">CentipedeSegment</a> objects into the <a class="el" href="class_game_engine_1_1_centipede.html">Centipede</a> container. CentipedeSegments spawn in the beginning of the game. </p>
 
 <p>Implements <a class="el" href="class_game_engine_1_1_entity_logic.html#a3986478210f6c9e3c18989670a04ac80">GameEngine::EntityLogic</a>.</p>
 

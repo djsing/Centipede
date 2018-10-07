@@ -19,7 +19,8 @@ class BulletLogic : public EntityLogic
 {
    public:
     /**
-     * @brief BulletLogic Constructor
+     * @brief BulletLogic Constructor. Saves address of the bullet vector, sets speed to default
+     * values.
      * @param bullets Address of vector containing all existing Bullet objects in the game.
      */
     BulletLogic(std::vector<Bullet>& bullets);

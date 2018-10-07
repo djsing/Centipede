@@ -21,7 +21,7 @@ void BulletLogic::Move(float dt)
 	    // Check whether bullet is moving to the top  of screen
 	    if(i.GetTopLeftYPosition() <= SCREEN_TOP)
 		{
-		    i.SetDead(true);
+		    i.SetDead();
 		}
 
 	    else

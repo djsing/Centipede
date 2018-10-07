@@ -20,7 +20,14 @@ class MainMenu : public GameState
 {
    public:
     /**
-     * @brief MainMenu Constructor.
+     * @brief MainMenu Constructor. Changes window object to have
+     * dimensions of SCREEN_WIDTH and SCREEN_HEIGHT as defined in
+     * DEFINITIONS.h. Sets the window top left position to one third of the
+     * monitor width, such that the window is centered (the window width
+     * is one third of the monitor width, as defined in DEFINITIONS.h).
+     * Creates instance of StateRenderer class for drawing purposes.
+     * @param data Shared pointer to Data layer, used to queue GamePlay
+     * state when the user presses the spacebar to begin the game.
      */
     MainMenu(DataPtr data);
     /**
@@ -29,7 +36,7 @@ class MainMenu : public GameState
      */
     void HandleInput() override;
     /**
-     * @brief Reads the High Score before displaying.
+     * @brief Reads the High Score.
      * @param dt Unused in this version of Update.
      */
     void Update(float dt) override;

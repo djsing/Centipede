@@ -16,34 +16,42 @@ namespace GameEngine
  * @author Darrion Singh and Sachin Govender
  * @date 29/09/2018
  * @file Turret.h
- * @brief Turret object.
+ * @brief Turret object, inherits from Entity. Shoots Bullet objects. The player controls this object.
+ * The Turret object loses a life upon collision with a Spider/CentipedeSegment as defined in
+ * CollisionHandler.
  */
 class Turret : public Entity
 {
    public:
     /**
-     * @brief Turret Constructor. Spawns Turret.
+     * @brief Turret Constructor. Spawns Turret. Sets Turret to
+     * default x and y position.
      */
     Turret();
     /**
      * @brief Accesses the Bullet object container.
-     * @return Reference to Bullet object container.
+     * @return Reference to std::vector<Bullet>, i.e. the Bullet object container.
      */
     std::vector<Bullet>& GetBullets();
     /**
-     * @brief Sets x position of top left corner of turret.
-     * @param xpos Desired x position.
+     * @brief Sets the top left x position of the object. Sets the center x position
+     * of the object based on the size of the object sprite, with reference to the
+     * object's top left x position.
+     * @param xpos The desired x position.
      */
-    void SetTopLeftXPosition(float xpos);
+    virtual void SetTopLeftXPosition(float xpos) override;
     /**
-     * @brief Sets y position of top left corner of turret.
-     * @param ypos Desired y position.
+     * @brief Sets the top left y position of the object. Sets the center y position
+     * of the object based on the size of the object sprite, with reference to the
+     * object's top left y position.
+     * @param ypos The desired y position.
      */
-    void SetTopLeftYPosition(float ypos);
+    virtual void SetTopLeftYPosition(float ypos) override;
     /**
      * @brief Returns the y position of the top left corner of the
      * most recently fired bullet.
-     * @return Returns y position.
+     * @return Returns float containing the y position of the
+     * most recently fired bullet.
      */
     float GetLastBulletYPosition();
 

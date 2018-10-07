@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -58,35 +59,35 @@ Inheritance diagram for GameEngine::TurretLogic:</div>
 <div class="center"><img src="class_game_engine_1_1_turret_logic__inherit__graph.png" border="0" usemap="#_game_engine_1_1_turret_logic_inherit__map" alt="Inheritance graph"/></div>
 <map name="_game_engine_1_1_turret_logic_inherit__map" id="_game_engine_1_1_turret_logic_inherit__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for GameEngine::TurretLogic:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_engine_1_1_turret_logic__coll__graph.png" border="0" usemap="#_game_engine_1_1_turret_logic_coll__map" alt="Collaboration graph"/></div>
 <map name="_game_engine_1_1_turret_logic_coll__map" id="_game_engine_1_1_turret_logic_coll__map">
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab92b9b31e09d749fc174b7f0858c081b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_turret_logic.html#ab92b9b31e09d749fc174b7f0858c081b">TurretLogic</a> (<a class="el" href="namespace_game_engine.html#a3d0a7de6fcf37c02fc5e46da1a7a42af">DataPtr</a> data, <a class="el" href="namespace_game_engine.html#ac533d15e56c9909d9e40912ee1e8aff1">TurretPtr</a> turret)</td></tr>
-<tr class="memdesc:ab92b9b31e09d749fc174b7f0858c081b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_turret_logic.html">TurretLogic</a> Constructor.  <a href="#ab92b9b31e09d749fc174b7f0858c081b">More...</a><br /></td></tr>
+<tr class="memdesc:ab92b9b31e09d749fc174b7f0858c081b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_turret_logic.html">TurretLogic</a> Constructor. Sets default movement characteristics.  <a href="#ab92b9b31e09d749fc174b7f0858c081b">More...</a><br /></td></tr>
 <tr class="separator:ab92b9b31e09d749fc174b7f0858c081b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8efd4d064965fd68c468b3e1345c4afe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_turret_logic.html#a8efd4d064965fd68c468b3e1345c4afe">Spawn</a> () override</td></tr>
-<tr class="memdesc:a8efd4d064965fd68c468b3e1345c4afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn <a class="el" href="class_game_engine_1_1_bullet.html">Bullet</a> objects.  <a href="#a8efd4d064965fd68c468b3e1345c4afe">More...</a><br /></td></tr>
+<tr class="memdesc:a8efd4d064965fd68c468b3e1345c4afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn <a class="el" href="class_game_engine_1_1_bullet.html">Bullet</a> object. Only spawns when most recently fired bullet has no positional overlap with the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> object.  <a href="#a8efd4d064965fd68c468b3e1345c4afe">More...</a><br /></td></tr>
 <tr class="separator:a8efd4d064965fd68c468b3e1345c4afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d8a95b98ccd7d89dd2075b9732759e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_turret_logic.html#a7d8a95b98ccd7d89dd2075b9732759e7">Move</a> (float dt) override</td></tr>
-<tr class="memdesc:a7d8a95b98ccd7d89dd2075b9732759e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> object.  <a href="#a7d8a95b98ccd7d89dd2075b9732759e7">More...</a><br /></td></tr>
+<tr class="memdesc:a7d8a95b98ccd7d89dd2075b9732759e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> object. Movement determined by direction saved in <a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html">KeyboardControlsHandler</a> instance in the Data layer.  <a href="#a7d8a95b98ccd7d89dd2075b9732759e7">More...</a><br /></td></tr>
 <tr class="separator:a7d8a95b98ccd7d89dd2075b9732759e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9227598c613f23187506b3758b2ced4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_turret_logic.html#a9227598c613f23187506b3758b2ced4d">CollisionHandle</a> () override</td></tr>
-<tr class="memdesc:a9227598c613f23187506b3758b2ced4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new instance of the game when the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> is dead, ends the game when there are no lives remaining.  <a href="#a9227598c613f23187506b3758b2ced4d">More...</a><br /></td></tr>
+<tr class="memdesc:a9227598c613f23187506b3758b2ced4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new instance of the game and decrements <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> lives when the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> dies after a fatal collision with specific <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> objects. Ends the game when there are no more <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> lives remaining.  <a href="#a9227598c613f23187506b3758b2ced4d">More...</a><br /></td></tr>
 <tr class="separator:a9227598c613f23187506b3758b2ced4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>29/09/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_turret_logic_8h_source.html#l00019">19</a> of file <a class="el" href="_turret_logic_8h_source.html">TurretLogic.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_turret_logic_8h_source.html#l00020">20</a> of file <a class="el" href="_turret_logic_8h_source.html">TurretLogic.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab92b9b31e09d749fc174b7f0858c081b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab92b9b31e09d749fc174b7f0858c081b">&#9670;&nbsp;</a></span>TurretLogic()</h2>
@@ -114,7 +115,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_game_engine_1_1_turret_logic.html">TurretLogic</a> Constructor. </p>
+<p><a class="el" href="class_game_engine_1_1_turret_logic.html">TurretLogic</a> Constructor. Sets default movement characteristics. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>Shared pointer to Data layer. </td></tr>
@@ -151,7 +152,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Adds a new instance of the game when the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> is dead, ends the game when there are no lives remaining. </p>
+<p>Adds a new instance of the game and decrements <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> lives when the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> dies after a fatal collision with specific <a class="el" href="class_game_engine_1_1_entity.html">Entity</a> objects. Ends the game when there are no more <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> lives remaining. </p>
 
 <p>Implements <a class="el" href="class_game_engine_1_1_entity_logic.html#a518fbfdda3adc264da22892374d086f1">GameEngine::EntityLogic</a>.</p>
 
@@ -183,10 +184,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Moves <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> object. </p>
+<p>Moves <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> object. Movement determined by direction saved in <a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html">KeyboardControlsHandler</a> instance in the Data layer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dt</td><td>Timestep given by game loop. </td></tr>
+    <tr><td class="paramname">dt</td><td>Time step of game loop iteration, provided by Run() in <a class="el" href="_game_8h.html" title="Struct containing objects of the Data layer that must be globally accessable for a particular instanc...">Game.h</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -220,7 +221,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Spawn <a class="el" href="class_game_engine_1_1_bullet.html">Bullet</a> objects. </p>
+<p>Spawn <a class="el" href="class_game_engine_1_1_bullet.html">Bullet</a> object. Only spawns when most recently fired bullet has no positional overlap with the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> object. </p>
 
 <p>Implements <a class="el" href="class_game_engine_1_1_entity_logic.html#a3986478210f6c9e3c18989670a04ac80">GameEngine::EntityLogic</a>.</p>
 

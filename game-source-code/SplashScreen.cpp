@@ -1,3 +1,4 @@
+#include <SFML/Window/Event.hpp>
 #include "DEFINITIONS.h"
 #include "MainMenu.h"
 #include "SplashScreen.h"
@@ -6,7 +7,7 @@ namespace GameEngine
 {
 SplashScreen::SplashScreen(DataPtr data) : data_(data)
 {
-    renderer_ = std::make_shared<StateRenderer>(data_);
+    renderer_ = std::make_unique<StateRenderer>(data_);
 }
 
 void SplashScreen::HandleInput()

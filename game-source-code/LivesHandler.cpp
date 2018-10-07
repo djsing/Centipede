@@ -3,32 +3,31 @@
 
 namespace GameEngine
 {
-	LivesHandler::LivesHandler()
-		: lives_remaining_ ( STARTING_LIVES )
-	{
-	}
+LivesHandler::LivesHandler() : lives_remaining_(STARTING_LIVES)
+{
+}
 
-	int LivesHandler::LivesRemaining()
-	{
-		return lives_remaining_;
-	}
+unsigned int LivesHandler::LivesRemaining()
+{
+    return lives_remaining_;
+}
 
-	void LivesHandler::LifeLost()
-	{
-		lives_remaining_--;
-	}
+void LivesHandler::LifeLost()
+{
+    lives_remaining_--;
+}
 
-	void LivesHandler::LifeGained()
+void LivesHandler::LifeGained()
+{
+    if(lives_remaining_ < STARTING_LIVES)
 	{
-		if ( lives_remaining_ < 3 )
-		{
-			lives_remaining_++;
-		}
+	    lives_remaining_++;
 	}
+}
 
-	void LivesHandler::ResetLives()
-	{
-		lives_remaining_ = STARTING_LIVES;
-	}
+void LivesHandler::ResetLives()
+{
+    lives_remaining_ = STARTING_LIVES;
+}
 
-} // namespace GameEngine
+}  // namespace GameEngine

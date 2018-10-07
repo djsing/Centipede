@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="GameEngine::TextureFileNot\lFound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_engine_1_1_texture_file_not_found.html"];
+  Node0 [label="GameEngine::StateHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_engine_1_1_state_handler.html"];
 }

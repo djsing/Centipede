@@ -13,13 +13,14 @@ namespace GameEngine
  * @author Darrion Singh and Sachin Govender
  * @date 27/09/2018
  * @file CollisionHandler.h
- * @brief Checks for collisions between Entity objects, sets flags resulting from collisions.
+ * @brief Checks for collisions between Entity objects. Sets flags and saves co-ordinates, depending
+ * on which objects are colliding.
  */
 class CollisionHandler
 {
    public:
     /**
-     * @brief CollisionHandler Constructor
+     * @brief CollisionHandler Constructor. Saves various shared pointers.
      * @param data Shared pointer to Data layer, which contains the number of lives the player (Turret)
      * has remaining.
      * @param turret Shared pointer to the Turret object.
@@ -29,7 +30,7 @@ class CollisionHandler
      */
     CollisionHandler(DataPtr data, TurretPtr turret, CentPtr centipede, FieldPtr field);
     /**
-     * @brief Only calls all collision checking functions that are neccessary, based on the
+     * @brief Calls all collision checking functions that are neccessary, based on the
      * current state of the Turret or the Centipede.
      */
     void CheckCollisions();
@@ -81,10 +82,11 @@ class CollisionHandler
      */
     void CheckExplosionCollisions();
     /**
-     * @brief Checks the distance between two game Entity objects
-     * @param entity1 Object of type Entity
-     * @param entity2 Object of type Entity
-     * @return Distance between entity1 and entity2 using the Cartesian distance formula.
+     * @brief Checks the distance between two Entity objects.
+     * @param entity1 Object of type Entity.
+     * @param entity2 Object of type Entity.
+     * @return Float containing the distance between entity1 and entity2,
+     * calculated using the Cartesian distance formula.
      */
     float CheckDistanceBetweenEntities(Entity& entity1, Entity& entity2);
 };

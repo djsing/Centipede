@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +50,12 @@ $(function() {
 
 
 <h3><a id="index_b"></a>- b -</h3><ul>
+<li>Bomb()
+: <a class="el" href="class_game_engine_1_1_bomb.html#ab1bfbb03c3ccfc5dc8f2c6a0bede4d6d">GameEngine::Bomb</a>
+</li>
+<li>BombLogic()
+: <a class="el" href="class_game_engine_1_1_bomb_logic.html#a86940a18d8721787cfae0f0a4a21118a">GameEngine::BombLogic</a>
+</li>
 <li>Bullet()
 : <a class="el" href="class_game_engine_1_1_bullet.html#a72e23e30525daef9b0681e411befa0d7">GameEngine::Bullet</a>
 </li>
@@ -59,9 +66,6 @@ $(function() {
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
-<li>Centipede()
-: <a class="el" href="class_game_engine_1_1_centipede.html#a9846bd621276d6ad6105e9842b09c382">GameEngine::Centipede</a>
-</li>
 <li>CentipedeLogic()
 : <a class="el" href="class_game_engine_1_1_centipede_logic.html#a0d040bcbdbbc8437cc3f7e28823fca66">GameEngine::CentipedeLogic</a>
 </li>
@@ -72,7 +76,8 @@ $(function() {
 : <a class="el" href="class_game_engine_1_1_collision_handler.html#aa95e6bb0c362656db44ce72c1b06cbea">GameEngine::CollisionHandler</a>
 </li>
 <li>CollisionHandle()
-: <a class="el" href="class_game_engine_1_1_bullet_logic.html#aa473a2ae840ac08884d2edbb0bfaef7d">GameEngine::BulletLogic</a>
+: <a class="el" href="class_game_engine_1_1_bomb_logic.html#a7679e71f6681c3889f9142c8537688bf">GameEngine::BombLogic</a>
+, <a class="el" href="class_game_engine_1_1_bullet_logic.html#aa473a2ae840ac08884d2edbb0bfaef7d">GameEngine::BulletLogic</a>
 , <a class="el" href="class_game_engine_1_1_centipede_logic.html#aaf166e358790f0c5ee2d4d6b4e3cba95">GameEngine::CentipedeLogic</a>
 , <a class="el" href="class_game_engine_1_1_entity_logic.html#a518fbfdda3adc264da22892374d086f1">GameEngine::EntityLogic</a>
 , <a class="el" href="class_game_engine_1_1_mushroom_logic.html#a539e5bacb440d27d5a1698ebe53dbcf7">GameEngine::MushroomLogic</a>
@@ -89,6 +94,27 @@ $(function() {
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>DecrementLives()
 : <a class="el" href="class_game_engine_1_1_mushroom.html#a051816d147bb610ea8c7ee70b500a0df">GameEngine::Mushroom</a>
+</li>
+<li>DecrementScore()
+: <a class="el" href="class_game_engine_1_1_high_score_manager.html#abd547a24f7928309160704566fa68bb6">GameEngine::HighScoreManager</a>
+</li>
+<li>DisplayLoss()
+: <a class="el" href="class_game_engine_1_1_state_renderer.html#ad460ef568db8ede59d5eac0cf324b3ce">GameEngine::StateRenderer</a>
+</li>
+<li>DisplayMenu()
+: <a class="el" href="class_game_engine_1_1_state_renderer.html#a1265c638b81a9727afb3e6c3b72cf1bf">GameEngine::StateRenderer</a>
+</li>
+<li>DisplayPause()
+: <a class="el" href="class_game_engine_1_1_state_renderer.html#a6c57219e02652269e56fcce2e6c5addd">GameEngine::StateRenderer</a>
+</li>
+<li>DisplayScore()
+: <a class="el" href="class_game_engine_1_1_state_renderer.html#a74b646d577a158794a171f32c33865c6">GameEngine::StateRenderer</a>
+</li>
+<li>DisplaySplashScreen()
+: <a class="el" href="class_game_engine_1_1_state_renderer.html#ac9de7daa4938a66e5c0cd3ce6cad481e">GameEngine::StateRenderer</a>
+</li>
+<li>DisplayWin()
+: <a class="el" href="class_game_engine_1_1_state_renderer.html#a1c1568e3f0f87d7178edd7ee5aa8551c">GameEngine::StateRenderer</a>
 </li>
 <li>Draw()
 : <a class="el" href="class_game_engine_1_1_entity_rendering.html#a67ecf1d25a66b614203c07525ac2c005">GameEngine::EntityRendering</a>
@@ -117,9 +143,6 @@ $(function() {
 <li>Game()
 : <a class="el" href="class_game_engine_1_1_game.html#a20d959bca809e33c66244477fdadee21">GameEngine::Game</a>
 </li>
-<li>GameField()
-: <a class="el" href="class_game_engine_1_1_game_field.html#ab0d88106868c7292b7babfc49bd0735e">GameEngine::GameField</a>
-</li>
 <li>GameOver()
 : <a class="el" href="class_game_engine_1_1_game_over.html#a4d9b3b555c3a1a2cb32385c934c2a2aa">GameEngine::GameOver</a>
 </li>
@@ -134,6 +157,9 @@ $(function() {
 </li>
 <li>GetAngle()
 : <a class="el" href="class_game_engine_1_1_spider.html#aae9eeee54d262265946e0cfff69cb26d">GameEngine::Spider</a>
+</li>
+<li>GetBombs()
+: <a class="el" href="class_game_engine_1_1_game_field.html#a7cb2ea0a2df20d1def61fda730271555">GameEngine::GameField</a>
 </li>
 <li>GetBullets()
 : <a class="el" href="class_game_engine_1_1_turret.html#a6b65317990a41a481e191b7bd45a0c64">GameEngine::Turret</a>
@@ -154,8 +180,8 @@ $(function() {
 <li>getElapsedTime()
 : <a class="el" href="class_game_engine_1_1_stop_watch.html#aeebc58387dfa7f1bc43781c23e90fe37">GameEngine::StopWatch</a>
 </li>
-<li>GetFont()
-: <a class="el" href="class_game_engine_1_1_resource_manager.html#a6bd6e6e9a3101c6dc2073fb7256e36d6">GameEngine::ResourceManager</a>
+<li>GetHighScore()
+: <a class="el" href="class_game_engine_1_1_high_score_manager.html#ae8801e48e3a842eed2229dc9c4d2cb38">GameEngine::HighScoreManager</a>
 </li>
 <li>GetLastBulletYPosition()
 : <a class="el" href="class_game_engine_1_1_turret.html#a379342e89b8734996c4d9d75af5e045b">GameEngine::Turret</a>
@@ -164,20 +190,20 @@ $(function() {
 : <a class="el" href="class_game_engine_1_1_centipede.html#af16d64fbeb3035747c64706bcf54859a">GameEngine::Centipede</a>
 </li>
 <li>GetLivesRemaining()
-: <a class="el" href="class_game_engine_1_1_mushroom.html#a78abce02810091639e8ce3999de671d1">GameEngine::Mushroom</a>
+: <a class="el" href="class_game_engine_1_1_mushroom.html#a8724dc82ab33d084c251d5f5778cb11f">GameEngine::Mushroom</a>
 </li>
 <li>GetMushrooms()
 : <a class="el" href="class_game_engine_1_1_game_field.html#ab8a89f1d3cc02649efe1fa82dde458d8">GameEngine::GameField</a>
 </li>
 <li>GetNewMushrooms()
-: <a class="el" href="class_game_engine_1_1_game_field.html#a0da912ba891826fbc8589d4742331455">GameEngine::GameField</a>
-</li>
-<li>GetObjectSprite()
-: <a class="el" href="class_game_engine_1_1_entity.html#a8e2809cbd92513d61feaca22702f54f6">GameEngine::Entity</a>
+: <a class="el" href="class_game_engine_1_1_game_field.html#a0bfa7f2c263b8112bd486ab6db9ef8b3">GameEngine::GameField</a>
 </li>
 <li>GetRegion()
 : <a class="el" href="class_game_engine_1_1_entity.html#ad9dee840663cbdd3e8845cef69e3c0ad">GameEngine::Entity</a>
 , <a class="el" href="class_game_engine_1_1_region_handler.html#a688c80970910da1e02f05b3569c7721d">GameEngine::RegionHandler</a>
+</li>
+<li>GetScore()
+: <a class="el" href="class_game_engine_1_1_high_score_manager.html#a05930dcd3bd7c471949e09fe417f9a8f">GameEngine::HighScoreManager</a>
 </li>
 <li>GetScorpions()
 : <a class="el" href="class_game_engine_1_1_game_field.html#a695029dfb56761ab4cf945847e83ee53">GameEngine::GameField</a>
@@ -214,10 +240,19 @@ $(function() {
 , <a class="el" href="class_game_engine_1_1_pause_game.html#acabe4b86f6a7bf972c84d84eacdbfd69">GameEngine::PauseGame</a>
 , <a class="el" href="class_game_engine_1_1_splash_screen.html#ad2ef0970c9a43a983b5d89dd27686bf9">GameEngine::SplashScreen</a>
 </li>
+<li>HighScoreManager()
+: <a class="el" href="class_game_engine_1_1_high_score_manager.html#ad74f7e40f3c7773aa6a7991b75dd93fb">GameEngine::HighScoreManager</a>
+</li>
+<li>HighScoreSurpassed()
+: <a class="el" href="class_game_engine_1_1_high_score_manager.html#a0492ff670c9c03f3af701750fab123da">GameEngine::HighScoreManager</a>
+</li>
 </ul>
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
+<li>IncrementScore()
+: <a class="el" href="class_game_engine_1_1_high_score_manager.html#add406569458aef922a36e18c71dba546">GameEngine::HighScoreManager</a>
+</li>
 <li>InputHandler()
 : <a class="el" href="class_game_engine_1_1_input_handler.html#a321eaef88e21da32631c60ff445bf514">GameEngine::InputHandler</a>
 </li>
@@ -270,10 +305,7 @@ $(function() {
 : <a class="el" href="class_game_engine_1_1_lives_handler.html#a9b4bed1c1abced4ea4b22fc4bfc74e28">GameEngine::LivesHandler</a>
 </li>
 <li>LivesRemaining()
-: <a class="el" href="class_game_engine_1_1_lives_handler.html#a8c9d990a373b2ae8e26552c2bec0adcc">GameEngine::LivesHandler</a>
-</li>
-<li>LoadFont()
-: <a class="el" href="class_game_engine_1_1_resource_manager.html#a9ca16f426228432d6b196ab483dc4de1">GameEngine::ResourceManager</a>
+: <a class="el" href="class_game_engine_1_1_lives_handler.html#af1a97f441dcd62b5341d5aa045feda47">GameEngine::LivesHandler</a>
 </li>
 <li>LoadTexture()
 : <a class="el" href="class_game_engine_1_1_resource_manager.html#aba4348fe27bc17ddf5ebc1656e9c52a2">GameEngine::ResourceManager</a>
@@ -286,10 +318,11 @@ $(function() {
 : <a class="el" href="class_game_engine_1_1_main_menu.html#a13c6491534fee7cbe3dd3e35cd72c724">GameEngine::MainMenu</a>
 </li>
 <li>Move()
-: <a class="el" href="class_game_engine_1_1_bullet_logic.html#a4956b2a381c03f0b3b60dc2c0118610e">GameEngine::BulletLogic</a>
+: <a class="el" href="class_game_engine_1_1_bomb_logic.html#a2cda0e0d980fda76d842aa12ac94fc75">GameEngine::BombLogic</a>
+, <a class="el" href="class_game_engine_1_1_bullet_logic.html#a4956b2a381c03f0b3b60dc2c0118610e">GameEngine::BulletLogic</a>
 , <a class="el" href="class_game_engine_1_1_centipede_logic.html#ab659197f1ea7d7bff7b04541f63e6a7e">GameEngine::CentipedeLogic</a>
 , <a class="el" href="class_game_engine_1_1_entity_logic.html#a6bb9fa17196da18cb1e7999f23193989">GameEngine::EntityLogic</a>
-, <a class="el" href="class_game_engine_1_1_mushroom_logic.html#a080b2b9c24c6232df026e080ba219a60">GameEngine::MushroomLogic</a>
+, <a class="el" href="class_game_engine_1_1_mushroom_logic.html#a112bdd6f39b48fba91aea8e51da08532">GameEngine::MushroomLogic</a>
 , <a class="el" href="class_game_engine_1_1_scorpion_logic.html#a27567fdae5a943487144094711965e8f">GameEngine::ScorpionLogic</a>
 , <a class="el" href="class_game_engine_1_1_spider_logic.html#a91bd60165fd2a5cb2d408cda76dfdbc8">GameEngine::SpiderLogic</a>
 , <a class="el" href="class_game_engine_1_1_turret_logic.html#a7d8a95b98ccd7d89dd2075b9732759e7">GameEngine::TurretLogic</a>
@@ -330,8 +363,8 @@ $(function() {
 <li>ResetLives()
 : <a class="el" href="class_game_engine_1_1_lives_handler.html#ae5bfbe6beaaa2cee44a1d8fad023b4dd">GameEngine::LivesHandler</a>
 </li>
-<li>ResourceManager()
-: <a class="el" href="class_game_engine_1_1_resource_manager.html#a13500999fcb7738d2df4e46e278f56ac">GameEngine::ResourceManager</a>
+<li>ResetScore()
+: <a class="el" href="class_game_engine_1_1_high_score_manager.html#a96fd9ca8e23a796cce256e6c12eb3acf">GameEngine::HighScoreManager</a>
 </li>
 <li>resources
 : <a class="el" href="struct_game_engine_1_1_game_data.html#a5b9327fbd9547d3f751daf1b25612f44">GameEngine::GameData</a>
@@ -343,6 +376,9 @@ $(function() {
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>score_manager
+: <a class="el" href="struct_game_engine_1_1_game_data.html#af55fc637ebc05cf46b44bd48574fe15f">GameEngine::GameData</a>
+</li>
 <li>Scorpion()
 : <a class="el" href="class_game_engine_1_1_scorpion.html#a2580f912c363422fb77a00b5b54794b5">GameEngine::Scorpion</a>
 </li>
@@ -365,7 +401,7 @@ $(function() {
 : <a class="el" href="class_game_engine_1_1_input_handler.html#a39c8bc7460396b3284eacd08dfe28253">GameEngine::InputHandler</a>
 </li>
 <li>SetDead()
-: <a class="el" href="class_game_engine_1_1_entity.html#af1628e7e8a9fcd53bb69a41a15da4d1f">GameEngine::Entity</a>
+: <a class="el" href="class_game_engine_1_1_entity.html#a14e4d6be367ff89ace3b70c96edf3294">GameEngine::Entity</a>
 </li>
 <li>SetDirection()
 : <a class="el" href="class_game_engine_1_1_entity.html#a725f30976de61729cd0ce3838a260410">GameEngine::Entity</a>
@@ -385,20 +421,22 @@ $(function() {
 : <a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html#a81f52bacd0b4bacde46cc9f11fc2c377">GameEngine::KeyboardControlsHandler</a>
 </li>
 <li>SetTopLeftXPosition()
-: <a class="el" href="class_game_engine_1_1_bullet.html#a235a5dcac96274794cb26edfcf40b97e">GameEngine::Bullet</a>
-, <a class="el" href="class_game_engine_1_1_centipede_segment.html#a14294f27472b18ee9d92ada63a774c53">GameEngine::CentipedeSegment</a>
+: <a class="el" href="class_game_engine_1_1_bomb.html#aaa9ac98b60193edaabfc77a22ea4b4ac">GameEngine::Bomb</a>
+, <a class="el" href="class_game_engine_1_1_bullet.html#a52db03f9897a1ab8fc5c652c2a8e1498">GameEngine::Bullet</a>
+, <a class="el" href="class_game_engine_1_1_centipede_segment.html#a336b6acc9ccd239a416db1a32a242b89">GameEngine::CentipedeSegment</a>
 , <a class="el" href="class_game_engine_1_1_entity.html#a7642342deee11c9d76a9045f54b6bf0d">GameEngine::Entity</a>
-, <a class="el" href="class_game_engine_1_1_scorpion.html#a89073b200574a5a36bfdbfee54fe8221">GameEngine::Scorpion</a>
-, <a class="el" href="class_game_engine_1_1_spider.html#a9161e9b0cf2eed2118750f7e97d9d3a2">GameEngine::Spider</a>
-, <a class="el" href="class_game_engine_1_1_turret.html#ae2c3ca5b535a7ca8d01dcf0801c29342">GameEngine::Turret</a>
+, <a class="el" href="class_game_engine_1_1_scorpion.html#a89d413d56244a4c97204a2e440a0d34b">GameEngine::Scorpion</a>
+, <a class="el" href="class_game_engine_1_1_spider.html#aaaaaedbe98096a2b8eda098da094b005">GameEngine::Spider</a>
+, <a class="el" href="class_game_engine_1_1_turret.html#ade05ddf7cf078f0c3e31990957824e8f">GameEngine::Turret</a>
 </li>
 <li>SetTopLeftYPosition()
-: <a class="el" href="class_game_engine_1_1_bullet.html#aeae0bb67f260f3ce8d0088daca22fc48">GameEngine::Bullet</a>
-, <a class="el" href="class_game_engine_1_1_centipede_segment.html#a08b6ea319eda99bcc7c9815f7dcf9695">GameEngine::CentipedeSegment</a>
+: <a class="el" href="class_game_engine_1_1_bomb.html#ac760c90eac9b69fe4e7898093927545b">GameEngine::Bomb</a>
+, <a class="el" href="class_game_engine_1_1_bullet.html#a612cb3cfe69f44a48148230ac6b389ce">GameEngine::Bullet</a>
+, <a class="el" href="class_game_engine_1_1_centipede_segment.html#ad9b26e204f5f017565cebf5abf4b7fc4">GameEngine::CentipedeSegment</a>
 , <a class="el" href="class_game_engine_1_1_entity.html#a98d4de664b689f3f633a4a29c85de308">GameEngine::Entity</a>
-, <a class="el" href="class_game_engine_1_1_scorpion.html#a8f8c3ac0f26fff1acc7adc8f5e967f26">GameEngine::Scorpion</a>
-, <a class="el" href="class_game_engine_1_1_spider.html#a096cb39e61e0b671ebe338e03559a36e">GameEngine::Spider</a>
-, <a class="el" href="class_game_engine_1_1_turret.html#aa3a9dcedad7f999265b8eda8ca34e733">GameEngine::Turret</a>
+, <a class="el" href="class_game_engine_1_1_scorpion.html#a851dee1c7439c4f91629caa38bcf4304">GameEngine::Scorpion</a>
+, <a class="el" href="class_game_engine_1_1_spider.html#a4095a08be68680e9c94038e8083619ca">GameEngine::Spider</a>
+, <a class="el" href="class_game_engine_1_1_turret.html#af85b2bf0ab6916794f10f7a34ab0bdc3">GameEngine::Turret</a>
 </li>
 <li>SetTrajectory()
 : <a class="el" href="class_game_engine_1_1_centipede_segment.html#a04f554afbf6519523ef2348054373746">GameEngine::CentipedeSegment</a>
@@ -407,7 +445,8 @@ $(function() {
 : <a class="el" href="class_game_engine_1_1_centipede_segment.html#a72d4306fd285bb0b19a17cc0e5d3d6da">GameEngine::CentipedeSegment</a>
 </li>
 <li>Spawn()
-: <a class="el" href="class_game_engine_1_1_bullet_logic.html#a339ae17fe46d97cb862751007b508e83">GameEngine::BulletLogic</a>
+: <a class="el" href="class_game_engine_1_1_bomb_logic.html#a7898413d61a761b16c3d9deb4e49ae23">GameEngine::BombLogic</a>
+, <a class="el" href="class_game_engine_1_1_bullet_logic.html#a339ae17fe46d97cb862751007b508e83">GameEngine::BulletLogic</a>
 , <a class="el" href="class_game_engine_1_1_centipede_logic.html#ad593e585fd508bde68c405e23e67442c">GameEngine::CentipedeLogic</a>
 , <a class="el" href="class_game_engine_1_1_entity_logic.html#a3986478210f6c9e3c18989670a04ac80">GameEngine::EntityLogic</a>
 , <a class="el" href="class_game_engine_1_1_mushroom_logic.html#adbe57f8a25ee7073c823ac211d818331">GameEngine::MushroomLogic</a>
@@ -426,6 +465,9 @@ $(function() {
 </li>
 <li>statehandler
 : <a class="el" href="struct_game_engine_1_1_game_data.html#aaa9a73ccd09fb038e3d2ee4c7d11b3d1">GameEngine::GameData</a>
+</li>
+<li>StateRenderer()
+: <a class="el" href="class_game_engine_1_1_state_renderer.html#afa583d6b4ac77904cad0f5c08f53cf8a">GameEngine::StateRenderer</a>
 </li>
 <li>StopWatch()
 : <a class="el" href="class_game_engine_1_1_stop_watch.html#a5a215c202c4ccae4bc092dfac789acbc">GameEngine::StopWatch</a>
@@ -453,19 +495,15 @@ $(function() {
 , <a class="el" href="class_game_engine_1_1_pause_game.html#a8c51594be32438e4d73fc1ddcb531f38">GameEngine::PauseGame</a>
 , <a class="el" href="class_game_engine_1_1_splash_screen.html#ae0ac95748c17529b284e181791b5fdcb">GameEngine::SplashScreen</a>
 </li>
+<li>UpdateHighScore()
+: <a class="el" href="class_game_engine_1_1_high_score_manager.html#a2e9f41dea506a911fcd979365ce3e71c">GameEngine::HighScoreManager</a>
+</li>
 </ul>
 
 
 <h3><a id="index_w"></a>- w -</h3><ul>
 <li>window
 : <a class="el" href="struct_game_engine_1_1_game_data.html#a3a8bd1270de7f0286e20f4168170de53">GameEngine::GameData</a>
-</li>
-</ul>
-
-
-<h3><a id="index_0x7e"></a>- ~ -</h3><ul>
-<li>~ResourceManager()
-: <a class="el" href="class_game_engine_1_1_resource_manager.html#ab1ba47529968d18b4e8c0cc77859ddab">GameEngine::ResourceManager</a>
 </li>
 </ul>
 </div><!-- contents -->

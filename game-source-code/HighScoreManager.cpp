@@ -24,12 +24,12 @@ HighScoreManager::HighScoreManager() : high_score_surpassed_(false), score_(0), 
     high_score_file_.close();
 }
 
-void HighScoreManager::IncrementScore(int increment)
+void HighScoreManager::IncrementScore(unsigned int increment)
 {
     score_ += increment;
 }
 
-void HighScoreManager::DecrementScore(int decrement)
+void HighScoreManager::DecrementScore(unsigned int decrement)
 {
     if(score_ > decrement)
 	{
@@ -39,7 +39,7 @@ void HighScoreManager::DecrementScore(int decrement)
 	score_ = 0;
 }
 
-int HighScoreManager::GetScore()
+unsigned int HighScoreManager::GetScore()
 {
     return score_;
 }
@@ -52,7 +52,7 @@ std::string HighScoreManager::GetHighScore()
 void HighScoreManager::UpdateHighScore()
 {
     high_score_surpassed_ = false;
-    if(score_ >= std::stoi(high_score_))
+    if(score_ >= static_cast<unsigned int>(std::stoi(high_score_)))
 	{
 	    high_score_ = std::to_string(score_);
 	    high_score_file_.open(HIGHSCORE_FILEPATH, std::ios::out);

@@ -6,6 +6,6 @@ digraph "Desktop/project-repo/game-source-code/StopWatch.cpp"
   Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 [label="ctime",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="StopWatch.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stop_watch_8h.html",tooltip="Timer object. Provides alternative to sf::Clock objects. "];
+  Node2 [label="StopWatch.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stop_watch_8h.html",tooltip="Timer object. Provides alternative to sf::Clock object. "];
   Node2 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

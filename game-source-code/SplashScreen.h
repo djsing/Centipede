@@ -20,7 +20,8 @@ class SplashScreen : public GameState
 {
    public:
     /**
-     * @brief SplashScreen Constructor
+     * @brief SplashScreen Constructor. Creates instance of StateRenderer
+     * for drawing purposes. Starts splash screen timer.
      */
     SplashScreen(DataPtr data);
     /**
@@ -34,7 +35,7 @@ class SplashScreen : public GameState
      */
     void Update(float dt) override;
     /**
-     * @brief Draws the main menu screen.
+     * @brief Draws the splash screen.
      */
     void Draw() override;
 

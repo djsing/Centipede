@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -52,11 +53,18 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_keyboard_controls_handler_8h_source.html">KeyboardControlsHandler.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for GameEngine::KeyboardControlsHandler:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_engine_1_1_keyboard_controls_handler__coll__graph.png" border="0" usemap="#_game_engine_1_1_keyboard_controls_handler_coll__map" alt="Collaboration graph"/></div>
+<map name="_game_engine_1_1_keyboard_controls_handler_coll__map" id="_game_engine_1_1_keyboard_controls_handler_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa548b70127fdd0475b8a4134bfea0d83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html#aa548b70127fdd0475b8a4134bfea0d83">KeyboardControlsHandler</a> ()</td></tr>
-<tr class="memdesc:aa548b70127fdd0475b8a4134bfea0d83"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html">KeyboardControlsHandler</a> Constructor.  <a href="#aa548b70127fdd0475b8a4134bfea0d83">More...</a><br /></td></tr>
+<tr class="memdesc:aa548b70127fdd0475b8a4134bfea0d83"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html">KeyboardControlsHandler</a> Constructor. By default, sets shooting state to False, and <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> direction to <a class="el" href="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168bada95feece334f0612031adf21d057ab9">Direction::HOVER</a>.  <a href="#aa548b70127fdd0475b8a4134bfea0d83">More...</a><br /></td></tr>
 <tr class="separator:aa548b70127fdd0475b8a4134bfea0d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91b944086ebbfa1dfc02ef8d4d4d58b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html#a91b944086ebbfa1dfc02ef8d4d4d58b9">IsShooting</a> ()</td></tr>
 <tr class="memdesc:a91b944086ebbfa1dfc02ef8d4d4d58b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether or not the player has sent the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> a shoot command.  <a href="#a91b944086ebbfa1dfc02ef8d4d4d58b9">More...</a><br /></td></tr>
@@ -65,17 +73,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a81f52bacd0b4bacde46cc9f11fc2c377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> shoot command.  <a href="#a81f52bacd0b4bacde46cc9f11fc2c377">More...</a><br /></td></tr>
 <tr class="separator:a81f52bacd0b4bacde46cc9f11fc2c377"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed6a29be22821be92b1656fac4b7d521"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168b">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html#aed6a29be22821be92b1656fac4b7d521">GetDirection</a> ()</td></tr>
-<tr class="memdesc:aed6a29be22821be92b1656fac4b7d521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current Direction of movement of the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a>.  <a href="#aed6a29be22821be92b1656fac4b7d521">More...</a><br /></td></tr>
+<tr class="memdesc:aed6a29be22821be92b1656fac4b7d521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current <a class="el" href="class_direction.html">Direction</a> of movement of the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a>.  <a href="#aed6a29be22821be92b1656fac4b7d521">More...</a><br /></td></tr>
 <tr class="separator:aed6a29be22821be92b1656fac4b7d521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a004b2cbbb3dcd0159992ee0186bd556e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html#a004b2cbbb3dcd0159992ee0186bd556e">SetDirection</a> (<a class="el" href="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168b">Direction</a> direction)</td></tr>
-<tr class="memdesc:a004b2cbbb3dcd0159992ee0186bd556e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current Direction of movement of the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a>.  <a href="#a004b2cbbb3dcd0159992ee0186bd556e">More...</a><br /></td></tr>
+<tr class="memdesc:a004b2cbbb3dcd0159992ee0186bd556e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current <a class="el" href="class_direction.html">Direction</a> of movement of the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a>.  <a href="#a004b2cbbb3dcd0159992ee0186bd556e">More...</a><br /></td></tr>
 <tr class="separator:a004b2cbbb3dcd0159992ee0186bd556e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Darrion Singh and Sachin Govender </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>29/09/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8h_source.html#l00016">16</a> of file <a class="el" href="_keyboard_controls_handler_8h_source.html">KeyboardControlsHandler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8h_source.html#l00017">17</a> of file <a class="el" href="_keyboard_controls_handler_8h_source.html">KeyboardControlsHandler.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa548b70127fdd0475b8a4134bfea0d83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa548b70127fdd0475b8a4134bfea0d83">&#9670;&nbsp;</a></span>KeyboardControlsHandler()</h2>
@@ -92,7 +100,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html">KeyboardControlsHandler</a> Constructor. </p>
+<p><a class="el" href="class_game_engine_1_1_keyboard_controls_handler.html">KeyboardControlsHandler</a> Constructor. By default, sets shooting state to False, and <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> direction to <a class="el" href="namespace_game_engine.html#ad47e77f6deeeb8cb54cdebdd953d168bada95feece334f0612031adf21d057ab9">Direction::HOVER</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00005">5</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
 
@@ -114,10 +122,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the current Direction of movement of the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>Current <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> direction, as defined in <a class="el" href="_direction_8h.html">Direction.h</a> </dd></dl>
+<p>Returns the current <a class="el" href="class_direction.html">Direction</a> of movement of the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> direction, as defined in <a class="el" href="_direction_8h.html" title="Scoped Enumeration to define states of movement. ">Direction.h</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00021">21</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00019">19</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -137,9 +145,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns whether or not the player has sent the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> a shoot command. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the player wants to shoot, else False. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the player has sent a shoot command, else False. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00011">11</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00009">9</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -159,15 +167,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the current Direction of movement of the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a>. </p>
+<p>Sets the current <a class="el" href="class_direction.html">Direction</a> of movement of the <a class="el" href="class_game_engine_1_1_turret.html">Turret</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">direction</td><td>Desired <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> direction, as defined in <a class="el" href="_direction_8h.html">Direction.h</a> </td></tr>
+    <tr><td class="paramname">direction</td><td>Desired <a class="el" href="class_game_engine_1_1_turret.html">Turret</a> direction, as defined in <a class="el" href="_direction_8h.html" title="Scoped Enumeration to define states of movement. ">Direction.h</a> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00026">26</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00024">24</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,7 +203,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00016">16</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_keyboard_controls_handler_8cpp_source.html#l00014">14</a> of file <a class="el" href="_keyboard_controls_handler_8cpp_source.html">KeyboardControlsHandler.cpp</a>.</p>
 
 </div>
 </div>

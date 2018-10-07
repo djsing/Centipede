@@ -61,8 +61,8 @@ void CollisionHandler::CheckBulletSegmentCollisions()
 			{
 			    if(CheckDistanceBetweenEntities(*it, i) < CENTIPEDE_SEGMENT_HIT_RADIUS + BULLET_HIT_RADIUS)
 				{
-				    i.SetDead(true);
-				    it->SetDead(true);
+				    i.SetDead();
+				    it->SetDead();
 				    data_->score_manager.IncrementScore(SEGMENT_SCORE);
 				    // saved the position of bullet/segment collisions to the GameField container.
 				    field_->GetNewMushrooms().push_back(
@@ -152,7 +152,7 @@ void CollisionHandler::CheckTurretSegmentCollisions()
 		    if(CheckDistanceBetweenEntities(*it, *turret_) < CENTIPEDE_SEGMENT_HIT_RADIUS + TURRET_HIT_RADIUS)
 			{
 			    data_->lives.LifeLost();
-			    turret_->SetDead(true);
+			    turret_->SetDead();
 			    return;
 			}
 		    it++;
@@ -173,7 +173,7 @@ void CollisionHandler::CheckTurretSpiderCollisions()
 		    if(CheckDistanceBetweenEntities(*it, *turret_) < TURRET_HIT_RADIUS + SPIDER_HIT_RADIUS)
 			{
 			    data_->lives.LifeLost();
-			    turret_->SetDead(true);
+			    turret_->SetDead();
 			    return;
 			}
 		    it++;
@@ -235,8 +235,8 @@ void CollisionHandler::CheckBulletSpiderCollisions()
 			{
 			    if(CheckDistanceBetweenEntities(j, *it) < SPIDER_HIT_RADIUS + BULLET_HIT_RADIUS)
 				{
-				    it->SetDead(true);
-				    j.SetDead(true);
+				    it->SetDead();
+				    j.SetDead();
 				    data_->score_manager.IncrementScore(SPIDER_SCORE);
 				}
 			    it++;
@@ -264,11 +264,11 @@ void CollisionHandler::CheckBulletMushroomCollisions()
 			{
 			    if(CheckDistanceBetweenEntities(*it, i) < MUSHROOM_HIT_RADIUS + BULLET_HIT_RADIUS)
 				{
-				    i.SetDead(true);
+				    i.SetDead();
 				    it->DecrementLives();
 				    if(it->GetLivesRemaining() == 0)
 					{
-					    it->SetDead(true);
+					    it->SetDead();
 					    data_->score_manager.IncrementScore(MUSHROOM_SCORE);
 					}
 				}
@@ -296,8 +296,8 @@ void CollisionHandler::CheckBulletBombCollisions()
 			{
 			    if(CheckDistanceBetweenEntities(i, *it) < BULLET_HIT_RADIUS + BOMB_HIT_RADIUS)
 				{
-				    it->SetDead(true);
-				    i.Explode();
+				    it->SetDead();
+				    i.SetDead();
 				    break;
 				}
 			    it++;
@@ -312,7 +312,7 @@ void CollisionHandler::CheckExplosionCollisions()
 {
     for(auto& i : field_->GetBombs())
 	{
-	    if(i.IsTriggered())
+	    if(i.IsDead())
 		{
 		    // Check scorpion deaths
 		    for(auto& j : field_->GetScorpions())
@@ -323,8 +323,8 @@ void CollisionHandler::CheckExplosionCollisions()
 				}
 			    if(CheckDistanceBetweenEntities(i, j) < SCORPION_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
-				    i.SetDead(true);
-				    j.SetDead(true);
+				    i.SetDead();
+				    j.SetDead();
 				    data_->score_manager.IncrementScore(SCORPION_SCORE);
 				}
 			}
@@ -337,8 +337,8 @@ void CollisionHandler::CheckExplosionCollisions()
 				}
 			    if(CheckDistanceBetweenEntities(i, j) < SPIDER_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
-				    i.SetDead(true);
-				    j.SetDead(true);
+				    i.SetDead();
+				    j.SetDead();
 				    data_->score_manager.IncrementScore(SPIDER_SCORE);
 				}
 			}
@@ -351,8 +351,8 @@ void CollisionHandler::CheckExplosionCollisions()
 				}
 			    if(CheckDistanceBetweenEntities(i, j) < CENTIPEDE_SEGMENT_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
-				    i.SetDead(true);
-				    j.SetDead(true);
+				    i.SetDead();
+				    j.SetDead();
 				    data_->score_manager.IncrementScore(MUSHROOM_SCORE);
 				}
 			}
@@ -365,8 +365,8 @@ void CollisionHandler::CheckExplosionCollisions()
 				}
 			    if(CheckDistanceBetweenEntities(i, j) < CENTIPEDE_SEGMENT_HIT_RADIUS + EXPLOSION_HIT_RADIUS)
 				{
-				    i.SetDead(true);
-				    j.SetDead(true);
+				    i.SetDead();
+				    j.SetDead();
 				    data_->score_manager.IncrementScore(SEGMENT_SCORE);
 				}
 			}

@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -52,10 +53,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Turret object.  
+<p>Turret object, inherits from Entity. Shoots Bullet objects. The player controls this object. The Turret object loses a life upon collision with a Spider/CentipedeSegment as defined in CollisionHandler.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;SFML/Graphics.hpp&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="_bullet_8h_source.html">Bullet.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_direction_8h_source.html">Direction.h</a>&quot;</code><br />
@@ -95,7 +95,7 @@ Typedefs</h2></td></tr>
 <tr class="separator:ac533d15e56c9909d9e40912ee1e8aff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Turret object. </p>
+<div class="textblock"><p>Turret object, inherits from Entity. Shoots Bullet objects. The player controls this object. The Turret object loses a life upon collision with a Spider/CentipedeSegment as defined in CollisionHandler. </p>
 
 <p class="definition">Definition in file <a class="el" href="_turret_8h_source.html">Turret.h</a>.</p>
 </div></div><!-- contents -->

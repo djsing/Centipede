@@ -14,27 +14,35 @@ namespace GameEngine
  * @author Darrion Singh and Sachin Govender
  * @date 27/09/2018
  * @file CentipedeSegment.h
- * @brief CentipedeSegment objects.
+ * @brief CentipedeSegment object that is stored in the Centipede
+ * container. Inherits from Entity. Affects other Entity objects
+ * in different manners upon contact, as defined in CollisionHandler.
  */
 class CentipedeSegment : public Entity
 {
    public:
     /**
-     * @brief CentipedeSegment Constructor
-     * @param firstSegment Sets whether the segment is a head segment or a body segment,
-     * set to false by default.
+     * @brief CentipedeSegment Constructor. Sets object's top left x and y position,
+     * center x and y position, as well as default movement/other characteristics.
+     * @param firstSegment Sets whether the CentipedeSegment is a head segment
+     * or a body segment. True if the CentipedeSegment is a head segment, else false.
+     * Set to false by default.
      */
     CentipedeSegment(bool firstSegment = false);
     /**
-     * @brief Sets CentipedeSegment object's top left x position.
-     * @param xpos Desired x position.
+     * @brief Sets the top left x position of the object. Sets the center x position
+     * of the object based on the size of the object sprite, with reference to the
+     * object's top left x position.
+     * @param xpos The desired x position.
      */
-    void SetTopLeftXPosition(float xpos);
+    virtual void SetTopLeftXPosition(float xpos) override;
     /**
-     * @brief Sets CentipedeSegment object's top left y position.
-     * @param ypos Desired y position.
+     * @brief Sets the top left y position of the object. Sets the center y position
+     * of the object based on the size of the object sprite, with reference to the
+     * object's top left y position.
+     * @param ypos The desired y position.
      */
-    void SetTopLeftYPosition(float ypos);
+    virtual void SetTopLeftYPosition(float ypos) override;
     /**
      * @brief Sets whether the CentipedeSegment is a head segment.
      * @param isFirstSegment True if a head segment is required, false if
@@ -44,55 +52,55 @@ class CentipedeSegment : public Entity
     /**
      * @brief Sets whether the CentipedeSegment is the last segment of a
      * centipede section.
-     * @param IsLastSegment
+     * @param IsLastSegment True if the segment is the end of a section of
+     * the Centipede container.
      */
     void SetLastSegment(bool IsLastSegment);
     /**
      * @brief Sets whether the segment is moving to the bottom of the screen
-     * or the top of the screen
-     * @param trajectory Desired trajectory, either UPWARDS or DOWNWARDS,
-     * given in Trajectory.h.
+     * or the top of the screen.
+     * @param trajectory Desired trajectory as defined in Trajectory.h.
      */
     void SetTrajectory(Trajectory trajectory);
     /**
      * @brief Sets whether the CentipedeSegment is turning right or left at the
-     * next impassable collision, i.e. at a wall or a mushroom.
+     * next edge of the screen or Mushroom object.
      * @param isTurningLeft True to set the segment to turn right,
      * False to make the segment turn right.
      */
     void SetTurningLeft(bool isTurningLeft);
     /**
-     * @brief Sets whether the CentipedeSegment is poisoned after collisons
+     * @brief Sets whether the CentipedeSegment is poisoned after a collison
      * with a poisoned mushroom.
      * @param isPoisoned True if the segment is poisoned, else false.
      */
     void SetPoisoned(bool isPoisoned);
     /**
-     * @brief Returns whether the segment is moving towards the top or the
-     * bottom of the screen.
-     * @return Either UPWARD or DOWNWARD - See Trajectory.h
+     * @brief Returns whether the CentipedeSegment object is moving towards
+     * the top or the bottom of the screen.
+     * @return Current trajectory as defined in Trajectory.h.
      */
     Trajectory GetTrajectory() const;
     /**
-     * @brief Returns whether the segment is a head or body segment.
+     * @brief Returns whether the CentipedeSegment is a head or body segment.
      * @return True if the segment is a head, else returns False.
      */
     bool IsFirstSegment() const;
     /**
-     * @brief Returns whether a segment is the last segment of a
-     * Centipede section.
-     * @return True if the segment is the last segment of a Centipede
-     * Section.
+     * @brief Returns whether the CentipedeSegment is the last segment of a
+     * centipede section.
+     * @return True if the segment is the end of a section of the Centipede
+     * container.
      */
     bool IsLastSegment() const;
     /**
-     * @brief Returns whether the segment is turning left or right at the
-     * next impassable collision.
+     * @brief Returns whether the CentipedeSegment is turning right or left at the
+     * next edge of the screen or Mushroom object.
      * @return True if turning left, False if turning right.
      */
     bool IsTurningLeft() const;
     /**
-     * @brief Returns whether the segment is poisoned.
+     * @brief Returns whether the CentipedeSegment object is poisoned.
      * @return True if poisoned, else false.
      */
     bool IsPoisoned() const;

@@ -4,9 +4,9 @@ digraph "Desktop/project-repo/game-source-code/ResourceManager.cpp"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node0 [label="Desktop/project-repo\l/game-source-code/ResourceManager.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="ResourceManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resource_manager_8h.html"];
+  Node1 [label="ResourceManager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resource_manager_8h.html",tooltip="Empty class used to throw an exception when a texture file is not found. "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="SFML/Graphics.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 [label="SFML/Graphics/Texture.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="map",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
 }

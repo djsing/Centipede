@@ -1,7 +1,7 @@
 #ifndef ENTITYRENDERING_H
 #define ENTITYRENDERING_H
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 #include <memory>
 #include "Centipede.h"
 #include "Game.h"
@@ -56,10 +56,6 @@ class EntityRendering
      * @brief Draws all Bomb objects.
      */
     void DrawBombs();
-    /**
-     * @brief Draws live game score to the screen.
-     */
-    void DisplayScore();
     // Shared pointer to Data layer.
     DataPtr data_;
     // Shared pointer to Turret object.
@@ -70,17 +66,6 @@ class EntityRendering
     FieldPtr field_;
     // sprite to display lives remaining
     sf::Sprite life_;
-    // sprite to display score
-    sf::Sprite zero_;
-	sf::Sprite one_;
-	sf::Sprite two_;
-	sf::Sprite three_;
-	sf::Sprite four_;
-	sf::Sprite five_;
-	sf::Sprite six_;
-	sf::Sprite seven_;
-	sf::Sprite eight_;
-	sf::Sprite nine_;
     // sprites for Entity objects
     sf::Sprite turret_sprite_;
     sf::Sprite body_segment_;

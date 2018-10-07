@@ -6,7 +6,7 @@ namespace GameEngine
 {
 GameWon::GameWon(DataPtr data) : data_(data)
 {
-    renderer_ = std::make_shared<StateRenderer>(data_);
+    renderer_ = std::make_unique<StateRenderer>(data_);
 }
 
 void GameWon::HandleInput()
@@ -41,7 +41,7 @@ void GameWon::Draw()
     // clear screen to update data
     data_->window.clear();
     renderer_->DisplayWin();
-    renderer_->DisplayHighScore();
+    renderer_->DisplayScore(false, false);
     // display updated data
     data_->window.display();
 }

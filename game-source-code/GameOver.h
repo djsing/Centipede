@@ -18,7 +18,9 @@ class GameOver : public GameState
 {
    public:
     /**
-     * @brief GameOver Constructor
+     * @brief GameOver Constructor. Creates an instance of the StateRenderer
+     * class for drawing capability.
+     * @param data Shared pointer to Data layer. Used to load/read textures.
      */
     GameOver(DataPtr data);
     /**
@@ -27,7 +29,7 @@ class GameOver : public GameState
      */
     void HandleInput() override;
     /**
-     * @brief Updates the High Score before displaying.
+     * @brief Updates the High Score.
      * @param dt Unused in this version of Update.
      */
     void Update(float dt) override;

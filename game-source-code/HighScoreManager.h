@@ -36,20 +36,20 @@ class HighScoreManager
      * @brief Increases the current game score.
      * @param increment Score increment.
      */
-    void IncrementScore(int increment);
+    void IncrementScore(unsigned int increment);
     /**
      * @brief Decreases the current game score.
      * @param decrement Score decrement.
      */
-    void DecrementScore(int decrement);
+    void DecrementScore(unsigned int decrement);
     /**
      * @brief Returns the current score of the player.
      * @return Integer score value.
      */
-    int GetScore();
+    unsigned int GetScore();
     /**
      * @brief Returns the current High score.
-     * @return String containing the high score value.
+     * @return std::string containing the high score value.
      */
     std::string GetHighScore();
     /**
@@ -71,7 +71,7 @@ class HighScoreManager
 
    private:
     bool high_score_surpassed_;
-    int score_;
+    unsigned int score_;
     std::string high_score_;
     std::fstream high_score_file_;
 };

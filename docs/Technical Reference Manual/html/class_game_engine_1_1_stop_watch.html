@@ -17,10 +17,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="centipedesegment.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Centipede
    </div>
-   <div id="projectbrief">El Don Dagga Dragga</div>
+   <div id="projectbrief">A recreation of Centipede by Atari, written in C++, using the Simple and Fast Multimedia Library (SFML).</div>
   </td>
  </tr>
  </tbody>
@@ -52,17 +53,24 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_stop_watch_8h_source.html">StopWatch.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for GameEngine::StopWatch:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_engine_1_1_stop_watch__coll__graph.png" border="0" usemap="#_game_engine_1_1_stop_watch_coll__map" alt="Collaboration graph"/></div>
+<map name="_game_engine_1_1_stop_watch_coll__map" id="_game_engine_1_1_stop_watch_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a215c202c4ccae4bc092dfac789acbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_stop_watch.html#a5a215c202c4ccae4bc092dfac789acbc">StopWatch</a> ()</td></tr>
-<tr class="memdesc:a5a215c202c4ccae4bc092dfac789acbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stopwatch Constructor. Begins timer for each instance of Stopwatch.  <a href="#a5a215c202c4ccae4bc092dfac789acbc">More...</a><br /></td></tr>
+<tr class="memdesc:a5a215c202c4ccae4bc092dfac789acbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stopwatch Constructor. Begins timer.  <a href="#a5a215c202c4ccae4bc092dfac789acbc">More...</a><br /></td></tr>
 <tr class="separator:a5a215c202c4ccae4bc092dfac789acbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeebc58387dfa7f1bc43781c23e90fe37"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_stop_watch.html#aeebc58387dfa7f1bc43781c23e90fe37">getElapsedTime</a> ()</td></tr>
-<tr class="memdesc:aeebc58387dfa7f1bc43781c23e90fe37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns time elapsed between the last time <a class="el" href="class_game_engine_1_1_stop_watch.html#a6a438413b94e51885772e17b6c2525ae" title="Returns time elapsed between the last time restart() was called for that instance or upon instance cr...">restart()</a> was called for that instance or upon instance creation.  <a href="#aeebc58387dfa7f1bc43781c23e90fe37">More...</a><br /></td></tr>
+<tr class="memdesc:aeebc58387dfa7f1bc43781c23e90fe37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns time elapsed between the current time and the last time StartTimer() was called.  <a href="#aeebc58387dfa7f1bc43781c23e90fe37">More...</a><br /></td></tr>
 <tr class="separator:aeebc58387dfa7f1bc43781c23e90fe37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a438413b94e51885772e17b6c2525ae"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_engine_1_1_stop_watch.html#a6a438413b94e51885772e17b6c2525ae">restart</a> ()</td></tr>
-<tr class="memdesc:a6a438413b94e51885772e17b6c2525ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns time elapsed between the last time <a class="el" href="class_game_engine_1_1_stop_watch.html#a6a438413b94e51885772e17b6c2525ae" title="Returns time elapsed between the last time restart() was called for that instance or upon instance cr...">restart()</a> was called for that instance or upon instance creation. Restarts timer.  <a href="#a6a438413b94e51885772e17b6c2525ae">More...</a><br /></td></tr>
+<tr class="memdesc:a6a438413b94e51885772e17b6c2525ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns time elapsed between the last time StartTimer() was called. Restarts timer.  <a href="#a6a438413b94e51885772e17b6c2525ae">More...</a><br /></td></tr>
 <tr class="separator:a6a438413b94e51885772e17b6c2525ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -86,7 +94,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Stopwatch Constructor. Begins timer for each instance of Stopwatch. </p>
+<p>Stopwatch Constructor. Begins timer. </p>
 
 <p class="definition">Definition at line <a class="el" href="_stop_watch_8cpp_source.html#l00007">7</a> of file <a class="el" href="_stop_watch_8cpp_source.html">StopWatch.cpp</a>.</p>
 
@@ -108,7 +116,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns time elapsed between the last time <a class="el" href="class_game_engine_1_1_stop_watch.html#a6a438413b94e51885772e17b6c2525ae" title="Returns time elapsed between the last time restart() was called for that instance or upon instance cr...">restart()</a> was called for that instance or upon instance creation. </p>
+<p>Returns time elapsed between the current time and the last time StartTimer() was called. </p>
 <dl class="section return"><dt>Returns</dt><dd>Elapsed time as a floating point number. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_stop_watch_8cpp_source.html#l00035">35</a> of file <a class="el" href="_stop_watch_8cpp_source.html">StopWatch.cpp</a>.</p>
@@ -137,7 +145,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns time elapsed between the last time <a class="el" href="class_game_engine_1_1_stop_watch.html#a6a438413b94e51885772e17b6c2525ae" title="Returns time elapsed between the last time restart() was called for that instance or upon instance cr...">restart()</a> was called for that instance or upon instance creation. Restarts timer. </p>
+<p>Returns time elapsed between the last time StartTimer() was called. Restarts timer. </p>
 <dl class="section return"><dt>Returns</dt><dd>Elapsed time as a floating point number. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_stop_watch_8cpp_source.html#l00026">26</a> of file <a class="el" href="_stop_watch_8cpp_source.html">StopWatch.cpp</a>.</p>
