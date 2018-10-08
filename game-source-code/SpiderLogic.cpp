@@ -41,6 +41,7 @@ void SpiderLogic::Move(float dt)
 	    // move the spiders across the sreen
 	    for(auto& i : _field->GetSpiders())
 		{
+		    // if the spider is above the player box
 		    if(i.GetTopLeftYPosition() <= TURRET_SCREEN_FRACTION * SCREEN_HEIGHT)
 			{
 			    // keep sprite from moving above player box

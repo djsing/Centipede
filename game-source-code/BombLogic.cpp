@@ -38,7 +38,8 @@ void BombLogic::Move(float dt)
 	    time_elapsed_ = 0;
 	    return;
 	}
-    time_elapsed_ += dt;
+    else
+	time_elapsed_ += dt;
 }
 
 void BombLogic::CollisionHandle()

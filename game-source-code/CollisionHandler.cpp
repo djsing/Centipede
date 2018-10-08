@@ -96,42 +96,44 @@ void CollisionHandler::CheckSegmentMushroomCollisions()
 	                                       centipede_->GetCentipede().at(i).GetSubRegion()));
 	    while(it != field_->GetMushrooms().end())
 		{
-		    if(it->IsPoisoned() && CheckDistanceBetweenEntities(centipede_->GetCentipede().at(i), *it) <
-		                               CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
-			{
-			    // set segments
-			    centipede_->GetCentipede().at(i).SetPoisoned(true);
-			    // set mushrooms normal after collisions with the last segment of a centipede segment
-			    if(centipede_->GetCentipede().at(i).IsLastSegment())
-				{
-				    it->SetPoisoned(false);
-				}
-			    it++;
-			    it = std::find(it, field_->GetMushrooms().end(),
-			                   std::make_pair(centipede_->GetCentipede().at(i).GetRegion(),
-			                                  centipede_->GetCentipede().at(i).GetSubRegion()));
-			    continue;
-			}
-
 		    if(CheckDistanceBetweenEntities(centipede_->GetCentipede().at(i), *it) <
 		       CENTIPEDE_SEGMENT_HIT_RADIUS + MUSHROOM_HIT_RADIUS)
 			{
-			    if(centipede_->GetCentipede().at(i).GetDirection() == Direction::LEFT)
+			    if(it->IsPoisoned())
 				{
-				    centipede_->GetCentipede().at(i).SetTopLeftXPosition(it->GetTopLeftXPosition() +
-				                                                         MUSHROOM_SPRITE_SIZE);
+				    // set segments
+				    centipede_->GetCentipede().at(i).SetPoisoned(true);
+				    // set mushrooms normal after collisions with the last segment of a centipede
+				    // segment
+				    if(centipede_->GetCentipede().at(i).IsLastSegment())
+					{
+					    it->SetPoisoned(false);
+					}
+				    it++;
+				    it = std::find(it, field_->GetMushrooms().end(),
+				                   std::make_pair(centipede_->GetCentipede().at(i).GetRegion(),
+				                                  centipede_->GetCentipede().at(i).GetSubRegion()));
+				    continue;
 				}
 			    else
-				centipede_->GetCentipede().at(i).SetTopLeftXPosition(it->GetTopLeftXPosition() -
-				                                                     CENTIPEDE_SPRITE_SIDE_SIZE);
-
-			    if(centipede_->GetCentipede().at(i).GetTrajectory() == Trajectory::DOWNWARD)
 				{
-				    centipede_->GetCentipede().at(i).SetDirection(Direction::DOWN);
-				}
+				    if(centipede_->GetCentipede().at(i).GetDirection() == Direction::LEFT)
+					{
+					    centipede_->GetCentipede().at(i).SetTopLeftXPosition(
+					        it->GetTopLeftXPosition() + MUSHROOM_SPRITE_SIZE);
+					}
+				    else
+					centipede_->GetCentipede().at(i).SetTopLeftXPosition(
+					    it->GetTopLeftXPosition() - CENTIPEDE_SPRITE_SIDE_SIZE);
 
-			    else
-				centipede_->GetCentipede().at(i).SetDirection(Direction::UP);
+				    if(centipede_->GetCentipede().at(i).GetTrajectory() == Trajectory::DOWNWARD)
+					{
+					    centipede_->GetCentipede().at(i).SetDirection(Direction::DOWN);
+					}
+
+				    else
+					centipede_->GetCentipede().at(i).SetDirection(Direction::UP);
+				}
 			}
 		    it++;
 		    it = std::find(it, field_->GetMushrooms().end(),

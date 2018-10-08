@@ -48,7 +48,6 @@ void CentipedeLogic::Move(float dt)
 	    if(i.IsPoisoned())
 		{
 		    i.SetTopLeftYPosition(i.GetTopLeftYPosition() + CENTIPEDE_SPRITE_SIDE_SIZE);
-
 		    // once in turret area, resume normal behaviour
 		    if(i.GetTopLeftYPosition() >= TURRET_SCREEN_FRACTION * SCREEN_HEIGHT)
 			{
@@ -59,10 +58,8 @@ void CentipedeLogic::Move(float dt)
 				    i.SetTrajectory(Trajectory::DOWNWARD);
 				    i.SetDirection(Direction::DOWN);
 				}
-
 			    continue;
 			}
-
 		    continue;
 		}
 

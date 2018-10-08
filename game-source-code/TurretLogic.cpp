@@ -29,8 +29,7 @@ void TurretLogic::Move(float dt)
     switch(data_->keyboard.GetDirection())
 	{
 	case Direction::RIGHT:
-
-	    // now check if square is at right side of screen
+	    // if turret moves past the right side of the screen, set it at the right edge of the screen
 	    if((turret_->GetTopLeftXPosition() + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_WIDTH))
 		{
 		    turret_->SetTopLeftXPosition(SCREEN_WIDTH - TURRET_SPRITE_SIDE_SIZE);
@@ -39,11 +38,9 @@ void TurretLogic::Move(float dt)
 		{
 		    turret_->SetTopLeftXPosition(turret_->GetTopLeftXPosition() + moveDistance);
 		}
-
 	    break;
 
 	case Direction::DOWN:
-
 	    // check if square is at bottom of the screen
 	    if((turret_->GetTopLeftYPosition() + TURRET_SPRITE_SIDE_SIZE) >= (SCREEN_HEIGHT))
 		{
@@ -53,7 +50,6 @@ void TurretLogic::Move(float dt)
 		{
 		    turret_->SetTopLeftYPosition(turret_->GetTopLeftYPosition() + moveDistance);
 		}
-
 	    break;
 
 	case Direction::LEFT:
@@ -65,7 +61,6 @@ void TurretLogic::Move(float dt)
 		{
 		    turret_->SetTopLeftXPosition(turret_->GetTopLeftXPosition() - moveDistance);
 		}
-
 	    break;
 
 	case Direction::UP:
@@ -80,7 +75,6 @@ void TurretLogic::Move(float dt)
 		    turret_->SetTopLeftYPosition(turret_->GetTopLeftYPosition() - moveDistance);
 		}
 
-	case Direction::HOVER:
 	default:
 	    break;
 	}
